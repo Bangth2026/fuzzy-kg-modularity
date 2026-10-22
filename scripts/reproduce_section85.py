@@ -6,8 +6,8 @@ Runs entirely offline on the 201 x 7 = 1407-state grid.  Prints
 * embeddedness of the collapse in its own footprint (paper: 92.7% for par);
 * mean footprint widths (paper: 0.233 / 0.362 / 0.230);
 * the closed-form degeneration half-width h* (paper: 0.075);
-* Table 10 on the raw bounds of Eq. (13) (as in the paper), followed by the
-  earlier-draft variant that normalised the bound vectors separately;
+* Table 10 in two variants -- the as-published gate (bound vectors normalised
+  separately before gating) and the gate on the raw bounds of Eq. (13);
 * timing of collapse vs footprint vs footprint + Nie-Tan.
 
 Usage:  python scripts/reproduce_section85.py [--tau 0.4]
@@ -58,7 +58,7 @@ def main():
     print(f"h* = (1 - tau) max(a, b) / 2 = {degeneration_halfwidth(tau):.3f}")
 
     # ---------------------------------------------------------------- Table 10
-    for variant in ("raw bounds, Eq. (13) -- as in the paper", "earlier draft: bound vectors normalised separately (not used)"):
+    for variant in ("as published (bounds normalised separately)", "raw bounds, Eq. (13) as stated"):
         print(f"\nTable 10 -- {variant}; tau_ZPD = {tau}")
         print(f"{'eta*sigma':>9} {'IT2 pass':>9} {'IT2 fail':>9} {'IT2 indet':>10} {'T1 pass':>8} {'T1~NieTan':>10}  {'sum':>6}")
         tot = {"pass": 0, "fail": 0, "ind": 0, "t1": 0, "nt": 0, "agree": 0, "n": 0, "t1_fail_on_ind": 0, "n_ind": 0}
@@ -66,7 +66,7 @@ def main():
             t1 = zpd_gate_type1(ps, h, tau)
             f = footprint(ps, h)
             nt = nie_tan(f, renormalise=True)["par"] >= tau
-            if variant.startswith("earlier draft"):
+            if variant.startswith("as published"):
                 pa, fa, ind = zpd_gate_it2_normalised(ps, h, tau)
             else:
                 g = zpd_gate_it2(ps, h, tau)
