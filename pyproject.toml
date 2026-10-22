@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fuzzykg"
+version = "1.0.0"
+description = "Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs (reference implementation)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hai Bang Truong", email = "truonghaibang@siu.edu.vn" }]
+keywords = ["fuzzy graphs", "modularity", "community detection", "interval type-2 fuzzy sets", "t-norms", "OWA", "knowledge graphs"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "pandas>=2.0",
+  "python-igraph>=0.10",
+  "leidenalg>=0.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+mooc = ["requests"]
+
+[tool.setuptools.packages.find]
+include = ["fuzzykg*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
