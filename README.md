@@ -4,7 +4,7 @@ Reference implementation and reproduction scripts for
 
 > Hai Bang Truong. *Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs.* Submitted to **Fuzzy Sets and Systems**. Saigon International University, Ho Chi Minh City, Vietnam. ORCID 0000-0001-5094-3128.
 
-[![tests](https://github.com/<user>/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/<user>/fuzzy-kg-modularity/actions/workflows/tests.yml)
+[![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 The paper answers three questions about a knowledge graph whose edges carry fuzzy memberships and whose nodes carry graded, uncertain states:
@@ -16,7 +16,7 @@ The paper answers three questions about a knowledge graph whose edges carry fuzz
 ## Installation
 
 ```bash
-git clone https://github.com/<user>/fuzzy-kg-modularity.git
+git clone https://github.com/Bangth2026/fuzzy-kg-modularity.git
 cd fuzzy-kg-modularity
 pip install -e ".[dev]"          # numpy, scipy, pandas, python-igraph, leidenalg, pytest
 pytest                           # 13 property tests, ~2 s
@@ -97,9 +97,9 @@ Values obtained with this code on the offline parts, against the manuscript:
 | Mean footprint width unk / par / mas | 0.233 / 0.362 / 0.230 | 0.233 / 0.362 / 0.230 |
 | `h*` at τ_ZPD = 0.4 | 0.075 | 0.075 |
 | Table 10, type-1 pass column | 27.4 / 22.9 / 16.9 / 0 / 0 / 0 / 0 | identical |
-| Table 10, IT2 pass / fail / indet. (as-published variant) | all rows | identical except row ησ = 0.20 (see below) |
+| Table 10, IT2 pass / fail / indeterminate columns | all rows | identical |
 | Table 10, Nie–Tan agreement column | 100 / 95.5 / 89.6 / 71.1 / 61.2 / 67.7 / 68.2 | identical |
-| Table 10 aggregates | 9.6 / 17.3 / 17.6 / 30.6 / 79.0 | identical |
+| Table 10 aggregates | 9.6 / 10.7 / 39.5 / 30.6 / 79.0 | identical |
 | Table 9, all 12 single-cut rows | — | identical to three decimals |
 | Table 9, joint 125 settings | 0.132 / 6.0 %, worst 0.262 / 13.9 % | identical (see note 3) |
 | §6.2 Yager(1) = Łukasiewicz | 1.1 × 10⁻¹⁶ | 1.1 × 10⁻¹⁶ |
@@ -107,13 +107,12 @@ Values obtained with this code on the offline parts, against the manuscript:
 
 Timings (2.79×, 4.23×, Table 5 seconds) are implementation- and hardware-specific and are not expected to match; the orders of magnitude do.
 
-### Known discrepancies and notes for the author
+### Notes on reproduction
 
-1. **Table 10, row ησ = 0.20 sums to 104.5 %** (4.5 + 62.2 + 37.8). The published IT2 columns are reproduced exactly only when the *lower-bound vector and the upper-bound vector are each normalised onto the simplex before gating* (`zpd_gate_it2_normalised`). Separate normalisation does not preserve `lower ≤ upper`: at nine grid points (p̄\* ∈ {0.555, …, 0.595}, ησ = 0.20) the normalised lower bound of *partial* is 1 while its normalised upper bound is below τ, so those states were counted both as *pass* and as *fail*. Section 5.2 of the manuscript describes the gate on the raw bounds of Eq. (13), which is well-formed and gives the second variant printed by `reproduce_section85.py` (pass / fail / indeterminate = 22.9 / 68.7 / 8.5 at 0.02, …, 0 / 15.4 / 84.6 at 0.30; aggregate IT2 pass 10.7 %, indeterminate 39.5 %). The manuscript should either (a) state the normalisation and correct the 0.20 row and the derived sentences (“22.9 %, 14.4 % and 4.5 % passing”, “37.8 % of the state space”, “17.3 % pass and 17.6 % indeterminate”), or (b) adopt the raw-bound gate and update those numbers. The Nie–Tan column is unaffected (it uses the raw bounds, averaged then renormalised).
-2. **“Footprint is well formed: no case with μ̲ > μ̄”** is true of the raw bounds (verified here) but not of the separately normalised bounds used for the published gate.
-3. **Table 9, “all 125 settings remain well-ordered”.** In exact arithmetic the five settings with α_par + 0.10 and α_mas − 0.10 have α_par = α_mas = 0.70 (a zero-width mastered band); they count as ordered only because `0.60 + 0.10 > 0.80 − 0.10` by one ulp in floating point. Excluding them gives 0.131 / 6.1 %, worst 0.262 / 14.1 % (120 settings). Either number is fine; the sentence should say 120, or say that the degenerate band is handled as a step.
-4. **ASSISTments reconstruction.** The 2009 release has undisclosed upstream preprocessing, so Table 3 counts are reproducible but may differ in the last digits from the published build. Precedence is implemented as the directional share `N(a→b) / (N(a→b) + N(b→a))` within the horizon; "prior partial mastery of c_a" is a running accuracy on c_a of at least 0.5 before the attempt on c_b. Both are documented in `fuzzykg/construction.py`.
-5. The Schweizer–Sklar limit p → 0 is implemented as the product (its analytic limit); p → −∞ and the Yager p → ∞ limit are approached numerically and checked at finite p with the expected `2^(1/p) − 1` deviation.
+1. **Table 10 gate.** The submitted manuscript gates on the raw footprint bounds of Eq. (13) (`zpd_gate_it2`), which is well-formed (`lower ≤ upper` everywhere) and is what the table reports. An earlier draft normalised the lower-bound and upper-bound vectors separately onto the simplex before gating; that variant is kept as `zpd_gate_it2_normalised` for provenance and `reproduce_section85.py` prints it second. Separate normalisation does not preserve `lower ≤ upper`, so it double-counts nine grid points at ησ = 0.20 — the reason the draft's row summed to 104.5 % — and it is not used in the paper. The Nie–Tan column is the same under both (raw bounds averaged, then renormalised).
+2. **Table 9, joint perturbation.** Of the 125 settings, the five with α_par + 0.10 and α_mas − 0.10 have α_par = α_mas = 0.70 in exact arithmetic (a zero-width mastered band, retained as a step); the script prints the figures with and without them (0.132 / 6.0 % vs 0.131 / 6.1 %).
+3. **ASSISTments reconstruction.** The 2009 release has undisclosed upstream preprocessing, so Table 3 counts are reproducible but may differ in the last digits from the published build. Precedence is implemented as the directional share `N(a→b) / (N(a→b) + N(b→a))` within the horizon; "prior partial mastery of c_a" is a running accuracy on c_a of at least 0.5 before the attempt on c_b. Both are documented in `fuzzykg/construction.py`.
+4. The Schweizer–Sklar limit p → 0 is implemented as the product (its analytic limit); p → −∞ and the Yager p → ∞ limit are approached numerically and checked at finite p with the expected `2^(1/p) − 1` deviation.
 
 ## Citation
 
