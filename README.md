@@ -20,33 +20,33 @@ The interval-valued learner state and its cautious type-1 collapse are treated i
 |---|---|---|
 | Level-set modularity | `Qbar` over a quantile grid of α-cuts (mass or equal layer weights), multiplex Leiden optimiser, per-level profile, cost index, persistence tracks along the α-filtration | `fuzzykg/multislice.py`, `scripts/benchmark_levelset.py`, `scripts/levelset_real.py`, `results/levelset_{shift,lfr,real}.json` |
 | Membership-information sweep | Planted partitions with the community shift of the memberships swept 0 → 1, ten seeds; Fuzzy Leiden, level-set (both weightings), Algorithm 1 and single cuts compared by ARI; cost index vs recovery loss (Table 8) | `scripts/benchmark_levelset.py --stage shift` |
-| LFR-style benchmark | Directed generator with power-law community sizes and out-degrees, mixing 0.1–0.6, sizes 500 / 2000 / 10000 (Table 9) | `fuzzykg/synthetic.py::lfr_style_fuzzy_graph`, `scripts/benchmark_levelset.py --stage lfr` |
+| LFR-style benchmark | Directed generator with power-law community sizes and out-degrees, mixing 0.1–0.6, sizes 500 / 2000 / 10000 (Table S1, supplementary) | `fuzzykg/synthetic.py::lfr_style_fuzzy_graph`, `scripts/benchmark_levelset.py --stage lfr` |
 | Four null models | Degree-preserving, curriculum-order-preserving, component-preserving and weights-only nulls at the reference resolution, 200 draws on the real graphs (Table 6) | `scripts/null_models_extended.py`, `results/null_models_extended.json` |
-| Held-out next-concept prediction | Learner split 70/10/20, graph rebuilt on training learners, MRR / hit@k of the true next concept under each composition operator, family parameters selected on validation, baselines (Table 14) | `scripts/heldout_transitions.py`, `results/heldout_*.json` |
+| Held-out next-concept prediction | Learner split 70/10/20, graph rebuilt on training learners, MRR / hit@k of the true next concept under each composition operator, family parameters selected on validation, baselines (Table 13) | `scripts/heldout_transitions.py`, `results/heldout_*.json` |
 | Full curated graph | MOOCCubeX-CS with all 725 expert pairs (287 concepts) next to the assessed 59-concept graph | `scripts/build_mooccubex_graph.py --full` |
-| The Corollary 1 gap vs the cost of binarising | Constant-membership identity (Remark 3); the shortcut on planted partitions with γ refitted per level set (Table 7) and on the real graphs (Table 10) | `scripts/benchmark_binarisation.py`, `results/binarisation*.json` |
+| The Corollary 1 gap vs the cost of binarising | Constant-membership identity (Remark 3); the shortcut on planted partitions with γ refitted per level set (Table 7) and on the real graphs (Table 9) | `scripts/benchmark_binarisation.py`, `results/binarisation*.json` |
 | Resolution threshold and Algorithm 1 | General bipartition threshold θ(B) (Proposition 1); seeded resolution with a null-model test and a "no structure detected" outcome (Table 5) | `fuzzykg/modularity.py`, `fuzzykg/resolution.py`, `scripts/null_model_check.py` |
-| Best paths under Archimedean t-norms | Additive generators; exact best paths by Dijkstra / hop-limited Bellman–Ford, checked against bounded enumeration; ordinal-invariance check (Proposition 3); per-source Kendall τ-b with bootstrap CIs (Table 13) | `fuzzykg/tnorms.py`, `scripts/exact_tnorm_paths.py`, `scripts/composition_real.py` |
+| Best paths under Archimedean t-norms | Additive generators; exact best paths by Dijkstra / hop-limited Bellman–Ford, checked against bounded enumeration; ordinal-invariance check (Proposition 3); per-source Kendall τ-b with bootstrap CIs (Table 12) | `fuzzykg/tnorms.py`, `scripts/exact_tnorm_paths.py`, `scripts/composition_real.py` |
 | Gates on the uncertain state | Cautious collapse, footprint, three-valued IT2 gate and four comparison gates (Table B.2) | `fuzzykg/fuzzification.py`, `scripts/gate_baselines.py` |
 
 Runs on the real graphs (require the public data, see `data/README.md`):
 
 ```bash
-python scripts/levelset_real.py                                            # Table 10 (level-set columns)
+python scripts/levelset_real.py                                            # Table 9 (level-set columns)
 python scripts/null_models_extended.py --draws 200 data/graphs/*_edges.csv # Table 6
-python scripts/heldout_transitions.py --release 2009 --level item          # Table 14 (one column)
-python scripts/benchmark_binarisation.py --edges data/graphs/*_edges.csv   # Table 10
+python scripts/heldout_transitions.py --release 2009 --level item          # Table 13 (one column)
+python scripts/benchmark_binarisation.py --edges data/graphs/*_edges.csv   # Table 9
 python scripts/null_model_check.py       data/graphs/*_edges.csv           # Table 5
 python scripts/real_graph_tables.py                                        # Tables 2-4
-python scripts/composition_real.py                                         # Table 13
-python scripts/tnorm_sweep.py data/graphs/assist2009_item_edges.csv --sources 60 --hops 4   # Table 12
+python scripts/composition_real.py                                         # Table 12
+python scripts/tnorm_sweep.py data/graphs/assist2009_item_edges.csv --sources 60 --hops 4   # Table 11
 ```
 
 Synthetic runs (no download):
 
 ```bash
 python scripts/benchmark_levelset.py --stage shift --seeds 10             # Table 8
-python scripts/benchmark_levelset.py --stage lfr   --seeds 10             # Table 9
+python scripts/benchmark_levelset.py --stage lfr   --seeds 10             # Table S1
 python scripts/benchmark_binarisation.py                                  # Table 7
 ```
 
@@ -68,7 +68,7 @@ Python ≥ 3.10. Everything runs on one CPU core; no GPU, no API keys.
 | `scripts/verify_propositions.py` | Props. 1–3, Cor. 1, Remark 3, Fact 1, §6.2 identities, Appendix B identities | seconds | no |
 | `scripts/reproduce_section85.py` | Appendix B, **Table B.2**, footprint widths, `h*` | seconds | no |
 | `scripts/reproduce_table9.py` | Appendix B, **Table B.1** (cut-point sensitivity, 63 125 fuzzifications) | seconds | no |
-| `scripts/reproduce_table5.py [--full]` | §8.4, **Table 11** (synthetic scalability to 20 000 nodes) | minutes (`--full` ≈ 10 min) | no |
+| `scripts/reproduce_table5.py [--full]` | §8.4, **Table 10** (synthetic scalability to 20 000 nodes) | minutes (`--full` ≈ 10 min) | no |
 | `scripts/run_leiden_grid.py --synthetic 59` | Tables 2/4-style run, Algorithm 1 | seconds | no |
 | `scripts/tnorm_sweep.py --synthetic 371` | Tables 7/8-style sweep | seconds | no |
 
@@ -77,13 +77,13 @@ Python ≥ 3.10. Everything runs on one CPU core; no GPU, no API keys.
 Download instructions and expected paths are in [`data/README.md`](data/README.md). Nothing is redistributed here.
 
 ```bash
-# MOOCCubeX-CS (two small files from the THU-KEG release)         -> Tables 2, 5, 6, 10, 13 input
+# MOOCCubeX-CS (two small files from the THU-KEG release)         -> Tables 2, 5, 6, 9, 12 input
 python scripts/build_mooccubex_graph.py            # assessed graph (59 concepts)
 python scripts/build_mooccubex_graph.py --full     # full expert graph (287 concepts)
 python scripts/run_leiden_grid.py data/graphs/mooccubex_cs_edges.csv --gammas 0.5 1.0 --seeds 10 --algorithm1
 python scripts/tnorm_sweep.py   data/graphs/mooccubex_cs_edges.csv --sources all --hops 5 --standard-only
 
-# ASSISTments 2009 / 2015 / 2017, Section 7.1 end to end          -> Tables 3, 4, 5, 6, 10, 13, 14
+# ASSISTments 2009 / 2015 / 2017, Section 7.1 end to end          -> Tables 3, 4, 5, 6, 9, 12, 13
 python scripts/build_assistments_graph.py --release 2009 --level kc
 python scripts/build_assistments_graph.py --release 2009 --level item
 python scripts/build_assistments_graph.py --release 2015 --level kc
@@ -144,7 +144,7 @@ Values obtained with this code on the offline parts, against the manuscript:
 | §6.2 Yager(1) = Łukasiewicz | 1.1 × 10⁻¹⁶ | 1.1 × 10⁻¹⁶ |
 | Props. 1–3, Cor. 1, Remark 3, Fact 1 | zero counter-examples | zero counter-examples |
 
-Timings (Table 11 seconds) are implementation- and hardware-specific and are not expected to match; the orders of magnitude do.
+Timings (Table 10 seconds) are implementation- and hardware-specific and are not expected to match; the orders of magnitude do.
 
 ### Notes on reproduction
 
