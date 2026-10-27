@@ -143,3 +143,62 @@ def test_owa_orness():
     assert orness([0.5, 0.3, 0.2]) == pytest.approx(0.65)
     w = owa_weights_from_orness(0.65, 3)
     assert orness(w) == pytest.approx(0.65, abs=1e-6) and w.sum() == pytest.approx(1)
+
+
+# ------------------------------------------------------------ revision (M1-M4)
+from fuzzykg.tnorms import generator, generator_best_paths, enumerate_best_paths
+from fuzzykg.synthetic import planted_partition_fuzzy_graph
+from fuzzykg.modularity import bipartition_threshold_general, community_vs_rest_candidates, _community_sums
+from fuzzykg.fuzzification import gate_interval_image_type1, gate_point_estimate
+
+
+@pytest.mark.parametrize("fam,p", [("product", None), ("lukasiewicz", None), ("yager", 2.0),
+                                   ("schweizer_sklar", -2.0), ("schweizer_sklar", 0.5)])
+def test_generator_matches_closed_form_and_enumeration(G, fam, p):
+    gen = generator(fam, p)
+    T = {"product": lambda: STANDARD_TNORMS["product"], "lukasiewicz": lambda: t_lukasiewicz,
+         "yager": lambda: yager(p), "schweizer_sklar": lambda: schweizer_sklar(p)}[fam]()
+    x = np.random.default_rng(0).random((500, 2))
+    assert np.allclose(gen.tnorm()(x[:, 0], x[:, 1]), T(x[:, 0], x[:, 1]), atol=1e-12)
+    for s in (0, 7, 42):
+        e = enumerate_best_paths(G, s, 4, T); e.pop("__expanded__", None)
+        b = generator_best_paths(G, s, gen, max_hops=4)
+        assert set(e) == set(b)
+        assert all(abs(e[k][0] - b[k][0]) < 1e-12 for k in e)
+
+
+def test_maxmin_is_ordinally_invariant(G):
+    rng = np.random.default_rng(1)
+    inc = rng.dirichlet(np.ones(20)); grid = np.linspace(0, 1, 21); vals = np.concatenate([[0], np.cumsum(inc)])
+    Gx = FuzzyGraph(G.n, G.src, G.dst, np.clip(np.interp(G.mu, grid, vals), 1e-9, 1))
+    for s in (0, 7):
+        a, _ = widest_path(G, s); b, _ = widest_path(Gx, s)
+        reach = a > 0
+        assert np.array_equal(np.argsort(a[reach], kind="stable"), np.argsort(b[reach], kind="stable"))
+
+
+def test_constant_membership_gap_identity():
+    G0, truth = planted_partition_fuzzy_graph(300, 4, 6.0, 0.9, 0.5, 0.1, 0.0, seed=1)
+    for c in (0.25, 0.5):
+        Gc = FuzzyGraph(G0.n, G0.src, G0.dst, np.full(G0.m, c))
+        gap = correlation_gap(Gc, truth, 1.0)
+        _, So, Si = _community_sums(Gc, truth); W = Gc.W
+        assert abs(gap["gap"] - (1 / c - 1) * np.sum(So / W * Si / W)) < 1e-9
+        assert abs(gap["Q_F"] - fuzzy_modularity(FuzzyGraph(Gc.n, Gc.src, Gc.dst, np.ones(Gc.m)), truth)) < 1e-12
+
+
+def test_general_threshold_reduces_to_balanced_form():
+    G, truth = planted_partition_fuzzy_graph(400, 2, 6.0, 0.8, 0.6, 0.1, 0.0, seed=2)
+    th = bipartition_threshold_general(G, [truth])
+    row = th["thresholds"][0]
+    assert abs(row["theta"] - row["two_c_over_W"]) < 0.05       # near-balanced planted split
+    cands = community_vs_rest_candidates(np.repeat(np.arange(4), 100))
+    assert bipartition_threshold_general(G, cands)["min_theta"] > 0
+
+
+def test_interval_image_gate_is_it2_pass_rule():
+    ps = np.linspace(0, 1, 201)
+    for h in (0.0, 0.05, 0.1, 0.2):
+        H = np.full_like(ps, h)
+        assert np.array_equal(gate_interval_image_type1(ps, H), zpd_gate_it2(ps, H) == 1)
+        assert gate_point_estimate(ps, H).mean() == gate_point_estimate(ps, np.zeros_like(ps)).mean()

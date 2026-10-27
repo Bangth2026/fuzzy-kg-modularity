@@ -131,3 +131,34 @@ def bipartition_threshold(G: FuzzyGraph, membership: Sequence[int]) -> Dict[str,
         "two_c_over_W": 2 * c / W,
         "gamma_threshold": (c / W) / denom if denom > 0 else np.inf,
     }
+
+
+def bipartition_threshold_general(G: FuzzyGraph, candidates: Sequence[Sequence[int]]) -> Dict[str, object]:
+    """Revised Proposition 1: the onset of structure over a family of bipartitions.
+
+    For a bipartition B with cross mass c(B) and out/in strength shares
+    (a_1, b_1), (a_2, b_2), the bipartition beats the trivial partition iff
+    gamma > theta(B) = (c(B)/W) / (a_1 b_2 + a_2 b_1).  For a strength-balanced
+    split (a_i = b_i = 1/2) theta(B) = 2c(B)/W, which is therefore only the
+    threshold of balanced cuts; an unbalanced, weakly attached block can have a
+    much smaller theta.  Returns theta for every candidate, the minimising
+    candidate, and the balanced-cut value for comparison.
+    """
+    rows = []
+    for i, memb in enumerate(candidates):
+        memb = np.asarray(memb, dtype=np.int64)
+        if memb.min() != 0 or memb.max() != 1:
+            continue
+        t = bipartition_threshold(G, memb)
+        rows.append({"candidate": i, "theta": t["gamma_threshold"],
+                     "two_c_over_W": t["two_c_over_W"], "c_over_W": t["c_over_W"]})
+    if not rows:
+        raise ValueError("no valid bipartition among candidates")
+    best = min(rows, key=lambda r: r["theta"])
+    return {"thresholds": rows, "min_theta": best["theta"], "argmin": best["candidate"]}
+
+
+def community_vs_rest_candidates(membership: Sequence[int]) -> list:
+    """Bipartitions 'one community vs the rest' for every community of a partition."""
+    memb = np.asarray(membership, dtype=np.int64)
+    return [(memb == c).astype(np.int64) for c in np.unique(memb)]

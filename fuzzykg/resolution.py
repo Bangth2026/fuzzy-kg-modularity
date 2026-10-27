@@ -102,3 +102,62 @@ def adaptive_resolution(
         g1 *= grid_factor
         g2 *= grid_factor
     raise RuntimeError("Algorithm 1 did not accept within max_doublings")
+
+
+# ------------------------------------------- null model and 'no structure' (M2)
+def null_model_zscore(
+    G: FuzzyGraph,
+    gamma: float,
+    n_perm: int = 20,
+    seeds: Sequence[int] = (0,),
+    rng_seed: int = 0,
+    rewire: bool = True,
+) -> dict:
+    """z-score of the optimised Q_F against a degree-preserving null model.
+
+    Each null graph keeps the in- and out-degree sequence (degree-preserving
+    edge swaps via igraph's rewiring when ``rewire`` is True, the observed
+    topology otherwise) and reassigns the observed memberships to edges in
+    random order, so the membership distribution is kept exactly.  Fuzzy
+    Leiden is run on each null graph with the same gamma and seeds, and the
+    best Q_F is recorded.  Returns the observed Q_F, the null mean and
+    standard deviation, the z-score and the empirical one-sided p-value.
+    """
+    import igraph as ig
+
+    rng = np.random.default_rng(rng_seed)
+    obs = max(fuzzy_leiden(G, gamma, seed=s, n_iterations=0).Q_F for s in seeds)
+    null = []
+    base = G.to_igraph()
+    for _ in range(n_perm):
+        g = base.copy()
+        if rewire:
+            g.rewire(n=10 * G.m, mode="simple")
+        src = np.array([e.source for e in g.es]); dst = np.array([e.target for e in g.es])
+        mu = rng.permutation(G.mu)[: src.size]
+        Gn = FuzzyGraph(G.n, src, dst, mu)
+        null.append(max(fuzzy_leiden(Gn, gamma, seed=s, n_iterations=0).Q_F for s in seeds))
+    null = np.asarray(null)
+    sd = float(null.std(ddof=1)) if n_perm > 1 else float("nan")
+    z = (obs - null.mean()) / sd if sd > 0 else float("inf")
+    p = float((np.sum(null >= obs) + 1) / (n_perm + 1))
+    return {"Q_F_obs": float(obs), "null_mean": float(null.mean()), "null_sd": sd,
+            "z": float(z), "p_empirical": p, "n_perm": n_perm}
+
+
+def adaptive_resolution_with_null(
+    G: FuzzyGraph,
+    z_min: float = 3.0,
+    n_perm: int = 20,
+    **kwargs,
+) -> dict:
+    """Algorithm 1 (revised): run ``adaptive_resolution``, then test the accepted
+    partition against the null model.  Outcome is 'structure' when z >= z_min,
+    otherwise 'no structure detected', in which case the accepted partition
+    should not be reported as communities."""
+    res = adaptive_resolution(G, **kwargs)
+    seeds = kwargs.get("seeds", (0, 1, 2, 3, 4))
+    nm = null_model_zscore(G, res.gamma1, n_perm=n_perm, seeds=seeds)
+    outcome = "structure" if nm["z"] >= z_min else "no structure detected"
+    return {"gamma1": res.gamma1, "gamma2": res.gamma2, "c_over_W": res.c_over_W,
+            "doublings": res.doublings, "null": nm, "outcome": outcome}

@@ -1,0 +1,62 @@
+[
+ {
+  "graph": "planted, p_in=0.8",
+  "summary": "FuzzyGraph(n=600, m=4800, W=3217.352, mu min/mean/max=0.097/0.670/0.991, reciprocity=0.098)",
+  "gamma1": 0.2584636322884494,
+  "doublings": 0,
+  "k_accepted": 10,
+  "Q_F_accepted": 0.8247919768686891,
+  "null": {
+   "Q_F_obs": 0.8247919768686892,
+   "null_mean": 0.7415363677115525,
+   "null_sd": 2.2569585065945776e-15,
+   "z": 36888409296791.77,
+   "p_empirical": 0.047619047619047616,
+   "n_perm": 20
+  },
+  "outcome": "structure",
+  "theta_balanced_2c_over_W": 0.20677090583075952,
+  "theta_spectral_bisection": 0.20676731330896897,
+  "theta_min_over_community_splits": 0.15519837909481887
+ },
+ {
+  "graph": "planted, p_in=1/k (no structure)",
+  "summary": "FuzzyGraph(n=600, m=4800, W=2872.973, mu min/mean/max=0.089/0.599/0.968, reciprocity=0.013)",
+  "gamma1": 108.94883533571537,
+  "doublings": 7,
+  "k_accepted": 582,
+  "Q_F_accepted": -0.179403445546916,
+  "null": {
+   "Q_F_obs": -0.179403445546916,
+   "null_mean": -0.17958691137906718,
+   "null_sd": 0.00028690590963903966,
+   "z": 0.6394634128728683,
+   "p_empirical": 0.2857142857142857,
+   "n_perm": 20
+  },
+  "outcome": "no structure detected",
+  "theta_balanced_2c_over_W": 0.6802600323676747,
+  "theta_spectral_bisection": 0.6802072505922314,
+  "theta_min_over_community_splits": 0.6802072505922314
+ },
+ {
+  "graph": "dense co-practice-like, n=110, 50 edges/node",
+  "summary": "FuzzyGraph(n=110, m=5500, W=2748.821, mu min/mean/max=0.012/0.500/0.980, reciprocity=0.464)",
+  "gamma1": 4.543369987500025,
+  "doublings": 2,
+  "k_accepted": 109,
+  "Q_F_accepted": -0.04132643755960894,
+  "null": {
+   "Q_F_obs": -0.04132643755960894,
+   "null_mean": -0.04132167656961916,
+   "null_sd": 4.316169143630379e-05,
+   "z": -0.11030591784870503,
+   "p_empirical": 0.5714285714285714,
+   "n_perm": 20
+  },
+  "outcome": "no structure detected",
+  "theta_balanced_2c_over_W": 0.9091657581757269,
+  "theta_spectral_bisection": 0.9091697224398726,
+  "theta_min_over_community_splits": 0.9091697224398726
+ }
+]

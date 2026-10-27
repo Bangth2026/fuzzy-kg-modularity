@@ -178,3 +178,145 @@ def enumerate_best_paths(G: FuzzyGraph, source: int, max_hops: int, T: TNorm) ->
             break
     best["__expanded__"] = (float(expanded), violations)   # bookkeeping for Section 8.3
     return best
+
+
+# ------------------------------------------- additive generators (revision, M3)
+# Every continuous Archimedean t-norm has an additive generator g : [0,1] -> [0, inf],
+# continuous, strictly decreasing, g(1) = 0, with T(a, b) = g^(-1)(g(a) + g(b)) where
+# g^(-1) is the pseudo-inverse (x -> g^{-1}(min(x, g(0)))).  Hence the T-composition
+# of a path equals g^(-1)(sum_e g(mu_e)), and the best path under T is the path of
+# minimum additive length sum_e g(mu_e): an ordinary shortest-path problem with
+# non-negative edge lengths.  No enumeration is needed.
+#
+#   product:            g(x) = -ln x               (strict,     g(0) = inf)
+#   Lukasiewicz:        g(x) = 1 - x               (nilpotent,  g(0) = 1)
+#   Yager p > 0:        g(x) = (1 - x)^p           (nilpotent,  g(0) = 1)
+#   Schweizer-Sklar p:  g(x) = (1 - x^p) / p       (p < 0 strict, p > 0 nilpotent,
+#                                                   p -> 0 product)
+# The minimum is not Archimedean; its best path is the widest path (max-min).
+
+from dataclasses import dataclass as _dataclass
+
+
+@_dataclass(frozen=True)
+class AdditiveGenerator:
+    name: str
+    g: Callable[[np.ndarray], np.ndarray]          # generator
+    g_inv: Callable[[np.ndarray], np.ndarray]      # ordinary inverse on [0, g(0)]
+    g0: float                                       # g(0); inf for strict t-norms
+
+    def pseudo_inverse(self, x):
+        x = np.asarray(x, float)
+        out = self.g_inv(np.minimum(x, self.g0)) if np.isfinite(self.g0) else self.g_inv(x)
+        return np.where(x >= self.g0, 0.0, out) if np.isfinite(self.g0) else out
+
+    def tnorm(self) -> TNorm:
+        def T(a, b):
+            a = np.asarray(a, float); b = np.asarray(b, float)
+            return self.pseudo_inverse(self.g(a) + self.g(b))
+        T.__name__ = f"gen_{self.name}"
+        return T
+
+    @property
+    def kind(self) -> str:
+        return "strict" if not np.isfinite(self.g0) else "nilpotent"
+
+
+def _safe_log(x):
+    x = np.asarray(x, float)
+    with np.errstate(divide="ignore"):
+        return np.where(x > 0, -np.log(np.where(x > 0, x, 1.0)), np.inf)
+
+
+def generator(name: str, p: float | None = None) -> AdditiveGenerator:
+    """Additive generator of a named family."""
+    if name == "product":
+        return AdditiveGenerator("product", _safe_log, lambda y: np.exp(-y), np.inf)
+    if name == "lukasiewicz":
+        return AdditiveGenerator("lukasiewicz", lambda x: 1.0 - np.asarray(x, float),
+                                 lambda y: 1.0 - np.asarray(y, float), 1.0)
+    if name == "yager":
+        if p is None or p <= 0:
+            raise ValueError("Yager needs p > 0")
+        return AdditiveGenerator(f"yager_p{p}", lambda x: (1.0 - np.asarray(x, float)) ** p,
+                                 lambda y: 1.0 - np.asarray(y, float) ** (1.0 / p), 1.0)
+    if name == "schweizer_sklar":
+        if p is None:
+            raise ValueError("Schweizer-Sklar needs p")
+        if p == 0:
+            return generator("product")
+        if p > 0:
+            return AdditiveGenerator(f"schweizer_sklar_p{p}",
+                                     lambda x: (1.0 - np.asarray(x, float) ** p) / p,
+                                     lambda y: (1.0 - p * np.asarray(y, float)) ** (1.0 / p), 1.0 / p)
+
+        def g(x):
+            x = np.asarray(x, float)
+            with np.errstate(divide="ignore"):
+                return np.where(x > 0, (1.0 - np.where(x > 0, x, 1.0) ** p) / p, np.inf)
+
+        return AdditiveGenerator(f"schweizer_sklar_p{p}", g,
+                                 lambda y: (1.0 - p * np.asarray(y, float)) ** (1.0 / p), np.inf)
+    raise ValueError(f"unknown family {name}")
+
+
+def generator_best_paths(
+    G: FuzzyGraph, source: int, gen: AdditiveGenerator, max_hops: int | None = None
+) -> Dict[int, Tuple[float, int]]:
+    """Exact best path under a continuous Archimedean t-norm.
+
+    Without a hop limit: Dijkstra on the additive lengths g(mu_e), O(|E| log |C|).
+    With a hop limit L: L rounds of Bellman-Ford relaxation.  Lengths are
+    non-negative, so the minimum over walks of at most L hops is attained by a
+    simple path and the hop-limited result is exact.
+
+    Returns {target: (best strength, hop count of a best path)}; targets that are
+    unreachable, or whose best strength is 0 under a nilpotent t-norm, are omitted
+    (mirroring ``enumerate_best_paths``).
+    """
+    A = G.adjacency()
+    length = gen.g(A.data)                         # edge lengths, non-negative
+    n = G.n
+    if max_hops is None:
+        dist = np.full(n, np.inf); hops = np.zeros(n, dtype=np.int64)
+        dist[source] = 0.0
+        heap = [(0.0, source)]
+        done = np.zeros(n, dtype=bool)
+        indptr, indices = A.indptr, A.indices
+        while heap:
+            d, u = heapq.heappop(heap)
+            if done[u]:
+                continue
+            done[u] = True
+            for k in range(indptr[u], indptr[u + 1]):
+                v = indices[k]
+                nd = d + length[k]
+                if nd < dist[v]:
+                    dist[v] = nd; hops[v] = hops[u] + 1
+                    heapq.heappush(heap, (nd, v))
+    else:
+        dist = np.full(n, np.inf); hops = np.zeros(n, dtype=np.int64)
+        dist[source] = 0.0
+        src, dst = G.src, G.dst
+        for h in range(1, max_hops + 1):
+            cand = dist[src] + length
+            new = dist.copy(); newh = hops.copy()
+            # vectorised relaxation: minimum over incoming edges
+            order = np.argsort(cand)
+            dst_sorted = dst[order]
+            first = np.unique(dst_sorted, return_index=True)[1]
+            best_v = dst_sorted[first]; best_c = cand[order][first]
+            better = best_c < new[best_v]
+            new[best_v[better]] = best_c[better]
+            newh[best_v[better]] = h
+            dist, hops = new, newh
+    # back to the membership scale
+    out: Dict[int, Tuple[float, int]] = {}
+    for v in range(n):
+        if v == source or not np.isfinite(dist[v]):
+            continue
+        s = float(gen.pseudo_inverse(dist[v]))
+        if s <= 0.0:
+            continue
+        out[v] = (s, int(hops[v]))
+    return out

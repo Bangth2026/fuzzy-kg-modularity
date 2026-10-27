@@ -50,7 +50,7 @@ from .tnorms import (
     widest_path,
 )
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __all__ = [
     "FuzzyGraph",
     "fuzzy_modularity",
@@ -79,3 +79,12 @@ __all__ = [
     "compose_path",
     "widest_path",
 ]
+
+# revision additions (October 2026)
+from .tnorms import generator, generator_best_paths  # noqa: E402
+from .synthetic import planted_partition_fuzzy_graph  # noqa: E402
+from .resolution import null_model_zscore, adaptive_resolution_with_null  # noqa: E402
+from .modularity import bipartition_threshold_general, community_vs_rest_candidates  # noqa: E402
+__all__ += ["generator", "generator_best_paths", "planted_partition_fuzzy_graph",
+            "null_model_zscore", "adaptive_resolution_with_null",
+            "bipartition_threshold_general", "community_vs_rest_candidates"]

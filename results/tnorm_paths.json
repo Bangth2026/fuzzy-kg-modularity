@@ -1,0 +1,110 @@
+{
+ "graph": "FuzzyGraph(n=371, m=571, W=353.694, mu min/mean/max=0.200/0.619/0.998, reciprocity=0.000)",
+ "exactness": {
+  "product": {
+   "kind": "strict",
+   "targets_checked": 101,
+   "max_abs_diff": 5.551115123125783e-17
+  },
+  "lukasiewicz": {
+   "kind": "nilpotent",
+   "targets_checked": 68,
+   "max_abs_diff": 0.0
+  },
+  "yager_p0.5": {
+   "kind": "nilpotent",
+   "targets_checked": 36,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  "yager_p2.0": {
+   "kind": "nilpotent",
+   "targets_checked": 95,
+   "max_abs_diff": 1.1102230246251565e-16
+  },
+  "schweizer_sklar_p-2.0": {
+   "kind": "strict",
+   "targets_checked": 101,
+   "max_abs_diff": 1.1102230246251565e-16
+  },
+  "schweizer_sklar_p0.5": {
+   "kind": "nilpotent",
+   "targets_checked": 93,
+   "max_abs_diff": 0.0
+  }
+ },
+ "cost": [
+  {
+   "n": 371,
+   "m": 556,
+   "density": 1.4986522911051212,
+   "maxmin_s": 0.0009669639999856372,
+   "dijkstra_s": 0.002796942000031777,
+   "bellman_ford_4hop_s": 0.004221389999997882,
+   "enumeration_4hop_s": 0.0013948850000247148,
+   "paths_expanded": 29.0,
+   "ratio_dijkstra_over_maxmin": 2.892498583270237,
+   "ratio_enum_over_maxmin": 1.442540777159681
+  },
+  {
+   "n": 371,
+   "m": 1484,
+   "density": 4.0,
+   "maxmin_s": 0.06258346399999937,
+   "dijkstra_s": 0.022082469999986643,
+   "bellman_ford_4hop_s": 0.011287487999993573,
+   "enumeration_4hop_s": 0.06640107799995576,
+   "paths_expanded": 3207.0,
+   "ratio_dijkstra_over_maxmin": 0.352848317887723,
+   "ratio_enum_over_maxmin": 1.06100036265101
+  },
+  {
+   "n": 371,
+   "m": 2968,
+   "density": 8.0,
+   "maxmin_s": 0.06965115399998467,
+   "dijkstra_s": 0.023771724999960497,
+   "bellman_ford_4hop_s": 0.018666451000001416,
+   "enumeration_4hop_s": 0.7649385279999592,
+   "paths_expanded": 44015.0,
+   "ratio_dijkstra_over_maxmin": 0.34129692955217555,
+   "ratio_enum_over_maxmin": 10.982424325663398
+  }
+ ],
+ "ordinal_invariance": {
+  "min": {
+   "kendall_tau_mean": 1.0,
+   "kendall_tau_min": 0.9999999999999998,
+   "n": 80
+  },
+  "('product', None)": {
+   "kendall_tau_mean": 0.9725336651652441,
+   "kendall_tau_min": 0.33333333333333337,
+   "n": 80
+  },
+  "('lukasiewicz', None)": {
+   "kendall_tau_mean": 0.8971476924952236,
+   "kendall_tau_min": 0.33333333333333337,
+   "n": 80
+  },
+  "('yager', 0.5)": {
+   "kendall_tau_mean": 0.8817687074829932,
+   "kendall_tau_min": 0.33333333333333337,
+   "n": 70
+  },
+  "('yager', 2.0)": {
+   "kendall_tau_mean": 0.9810206041329994,
+   "kendall_tau_min": 0.894427190999916,
+   "n": 80
+  },
+  "('schweizer_sklar', -2.0)": {
+   "kendall_tau_mean": 0.9912807952281636,
+   "kendall_tau_min": 0.9393939393939393,
+   "n": 80
+  },
+  "('schweizer_sklar', 0.5)": {
+   "kendall_tau_mean": 0.9506840420963559,
+   "kendall_tau_min": 0.33333333333333337,
+   "n": 80
+  }
+ }
+}

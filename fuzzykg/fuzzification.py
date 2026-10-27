@@ -136,3 +136,48 @@ def max_collapsed_par(halfwidth: float, cuts=DEFAULT_CUTS) -> float:
     a_unk, a_par, a_mas = cuts
     a, b = a_par - a_unk, a_mas - a_par
     return 1.0 - 2.0 * halfwidth / max(a, b)
+
+
+# ------------------------------------------- alternative gates (revision, M4)
+def gate_point_estimate(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS):
+    """Baseline (i): gate on m_par(p) only, ignoring the dispersion."""
+    _, m_par, _ = partition_memberships(p, cuts)
+    return np.broadcast_to(m_par >= tau_zpd, np.broadcast(p, halfwidth).shape)
+
+
+def gate_interval_image_type1(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS):
+    """Baseline (ii): type-1 gate on the interval image, pass iff
+    min_{x in [lo,hi]} m_par(x) >= tau.  This is the 'pass' rule of the IT2 gate
+    and needs no type-2 machinery."""
+    lo_par, _ = footprint(p, halfwidth, cuts)["par"]
+    return lo_par >= tau_zpd
+
+
+def prob_in_zpd_band(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS, eta: float = 1.0):
+    """Baseline (iii): P(m_par(X) >= tau) under X ~ N(p, sigma^2), sigma = halfwidth/eta.
+    The set {x : m_par(x) >= tau} is the interval [a_par - (1-tau) a, a_par + (1-tau) b]."""
+    from scipy.stats import norm
+    a_unk, a_par, a_mas = cuts
+    a, b = a_par - a_unk, a_mas - a_par
+    lo_x, hi_x = a_par - (1 - tau_zpd) * a, a_par + (1 - tau_zpd) * b
+    p = np.asarray(p, float); h = np.asarray(halfwidth, float)
+    sigma = np.maximum(h / eta, 1e-12)
+    return norm.cdf((hi_x - p) / sigma) - norm.cdf((lo_x - p) / sigma)
+
+
+def gate_probability(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS, p_min: float = 0.5, eta: float = 1.0):
+    """Baseline (iii) thresholded: pass iff P(m_par(X) >= tau) >= p_min."""
+    return prob_in_zpd_band(p, halfwidth, tau_zpd, cuts, eta) >= p_min
+
+
+def expected_par_membership(p, halfwidth, cuts=DEFAULT_CUTS, n: int = 65):
+    """Baseline (iv): mean of m_par over the interval [lo, hi] (uniform weight)."""
+    p = np.asarray(p, float); h = np.asarray(halfwidth, float)
+    t = np.linspace(-1.0, 1.0, n)
+    xs = p[..., None] + h[..., None] * t
+    _, m_par, _ = partition_memberships(xs, cuts)
+    return m_par.mean(axis=-1)
+
+
+def gate_expected_membership(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS):
+    return expected_par_membership(p, halfwidth, cuts) >= tau_zpd

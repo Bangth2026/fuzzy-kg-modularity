@@ -52,3 +52,71 @@ def synthetic_fuzzy_graph(
     e = np.array(sorted(edges))
     mu = np.clip(rng.beta(beta_a, beta_b, size=len(e)), mu_min, 1.0)
     return FuzzyGraph.from_edges(zip(e[:, 0], e[:, 1], mu), n=n)
+
+
+# ------------------------------------------------ planted partitions (revision, M1)
+def _beta_params(mean: float, sd: float):
+    """Beta(a, b) with the given mean and standard deviation (sd clipped to the
+    feasible range sd^2 < mean(1-mean))."""
+    mean = float(np.clip(mean, 0.02, 0.98))
+    vmax = mean * (1 - mean)
+    var = min(sd ** 2, 0.95 * vmax)
+    k = vmax / var - 1.0
+    return mean * k, (1 - mean) * k
+
+
+def planted_partition_fuzzy_graph(
+    n: int = 1000,
+    k: int = 20,
+    out_degree: float = 8.0,
+    p_in: float = 0.8,
+    mu_mean: float = 0.6,
+    mu_sd: float = 0.15,
+    shift: float = 0.0,
+    mu_min: float = 1e-3,
+    seed: int = 0,
+):
+    """Directed planted-partition graph with controllable membership distribution.
+
+    n nodes in k equal-size communities (the ground truth); each node emits
+    ``out_degree`` edges on average, a fraction ``p_in`` of them inside its own
+    community.  Memberships are Beta-distributed with mean ``mu_mean`` and
+    standard deviation ``mu_sd``; ``shift`` in [0, 1) moves the mean of
+    within-community edges up and of between-community edges down by
+    ``shift * min(mu_mean, 1 - mu_mean)``, so that the memberships carry
+    community information (shift > 0) or none (shift = 0).
+
+    Returns (graph, ground-truth membership).
+    """
+    rng = np.random.default_rng(seed)
+    truth = np.repeat(np.arange(k), int(np.ceil(n / k)))[:n]
+    rng.shuffle(truth)
+    members = [np.where(truth == c)[0] for c in range(k)]
+    m_target = int(round(out_degree * n))
+    edges = {}
+    tries = 0
+    while len(edges) < m_target and tries < 50 * m_target:
+        tries += 1
+        u = int(rng.integers(0, n))
+        inside = rng.random() < p_in
+        if inside:
+            pool = members[truth[u]]
+        else:
+            c2 = int(rng.integers(0, k))
+            while c2 == truth[u]:
+                c2 = int(rng.integers(0, k))
+            pool = members[c2]
+        v = int(rng.choice(pool))
+        if v == u or (u, v) in edges:
+            continue
+        edges[(u, v)] = inside
+    e = np.array(sorted(edges))
+    inside = np.array([edges[tuple(x)] for x in e])
+    d = shift * min(mu_mean, 1 - mu_mean)
+    mu = np.empty(len(e))
+    a_in, b_in = _beta_params(mu_mean + d, mu_sd)
+    a_out, b_out = _beta_params(mu_mean - d, mu_sd)
+    mu[inside] = rng.beta(a_in, b_in, size=int(inside.sum()))
+    mu[~inside] = rng.beta(a_out, b_out, size=int((~inside).sum()))
+    mu = np.clip(mu, mu_min, 1.0)
+    return FuzzyGraph.from_edges(zip(e[:, 0], e[:, 1], mu), n=n), truth
