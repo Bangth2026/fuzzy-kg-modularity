@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Section 8.4 / Table 9: verification of the fuzzification and cut-point sensitivity.
+"""Supplementary Section S1.5 / Table S4: verification of the fuzzification and cut-point sensitivity.
 
 Offline.  505-point grid (101 point estimates x 5 widths), each cut-point
 perturbed over {-0.10, -0.05, 0, +0.05, +0.10} (125 joint settings, 63125

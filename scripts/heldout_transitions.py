@@ -1,20 +1,33 @@
 #!/usr/bin/env python3
 """Held-out next-concept prediction as an external criterion for the
-composition operators (Section 9.3, Table 12).
+composition operators (Section 8.5, Table 13).
 
 Learners of an ASSISTments release are split 70 / 10 / 20 (train / validation /
 test, by a hash of the learner id).  The fuzzy graph is built on the training
-learners only, with the construction of Section 8.1.  For every test learner
+learners only, with the construction of Section 7.1.  For every test learner
 and every transition c_prev -> c_next in the log with c_prev != c_next and both
 in the graph, the candidates are all other nodes, ranked by the best-path
 strength from c_prev under each composition operator (max-min widest path;
-generator shortest path for the Archimedean families).  Ties are broken at random (expected reciprocal rank over the tied positions).  Reported: mean reciprocal rank over the test transitions and its learner-level
-mean (each test learner weighted equally) with a 95% bootstrap interval over
-test learners, and hit@1 / hit@5 / hit@10 over the transitions; the parameters
-p of the Yager and Schweizer-Sklar families are chosen on the validation split
-and the chosen value is reported with the test score.  Baselines: the direct
-edge membership mu_E(c_prev, .) (one hop only), training popularity of the
-target, and the uniform random ranking (expected reciprocal rank).
+generator shortest path for the Archimedean families).  Ties are broken at
+random (expected reciprocal rank over the tied positions).  Reported: mean
+reciprocal rank over the test transitions and its learner-level mean (each
+test learner weighted equally) with a 95% bootstrap interval over test
+learners, and hit@1 / hit@5 / hit@10 over the transitions; the parameters p of
+the Yager and Schweizer-Sklar families are chosen on the validation split and
+the chosen value is reported with the test score.
+
+Baselines: the direct edge membership mu_E(c_prev, .) (one hop only), the
+training popularity of the target, the training bigram count
+N_train(c_prev -> .) (conditional popularity), and the uniform random ranking
+(expected reciprocal rank).
+
+Diagnostics: the share of test transitions whose true target is unreachable
+from the source (every operator scores 0 and ties), the share of test-learner
+transitions dropped because an endpoint is not in the training graph, and for
+every operator the share of test transitions on which the direct edge is a
+best path to the true target ("one-hop share") together with the per-source
+Kendall tau-b between the operator's ranking of all candidates and the
+direct-edge ranking.
 
 Usage: python scripts/heldout_transitions.py --release 2009 --level kc [--out results/heldout_2009_kc.json]
 """
@@ -55,31 +68,33 @@ def split_id(uid: str) -> str:
 
 
 def strength_matrix(G: FuzzyGraph, name: str, p):
-    """S[s, t] = best-path strength from s to t under the operator (0 if unreachable)."""
-    S = np.zeros((G.n, G.n))
-    if name == "min":
-        for s in range(G.n):
-            S[s] = widest_path(G, s)[0]
-    elif name == "min_hopbreak":
-        # max-min strength, ties broken by the hop count of the widest path (shorter first);
-        # the lexicographic order is encoded as strength - hops * 1e-6, which never crosses a strength level
+    """S[s, t] = best-path strength from s to t under the operator (0 if unreachable);
+    H[s, t] = hop count of the best path found (0 if unreachable)."""
+    S = np.zeros((G.n, G.n)); H = np.zeros((G.n, G.n), dtype=np.int64)
+    if name in ("min", "min_hopbreak"):
         for s in range(G.n):
             st, pred = widest_path(G, s)
-            hops = np.zeros(G.n)
+            hops = np.zeros(G.n, dtype=np.int64)
             for v in range(G.n):
                 if st[v] > 0:
                     h, u = 0, v
                     while u != s and u >= 0:
                         u = pred[u]; h += 1
                     hops[v] = h
-            S[s] = np.where(st > 0, st - 1e-6 * hops, 0.0)
+            H[s] = hops
+            if name == "min":
+                S[s] = st
+            else:
+                # max-min strength, ties broken by the hop count of the widest path (shorter first);
+                # the lexicographic order is encoded as strength - hops * 1e-6, which never crosses a strength level
+                S[s] = np.where(st > 0, st - 1e-6 * hops, 0.0)
     else:
         gen = generator(name, p)
         for s in range(G.n):
-            for t, (v, _) in generator_best_paths(G, s, gen).items():
-                S[s, t] = v
+            for t, (v, h) in generator_best_paths(G, s, gen).items():
+                S[s, t] = v; H[s, t] = h
     np.fill_diagonal(S, -1.0)        # the source itself is never a candidate
-    return S
+    return S, H
 
 
 def rank_stats(scores: np.ndarray, target: int):
@@ -92,30 +107,60 @@ def rank_stats(scores: np.ndarray, target: int):
     return float(np.mean(1.0 / ranks)), float(np.mean(ranks <= 1)), float(np.mean(ranks <= 5)), float(np.mean(ranks <= 10))
 
 
-def evaluate(S: np.ndarray, transitions, learners):
-    rr, h1, h5, h10, per_learner = [], [], [], [], {}
+def kendall_tau_b(x, y):
+    from scipy.stats import kendalltau
+    if np.unique(x).size < 2 or np.unique(y).size < 2:
+        return float("nan")
+    return float(kendalltau(x, y).statistic)
+
+
+def evaluate(S: np.ndarray, transitions, learners, A=None, H=None):
+    rr, h1, h5, h10, per_learner, onehop = [], [], [], [], {}, []
     for (s, t, uid) in transitions:
         a, b, c, d = rank_stats(S[s], t)
         rr.append(a); h1.append(b); h5.append(c); h10.append(d)
         per_learner.setdefault(uid, []).append(a)
+        if A is not None:
+            # the direct edge is a best path to the true target: it exists and attains the best strength
+            onehop.append(bool(A[s, t] > 0 and abs(S[s, t] - A[s, t]) <= 1e-9 * max(1.0, A[s, t])))
     rr = np.asarray(rr)
     rng = np.random.default_rng(0)
     means = np.array([np.mean(per_learner[u]) for u in learners if u in per_learner])
     boots = [np.mean(rng.choice(means, size=means.size, replace=True)) for _ in range(1000)]
-    return {"mrr": float(rr.mean()), "mrr_learner_mean": float(means.mean()),
-            "mrr_ci": [float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))],
-            "hit1": float(np.mean(h1)), "hit5": float(np.mean(h5)), "hit10": float(np.mean(h10)),
-            "n_transitions": int(rr.size)}
+    out = {"mrr": float(rr.mean()), "mrr_learner_mean": float(means.mean()),
+           "mrr_ci": [float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))],
+           "hit1": float(np.mean(h1)), "hit5": float(np.mean(h5)), "hit10": float(np.mean(h10)),
+           "n_transitions": int(rr.size)}
+    if A is not None:
+        out["onehop_share"] = float(np.mean(onehop))
+        sources = sorted(set(tr[0] for tr in transitions))
+        taus = []
+        for s in sources:
+            mask = np.ones(S.shape[1], dtype=bool); mask[s] = False
+            taus.append(kendall_tau_b(S[s][mask], A[s][mask]))
+        taus = np.asarray(taus); taus = taus[np.isfinite(taus)]
+        out["tau_vs_direct_edge"] = float(taus.mean()) if taus.size else None
+        if H is not None:
+            hs = np.array([H[s, t] for (s, t, _) in transitions])
+            out["mean_hops_to_target"] = float(hs[hs > 0].mean()) if (hs > 0).any() else None
+    return out
 
 
 def transitions_of(d: pd.DataFrame, node_index, uids):
-    out = []
+    """Transitions c_prev -> c_next (c_prev != c_next) of the given learners whose
+    endpoints are both in the graph; the second value counts the transitions
+    dropped because an endpoint is not in the graph."""
+    out, dropped = [], 0
     for uid, g in d[d.user_id.isin(uids)].groupby("user_id", sort=False):
         kcs = [str(x) for x in g["kc"].tolist()]
         for a, b in zip(kcs[:-1], kcs[1:]):
-            if a != b and a in node_index and b in node_index:
+            if a == b:
+                continue
+            if a in node_index and b in node_index:
                 out.append((node_index[a], node_index[b], uid))
-    return out
+            else:
+                dropped += 1
+    return out, dropped
 
 
 def main():
@@ -137,22 +182,35 @@ def main():
     node_index = {lab: i for i, lab in enumerate(G.labels)}
     val_uids = sorted(d[d.split == "val"].user_id.unique())
     test_uids = sorted(d[d.split == "test"].user_id.unique())[: args.max_test_learners]
-    val_tr = transitions_of(d, node_index, val_uids)
-    test_tr = transitions_of(d, node_index, test_uids)
+    val_tr, _ = transitions_of(d, node_index, val_uids)
+    test_tr, test_dropped = transitions_of(d, node_index, test_uids)
+    train_tr, _ = transitions_of(d, node_index, sorted(train.user_id.unique()))
     print(f"{args.release} {args.level}: graph on train {G.summary()} ({build_time:.1f}s); "
           f"val {len(val_tr)} transitions / {len(val_uids)} learners; test {len(test_tr)} / {len(test_uids)}", flush=True)
     res = {"release": args.release, "level": args.level, "graph_train": G.summary(), "n_nodes": G.n,
            "n_val_transitions": len(val_tr), "n_test_transitions": len(test_tr),
-           "n_test_learners": len(test_uids), "operators": {}, "baselines": {}, "selected": {}}
+           "n_test_learners": len(test_uids), "n_test_transitions_dropped": int(test_dropped),
+           "n_nodes_all_learners": int(d["kc"].astype(str).nunique()),
+           "operators": {}, "baselines": {}, "selected": {}}
+    A = G.adjacency().toarray(); np.fill_diagonal(A, -1.0)
+    # reachability: the true target is unreachable from the source (all operators score 0 and tie)
+    S_min, H_min = strength_matrix(G, "min", None)
+    res["unreachable_share_test"] = float(np.mean([S_min[s, t] <= 0 for (s, t, _) in test_tr]))
     # operators
     for key, (name, p) in OPERATORS.items():
-        S = strength_matrix(G, name, p)
-        res["operators"][key] = evaluate(S, test_tr, test_uids)
+        S, H = strength_matrix(G, name, p)
+        res["operators"][key] = evaluate(S, test_tr, test_uids, A=A, H=H)
         res["operators"][key]["val_mrr"] = evaluate(S, val_tr, val_uids)["mrr"]
         print(key, json.dumps({k: (round(v, 4) if isinstance(v, float) else v) for k, v in res["operators"][key].items() if k != "mrr_ci"}), flush=True)
     # baselines
-    A = G.adjacency().toarray(); np.fill_diagonal(A, -1.0)
-    res["baselines"]["direct_edge"] = evaluate(A, test_tr, test_uids)
+    res["baselines"]["direct_edge"] = evaluate(A, test_tr, test_uids, A=A)
+    B = np.zeros((G.n, G.n))
+    for (s_, t_, _) in train_tr:
+        B[s_, t_] += 1.0
+    np.fill_diagonal(B, -1.0)
+    res["baselines"]["bigram"] = evaluate(B, test_tr, test_uids, A=A)
+    res["baselines"]["bigram"]["val_mrr"] = evaluate(B, val_tr, val_uids)["mrr"]
+    print("bigram", round(res["baselines"]["bigram"]["mrr"], 4), "direct_edge", round(res["baselines"]["direct_edge"]["mrr"], 4), flush=True)
     pop = train["kc"].value_counts()
     pop = {str(k): v for k, v in pop.items()}
     P = np.tile(np.array([pop.get(lab, 0) for lab in G.labels], dtype=float), (G.n, 1)); np.fill_diagonal(P, -1.0)
@@ -162,14 +220,14 @@ def main():
     for fam, grid in (("yager", YAGER_GRID), ("schweizer_sklar", SS_GRID)):
         curve = {}
         for p in grid:
-            S = strength_matrix(G, fam, p)
+            S, _ = strength_matrix(G, fam, p)
             curve[p] = {"val_mrr": evaluate(S, val_tr, val_uids)["mrr"], "test": evaluate(S, test_tr, test_uids)}
         best = max(curve, key=lambda q: curve[q]["val_mrr"])
         res["selected"][fam] = {"p": best, "curve": {str(p): {"val_mrr": c["val_mrr"], "test_mrr": c["test"]["mrr"]} for p, c in curve.items()},
                                 "test": curve[best]["test"]}
         print(fam, "selected p =", best, "test MRR", round(curve[best]["test"]["mrr"], 4), flush=True)
     # tie share under max-min on the test sources
-    S = strength_matrix(G, "min", None)
+    S = S_min
     ties = []
     for s in sorted(set(t[0] for t in test_tr)):
         v = S[s]; v = v[v > 0]

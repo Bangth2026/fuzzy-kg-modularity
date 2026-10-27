@@ -1,0 +1,32 @@
+{
+ "planted_sweep": {
+  "n_cells": 330,
+  "rho_cost_loss": 0.8983809666191581,
+  "rho_mass_loss": -0.8118638381855307,
+  "n_cells_loss_gt_0.02": 125,
+  "rho_cost_loss_gt_0.02": 0.8234715821812595,
+  "rho_mass_loss_gt_0.02": -0.5563664460320634,
+  "n_negative_cost": 0,
+  "min_cost": -1.1102230246251565e-16,
+  "shift_0_to_0.2": {
+   "n": 90,
+   "rho_cost_loss": 0.9304440877474585,
+   "rho_mass_loss": -0.7125406428777215
+  },
+  "shift_0.3_to_1": {
+   "n": 240,
+   "rho_cost_loss": 0.7849416617732127,
+   "rho_mass_loss": -0.7015205905934994
+  }
+ },
+ "lfr": {
+  "n_cells": 900,
+  "rho_cost_loss": 0.8893908357840462,
+  "rho_mass_loss": -0.704349680495472,
+  "n_cells_loss_gt_0.02": 564,
+  "rho_cost_loss_gt_0.02": 0.8724857052941164,
+  "rho_mass_loss_gt_0.02": -0.389573100234675,
+  "n_negative_cost": 0,
+  "min_cost": -1.1102230246251565e-16
+ }
+}

@@ -1,7 +1,7 @@
 """Does the binarisation conclusion survive strictly increasing rescalings of mu_E?
 On planted partitions, apply random increasing piecewise-linear maps phi to the
 memberships, re-run Fuzzy Leiden and the quantile-cut shortcut, and report the
-recovery (ARI) and loss before and after (Section 9.1).  Usage: python scripts/scale_invariance_check.py
+recovery (ARI) and loss before and after (Section 8.2).  Usage: python scripts/scale_invariance_check.py
 """
 from __future__ import annotations
 import json, os, sys

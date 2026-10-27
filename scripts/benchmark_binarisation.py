@@ -1,4 +1,4 @@
-"""Planted-partition benchmark for the binarise-then-partition shortcut (Table 6).
+"""Planted-partition benchmark for the binarise-then-partition shortcut (Table 7).
 
 For each setting of the membership distribution (mean, spread, community shift)
 on a directed planted-partition graph with known communities:
@@ -122,10 +122,29 @@ def constant_membership_check():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true")
+    ap.add_argument("--graph-seeds", type=int, default=5, help="graph seeds per setting (1 with --quick)")
+    ap.add_argument("--seed-list", type=int, nargs="*", default=None,
+                    help="run only these graph seeds (for splitting the run over processes; merge with --merge)")
+    ap.add_argument("--merge", nargs="*", default=None, help="merge partial result files into --out and exit")
     ap.add_argument("--out", default="results/binarisation.json")
     ap.add_argument("--edges", nargs="*", default=None,
                     help="real edge lists (src,dst,mu CSV); runs the shortcut with gamma refitted per level set")
     args = ap.parse_args()
+    if args.merge:
+        rows, seen = [], set()
+        for f in args.merge:
+            for r in json.load(open(f)):
+                key = (r["mu_mean"], r["mu_sd"], r["shift"], r["p_in"], r["graph_seed"])
+                if key not in seen:
+                    seen.add(key); rows.append(r)
+        rows.sort(key=lambda r: (r["mu_mean"], r["mu_sd"], r["shift"], r["p_in"], r["graph_seed"]))
+        seeds_ = sorted({r["graph_seed"] for r in rows})
+        res = {"settings": {"n": 1000, "k": 20, "out_degree": 8.0, "gammas": GAMMAS, "alphas": ALPHAS,
+                            "quantiles": QUANTILES, "seeds": [0, 1, 2], "graph_seeds": seeds_},
+               "rows": rows, "constant_membership": constant_membership_check(), "runtime_s": None}
+        json.dump(res, open(args.out, "w"), indent=1)
+        print(f"merged {len(rows)} rows into {args.out}")
+        return
     if args.edges:
         import pandas as pd
         out = []
@@ -157,15 +176,23 @@ def main():
         return
     n, k = (400, 8) if args.quick else (1000, 20)
     seeds = (0,) if args.quick else (0, 1, 2)
-    graph_seeds = (0,) if args.quick else (0, 1, 2)
+    graph_seeds = (0,) if args.quick else tuple(args.seed_list if args.seed_list is not None else range(args.graph_seeds))
     means = [0.3, 0.5, 0.7, 0.9]
     sds = [0.05, 0.15, 0.25]
     shifts = [0.0, 0.5]
     p_ins = [0.7]
     rows = []
+    partial = args.out.replace(".json", "_partial.json") if args.seed_list is None else \
+        args.out.replace(".json", "_partial_" + "_".join(map(str, args.seed_list)) + ".json")
+    if os.path.exists(partial):                 # resume
+        rows = json.load(open(partial))
+    done = {(r["mu_mean"], r["mu_sd"], r["shift"], r["p_in"], r["graph_seed"]) for r in rows}
     t0 = time.time()
     for mu_mean, mu_sd, shift, p_in, gs in itertools.product(means, sds, shifts, p_ins, graph_seeds):
+        if (mu_mean, mu_sd, shift, p_in, gs) in done:
+            continue
         rows.append(run_setting(mu_mean, mu_sd, shift, p_in, n, k, seeds, gs))
+        json.dump(rows, open(partial, "w"))
         print(f"mean={mu_mean} sd={mu_sd} shift={shift} seed={gs}: fuzzy NMI={rows[-1]['fuzzy']['NMI_truth']:.3f} "
               f"gap={rows[-1]['fuzzy']['gap_cor1']:.3f} "
               + " ".join(f"{kk}:NMI={v['NMI_truth']:.2f},loss={v['loss']:.3f}" for kk, v in rows[-1]['cuts'].items() if v),
@@ -176,6 +203,8 @@ def main():
            "runtime_s": time.time() - t0}
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     json.dump(res, open(args.out, "w"), indent=1)
+    if os.path.exists(partial):
+        os.remove(partial)
     print("constant-membership check:", json.dumps(res["constant_membership"], indent=1))
     print(f"written {args.out} in {res['runtime_s']:.0f}s")
 

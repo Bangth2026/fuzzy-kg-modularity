@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Level-set multislice modularity against Fuzzy Leiden and the single-cut
-shortcut (Section 9.1, Tables 7 and 8).
+shortcut (Section 8.2, Tables 8 and S1).
 
 Stage A (``--stage shift``): directed planted partitions, n = 1000, k = 20,
 out-degree 8, p_in = 0.5, memberships Beta(0.5, 0.15) with the community

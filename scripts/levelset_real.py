@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Level-set modularity on the real graphs (Section 9.1, Table 10): the
+"""Level-set modularity on the real graphs (Section 8.3, Table 9): the
 multislice partition, its agreement with the Fuzzy-Leiden partition, and the
 cost index cost(alpha_0) = Qbar(Pi*) - Qbar(Pi_alpha_0) of the single-cut
-partitions at the quantile and absolute levels used in Table 10, next to the
+partitions at the quantile and absolute levels used in Table 9, next to the
 persistence reading of the same cuts.
 
 Usage: python scripts/levelset_real.py [--out results/levelset_real.json] [names ...]

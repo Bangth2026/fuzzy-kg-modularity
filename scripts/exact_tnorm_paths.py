@@ -121,7 +121,7 @@ def ordinal_invariance(G, n_sources=20, n_maps=10, seed=0):
 
 
 def per_source_agreement(G, n_sources=60, max_hops=None, n_boot=1000, seed=0):
-    """Table 11 (revised): for each sampled source, rank reachable targets by exact
+    """Table 12: for each sampled source, rank reachable targets by exact
     best-path strength under each operator and compute Kendall tau-b against the
     max-min ranking; mean over sources with a bootstrap CI over sources, plus the
     pooled Spearman rho of Table 11 for comparison."""

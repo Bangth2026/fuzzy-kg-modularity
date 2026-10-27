@@ -1,4 +1,4 @@
-"""Composition on the real graphs (Section 9.3): per-source Kendall tau-b against
+"""Composition on the real graphs (Section 8.5): per-source Kendall tau-b against
 max-min with bootstrap CIs, pooled Spearman, and the tie fraction of the max-min
 ranking, on every real graph; hop-count means for the three standard operators
 (Table 12).  Usage: python scripts/composition_real.py

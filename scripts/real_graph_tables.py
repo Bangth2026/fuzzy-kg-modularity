@@ -1,5 +1,5 @@
 """Tables 2-4 and the reference-partition and null-model comparisons on the real
-graphs, in one run (Section 9.1).  Usage: python scripts/real_graph_tables.py
+graphs, in one run (Section 8.1).  Usage: python scripts/real_graph_tables.py
 """
 from __future__ import annotations
 import glob, json, os, sys, time

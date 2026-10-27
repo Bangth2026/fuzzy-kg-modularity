@@ -100,7 +100,7 @@ def zpd_gate_it2(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS):
 
 
 def zpd_gate_it2_normalised(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS, eps: float = 1e-9):
-    """Variant used to produce the published Table 10: the lower-bound vector
+    """Variant kept for provenance (see README, note 1): the lower-bound vector
     and the upper-bound vector are each normalised onto the simplex *before*
     gating.  Separate normalisation does not preserve lower <= upper, so the
     pass test (normalised lower >= tau) and the fail test (normalised upper <
@@ -138,7 +138,7 @@ def max_collapsed_par(halfwidth: float, cuts=DEFAULT_CUTS) -> float:
     return 1.0 - 2.0 * halfwidth / max(a, b)
 
 
-# ------------------------------------------- alternative gates (Table 13)
+# ------------------------------------------- alternative gates (Supplementary Table S5)
 def gate_point_estimate(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS):
     """Baseline (i): gate on m_par(p) only, ignoring the dispersion."""
     _, m_par, _ = partition_memberships(p, cuts)

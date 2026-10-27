@@ -1,0 +1,132 @@
+[
+ {
+  "graph": "planted, p_in=0.8",
+  "Q_F": 0.7623330159210443,
+  "null_mean": 0.2510734492365249,
+  "delta_Q": 0.5112595666845194,
+  "z": 217.60651702864573,
+  "relative_excess": 2.036294830214743,
+  "outcome": {
+   "0.02": "structure",
+   "0.05": "structure",
+   "0.1": "structure"
+  }
+ },
+ {
+  "graph": "planted, p_in=1/k (no structure)",
+  "Q_F": 0.2547858603060319,
+  "null_mean": 0.2502096884902365,
+  "delta_Q": 0.0045761718157953934,
+  "z": 1.8072634096259061,
+  "relative_excess": 0.018289347000941418,
+  "outcome": {
+   "0.02": "no structure detected",
+   "0.05": "no structure detected",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "dense co-practice-like, n=110, 50 edges/node",
+  "Q_F": 0.06716589030489009,
+  "null_mean": 0.06643550831219822,
+  "delta_Q": 0.0007303819926918753,
+  "z": 0.39033184855474107,
+  "relative_excess": 0.010993849693444281,
+  "outcome": {
+   "0.02": "no structure detected",
+   "0.05": "no structure detected",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "mooccubex_cs_edges.csv",
+  "Q_F": 0.523653143213345,
+  "null_mean": 0.5304709472524695,
+  "delta_Q": -0.006817804039124464,
+  "z": -0.4689143675804777,
+  "relative_excess": -0.012852360858661004,
+  "outcome": {
+   "0.02": "no structure detected",
+   "0.05": "no structure detected",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "mooccubex_cs_full_edges.csv",
+  "Q_F": 0.4717563293876876,
+  "null_mean": 0.45134754428651497,
+  "delta_Q": 0.02040878510117261,
+  "z": 3.837235870219051,
+  "relative_excess": 0.04521745018782496,
+  "outcome": {
+   "0.02": "structure",
+   "0.05": "no structure detected",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "assist2009_kc_edges.csv",
+  "Q_F": 0.1015033886047564,
+  "null_mean": 0.04556063186148684,
+  "delta_Q": 0.05594275674326956,
+  "z": 39.45973482813841,
+  "relative_excess": 1.2278749099298358,
+  "outcome": {
+   "0.02": "structure",
+   "0.05": "structure",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "assist2015_kc_edges.csv",
+  "Q_F": 0.058737775715566765,
+  "null_mean": 0.028268988064574535,
+  "delta_Q": 0.03046878765099223,
+  "z": 31.189756653926086,
+  "relative_excess": 1.0778167078847223,
+  "outcome": {
+   "0.02": "structure",
+   "0.05": "no structure detected",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "assist2017_kc_edges.csv",
+  "Q_F": 0.025389751343077298,
+  "null_mean": 0.01720648932380673,
+  "delta_Q": 0.008183262019270568,
+  "z": 8.231319892018305,
+  "relative_excess": 0.47559161344715956,
+  "outcome": {
+   "0.02": "no structure detected",
+   "0.05": "no structure detected",
+   "0.1": "no structure detected"
+  }
+ },
+ {
+  "graph": "assist2009_item_edges.csv",
+  "Q_F": 0.8734570702250123,
+  "null_mean": 0.15917937086680622,
+  "delta_Q": 0.7142776993582061,
+  "z": 342.481526357854,
+  "relative_excess": 4.4872504236486765,
+  "outcome": {
+   "0.02": "structure",
+   "0.05": "structure",
+   "0.1": "structure"
+  }
+ },
+ {
+  "graph": "assist2017_item_edges.csv",
+  "Q_F": 0.563882158515296,
+  "null_mean": 0.08458263593759169,
+  "delta_Q": 0.4792995225777043,
+  "z": 502.0464216873714,
+  "relative_excess": 5.666642062696531,
+  "outcome": {
+   "0.02": "structure",
+   "0.05": "structure",
+   "0.1": "structure"
+  }
+ }
+]
