@@ -50,6 +50,9 @@ def exactness(G, n_sources=20, max_hops=4, seed=0):
         for s in srcs:
             e = enumerate_best_paths(G, int(s), max_hops, T); e.pop("__expanded__", None)
             b = generator_best_paths(G, int(s), gen, max_hops=max_hops)
+            # a nilpotent composition that is exactly 0 may come out as 1e-17 in one of
+            # the two arithmetics; such targets are "unreachable" under both
+            e = {k: v for k, v in e.items() if v[0] > 1e-9}; b = {k: v for k, v in b.items() if v[0] > 1e-9}
             assert set(e) == set(b), (name, p)
             n_targets += len(e)
             if e:
@@ -117,6 +120,47 @@ def ordinal_invariance(G, n_sources=20, n_maps=10, seed=0):
             for f, v in taus.items() if v}
 
 
+def per_source_agreement(G, n_sources=60, max_hops=None, n_boot=1000, seed=0):
+    """Table 11 (revised): for each sampled source, rank reachable targets by exact
+    best-path strength under each operator and compute Kendall tau-b against the
+    max-min ranking; mean over sources with a bootstrap CI over sources, plus the
+    pooled Spearman rho of the earlier version for continuity."""
+    from scipy.stats import spearmanr
+    rng = np.random.default_rng(seed)
+    srcs = rng.choice(G.n, min(n_sources, G.n), replace=False)
+    fams = [("product", None), ("lukasiewicz", None), ("yager", 1.5), ("yager", 2.0), ("yager", 3.0),
+            ("yager", 5.0), ("yager", 10.0), ("schweizer_sklar", -8.0), ("schweizer_sklar", -4.0),
+            ("schweizer_sklar", -2.0), ("schweizer_sklar", -1.0), ("schweizer_sklar", 0.5)]
+    base = {}
+    for s_ in srcs:
+        st, _ = widest_path(G, int(s_))
+        if max_hops is not None:
+            reach = {t for t, _ in generator_best_paths(G, int(s_), generator("product"), max_hops=max_hops).items()}
+            mask = np.zeros(G.n, bool); mask[list(reach)] = True
+            st = np.where(mask, st, 0.0)
+        base[int(s_)] = st
+    out = {}
+    for name, p in fams:
+        gen = generator(name, p); taus = []; pooled_a = []; pooled_b = []
+        for s_ in srcs:
+            st = base[int(s_)]; reach = st > 0
+            bp = generator_best_paths(G, int(s_), gen, max_hops=max_hops)
+            v = np.zeros(G.n)
+            for t, (sv, _) in bp.items():
+                v[t] = sv
+            if reach.sum() >= 3:
+                taus.append(kendalltau(st[reach], v[reach]).statistic)
+                pooled_a.extend(st[reach]); pooled_b.extend(v[reach])
+        taus = np.array([t for t in taus if np.isfinite(t)])
+        boots = [np.mean(rng.choice(taus, taus.size, replace=True)) for _ in range(n_boot)]
+        out[gen.name] = {"n_sources": int(taus.size), "kendall_tau_b_mean": float(taus.mean()),
+                         "ci95": [float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))],
+                         "pooled_spearman": float(spearmanr(pooled_a, pooled_b).statistic),
+                         "n_pairs_pooled": len(pooled_a)}
+        print(gen.name, {k: (round(v, 3) if isinstance(v, float) else v) for k, v in out[gen.name].items()}, flush=True)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("edges", nargs="?", default=None)
@@ -125,6 +169,9 @@ def main():
     G = load_edges(args.edges) if args.edges else synthetic_fuzzy_graph(371, seed=0)
     res = {"graph": G.summary(), "exactness": exactness(G), "cost": cost(),
            "ordinal_invariance": ordinal_invariance(G)}
+    if args.edges:
+        res["per_source_agreement_4hop"] = per_source_agreement(G, max_hops=4)
+        res["per_source_agreement_unbounded"] = per_source_agreement(G, max_hops=None)
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     json.dump(res, open(args.out, "w"), indent=1)
     print(json.dumps({k: v for k, v in res.items() if k != "cost"}, indent=1))

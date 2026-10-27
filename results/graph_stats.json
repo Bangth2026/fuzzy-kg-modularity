@@ -1,0 +1,116 @@
+[
+ {
+  "graph": "mooccubex_cs_edges.csv",
+  "n": 59,
+  "m": 91,
+  "density": 1.5423728813559323,
+  "weak_components": 2,
+  "largest_component": 57,
+  "reciprocity": 0.0,
+  "mu_mean": 0.9341284216760279,
+  "mu_sd": 0.10541451230113845,
+  "mu_q25_50_75": [
+   0.9223121404647828,
+   0.968799889087677,
+   0.9887714385986328
+  ],
+  "k_leiden": 5,
+  "Q_F": 0.6686621037527254,
+  "NMI_leiden_vs_components": 0.20262463438925796
+ },
+ {
+  "graph": "assist2009_kc_edges.csv",
+  "n": 110,
+  "m": 5069,
+  "density": 46.08181818181818,
+  "weak_components": 2,
+  "largest_component": 108,
+  "reciprocity": 0.9607417636614717,
+  "mu_mean": 0.47544712221287716,
+  "mu_sd": 0.11852365784726386,
+  "mu_q25_50_75": [
+   0.3851698443315326,
+   0.4670259662275658,
+   0.5678889331628573
+  ],
+  "k_leiden": 2,
+  "Q_F": 0.5004479188268416,
+  "NMI_leiden_vs_components": 1.0
+ },
+ {
+  "graph": "assist2009_item_edges.csv",
+  "n": 371,
+  "m": 4947,
+  "density": 13.33423180592992,
+  "weak_components": 28,
+  "largest_component": 44,
+  "reciprocity": 0.9973721447341823,
+  "mu_mean": 0.47016698851094957,
+  "mu_sd": 0.09300590246422898,
+  "mu_q25_50_75": [
+   0.4078071551030489,
+   0.4754624048939858,
+   0.5392803376437924
+  ],
+  "k_leiden": 28,
+  "Q_F": 0.9367285351125061,
+  "NMI_leiden_vs_components": 1.0
+ },
+ {
+  "graph": "assist2015_kc_edges.csv",
+  "n": 100,
+  "m": 6963,
+  "density": 69.63,
+  "weak_components": 1,
+  "largest_component": 100,
+  "reciprocity": 0.9619416917995117,
+  "mu_mean": 0.4467690389662738,
+  "mu_sd": 0.09905274836951698,
+  "mu_q25_50_75": [
+   0.3775515538295312,
+   0.4337557008384084,
+   0.5060629219437117
+  ],
+  "k_leiden": 1,
+  "Q_F": 0.4999999999999998,
+  "NMI_leiden_vs_components": 1.0
+ },
+ {
+  "graph": "assist2017_kc_edges.csv",
+  "n": 83,
+  "m": 5494,
+  "density": 66.19277108433735,
+  "weak_components": 1,
+  "largest_component": 83,
+  "reciprocity": 0.9985438660356752,
+  "mu_mean": 0.468357690975746,
+  "mu_sd": 0.06494689770031811,
+  "mu_q25_50_75": [
+   0.43097399451185725,
+   0.4697969471554849,
+   0.5083287045641075
+  ],
+  "k_leiden": 1,
+  "Q_F": 0.4999999999999996,
+  "NMI_leiden_vs_components": 1.0
+ },
+ {
+  "graph": "assist2017_item_edges.csv",
+  "n": 867,
+  "m": 33604,
+  "density": 38.75893886966551,
+  "weak_components": 7,
+  "largest_component": 849,
+  "reciprocity": 0.9588144268539459,
+  "mu_mean": 0.48369988245375817,
+  "mu_sd": 0.10343653985999213,
+  "mu_q25_50_75": [
+   0.41428572313268924,
+   0.4789609865317746,
+   0.5554721213064022
+  ],
+  "k_leiden": 16,
+  "Q_F": 0.7236699478133722,
+  "NMI_leiden_vs_components": 0.15709119383369607
+ }
+]

@@ -298,8 +298,9 @@ def generator_best_paths(
         dist = np.full(n, np.inf); hops = np.zeros(n, dtype=np.int64)
         dist[source] = 0.0
         src, dst = G.src, G.dst
+        length_e = gen.g(G.mu)                     # lengths in edge-list order (not CSR order)
         for h in range(1, max_hops + 1):
-            cand = dist[src] + length
+            cand = dist[src] + length_e
             new = dist.copy(); newh = hops.copy()
             # vectorised relaxation: minimum over incoming edges
             order = np.argsort(cand)

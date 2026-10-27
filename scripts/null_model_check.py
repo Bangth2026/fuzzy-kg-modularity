@@ -28,7 +28,7 @@ from fuzzykg.synthetic import planted_partition_fuzzy_graph  # noqa: E402
 
 
 def analyse(name, G, n_perm=20):
-    r = adaptive_resolution_with_null(G, z_min=3.0, n_perm=n_perm)
+    r = adaptive_resolution_with_null(G, z_min=3.0, dq_min=0.10, reference_gamma=1.0, n_perm=n_perm)
     part = fuzzy_leiden(G, r["gamma1"], seed=0, n_iterations=0)
     cands = [spectral_bisection(G)] + community_vs_rest_candidates(part.membership)
     th = bipartition_threshold_general(G, cands)

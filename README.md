@@ -163,3 +163,18 @@ MIT for the code (see `LICENSE`). Datasets remain under their own licenses; see 
 ## Acknowledgements
 
 The ASSISTments team at Worcester Polytechnic Institute for the datasets, THU-KEG for MOOCCubeX, and the authors of `leidenalg` and `python-igraph`.
+
+### Reproduction note (27 Oct 2026)
+
+Rebuilt from the raw public files in a clean environment with the scripts above:
+MOOCCubeX-CS matches Table 2 exactly (59 nodes, 91 edges, μ 0.400/0.934/0.999); the
+five ASSISTments graphs match Table 3 in node and edge counts to within 0.3%
+(2009 KC 110/5069, 2009 item 371/4947, 2015 KC 100/6963, 2017 KC 83/5494,
+2017 item 867/33604) but their mean μ_E is 0.01–0.05 higher than Table 3, and
+`spectral_bisection` returns c/W values different from Table 5. The original
+Tables 2–5 and 11 came from an earlier script; `results/null_model.json`,
+`results/binarisation_real.json`, `results/tnorm_paths_assist2009_item.json`
+and `results/graph_stats.json` come from this repository. The loader fixes
+needed to reach the counts above (JSON-lines `cs.json`, CS-discipline filter by
+concept name, one log entry per (learner, order), missing-skill rows dropped at
+item level) are in `data/loaders.py`.

@@ -1,0 +1,354 @@
+{
+ "graph": "FuzzyGraph(n=371, m=4947, W=2325.916, mu min/mean/max=0.203/0.470/0.709, reciprocity=0.997)",
+ "exactness": {
+  "product": {
+   "kind": "strict",
+   "targets_checked": 496,
+   "max_abs_diff": 2.7755575615628914e-17
+  },
+  "lukasiewicz": {
+   "kind": "nilpotent",
+   "targets_checked": 429,
+   "max_abs_diff": 0.0
+  },
+  "yager_p0.5": {
+   "kind": "nilpotent",
+   "targets_checked": 315,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  "yager_p2.0": {
+   "kind": "nilpotent",
+   "targets_checked": 483,
+   "max_abs_diff": 1.1102230246251565e-16
+  },
+  "schweizer_sklar_p-2.0": {
+   "kind": "strict",
+   "targets_checked": 496,
+   "max_abs_diff": 5.551115123125783e-17
+  },
+  "schweizer_sklar_p0.5": {
+   "kind": "nilpotent",
+   "targets_checked": 481,
+   "max_abs_diff": 0.0
+  }
+ },
+ "cost": [
+  {
+   "n": 371,
+   "m": 556,
+   "density": 1.4986522911051212,
+   "maxmin_s": 0.001329634000057922,
+   "dijkstra_s": 0.0030109530000572704,
+   "bellman_ford_4hop_s": 0.004519814000104816,
+   "enumeration_4hop_s": 0.0013499350000074628,
+   "paths_expanded": 29.0,
+   "ratio_dijkstra_over_maxmin": 2.2644975985317055,
+   "ratio_enum_over_maxmin": 1.015268111336395
+  },
+  {
+   "n": 371,
+   "m": 1484,
+   "density": 4.0,
+   "maxmin_s": 0.06298821800010046,
+   "dijkstra_s": 0.019445646000121997,
+   "bellman_ford_4hop_s": 0.011327837999942858,
+   "enumeration_4hop_s": 0.07183089199997994,
+   "paths_expanded": 3207.0,
+   "ratio_dijkstra_over_maxmin": 0.30871878293319843,
+   "ratio_enum_over_maxmin": 1.14038615919989
+  },
+  {
+   "n": 371,
+   "m": 2968,
+   "density": 8.0,
+   "maxmin_s": 0.06613546499988843,
+   "dijkstra_s": 0.024592436000148155,
+   "bellman_ford_4hop_s": 0.020227448000014192,
+   "enumeration_4hop_s": 0.9319381759999033,
+   "paths_expanded": 44015.0,
+   "ratio_dijkstra_over_maxmin": 0.3718494456822772,
+   "ratio_enum_over_maxmin": 14.09135289215061
+  }
+ ],
+ "ordinal_invariance": {
+  "min": {
+   "kendall_tau_mean": 1.0,
+   "kendall_tau_min": 0.9999999999999998,
+   "n": 180
+  },
+  "('product', None)": {
+   "kendall_tau_mean": 0.9284603537038619,
+   "kendall_tau_min": 0.5608465608465608,
+   "n": 180
+  },
+  "('lukasiewicz', None)": {
+   "kendall_tau_mean": 0.9580839394623825,
+   "kendall_tau_min": 0.5753846153846154,
+   "n": 170
+  },
+  "('yager', 0.5)": {
+   "kendall_tau_mean": 0.9997385620915032,
+   "kendall_tau_min": 0.9555555555555554,
+   "n": 170
+  },
+  "('yager', 2.0)": {
+   "kendall_tau_mean": 0.8802365203436494,
+   "kendall_tau_min": 0.328042328042328,
+   "n": 180
+  },
+  "('schweizer_sklar', -2.0)": {
+   "kendall_tau_mean": 0.8286891186685782,
+   "kendall_tau_min": 0.37931034482758613,
+   "n": 180
+  },
+  "('schweizer_sklar', 0.5)": {
+   "kendall_tau_mean": 0.9449763401466595,
+   "kendall_tau_min": 0.5767195767195767,
+   "n": 170
+  }
+ },
+ "per_source_agreement_4hop": {
+  "product": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.3064055303312444,
+   "ci95": [
+    0.2531663666033258,
+    0.36532096634024236
+   ],
+   "pooled_spearman": 0.5039815024239582,
+   "n_pairs_pooled": 1496
+  },
+  "lukasiewicz": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.27762155158476265,
+   "ci95": [
+    0.22959574098714544,
+    0.3302644072283686
+   ],
+   "pooled_spearman": 0.45533645674282364,
+   "n_pairs_pooled": 1496
+  },
+  "yager_p1.5": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.30864286431349197,
+   "ci95": [
+    0.2538978579983279,
+    0.36532322670890144
+   ],
+   "pooled_spearman": 0.5111025503507938,
+   "n_pairs_pooled": 1496
+  },
+  "yager_p2.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.33229692998378235,
+   "ci95": [
+    0.2762710391730662,
+    0.38854975665776903
+   ],
+   "pooled_spearman": 0.5789600155331712,
+   "n_pairs_pooled": 1496
+  },
+  "yager_p3.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.3954762702167747,
+   "ci95": [
+    0.3405147984218592,
+    0.45341623794822167
+   ],
+   "pooled_spearman": 0.6937105935727754,
+   "n_pairs_pooled": 1496
+  },
+  "yager_p5.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.5038481205208364,
+   "ci95": [
+    0.4491241069361908,
+    0.5609407929392223
+   ],
+   "pooled_spearman": 0.8218021273492732,
+   "n_pairs_pooled": 1496
+  },
+  "yager_p10.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.6150368349284399,
+   "ci95": [
+    0.5634449711802039,
+    0.6682971181336674
+   ],
+   "pooled_spearman": 0.9162615427099285,
+   "n_pairs_pooled": 1496
+  },
+  "schweizer_sklar_p-8.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.5425670980884467,
+   "ci95": [
+    0.4890641212076498,
+    0.595945399826517
+   ],
+   "pooled_spearman": 0.8549097066062707,
+   "n_pairs_pooled": 1496
+  },
+  "schweizer_sklar_p-4.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.44264122955817076,
+   "ci95": [
+    0.38683577790729834,
+    0.5011657607816815
+   ],
+   "pooled_spearman": 0.7396597422057047,
+   "n_pairs_pooled": 1496
+  },
+  "schweizer_sklar_p-2.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.36624905614744424,
+   "ci95": [
+    0.31587765955754904,
+    0.42262891964678034
+   ],
+   "pooled_spearman": 0.633308476978097,
+   "n_pairs_pooled": 1496
+  },
+  "schweizer_sklar_p-1.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.3327046374178637,
+   "ci95": [
+    0.27883764477088707,
+    0.391058370983264
+   ],
+   "pooled_spearman": 0.5687262849150411,
+   "n_pairs_pooled": 1496
+  },
+  "schweizer_sklar_p0.5": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.2945138111642183,
+   "ci95": [
+    0.2441561335247723,
+    0.3519672479796716
+   ],
+   "pooled_spearman": 0.4796313380689662,
+   "n_pairs_pooled": 1496
+  }
+ },
+ "per_source_agreement_unbounded": {
+  "product": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.30305842150108586,
+   "ci95": [
+    0.24836318372427182,
+    0.36165772630802967
+   ],
+   "pooled_spearman": 0.5136185765372348,
+   "n_pairs_pooled": 1507
+  },
+  "lukasiewicz": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.2768161019979371,
+   "ci95": [
+    0.2286694655200505,
+    0.32943636349306377
+   ],
+   "pooled_spearman": 0.4647422282260236,
+   "n_pairs_pooled": 1507
+  },
+  "yager_p1.5": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.3071974183683979,
+   "ci95": [
+    0.251930982285811,
+    0.3633524508647216
+   ],
+   "pooled_spearman": 0.5205862229611865,
+   "n_pairs_pooled": 1507
+  },
+  "yager_p2.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.32944129987996335,
+   "ci95": [
+    0.27427693824708554,
+    0.3848637187210833
+   ],
+   "pooled_spearman": 0.5871480654219202,
+   "n_pairs_pooled": 1507
+  },
+  "yager_p3.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.39489869152141727,
+   "ci95": [
+    0.34010052455351364,
+    0.45366770913577736
+   ],
+   "pooled_spearman": 0.6998512038914632,
+   "n_pairs_pooled": 1507
+  },
+  "yager_p5.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.5115453340034005,
+   "ci95": [
+    0.45668029539650273,
+    0.5694247093584318
+   ],
+   "pooled_spearman": 0.8266412398380122,
+   "n_pairs_pooled": 1507
+  },
+  "yager_p10.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.6400195384732356,
+   "ci95": [
+    0.5873385174843586,
+    0.6903311541966964
+   ],
+   "pooled_spearman": 0.9285666928058025,
+   "n_pairs_pooled": 1507
+  },
+  "schweizer_sklar_p-8.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.5555598570960777,
+   "ci95": [
+    0.49977214840547185,
+    0.6096836725088167
+   ],
+   "pooled_spearman": 0.8610286444058239,
+   "n_pairs_pooled": 1507
+  },
+  "schweizer_sklar_p-4.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.44935079235943987,
+   "ci95": [
+    0.3916052732646531,
+    0.5067484100252903
+   ],
+   "pooled_spearman": 0.7455085924600983,
+   "n_pairs_pooled": 1507
+  },
+  "schweizer_sklar_p-2.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.3655641533737718,
+   "ci95": [
+    0.3152490452222829,
+    0.42242262383322765
+   ],
+   "pooled_spearman": 0.6407361393171738,
+   "n_pairs_pooled": 1507
+  },
+  "schweizer_sklar_p-1.0": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.33049130144213457,
+   "ci95": [
+    0.2760962997543588,
+    0.3898009072769477
+   ],
+   "pooled_spearman": 0.5772463980937419,
+   "n_pairs_pooled": 1507
+  },
+  "schweizer_sklar_p0.5": {
+   "n_sources": 51,
+   "kendall_tau_b_mean": 0.29226835737402923,
+   "ci95": [
+    0.2409613665675882,
+    0.3500661426108187
+   ],
+   "pooled_spearman": 0.4897183232591691,
+   "n_pairs_pooled": 1507
+  }
+ }
+}

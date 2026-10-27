@@ -148,16 +148,26 @@ def null_model_zscore(
 def adaptive_resolution_with_null(
     G: FuzzyGraph,
     z_min: float = 3.0,
+    dq_min: float = 0.10,
+    reference_gamma: float = 1.0,
     n_perm: int = 20,
     **kwargs,
 ) -> dict:
-    """Algorithm 1 (revised): run ``adaptive_resolution``, then test the accepted
-    partition against the null model.  Outcome is 'structure' when z >= z_min,
-    otherwise 'no structure detected', in which case the accepted partition
-    should not be reported as communities."""
+    """Algorithm 1 (revised): run ``adaptive_resolution`` to seed (gamma1, gamma2),
+    then test the graph against the degree-preserving null model at the
+    reference resolution (gamma = 1 by default, the scale on which Q_F is
+    comparable across graphs; the accepted gamma1 can be far above 1 on graphs
+    without structure, where both the observed and the null partitions are
+    near-singleton and a z-score is uninformative).  Outcome is 'structure'
+    when z >= z_min AND the excess Q_F over the null mean is at least dq_min
+    (an effect-size floor: on dense graphs the null standard deviation is of
+    order 1e-3, so a z-score alone certifies differences of a few thousandths).
+    """
     res = adaptive_resolution(G, **kwargs)
     seeds = kwargs.get("seeds", (0, 1, 2, 3, 4))
-    nm = null_model_zscore(G, res.gamma1, n_perm=n_perm, seeds=seeds)
-    outcome = "structure" if nm["z"] >= z_min else "no structure detected"
+    nm = null_model_zscore(G, reference_gamma, n_perm=n_perm, seeds=seeds)
+    nm["delta_Q"] = nm["Q_F_obs"] - nm["null_mean"]
+    nm["reference_gamma"] = reference_gamma
+    outcome = "structure" if (nm["z"] >= z_min and nm["delta_Q"] >= dq_min) else "no structure detected"
     return {"gamma1": res.gamma1, "gamma2": res.gamma2, "c_over_W": res.c_over_W,
             "doublings": res.doublings, "null": nm, "outcome": outcome}
