@@ -180,7 +180,7 @@ def enumerate_best_paths(G: FuzzyGraph, source: int, max_hops: int, T: TNorm) ->
     return best
 
 
-# ------------------------------------------- additive generators (revision, M3)
+# ------------------------------------------- additive generators (Section 7.3)
 # Every continuous Archimedean t-norm has an additive generator g : [0,1] -> [0, inf],
 # continuous, strictly decreasing, g(1) = 0, with T(a, b) = g^(-1)(g(a) + g(b)) where
 # g^(-1) is the pseudo-inverse (x -> g^{-1}(min(x, g(0)))).  Hence the T-composition

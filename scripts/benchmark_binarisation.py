@@ -1,4 +1,4 @@
-"""Planted-partition benchmark for the binarise-then-partition shortcut (revision, M1).
+"""Planted-partition benchmark for the binarise-then-partition shortcut (Table 6).
 
 For each setting of the membership distribution (mean, spread, community shift)
 on a directed planted-partition graph with known communities:

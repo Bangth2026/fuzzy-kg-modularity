@@ -1,5 +1,5 @@
-"""Gates on the uncertain state: the cautious collapse against the baselines
-asked for in revision (M4), on the same 201 x 7 grid as Section 9.5.
+"""Gates on the uncertain state: the cautious collapse against four alternative
+gates (Table 13), on the same 201 x 7 grid as Section 9.5.
 
   collapse      Eq. (11)-(12), pass iff collapsed mu_par >= tau
   point         (i)  m_par(p) >= tau, dispersion ignored

@@ -54,7 +54,7 @@ def synthetic_fuzzy_graph(
     return FuzzyGraph.from_edges(zip(e[:, 0], e[:, 1], mu), n=n)
 
 
-# ------------------------------------------------ planted partitions (revision, M1)
+# ------------------------------------------------ planted partitions (Table 6)
 def _beta_params(mean: float, sd: float):
     """Beta(a, b) with the given mean and standard deviation (sd clipped to the
     feasible range sd^2 < mean(1-mean))."""

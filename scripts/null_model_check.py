@@ -1,4 +1,4 @@
-"""Revised Algorithm 1 with a null-model test and a 'no structure' outcome (M2).
+"""Algorithm 1 with its null-model test and 'no structure' outcome (Section 5.3).
 
 Runs the revised procedure on (a) planted-partition graphs with structure,
 (b) the same topology with memberships shuffled and communities destroyed

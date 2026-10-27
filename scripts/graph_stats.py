@@ -1,4 +1,4 @@
-"""Graph statistics table requested in revision (4.7): nodes, edges, density,
+"""Graph statistics table (Section 9.1): nodes, edges, density,
 weak components, reciprocity, membership mean / sd / quartiles, and, when a
 *_nodes.csv with a problem-set column exists next to the edge list, the NMI of
 the Fuzzy-Leiden partition with the problem-set (or component) reference.

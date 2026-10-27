@@ -138,7 +138,7 @@ def max_collapsed_par(halfwidth: float, cuts=DEFAULT_CUTS) -> float:
     return 1.0 - 2.0 * halfwidth / max(a, b)
 
 
-# ------------------------------------------- alternative gates (revision, M4)
+# ------------------------------------------- alternative gates (Table 13)
 def gate_point_estimate(p, halfwidth, tau_zpd: float = 0.4, cuts=DEFAULT_CUTS):
     """Baseline (i): gate on m_par(p) only, ignoring the dispersion."""
     _, m_par, _ = partition_memberships(p, cuts)

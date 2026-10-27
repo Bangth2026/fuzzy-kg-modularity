@@ -104,7 +104,7 @@ def adaptive_resolution(
     raise RuntimeError("Algorithm 1 did not accept within max_doublings")
 
 
-# ------------------------------------------- null model and 'no structure' (M2)
+# ------------------------------------------- null model and 'no structure' (Algorithm 1)
 def null_model_zscore(
     G: FuzzyGraph,
     gamma: float,

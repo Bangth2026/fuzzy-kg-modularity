@@ -1,44 +1,38 @@
-# Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs
+# What binarisation, type-1 collapse and non-idempotent t-norms cost on fuzzy knowledge graphs
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *What binarisation, type-1 collapse and non-idempotent t-norms cost on fuzzy knowledge graphs built from learner logs.* Under revision for **Information Sciences** (earlier title: *Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs*). Saigon International University, Ho Chi Minh City, Vietnam. ORCID 0000-0001-5094-3128.
+> Hai Bang Truong. *What binarisation, type-1 collapse and non-idempotent t-norms cost on fuzzy knowledge graphs built from learner logs.* Submitted to **Information Sciences**. Saigon International University, Ho Chi Minh City, Vietnam. ORCID 0000-0001-5094-3128.
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-The paper answers three questions about a knowledge graph whose edges carry fuzzy memberships and whose nodes carry graded, uncertain states:
+The paper asks, for three shortcuts that discard the grades on a fuzzy knowledge graph built from learner logs, whether the loss is bounded, computable from the graph, and large enough to matter:
 
-1. **Modularity for fuzzy graphs.** A functional `Q_F` for directed fuzzy graphs (crisp partition, fuzzy edges) that keeps Leiden's well-connectedness guarantee (Prop. 1), is bounded, aggregation-invariant, monotone and finitely convergent (Prop. 2), and *dominates* the α-cut average of crisp modularities by Chebyshev's integral inequality (Prop. 3, Cor. 1). Remark 3 / Algorithm 1 derive the smallest useful resolution from the normalised cut.
-2. **Interval type-2 node states.** The Monte-Carlo-dropout interval `[p̄ − ησ, p̄ + ησ]` induces an IT2 membership over *unknown / partial / mastered*; the footprint of uncertainty is in closed form, and the usual type-1 collapse leaves its own footprint on 7.3 % of the state space and degenerates to universal rejection beyond the closed-form half-width `h* = (1 − τ_ZPD)·max(a, b)/2`.
-3. **Path composition.** Max–min composition is the upper envelope of all t-norms (Fact 1); the Yager and Schweizer–Sklar families only erode below the weakest link; the consequence is measured on real graphs.
+1. **Binarising before partitioning.** The fuzzy-graph modularity `Q_F` (crisp partition, fuzzy edges) exceeds the α-average of its level-set surrogates under global normalisation by γ Σ Cov(f_κ, g_κ) (Proposition 2, Corollary 1); that gap is *not* the cost of binarising (Remark 3). The cost is measured on planted partitions with ground truth and on six real graphs, with the resolution refitted per level set: it is governed by the fuzzy mass the cut discards, not by the membership spread. Proposition 1 gives the resolution threshold of a bipartition; Algorithm 1 seeds the resolution from it and tests the result against a degree-preserving null model.
+2. **Collapsing an uncertain state.** The interval `[p̄ − ησ, p̄ + ησ]` induces an interval type-2 membership over *unknown / partial / mastered* with a closed-form footprint; the cautious type-1 collapse rejects every candidate beyond `h* = (1 − τ_ZPD)·max(a, b)/2`, a defect of that construction that simpler gates do not share.
+3. **Replacing max-min by an Archimedean t-norm.** Best paths under every continuous Archimedean t-norm are shortest-path problems through the additive generator (Section 7.3), so no family is computationally privileged; what distinguishes max-min is ordinal invariance (Proposition 3), verified on synthetic graphs and measured on real ones.
 
+## What is in version 1.1
 
-## Revision (October 2026): what changed and why
-
-The referee report for the Information Sciences submission identified three
-errors in the earlier version and asked for ground-truth experiments. The
-code now contains the corrections; the numbers they produce are in
-`results/` and are the ones cited in the revised manuscript.
-
-| Concern | Correction | Where |
+| Topic | What the code does | Where |
 |---|---|---|
-| The Corollary 1 gap is **not** the cost of binarising (constant-membership counterexample) | Identity gap = γ(1/c − 1)Σ a_κ b_κ verified; cost measured on planted partitions with γ refitted per level set, NMI against the truth | `fuzzykg/synthetic.py::planted_partition_fuzzy_graph`, `scripts/benchmark_binarisation.py`, `results/binarisation.json` |
-| 2c/W is the threshold of **balanced** cuts only; Algorithm 1 could not fail | General threshold θ(B) = (c/W)/(a₁b₂ + a₂b₁); degree-preserving null-model z-score and a "no structure detected" outcome | `fuzzykg/modularity.py::bipartition_threshold_general`, `fuzzykg/resolution.py::null_model_zscore`, `adaptive_resolution_with_null`, `scripts/null_model_check.py` |
-| Best paths under Archimedean t-norms are **shortest paths** (additive generators), not an exponential enumeration | `generator()` + Dijkstra / hop-limited Bellman–Ford, exact to 1e-15 against the old enumeration; ordinal-invariance check of max-min under random increasing rescalings | `fuzzykg/tnorms.py::generator, generator_best_paths`, `scripts/exact_tnorm_paths.py`, `results/tnorm_paths.json` |
-| The cautious type-1 collapse is the author's own construction; baselines missing | Gates (i) point estimate, (ii) interval-image type-1, (iii) probability of ZPD, (iv) expected membership, compared with the three-valued IT2 gate on the raw bounds | `fuzzykg/fuzzification.py` (new `gate_*`), `scripts/gate_baselines.py`, `results/gate_baselines.json` |
-| Graph statistics / reference partitions | components, reciprocity, membership quartiles, NMI with components or problem sets | `scripts/graph_stats.py` |
+| The Corollary 1 gap vs the cost of binarising | Checks the constant-membership identity gap = γ(1/c − 1)Σ a_κ b_κ (Remark 3); measures the cost of binarising on directed planted partitions with controllable membership mean / spread / community shift, γ refitted per level set, NMI against the planted communities (Table 6); the same protocol on the real graphs (Table 8) | `fuzzykg/synthetic.py::planted_partition_fuzzy_graph`, `scripts/benchmark_binarisation.py`, `results/binarisation.json`, `results/binarisation_real.json` |
+| Resolution threshold and Algorithm 1 | General bipartition threshold θ(B) = (c/W)/(a₁b₂ + a₂b₁) (Proposition 1); degree-preserving null model at a reference resolution with an effect-size floor and a "no structure detected" outcome (Table 7) | `fuzzykg/modularity.py::bipartition_threshold_general`, `fuzzykg/resolution.py::null_model_zscore`, `adaptive_resolution_with_null`, `scripts/null_model_check.py`, `results/null_model.json` |
+| Best paths under Archimedean t-norms | Additive generators; exact best paths by Dijkstra / hop-limited Bellman–Ford (Section 7.3), checked to 1e-15 against bounded enumeration; ordinal-invariance check of max-min (Proposition 3); per-source Kendall τ-b with bootstrap CIs (Table 11b) | `fuzzykg/tnorms.py::generator, generator_best_paths`, `scripts/exact_tnorm_paths.py`, `results/tnorm_paths*.json` |
+| Gates on the uncertain state | Point-estimate, interval-image type-1, probability-of-ZPD and expected-membership gates next to the cautious collapse and the three-valued IT2 gate (Table 13) | `fuzzykg/fuzzification.py` (`gate_*`), `scripts/gate_baselines.py`, `results/gate_baselines.json` |
+| Graph statistics | Components, reciprocity, membership quartiles, NMI of the partition with components or problem sets | `scripts/graph_stats.py`, `results/graph_stats.json` |
 
 Runs on the real graphs (require the public data, see `data/README.md`):
 
 ```bash
-python scripts/benchmark_binarisation.py --edges data/graphs/*_edges.csv   # Table 8, gamma refitted
-python scripts/null_model_check.py       data/graphs/*_edges.csv           # Table 7, last row
-python scripts/exact_tnorm_paths.py      data/graphs/assist2009_item_edges.csv  # Table 11, no hop limit
+python scripts/benchmark_binarisation.py --edges data/graphs/*_edges.csv   # Table 8
+python scripts/null_model_check.py       data/graphs/*_edges.csv           # Table 7
+python scripts/exact_tnorm_paths.py      data/graphs/assist2009_item_edges.csv  # Table 11b
 python scripts/graph_stats.py            data/graphs/*_edges.csv
 ```
 
-The earlier bounded enumeration (`enumerate_best_paths`) is kept only as a
+The bounded enumeration (`enumerate_best_paths`) is kept only as a
 cross-check; `generator_best_paths` is the reference implementation.
 
 ## Installation
@@ -148,7 +142,7 @@ Timings (2.79×, 4.23×, Table 5 seconds) are implementation- and hardware-speci
 @article{truong2026fuzzymodularity,
   author  = {Truong, Hai Bang},
   title   = {Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs},
-  journal = {Fuzzy Sets and Systems},
+  journal = {Information Sciences},
   year    = {2026},
   note    = {submitted},
 }
@@ -171,8 +165,7 @@ MOOCCubeX-CS matches Table 2 exactly (59 nodes, 91 edges, μ 0.400/0.934/0.999);
 five ASSISTments graphs match Table 3 in node and edge counts to within 0.3%
 (2009 KC 110/5069, 2009 item 371/4947, 2015 KC 100/6963, 2017 KC 83/5494,
 2017 item 867/33604) but their mean μ_E is 0.01–0.05 higher than Table 3, and
-`spectral_bisection` returns c/W values different from Table 5. The original
-Tables 2–5 and 11 came from an earlier script; `results/null_model.json`,
+`spectral_bisection` returns c/W values different from Table 5. Tables 2–5 and 11 of the paper were produced with an earlier script; `results/null_model.json`,
 `results/binarisation_real.json`, `results/tnorm_paths_assist2009_item.json`
 and `results/graph_stats.json` come from this repository. The loader fixes
 needed to reach the counts above (JSON-lines `cs.json`, CS-discipline filter by

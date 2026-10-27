@@ -1,7 +1,8 @@
 """fuzzykg: reference implementation for
 
     Truong, H. B. "Modularity, interval type-2 states and weakest-link
-    composition on fuzzy knowledge graphs." Fuzzy Sets and Systems (submitted).
+    composition on fuzzy knowledge graphs" / "What binarisation, type-1 collapse
+    and non-idempotent t-norms cost on fuzzy knowledge graphs built from learner logs".
 
 Modules
 -------
@@ -80,7 +81,7 @@ __all__ = [
     "widest_path",
 ]
 
-# revision additions (October 2026)
+# additions in 1.1.0
 from .tnorms import generator, generator_best_paths  # noqa: E402
 from .synthetic import planted_partition_fuzzy_graph  # noqa: E402
 from .resolution import null_model_zscore, adaptive_resolution_with_null  # noqa: E402

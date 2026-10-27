@@ -145,7 +145,7 @@ def test_owa_orness():
     assert orness(w) == pytest.approx(0.65, abs=1e-6) and w.sum() == pytest.approx(1)
 
 
-# ------------------------------------------------------------ revision (M1-M4)
+# ------------------------------ generators, planted partitions, thresholds, gates
 from fuzzykg.tnorms import generator, generator_best_paths, enumerate_best_paths
 from fuzzykg.synthetic import planted_partition_fuzzy_graph
 from fuzzykg.modularity import bipartition_threshold_general, community_vs_rest_candidates, _community_sums

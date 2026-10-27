@@ -1,4 +1,4 @@
-"""Exact best paths under Archimedean t-norms by additive generators (revision, M3).
+"""Exact best paths under Archimedean t-norms by additive generators (Section 7.3).
 
 1. Exactness: on a synthetic graph the generator-based Bellman-Ford (hop-limited)
    returns the same best strengths as the bounded enumeration of the earlier
@@ -124,7 +124,7 @@ def per_source_agreement(G, n_sources=60, max_hops=None, n_boot=1000, seed=0):
     """Table 11 (revised): for each sampled source, rank reachable targets by exact
     best-path strength under each operator and compute Kendall tau-b against the
     max-min ranking; mean over sources with a bootstrap CI over sources, plus the
-    pooled Spearman rho of the earlier version for continuity."""
+    pooled Spearman rho of Table 11 for comparison."""
     from scipy.stats import spearmanr
     rng = np.random.default_rng(seed)
     srcs = rng.choice(G.n, min(n_sources, G.n), replace=False)
