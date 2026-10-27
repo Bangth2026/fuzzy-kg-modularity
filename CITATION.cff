@@ -3,7 +3,7 @@ message: "If you use this software, please cite the paper below."
 title: "fuzzykg: Level-set modularity for fuzzy knowledge graphs"
 version: 1.3.0
 date-released: 2026-10-27
-doi: 10.5281/zenodo.23689763
+doi: 10.5281/zenodo.23689762
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
 license: MIT
 authors:

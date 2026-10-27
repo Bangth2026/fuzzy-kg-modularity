@@ -6,7 +6,7 @@ Reference implementation and reproduction scripts for
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23689763.svg)](https://doi.org/10.5281/zenodo.23689763)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23689762.svg)](https://doi.org/10.5281/zenodo.23689762)
 
 A fuzzy knowledge graph built from learner logs carries graded prerequisite edges. The pipelines that consume it discard the grades at two points, and this repository prices both shortcuts:
 
@@ -182,7 +182,7 @@ Timings (Table 10 seconds) are implementation- and hardware-specific and are not
 }
 ```
 
-Archived release v1.2.0: https://doi.org/10.5281/zenodo.23689763 (all versions: https://doi.org/10.5281/zenodo.23689762). See also `CITATION.cff`.
+Archived on Zenodo: https://doi.org/10.5281/zenodo.23689762 (all versions; resolves to the latest). Version 1.2.0: https://doi.org/10.5281/zenodo.23689763. See also `CITATION.cff`.
 
 ## License
 
