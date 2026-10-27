@@ -133,7 +133,8 @@ def main():
     if args.merge:
         rows, seen = [], set()
         for f in args.merge:
-            for r in json.load(open(f)):
+            data = json.load(open(f))
+            for r in (data["rows"] if isinstance(data, dict) else data):
                 key = (r["mu_mean"], r["mu_sd"], r["shift"], r["p_in"], r["graph_seed"])
                 if key not in seen:
                     seen.add(key); rows.append(r)

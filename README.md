@@ -54,7 +54,11 @@ Synthetic runs (no download):
 ```bash
 python scripts/benchmark_levelset.py --stage shift --seeds 10             # Table 8
 python scripts/benchmark_levelset.py --stage lfr   --seeds 10             # Table S1
-python scripts/benchmark_binarisation.py --graph-seeds 5                  # Table 7
+python scripts/benchmark_binarisation.py --graph-seeds 5                  # Table 7 (one process)
+# or split over processes and merge:
+#   python scripts/benchmark_binarisation.py --seed-list 0 1 2 --out results/binarisation_a.json
+#   python scripts/benchmark_binarisation.py --seed-list 3 4   --out results/binarisation_b.json
+#   python scripts/benchmark_binarisation.py --merge results/binarisation_a.json results/binarisation_b.json
 python scripts/levelset_sensitivity.py --part shift                       # Table S3 (planted sweep)
 python scripts/levelset_sensitivity.py --part lfr_seeds                   # optimiser-seed dispersion, LFR-style
 python scripts/levelset_sensitivity.py --part correlations                # cost index vs recovery loss, stratified
