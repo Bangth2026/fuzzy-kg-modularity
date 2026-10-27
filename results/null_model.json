@@ -196,5 +196,27 @@
   "theta_balanced_2c_over_W": 0.13526885391755425,
   "theta_spectral_bisection": 0.13527344086861573,
   "theta_min_over_community_splits": 0.0
+ },
+ {
+  "graph": "mooccubex_cs_full_edges.csv",
+  "summary": "FuzzyGraph(n=287, m=725, W=670.321, mu min/mean/max=0.002/0.925/1.000, reciprocity=0.000)",
+  "gamma1": 24.211850018439712,
+  "doublings": 5,
+  "k_accepted": 115,
+  "Q_F_accepted": 0.02830455166454633,
+  "null": {
+   "Q_F_obs": 0.4717563293876876,
+   "null_mean": 0.45085862818048217,
+   "null_sd": 0.006733115188584418,
+   "z": 3.1037195446524035,
+   "p_empirical": 0.047619047619047616,
+   "n_perm": 20,
+   "delta_Q": 0.02089770120720541,
+   "reference_gamma": 1.0
+  },
+  "outcome": "no structure detected",
+  "theta_balanced_2c_over_W": 0.8806816443031642,
+  "theta_spectral_bisection": 0.8795599171533234,
+  "theta_min_over_community_splits": 0.0
  }
 ]

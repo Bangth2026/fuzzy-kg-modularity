@@ -25,17 +25,19 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=None)
     ap.add_argument("--out", default=str(ROOT / "data" / "graphs"))
+    ap.add_argument("--full", action="store_true", help="keep all ground-truth pairs (no assessed-concept restriction)")
     args = ap.parse_args()
-    edges, assessed = load_mooccubex_cs(args.root)
+    edges, assessed = load_mooccubex_cs(args.root, full=args.full)
+    name = "mooccubex_cs_full" if args.full else "mooccubex_cs"
     labels = sorted(set(edges.src) | set(edges.dst))
     idx = {k: i for i, k in enumerate(labels)}
     G = FuzzyGraph.from_edges(((idx[a], idx[b], m) for a, b, m in zip(edges.src, edges.dst, edges.mu)),
                               n=len(labels), labels=labels)
     print(f"assessed concepts: {len(assessed)}; graph: {G.summary()}")
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame({"src": G.src, "dst": G.dst, "mu": G.mu}).to_csv(out / "mooccubex_cs_edges.csv", index=False)
-    pd.DataFrame({"id": range(G.n), "label": G.labels}).to_csv(out / "mooccubex_cs_nodes.csv", index=False)
-    print(f"wrote {out}/mooccubex_cs_{{edges,nodes}}.csv")
+    pd.DataFrame({"src": G.src, "dst": G.dst, "mu": G.mu}).to_csv(out / f"{name}_edges.csv", index=False)
+    pd.DataFrame({"id": range(G.n), "label": G.labels}).to_csv(out / f"{name}_nodes.csv", index=False)
+    print(f"wrote {out}/{name}_{{edges,nodes}}.csv")
 
 
 if __name__ == "__main__":

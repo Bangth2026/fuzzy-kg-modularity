@@ -92,6 +92,98 @@
   }
  },
  {
+  "graph": "mooccubex_cs_full_edges.csv",
+  "summary": "FuzzyGraph(n=287, m=725, W=670.321, mu min/mean/max=0.002/0.925/1.000, reciprocity=0.000)",
+  "fuzzy": {
+   "Q_F": 0.4717563293876876,
+   "gamma": 1.0,
+   "k": 15,
+   "gap_cor1": 0.0026283642464379753
+  },
+  "cuts": {
+   "alpha=0.2": {
+    "m_alpha": 716,
+    "edge_frac": 0.9875862068965517,
+    "mass_kept": 0.9991726106629333,
+    "gamma_refit": 1.0,
+    "k": 25,
+    "Q_F_on_fuzzy": 0.4664672272876342,
+    "loss": 0.0052891021000534,
+    "NMI_vs_fuzzy": 0.49598660664051764,
+    "ARI_vs_fuzzy": 0.3056574551448311,
+    "AMI_vs_fuzzy": 0.41740957587989597,
+    "practitioner": {
+     "gamma": 1.0,
+     "k": 25,
+     "Q_F_on_fuzzy": 0.4664672272876342,
+     "loss": 0.0052891021000534,
+     "ARI_vs_fuzzy": 0.3056574551448311,
+     "AMI_vs_fuzzy": 0.41740957587989597
+    }
+   },
+   "alpha=0.4": {
+    "m_alpha": 708,
+    "edge_frac": 0.976551724137931,
+    "mass_kept": 0.9954579102227075,
+    "gamma_refit": 1.0,
+    "k": 29,
+    "Q_F_on_fuzzy": 0.4687248900885362,
+    "loss": 0.003031439299151395,
+    "NMI_vs_fuzzy": 0.5477782209218186,
+    "ARI_vs_fuzzy": 0.38569537445044266,
+    "AMI_vs_fuzzy": 0.4742089569487472,
+    "practitioner": {
+     "gamma": 1.0,
+     "k": 29,
+     "Q_F_on_fuzzy": 0.4687248900885362,
+     "loss": 0.003031439299151395,
+     "ARI_vs_fuzzy": 0.38569537445044266,
+     "AMI_vs_fuzzy": 0.4742089569487472
+    }
+   },
+   "alpha=0.6": {
+    "m_alpha": 691,
+    "edge_frac": 0.953103448275862,
+    "mass_kept": 0.9820881787438238,
+    "gamma_refit": 1.0,
+    "k": 39,
+    "Q_F_on_fuzzy": 0.4630138983330142,
+    "loss": 0.008742431054673372,
+    "NMI_vs_fuzzy": 0.5784484913334321,
+    "ARI_vs_fuzzy": 0.46138365880501636,
+    "AMI_vs_fuzzy": 0.4907241128603158,
+    "practitioner": {
+     "gamma": 1.0,
+     "k": 39,
+     "Q_F_on_fuzzy": 0.4630138983330142,
+     "loss": 0.008742431054673372,
+     "ARI_vs_fuzzy": 0.46138365880501636,
+     "AMI_vs_fuzzy": 0.4907241128603158
+    }
+   },
+   "alpha=0.8": {
+    "m_alpha": 657,
+    "edge_frac": 0.9062068965517242,
+    "mass_kept": 0.9451744360381106,
+    "gamma_refit": 1.0,
+    "k": 46,
+    "Q_F_on_fuzzy": 0.44943401351000145,
+    "loss": 0.022322315877686127,
+    "NMI_vs_fuzzy": 0.515693724071737,
+    "ARI_vs_fuzzy": 0.30199646033813604,
+    "AMI_vs_fuzzy": 0.40270955882583165,
+    "practitioner": {
+     "gamma": 1.0,
+     "k": 46,
+     "Q_F_on_fuzzy": 0.44943401351000145,
+     "loss": 0.022322315877686127,
+     "ARI_vs_fuzzy": 0.30199646033813604,
+     "AMI_vs_fuzzy": 0.40270955882583165
+    }
+   }
+  }
+ },
+ {
   "graph": "assist2009_kc_edges.csv",
   "summary": "FuzzyGraph(n=110, m=5069, W=2410.041, mu min/mean/max=0.201/0.475/0.789, reciprocity=0.961)",
   "fuzzy": {

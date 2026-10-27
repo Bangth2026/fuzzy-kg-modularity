@@ -1,8 +1,8 @@
 """fuzzykg: reference implementation for
 
-    Truong, H. B. "Modularity, interval type-2 states and weakest-link
-    composition on fuzzy knowledge graphs" / "What binarisation, type-1 collapse
-    and non-idempotent t-norms cost on fuzzy knowledge graphs built from learner logs".
+    Truong, H. B. "Level-set modularity for fuzzy knowledge graphs: pricing
+    binarisation and non-idempotent t-norms against planted partitions, null
+    models and held-out transitions".
 
 Modules
 -------
@@ -17,7 +17,10 @@ fuzzification  Eq. (10)-(13): type-1 collapse, footprint of uncertainty,
 tnorms         min / product / Lukasiewicz, Yager and Schweizer-Sklar
                families, OWA, Fact 1 check, max-min widest path (Eq. 1).
 construction   Eq. (14)-(15): fuzzy knowledge graph from interaction logs.
-synthetic      Synthetic fuzzy prerequisite graphs of Section 8.2.
+synthetic      Synthetic fuzzy prerequisite graphs, planted partitions with
+               controllable membership information, LFR-style directed benchmark.
+multislice     Level-set (multislice) modularity over the alpha-cut family, the
+               binarisation cost index and the persistence diagnostic.
 """
 
 from .graph import FuzzyGraph
@@ -51,7 +54,7 @@ from .tnorms import (
     widest_path,
 )
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __all__ = [
     "FuzzyGraph",
     "fuzzy_modularity",
@@ -89,3 +92,9 @@ from .modularity import bipartition_threshold_general, community_vs_rest_candida
 __all__ += ["generator", "generator_best_paths", "planted_partition_fuzzy_graph",
             "null_model_zscore", "adaptive_resolution_with_null",
             "bipartition_threshold_general", "community_vs_rest_candidates"]
+
+# additions in 1.2.0
+from .multislice import multislice_leiden, level_grid, qbar, binarisation_cost, persistence, persistence_cost  # noqa: E402
+from .synthetic import lfr_style_fuzzy_graph  # noqa: E402
+__all__ += ["multislice_leiden", "level_grid", "qbar", "binarisation_cost", "persistence", "persistence_cost",
+            "lfr_style_fuzzy_graph"]

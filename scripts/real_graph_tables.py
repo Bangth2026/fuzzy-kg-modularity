@@ -11,7 +11,7 @@ from fuzzykg.resolution import null_model_zscore
 import scipy.sparse.csgraph as csg
 from sklearn.metrics import adjusted_rand_score as ari, adjusted_mutual_info_score as ami, normalized_mutual_info_score as nmi
 
-NAMES = ["mooccubex_cs", "assist2009_kc", "assist2009_item", "assist2015_kc", "assist2017_kc", "assist2017_item"]
+NAMES = ["mooccubex_cs", "mooccubex_cs_full", "assist2009_kc", "assist2009_item", "assist2015_kc", "assist2017_kc", "assist2017_item"]
 
 def load(name):
     df = pd.read_csv(f"data/graphs/{name}_edges.csv")
@@ -21,7 +21,7 @@ def table_2_4():
     out = {}
     for name in NAMES:
         G = load(name)
-        gammas, seeds = ([0.5, 1.0], 10) if name == "mooccubex_cs" else ([0.5, 1.0, 2.0, 5.0], 5)
+        gammas, seeds = ([0.5, 1.0], 10) if name.startswith("mooccubex") else ([0.5, 1.0, 2.0, 5.0], 5)
         rows = {}
         for g in gammas:
             runs = [fuzzy_leiden(G, g, seed=s, n_iterations=10) for s in range(seeds)]
@@ -37,8 +37,8 @@ def reference_partitions():
     """Problem-set (skill) reference partition for the item-level graphs, and
     components for all; NMI/ARI/AMI of the Fuzzy-Leiden partition at gamma = 1."""
     out = {}
-    raw = {"assist2009_item": ("/home/claude/rawdata/assist2009.csv", "problem_id", "skill_id", "latin-1"),
-           "assist2017_item": ("/home/claude/rawdata/anonymized_full_release_competition_dataset.csv", "problemId", "skill", None)}
+    raw = {"assist2009_item": ("data/raw/assist2009/skill_builder_data.csv", "problem_id", "skill_id", "latin-1"),
+           "assist2017_item": ("data/raw/assist2017/anonymized_full_release_competition_dataset.csv", "problemId", "skill", None)}
     for name in NAMES:
         G = load(name)
         nodes = pd.read_csv(f"data/graphs/{name}_nodes.csv")
@@ -47,7 +47,7 @@ def reference_partitions():
         row = {"n": G.n, "m": G.m, "components": int(ncomp), "largest_component": int(np.bincount(comp).max()),
                "k_leiden_gamma1": part.n_communities,
                "ARI_vs_components": ari(comp, part.membership), "AMI_vs_components": ami(comp, part.membership)}
-        if name in raw:
+        if name in raw and os.path.exists(raw[name][0]):
             path, pid, sid, enc = raw[name]
             df = pd.read_csv(path, usecols=[pid, sid], encoding=enc, low_memory=False).dropna()
             first = df.drop_duplicates(subset=[pid]).set_index(pid)[sid].astype(str)

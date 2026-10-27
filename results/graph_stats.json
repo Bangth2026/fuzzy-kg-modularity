@@ -19,6 +19,25 @@
   "NMI_leiden_vs_components": 0.20262463438925796
  },
  {
+  "graph": "mooccubex_cs_full_edges.csv",
+  "n": 287,
+  "m": 725,
+  "density": 2.5261324041811846,
+  "weak_components": 8,
+  "largest_component": 272,
+  "reciprocity": 0.0,
+  "mu_mean": 0.9245803094004955,
+  "mu_sd": 0.149342582003153,
+  "mu_q25_50_75": [
+   0.9304906725883484,
+   0.9797099828720092,
+   0.992716908454895
+  ],
+  "k_leiden": 10,
+  "Q_F": 0.5851159322561242,
+  "NMI_leiden_vs_components": 0.42107393079336547
+ },
+ {
   "graph": "assist2009_kc_edges.csv",
   "n": 110,
   "m": 5069,

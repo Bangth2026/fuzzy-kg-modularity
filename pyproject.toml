@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fuzzykg"
-version = "1.0.0"
+version = "1.2.0"
 description = "Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs (reference implementation)"
 readme = "README.md"
 requires-python = ">=3.10"

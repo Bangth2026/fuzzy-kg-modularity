@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
-title: "fuzzykg: Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs"
-version: 1.0.0
-date-released: 2026-10-22
+title: "fuzzykg: Level-set modularity for fuzzy knowledge graphs"
+version: 1.2.0
+date-released: 2026-10-27
 license: MIT
 authors:
   - family-names: Truong
@@ -12,7 +12,7 @@ authors:
     email: truonghaibang@siu.edu.vn
 preferred-citation:
   type: article
-  title: "Modularity, interval type-2 states and weakest-link composition on fuzzy knowledge graphs"
+  title: "Level-set modularity for fuzzy knowledge graphs: pricing binarisation and non-idempotent t-norms against planted partitions, null models and held-out transitions"
   journal: Information Sciences (under review)
   year: 2026
   notes: submitted

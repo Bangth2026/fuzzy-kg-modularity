@@ -202,3 +202,73 @@ def test_interval_image_gate_is_it2_pass_rule():
         H = np.full_like(ps, h)
         assert np.array_equal(gate_interval_image_type1(ps, H), zpd_gate_it2(ps, H) == 1)
         assert gate_point_estimate(ps, H).mean() == gate_point_estimate(ps, np.zeros_like(ps)).mean()
+
+
+# ------------------------------------------------------------ Section 5.5: level-set modularity
+def test_levelset_objective_matches_optimiser_quality():
+    from fuzzykg.synthetic import planted_partition_fuzzy_graph
+    from fuzzykg.multislice import multislice_leiden, qbar, level_grid
+    G, truth = planted_partition_fuzzy_graph(300, 6, 8.0, 0.7, 0.5, 0.15, 0.3, seed=0)
+    r = multislice_leiden(G, seed=0)                       # asserts optimiser quality == mean of per-level Q
+    assert abs(r.Qbar - qbar(G, r.membership, r.alphas)) < 1e-10
+    assert abs(r.Q_F - fuzzy_modularity(G, r.membership, 1.0)) < 1e-12
+
+
+def test_levelset_single_cut_is_special_case():
+    """With one level the objective is the modularity of that level set."""
+    from fuzzykg.synthetic import planted_partition_fuzzy_graph
+    from fuzzykg.multislice import qbar
+    G, truth = planted_partition_fuzzy_graph(300, 6, 8.0, 0.7, 0.5, 0.15, 0.3, seed=1)
+    a = float(np.quantile(G.mu, 0.5))
+    r = fuzzy_leiden(G.alpha_cut(a), 1.0, seed=0, n_iterations=0)
+    assert abs(qbar(G, r.membership, [a]) - r.Q_F) < 1e-12
+
+
+def test_lemma3_identity_mass_weights():
+    """Lemma 3: mass-weighted Qbar equals sum_k [ sum_l |E_l cap k^2| / M - gamma sum_l f g / r_l ]."""
+    from fuzzykg.synthetic import planted_partition_fuzzy_graph
+    from fuzzykg.multislice import qbar, level_grid
+    G, truth = planted_partition_fuzzy_graph(300, 6, 8.0, 0.7, 0.5, 0.15, 0.3, seed=2)
+    alphas = level_grid(G)
+    memb = truth
+    M = sum(int((G.mu >= a).sum()) for a in alphas)
+    total = 0.0
+    for a in alphas:
+        keep = G.mu >= a
+        m = int(keep.sum()); r = m / M
+        for k in np.unique(memb):
+            inside = keep & (memb[G.src] == k) & (memb[G.dst] == k)
+            s_out = (keep & (memb[G.src] == k)).sum() / M
+            s_in = (keep & (memb[G.dst] == k)).sum() / M
+            total += inside.sum() / M - s_out * s_in / r
+    assert abs(total - qbar(G, memb, alphas)) < 1e-9
+
+
+def test_quantile_grid_is_scale_invariant():
+    from fuzzykg.synthetic import planted_partition_fuzzy_graph
+    from fuzzykg.multislice import level_grid, qbar
+    G, truth = planted_partition_fuzzy_graph(300, 6, 8.0, 0.7, 0.5, 0.15, 0.3, seed=3)
+    phi = lambda x: x ** 3                                  # strictly increasing rescaling
+    G2 = FuzzyGraph(G.n, G.src, G.dst, phi(G.mu))
+    assert abs(qbar(G, truth, level_grid(G)) - qbar(G2, truth, level_grid(G2))) < 1e-12
+
+
+def test_lfr_style_generator_shapes():
+    from fuzzykg.synthetic import lfr_style_fuzzy_graph
+    G, truth = lfr_style_fuzzy_graph(500, 0.3, seed=1)
+    assert G.n == 500 and truth.size == 500
+    assert np.bincount(truth).min() >= 10
+    assert 0 < G.mu.min() and G.mu.max() <= 1
+
+
+def test_order_preserving_null_keeps_orientation():
+    import sys, os
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+    from null_models_extended import null_draw, curriculum_order
+    G = synthetic_fuzzy_graph(200, 0.8, seed=5)            # acyclic by construction
+    rank = curriculum_order(G)
+    rng = np.random.default_rng(0)
+    Gn = null_draw(G, "order", rng, rank, None)
+    assert Gn.m == G.m
+    assert np.all(rank[Gn.src] < rank[Gn.dst])
+    assert np.array_equal(np.bincount(Gn.src, minlength=G.n), np.bincount(G.src, minlength=G.n))

@@ -120,3 +120,84 @@ def planted_partition_fuzzy_graph(
     mu[~inside] = rng.beta(a_out, b_out, size=int((~inside).sum()))
     mu = np.clip(mu, mu_min, 1.0)
     return FuzzyGraph.from_edges(zip(e[:, 0], e[:, 1], mu), n=n), truth
+
+
+# ------------------------------------------------ LFR-style directed fuzzy benchmark
+def lfr_style_fuzzy_graph(
+    n: int = 1000,
+    mixing: float = 0.3,
+    k_avg: float = 8.0,
+    k_max: float = 40.0,
+    tau_deg: float = 2.0,
+    tau_size: float = 1.0,
+    c_min: int = 10,
+    c_max: int | None = None,
+    mu_mean: float = 0.5,
+    mu_sd: float = 0.15,
+    shift: float = 0.0,
+    mu_min: float = 1e-3,
+    seed: int = 0,
+):
+    """Directed, weighted benchmark in the style of Lancichinetti–Fortunato [29]:
+    community sizes from a power law with exponent ``tau_size`` on
+    [c_min, c_max], node out-degrees from a power law with exponent ``tau_deg``
+    on [1, k_max] rescaled to mean ``k_avg``, a fraction ``mixing`` of every
+    node's out-edges leaving its community, targets drawn uniformly inside the
+    chosen community.  Memberships are Beta(mean, sd) with the same community
+    ``shift`` as ``planted_partition_fuzzy_graph``.  Returns (graph, truth).
+    This is a simplified generator (no in-degree power law, no overlap) and
+    is described as such in the paper."""
+    rng = np.random.default_rng(seed)
+    c_max = c_max or max(c_min + 1, n // 10)
+
+    def powerlaw(lo, hi, tau, size):
+        u = rng.random(size)
+        if abs(tau - 1.0) < 1e-9:
+            return lo * (hi / lo) ** u
+        a = 1.0 - tau
+        return (lo ** a + u * (hi ** a - lo ** a)) ** (1.0 / a)
+
+    sizes = []
+    while sum(sizes) < n:
+        sizes.append(int(round(powerlaw(c_min, c_max, tau_size, 1)[0])))
+    excess = sum(sizes) - n
+    if sizes[-1] - excess >= c_min:
+        sizes[-1] -= excess
+    else:                            # drop the last community and spread the shortfall
+        sizes.pop()
+        short = n - sum(sizes)
+        for i in range(len(sizes)):
+            sizes[i] += short // len(sizes) + (1 if i < short % len(sizes) else 0)
+    assert sum(sizes) == n
+    k = len(sizes)
+    truth = np.repeat(np.arange(k), sizes)
+    rng.shuffle(truth)
+    members = [np.where(truth == c)[0] for c in range(k)]
+    deg = powerlaw(1.0, k_max, tau_deg, n)
+    deg = deg * (k_avg / deg.mean())
+    deg = np.clip(np.round(deg), 1, k_max).astype(int)
+    edges = {}
+    for u in range(n):
+        for _ in range(deg[u]):
+            inside = rng.random() >= mixing
+            if inside:
+                pool = members[truth[u]]
+            else:
+                c2 = int(rng.integers(0, k))
+                while c2 == truth[u] and k > 1:
+                    c2 = int(rng.integers(0, k))
+                pool = members[c2]
+            v = int(rng.choice(pool))
+            if v == u or (u, v) in edges:
+                continue
+            edges[(u, v)] = inside
+    e = np.array(sorted(edges))
+    inside = np.array([edges[tuple(x)] for x in e])
+    d = shift * min(mu_mean, 1 - mu_mean)
+    mu = np.empty(len(e))
+    a_in, b_in = _beta_params(mu_mean + d, mu_sd)
+    a_out, b_out = _beta_params(mu_mean - d, mu_sd)
+    mu[inside] = rng.beta(a_in, b_in, size=int(inside.sum()))
+    mu[~inside] = rng.beta(a_out, b_out, size=int((~inside).sum()))
+    mu = np.clip(mu, mu_min, 1.0)
+    return FuzzyGraph.from_edges(zip(e[:, 0], e[:, 1], mu), n=n), truth

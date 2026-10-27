@@ -60,11 +60,13 @@ def load_assistments(release: str, level: str = "kc", path: Optional[str] = None
     raise ValueError(f"unknown release {release}")
 
 
-def load_mooccubex_cs(root: Optional[str] = None, discipline: str = "计算机科学与技术"):
+def load_mooccubex_cs(root: Optional[str] = None, discipline: str = "计算机科学与技术", full: bool = False):
     """MOOCCubeX-CS prerequisite graph (Section 8): intersect the ground-truth
     prerequisite pairs with the assessed concepts and keep edges whose endpoints
-    both carry at least one graded problem.  Returns (edges DataFrame with
-    src,dst,mu as concept ids, set of assessed concepts)."""
+    both carry at least one graded problem.  With ``full=True`` the assessed
+    restriction is dropped and all ground-truth pairs are kept (the full
+    expert-annotated CS graph).  Returns (edges DataFrame with src,dst,mu as
+    concept ids, set of assessed concepts)."""
     root = Path(root) if root else RAW / "MOOCCubeX"
     # prerequisites/cs.json is JSON-lines: one record per candidate pair with
     # fields c1, c2, ground_truth and two predicted confidences; the paper keeps
@@ -86,6 +88,6 @@ def load_mooccubex_cs(root: Optional[str] = None, discipline: str = "计算机�
             continue
         a, b = rec["c1"], rec["c2"]
         w = rec["graph_predict"][1]
-        if a in assessed and b in assessed and a != b:
+        if (full or (a in assessed and b in assessed)) and a != b:
             rows.append((a, b, float(w)))
     return pd.DataFrame(rows, columns=["src", "dst", "mu"]), assessed

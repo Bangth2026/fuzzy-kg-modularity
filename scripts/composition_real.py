@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from fuzzykg import FuzzyGraph
 from fuzzykg.tnorms import generator, generator_best_paths, widest_path
 
-NAMES = ["mooccubex_cs", "assist2009_kc", "assist2009_item", "assist2015_kc", "assist2017_kc", "assist2017_item"]
+NAMES = ["mooccubex_cs", "mooccubex_cs_full", "assist2009_kc", "assist2009_item", "assist2015_kc", "assist2017_kc", "assist2017_item"]
 FAMS = [("product", None), ("lukasiewicz", None), ("yager", 2.0), ("yager", 5.0), ("yager", 10.0),
         ("schweizer_sklar", -8.0), ("schweizer_sklar", -2.0), ("schweizer_sklar", 0.5)]
 
