@@ -1,0 +1,22 @@
+FuzzyGraph(n=371, m=4947, W=2325.916, mu min/mean/max=0.203/0.470/0.709, reciprocity=0.997)
+60 sources, 1502 reachable pairs within 4 hops; widest-path sweep 31.6 ms vs enumeration 35.96 s (14329913 partial paths expanded)
+
+Operator                 Class          Mean S 1-hop 2-hop 3-hop 4-hop  Erosion    rho  Fact1
+min (default)            t-norm          0.547 0.575 0.546 0.541 0.545    0.000  1.000      0
+product                  t-norm          0.388 0.575 0.405 0.374 0.350    0.307  0.547      0
+Lukasiewicz              t-norm          0.333 0.575 0.338 0.315 0.289    0.418  0.498      0
+Yager p = 1.5            t-norm          0.373 0.575 0.396 0.356 0.329    0.344  0.554      0
+Yager p = 2              t-norm          0.404 0.575 0.431 0.390 0.364    0.283  0.622      0
+Yager p = 3              t-norm          0.447 0.575 0.470 0.435 0.418    0.193  0.739      0
+Yager p = 5              t-norm          0.488 0.575 0.504 0.479 0.469    0.111  0.868      0
+Yager p = 10             t-norm          0.522 0.575 0.530 0.516 0.512    0.045  0.959      0
+Schweizer-Sklar p = -8   t-norm          0.508 0.575 0.517 0.500 0.494    0.069  0.902      0
+Schweizer-Sklar p = -4   t-norm          0.478 0.575 0.490 0.467 0.459    0.125  0.786      0
+Schweizer-Sklar p = -2   t-norm          0.448 0.575 0.461 0.435 0.423    0.184  0.677      0
+Schweizer-Sklar p = -1   t-norm          0.424 0.575 0.438 0.410 0.394    0.232  0.611      0
+Schweizer-Sklar p = 0    t-norm          0.388 0.575 0.405 0.374 0.350    0.307  0.547      0
+Schweizer-Sklar p = 0.5  t-norm          0.362 0.575 0.379 0.345 0.318    0.363  0.523      0
+Schweizer-Sklar p = 1    t-norm          0.333 0.575 0.338 0.315 0.289    0.418  0.498      0
+geometric mean           compensatory    0.665 0.757 0.673 0.655 0.649   -0.228  0.699    n/a
+arithmetic mean          compensatory    0.699 0.787 0.707 0.691 0.681   -0.291  0.599    n/a
+path-level OWA (pessim.) compensatory    0.572 0.581 0.572 0.572 0.571   -0.055  0.966    n/a

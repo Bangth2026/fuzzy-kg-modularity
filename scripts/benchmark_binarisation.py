@@ -33,23 +33,29 @@ import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from fuzzykg import FuzzyGraph, fuzzy_leiden, fuzzy_modularity, correlation_gap  # noqa: E402
 from fuzzykg.synthetic import planted_partition_fuzzy_graph  # noqa: E402
-from sklearn.metrics import normalized_mutual_info_score as nmi, adjusted_rand_score as ari  # noqa: E402
+from sklearn.metrics import normalized_mutual_info_score as nmi, adjusted_rand_score as ari, adjusted_mutual_info_score as ami  # noqa: E402
 
 GAMMAS = [0.25, 0.5, 1.0, 2.0, 4.0]
 ALPHAS = [0.4, 0.6, 0.8]
 QUANTILES = [0.25, 0.5, 0.75]
 
 
-def best_partition(G: FuzzyGraph, Geval: FuzzyGraph, seeds):
-    """Scan gamma and seeds on G; return the partition with the best Q_F on Geval."""
+def best_partition(G: FuzzyGraph, Geval: FuzzyGraph, seeds, practitioner=False):
+    """Scan gamma' and seeds on G.  Oracle protocol (default): keep the partition
+    with the best Q_F on Geval at gamma = 1.  Practitioner protocol: run crisp
+    Leiden on G at the default resolution gamma' = 1 only, keep the seed with the
+    best modularity of G itself (what a user who binarises sees), and report that
+    partition's Q_F on Geval at gamma = 1."""
     best = None
-    for g in GAMMAS:
+    gammas = [1.0] if practitioner else GAMMAS
+    for g in gammas:
         for s in seeds:
             r = fuzzy_leiden(G, g, seed=s, n_iterations=0)
             q = fuzzy_modularity(Geval, r.membership, 1.0)
-            if best is None or q > best[0]:
-                best = (q, g, r.membership)
-    return best
+            key = r.Q_F if practitioner else q
+            if best is None or key > best[3]:
+                best = (q, g, r.membership, key)
+    return best[:3]
 
 
 def level_set(G: FuzzyGraph, alpha: float):
@@ -67,7 +73,7 @@ def run_setting(mu_mean, mu_sd, shift, p_in, n, k, seeds, graph_seed):
         "mu_mean": mu_mean, "mu_sd": mu_sd, "shift": shift, "p_in": p_in, "graph_seed": graph_seed,
         "mu_mean_obs": float(G.mu.mean()), "mu_sd_obs": float(G.mu.std()),
         "fuzzy": {"Q_F": qf, "gamma": gf, "k": int(len(np.unique(pf))),
-                  "NMI_truth": nmi(truth, pf), "ARI_truth": ari(truth, pf),
+                  "NMI_truth": nmi(truth, pf), "ARI_truth": ari(truth, pf), "AMI_truth": ami(truth, pf),
                   "gap_cor1": gap["gap"]},
         "cuts": {},
     }
@@ -79,12 +85,17 @@ def run_setting(mu_mean, mu_sd, shift, p_in, n, k, seeds, graph_seed):
             row["cuts"][key] = None
             continue
         qa, ga, pa = best_partition(Ga, G, seeds)
+        qp, gp, pp = best_partition(Ga, G, seeds, practitioner=True)
         row["cuts"][key] = {
-            "alpha": a, "m_alpha": Ga.m, "mass_kept": float(G.mu[G.mu >= a].sum() / G.W),
+            "alpha": a, "m_alpha": Ga.m, "edge_frac": Ga.m / G.m,
+            "mass_kept": float(G.mu[G.mu >= a].sum() / G.W),
+            "mean_degree_alpha": Ga.m / G.n,
             "gamma_refit": ga, "k": int(len(np.unique(pa))),
             "Q_F_on_fuzzy": qa, "loss": qf - qa,
-            "NMI_truth": nmi(truth, pa), "ARI_truth": ari(truth, pa),
-            "NMI_vs_fuzzy": nmi(pf, pa),
+            "NMI_truth": nmi(truth, pa), "ARI_truth": ari(truth, pa), "AMI_truth": ami(truth, pa),
+            "NMI_vs_fuzzy": nmi(pf, pa), "ARI_vs_fuzzy": ari(pf, pa),
+            "practitioner": {"gamma": gp, "k": int(len(np.unique(pp))), "Q_F_on_fuzzy": qp,
+                             "loss": qf - qp, "ARI_truth": ari(truth, pp), "AMI_truth": ami(truth, pp)},
         }
     return row
 
@@ -131,9 +142,14 @@ def main():
                 if Ga is None:
                     row["cuts"][f"alpha={a}"] = None; continue
                 qa, ga, pa = best_partition(Ga, G, seeds)
-                row["cuts"][f"alpha={a}"] = {"m_alpha": Ga.m, "mass_kept": float(G.mu[G.mu >= a].sum() / G.W),
+                qp, gp, pp = best_partition(Ga, G, seeds, practitioner=True)
+                row["cuts"][f"alpha={a}"] = {"m_alpha": Ga.m, "edge_frac": Ga.m / G.m,
+                                             "mass_kept": float(G.mu[G.mu >= a].sum() / G.W),
                                              "gamma_refit": ga, "k": int(len(np.unique(pa))), "Q_F_on_fuzzy": qa,
-                                             "loss": qf - qa, "NMI_vs_fuzzy": nmi(pf, pa), "ARI_vs_fuzzy": ari(pf, pa)}
+                                             "loss": qf - qa, "NMI_vs_fuzzy": nmi(pf, pa), "ARI_vs_fuzzy": ari(pf, pa),
+                                             "AMI_vs_fuzzy": ami(pf, pa),
+                                             "practitioner": {"gamma": gp, "k": int(len(np.unique(pp))), "Q_F_on_fuzzy": qp,
+                                                              "loss": qf - qp, "ARI_vs_fuzzy": ari(pf, pp), "AMI_vs_fuzzy": ami(pf, pp)}}
             print(json.dumps(row, indent=1), flush=True)
             out.append(row)
         os.makedirs(os.path.dirname(args.out), exist_ok=True)

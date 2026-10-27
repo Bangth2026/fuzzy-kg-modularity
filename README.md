@@ -21,7 +21,9 @@ The paper asks, for three shortcuts that discard the grades on a fuzzy knowledge
 | Resolution threshold and Algorithm 1 | General bipartition threshold θ(B) = (c/W)/(a₁b₂ + a₂b₁) (Proposition 1); degree-preserving null model at a reference resolution with an effect-size floor and a "no structure detected" outcome (Table 7) | `fuzzykg/modularity.py::bipartition_threshold_general`, `fuzzykg/resolution.py::null_model_zscore`, `adaptive_resolution_with_null`, `scripts/null_model_check.py`, `results/null_model.json` |
 | Best paths under Archimedean t-norms | Additive generators; exact best paths by Dijkstra / hop-limited Bellman–Ford (Section 7.3), checked to 1e-15 against bounded enumeration; ordinal-invariance check of max-min (Proposition 3); per-source Kendall τ-b with bootstrap CIs (Table 11b) | `fuzzykg/tnorms.py::generator, generator_best_paths`, `scripts/exact_tnorm_paths.py`, `results/tnorm_paths*.json` |
 | Gates on the uncertain state | Point-estimate, interval-image type-1, probability-of-ZPD and expected-membership gates next to the cautious collapse and the three-valued IT2 gate (Table 13) | `fuzzykg/fuzzification.py` (`gate_*`), `scripts/gate_baselines.py`, `results/gate_baselines.json` |
-| Graph statistics | Components, reciprocity, membership quartiles, NMI of the partition with components or problem sets | `scripts/graph_stats.py`, `results/graph_stats.json` |
+| Graph statistics and reference partitions | Components, reciprocity, membership quartiles; Tables 2–4 recomputed; ARI/AMI of the partition against components and skill-builder problem sets; two null models (degree-preserving, weights-only) with equal seeds (Table 6) | `scripts/graph_stats.py`, `scripts/real_graph_tables.py`, `results/real_graph_tables.json` |
+| Composition on the real graphs | Per-source Kendall τ-b with bootstrap CIs, pooled ρ, max-min tie share on all six graphs; hop table (Tables 11–12) | `scripts/composition_real.py`, `results/composition_real.json`, `results/tnorm_sweep_assist2009_item.txt` (Table 10) |
+| Scale invariance of the binarisation conclusion | Quantile and absolute cuts under random increasing rescalings of μ_E on planted partitions | `scripts/scale_invariance_check.py`, `results/scale_invariance.json` |
 
 Runs on the real graphs (require the public data, see `data/README.md`):
 
@@ -30,6 +32,9 @@ python scripts/benchmark_binarisation.py --edges data/graphs/*_edges.csv   # Tab
 python scripts/null_model_check.py       data/graphs/*_edges.csv           # Table 7
 python scripts/exact_tnorm_paths.py      data/graphs/assist2009_item_edges.csv  # Table 11b
 python scripts/graph_stats.py            data/graphs/*_edges.csv
+python scripts/real_graph_tables.py                                        # Tables 2-4, 6, reference partitions
+python scripts/composition_real.py                                         # Tables 11-12
+python scripts/tnorm_sweep.py data/graphs/assist2009_item_edges.csv --sources 60 --hops 4   # Table 10
 ```
 
 The bounded enumeration (`enumerate_best_paths`) is kept only as a
@@ -160,14 +165,10 @@ The ASSISTments team at Worcester Polytechnic Institute for the datasets, THU-KE
 
 ### Reproduction note (27 Oct 2026)
 
-Rebuilt from the raw public files in a clean environment with the scripts above:
-MOOCCubeX-CS matches Table 2 exactly (59 nodes, 91 edges, μ 0.400/0.934/0.999); the
-five ASSISTments graphs match Table 3 in node and edge counts to within 0.3%
-(2009 KC 110/5069, 2009 item 371/4947, 2015 KC 100/6963, 2017 KC 83/5494,
-2017 item 867/33604) but their mean μ_E is 0.01–0.05 higher than Table 3, and
-`spectral_bisection` returns c/W values different from Table 5. Tables 2–5 and 11 of the paper were produced with an earlier script; `results/null_model.json`,
-`results/binarisation_real.json`, `results/tnorm_paths_assist2009_item.json`
-and `results/graph_stats.json` come from this repository. The loader fixes
-needed to reach the counts above (JSON-lines `cs.json`, CS-discipline filter by
-concept name, one log entry per (learner, order), missing-skill rows dropped at
-item level) are in `data/loaders.py`.
+All numbers in the paper come from this repository. Rebuilt from the raw public
+files in a clean environment: MOOCCubeX-CS has 59 nodes and 91 edges (μ
+0.400/0.934/0.999); the ASSISTments graphs have 2009 KC 110/5069, 2009 item
+371/4947, 2015 KC 100/6963, 2017 KC 83/5494, 2017 item 867/33604 nodes/edges.
+The loader details that produce these counts (JSON-lines `cs.json` with the
+CS-discipline filter by concept name, one log entry per (learner, order),
+missing-skill rows dropped at item level) are in `data/loaders.py`.
