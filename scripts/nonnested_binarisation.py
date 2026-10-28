@@ -77,7 +77,7 @@ def main(seeds=5, lseeds=(0, 1, 2)):
                                    "singleton_share": float((np.bincount(b.membership) == 1).sum() / G.n)}
                 rows.append({"shift": float(shift), "seed": seed, "frac": frac, "cells": cells})
             print(shift, seed, {r: round(c["shortfall"], 2) for r, c in rows[-2]["cells"].items()}, flush=True)
-    def conc(key):
+    def conc(key, sign=1):
         v = []
         for r in rows:
             c = list(r["cells"].values()); s = n = 0
@@ -86,13 +86,14 @@ def main(seeds=5, lseeds=(0, 1, 2)):
                     dl = c[i]["shortfall"] - c[j]["shortfall"]
                     if abs(dl) < 0.01:
                         continue
-                    n += 1; d = c[i][key] - c[j][key]
+                    n += 1; d = sign * (c[i][key] - c[j][key])
                     s += 1 if dl * d > 0 else (0.5 if d == 0 else 0)
             if n:
                 v.append(s / n)
         v = np.array(v); b = [np.mean(rng.choice(v, v.size)) for _ in range(1000)]
         return {"concordance": float(v.mean()), "ci": [float(np.percentile(b, 2.5)), float(np.percentile(b, 97.5))], "graphs": int(v.size)}
-    summary = {k: conc(k) for k in ("index", "qf_drop", "retained_mass", "singleton_share")}
+    # a lower retained mass predicts a larger shortfall, so its sign is reversed
+    summary = {k: conc(k, -1 if k == "retained_mass" else 1) for k in ("index", "qf_drop", "retained_mass", "singleton_share")}
     summary["mean_shortfall_by_rule"] = {rule: {str(fr): float(np.mean([r["cells"][rule]["shortfall"] for r in rows if r["frac"] == fr])) for fr in (0.5, 0.25)} for rule in RULES}
     # partial correlations on the main sweep
     L = json.load(open("results/levelset_shift.json")); X = []

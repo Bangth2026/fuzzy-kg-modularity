@@ -2,21 +2,25 @@
  "drop_cube": {
   "pairs": 330,
   "reversed": 14,
-  "reversed_shortfall_tied": 12
+  "reversed_shortfall_tied": 12,
+  "reversed_k_agrees_with_shortfall": 2
  },
  "drop_cube_root": {
   "pairs": 330,
   "reversed": 12,
-  "reversed_shortfall_tied": 11
+  "reversed_shortfall_tied": 11,
+  "reversed_k_agrees_with_shortfall": 0
  },
  "drop_upper": {
   "pairs": 330,
   "reversed": 9,
-  "reversed_shortfall_tied": 8
+  "reversed_shortfall_tied": 8,
+  "reversed_k_agrees_with_shortfall": 0
  },
  "index": {
   "pairs": 330,
   "reversed": 6,
-  "reversed_shortfall_tied": 5
+  "reversed_shortfall_tied": 5,
+  "reversed_k_agrees_with_shortfall": 0
  }
 }

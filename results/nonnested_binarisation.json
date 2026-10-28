@@ -3869,12 +3869,13 @@
    "graphs": 110
   },
   "retained_mass": {
-   "concordance": 0.09212121212121213,
+   "concordance": 0.9078787878787878,
    "ci": [
-    0.055909090909090915,
-    0.13349999999999998
+    0.8696969696969697,
+    0.9413636363636362
    ],
-   "graphs": 110
+   "graphs": 110,
+   "note": "sign reversed (lower mass, larger shortfall); recomputed from rows by nonnested_summary.py"
   },
   "singleton_share": {
    "concordance": 0.6623484848484849,

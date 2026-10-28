@@ -23,7 +23,7 @@ Every analysis is run on graphs from two constructions of the same logs: a **co-
 - Decisions under rescaling: pairs of cuts whose order changes under monotone rescalings (`scripts/rescaling_decisions.py`); cost index and Q_F drop on co-practice graphs rebuilt at three orness values, quantile and absolute cuts (`scripts/orness_decision.py`).
 - Junyi expert criterion with a two-way cluster bootstrap over exercises, Kendall tau-b, ranking over reached pairs, and transition graphs rebuilt at pruning thresholds 0.1 and 0.3 (`scripts/junyi_cluster_bootstrap.py`).
 - Held-out next-concept MRR under three tie rules (expected reciprocal rank under random tie-breaking, average rank, pessimistic rank) (`scripts/heldout_transitions.py`).
-- Weights-only nulls with more draws for one graph (`scripts/weights_null_more_draws.py`).
+- Weights-only nulls with more draws for one graph (`scripts/weights_null_more_draws.py`); edge-level agreement with the Junyi expert scores with cluster-bootstrap intervals (`scripts/junyi_expert_cluster.py`).
 
 ## What is in version 1.4.1
 
