@@ -220,6 +220,16 @@ def main():
     P = np.tile(np.array([pop.get(lab, 0) for lab in G.labels], dtype=float), (G.n, 1)); np.fill_diagonal(P, -1.0)
     r, per["popularity"] = evaluate(P, test_tr); res["baselines"]["popularity"] = r
     res["baselines"]["random_expected_rr"] = float(np.mean(1.0 / np.arange(1, G.n)))
+    # coverage-only baseline: unweighted hop distance on the training graph (no membership)
+    from scipy.sparse import csr_matrix
+    from scipy.sparse.csgraph import shortest_path
+    Ah = csr_matrix((np.ones(G.m), (G.src, G.dst)), shape=(G.n, G.n)) if not args.tau_path else csr_matrix(
+        (np.ones(int((G.mu >= args.tau_path).sum())), (G.src[G.mu >= args.tau_path], G.dst[G.mu >= args.tau_path])), shape=(G.n, G.n))
+    Dh = shortest_path(Ah, directed=True, unweighted=True)
+    if args.max_hops:
+        Dh[Dh > args.max_hops] = np.inf
+    Hs = np.where(np.isfinite(Dh), 1.0 / (1.0 + Dh), 0.0); np.fill_diagonal(Hs, -1.0)
+    r, per["hop_baseline"] = evaluate(Hs, test_tr, A=A); r["val_mrr"] = evaluate(Hs, val_tr)[0]["mrr"]; res["baselines"]["hop_baseline"] = r
     print("bigram", round(res["baselines"]["bigram"]["mrr_learner_mean"], 4), "direct", round(res["baselines"]["direct_edge"]["mrr_learner_mean"], 4), flush=True)
     if not args.no_grid:
         for fam, grid in (("yager", YAGER_GRID), ("schweizer_sklar", SS_GRID)):
@@ -237,6 +247,11 @@ def main():
     best_op = max(OPERATORS, key=lambda k: res["operators"][k]["mrr_learner_mean"])
     c = paired(per["bigram"], per[best_op]); res["paired"][f"bigram-{best_op}"] = c; ps[f"bigram-{best_op}"] = c["p"]
     c = paired(per["min"], per["direct_edge"]); ps["min-direct_edge"] = c["p"]
+    # operator chosen on validation learners, evaluated on test learners
+    val_op = max(OPERATORS, key=lambda k: res["operators"][k]["val_mrr"])
+    res["validation_selected_operator"] = val_op
+    c = paired(per[val_op], per["hop_baseline"]); res["paired"][f"{val_op}-hop_baseline"] = c; ps[f"{val_op}-hop_baseline"] = c["p"]
+    c = paired(per["hop_baseline"], per["direct_edge"]); res["paired"]["hop_baseline-direct_edge"] = c; ps["hop_baseline-direct_edge"] = c["p"]
     for k, v in holm(ps).items():
         res["paired"][k]["p_holm"] = v
     res["best_operator"] = best_op

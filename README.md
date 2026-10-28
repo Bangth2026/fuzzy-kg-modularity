@@ -16,6 +16,14 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 1.4.1
+
+- Cost decomposition on the real graphs: no-cut (support) baseline, optimiser-seed dispersion of every index, and the index under permuted memberships (`scripts/cost_decomposition.py`); the Q_F drop of the same cuts (`scripts/real_qf_drop.py`).
+- Validity of the index against the recovery shortfall 1 − ARI(cut, truth), within-graph concordance, bootstrap intervals, and the Q_F drop, relative and equal-weighted indices as competitors (`scripts/cost_index_validity_extended.py`); dependence on the unit of μ_E under monotone rescalings (`scripts/rescaling_validity.py`).
+- Memberships against groupings fixed independently of the graph (Junyi topics and areas, ASSISTments skills and assignments), with global and within-source permutations (`scripts/external_reference_test.py`), and the topic agreement of Leiden on Q_F against permuted memberships (`scripts/junyi_topic_partition_check.py`).
+- Composition beyond reachability: an unweighted hop-distance baseline, common-support correlations, split-half operator selection and the density mechanism (`scripts/composition_robustness.py`, `scripts/hop_vs_tnorm.py`); held-out prediction with the hop baseline and the operator selected on validation learners (`scripts/heldout_transitions.py`).
+- Sensitivity of the reference and the disparity filter on all thirteen graphs (`scripts/levelset_sensitivity.py --part real`).
+
 ## What is in version 1.4
 
 - Junyi Academy as a fourth corpus: loader for the problem log and for the expert information (exercise table with knowledge-map parents, topics and areas; pairwise crowd annotations), both constructions, and a check that rebuilds the transition graph without the attempts the platform itself suggested.

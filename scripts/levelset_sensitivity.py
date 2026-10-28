@@ -124,10 +124,17 @@ def summarise_shift(rows):
     print("Qbar seed sd: mean", np.mean([r["Qbar_seed_sd"] for r in rows]), "max", np.max([r["Qbar_seed_sd"] for r in rows]))
 
 
-def part_real(out, seeds=(0, 1, 2, 3, 4)):
-    rows = []
-    for name in ["mooccubex_cs", "mooccubex_cs_full", "assist2009_kc", "assist2009_item", "assist2015_kc",
-                 "assist2017_kc", "assist2017_item"]:
+REAL13 = ["mooccubex_cs", "mooccubex_cs_full", "assist2009_kc", "assist2009_kc_transition", "assist2009_item", "assist2015_kc",
+          "assist2015_kc_transition", "assist2017_kc", "assist2017_kc_transition", "assist2017_item", "assist2017_item_transition",
+          "junyi_copractice", "junyi_transition"]
+
+
+def part_real(out, seeds=(0, 1, 2, 3, 4), names=None):
+    rows = json.load(open(out)) if os.path.exists(out) else []
+    done = {r["graph"] for r in rows}
+    for name in (names or REAL13):
+        if name in done:
+            continue
         df = pd.read_csv(f"data/graphs/{name}_edges.csv")
         G = FuzzyGraph.from_edges(zip(df.src, df.dst, df.mu))
         rec = analyse(G, list(seeds), None, cuts=("a0.2", "a0.4", "a0.6", "q0.50", "q0.75"))
@@ -200,12 +207,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--part", choices=["shift", "real", "correlations", "lfr_seeds"], required=True)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--names", nargs="*", default=None)
     ap.add_argument("--graph-seeds", type=int, default=5, help="graph seeds per shift (part shift)")
     args = ap.parse_args()
     out = args.out or f"results/levelset_sensitivity_{args.part}.json"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     if args.part == "shift":
         part_shift(out, graph_seeds=args.graph_seeds); return
+    if args.part == "real":
+        part_real(out, names=args.names); return
     {"shift": part_shift, "real": part_real, "correlations": part_correlations, "lfr_seeds": part_lfr_seeds}[args.part](out)
 
 
