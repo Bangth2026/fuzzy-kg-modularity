@@ -76,7 +76,7 @@ def strength_matrix(G, name, p, max_hops=None, tau_path=0.0):
 
 def rank_stats(S, src, tgt):
     """Vectorised expected reciprocal rank and hit@10 under random tie-breaking."""
-    rr = np.empty(src.size); h10 = np.empty(src.size)
+    rr = np.empty(src.size); h10 = np.empty(src.size); rr_avg = np.empty(src.size); rr_pess = np.empty(src.size)
     n = S.shape[1]
     harm = np.concatenate([[0.0], np.cumsum(1.0 / np.arange(1, n + 1))])
     for s in np.unique(src):
@@ -86,22 +86,28 @@ def rank_stats(S, src, tgt):
         above = n - np.searchsorted(row, v, side="right")
         ties = np.searchsorted(row, v, side="right") - np.searchsorted(row, v, side="left")
         rr[idx] = (harm[above + ties] - harm[above]) / ties
+        rr_avg[idx] = 1.0 / (above + (ties + 1) / 2.0)      # reciprocal of the average rank among ties
+        rr_pess[idx] = 1.0 / (above + ties)                  # pessimistic: last among ties
         # P(rank <= 10) with the target uniform among its ties
         h10[idx] = np.clip(10 - above, 0, ties) / ties
+    rank_stats.last = (rr_avg, rr_pess)
     return rr, h10
 
 
 def evaluate(S, tr, A=None, H=None, B=1000, rng_seed=0):
     src, tgt, uid = tr
     rr, h10 = rank_stats(S, src, tgt)
-    df = pd.DataFrame({"u": uid, "rr": rr})
+    rr_avg, rr_pess = rank_stats.last
+    df = pd.DataFrame({"u": uid, "rr": rr, "rra": rr_avg, "rrp": rr_pess})
     per = df.groupby("u", sort=True)["rr"].mean()
     rng = np.random.default_rng(rng_seed)
     m = per.to_numpy()
     boots = m[rng.integers(0, m.size, (B, m.size))].mean(axis=1)
     out = {"mrr": float(rr.mean()), "mrr_learner_mean": float(m.mean()),
            "mrr_ci": [float(np.percentile(boots, 2.5)), float(np.percentile(boots, 97.5))],
-           "hit10": float(h10.mean()), "n_transitions": int(rr.size)}
+           "hit10": float(h10.mean()), "n_transitions": int(rr.size),
+           "mrr_learner_mean_average_rank_ties": float(df.groupby("u", sort=True)["rra"].mean().mean()),
+           "mrr_learner_mean_pessimistic_ties": float(df.groupby("u", sort=True)["rrp"].mean().mean())}
     if A is not None:
         a = A[src, tgt]
         out["onehop_share"] = float(np.mean((a > 0) & (np.abs(S[src, tgt] - a) <= 1e-6 * np.maximum(1.0, a) + 1e-9)))

@@ -1,0 +1,47 @@
+{
+ "cases": {
+  "seed0_truth": {
+   "full_grid": 1.1102230246251565e-16,
+   "full_grid_vs_QF": 1.1102230246251565e-16,
+   "quantile_mass": 1.1102230246251565e-16,
+   "quantile_equal": 6.661338147750939e-16,
+   "gap_full": 0.00030092534910909977
+  },
+  "seed0_leiden_qf": {
+   "full_grid": 1.1102230246251565e-16,
+   "full_grid_vs_QF": 1.1102230246251565e-16,
+   "quantile_mass": 1.1102230246251565e-16,
+   "quantile_equal": 6.661338147750939e-16,
+   "gap_full": 0.0003086507316336744
+  },
+  "seed1_truth": {
+   "full_grid": 2.220446049250313e-16,
+   "full_grid_vs_QF": 2.220446049250313e-16,
+   "quantile_mass": 0.0,
+   "quantile_equal": 3.3306690738754696e-16,
+   "gap_full": 0.0002935223505646997
+  },
+  "seed1_leiden_qf": {
+   "full_grid": 0.0,
+   "full_grid_vs_QF": 0.0,
+   "quantile_mass": 0.0,
+   "quantile_equal": 2.220446049250313e-16,
+   "gap_full": 0.000317422986435615
+  },
+  "seed2_truth": {
+   "full_grid": 0.0,
+   "full_grid_vs_QF": 0.0,
+   "quantile_mass": 1.1102230246251565e-16,
+   "quantile_equal": 2.220446049250313e-16,
+   "gap_full": 0.0002041823960644805
+  },
+  "seed2_leiden_qf": {
+   "full_grid": 1.1102230246251565e-16,
+   "full_grid_vs_QF": 1.1102230246251565e-16,
+   "quantile_mass": 0.0,
+   "quantile_equal": 2.220446049250313e-16,
+   "gap_full": 0.00019615406461672563
+  }
+ },
+ "largest_abs_error": 6.661338147750939e-16
+}

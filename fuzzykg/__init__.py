@@ -54,7 +54,7 @@ from .tnorms import (
     widest_path,
 )
 
-__version__ = "1.4.1"
+__version__ = "1.4.2"
 __all__ = [
     "FuzzyGraph",
     "fuzzy_modularity",

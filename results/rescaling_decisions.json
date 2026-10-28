@@ -1,0 +1,22 @@
+{
+ "drop_cube": {
+  "pairs": 330,
+  "reversed": 14,
+  "reversed_shortfall_tied": 12
+ },
+ "drop_cube_root": {
+  "pairs": 330,
+  "reversed": 12,
+  "reversed_shortfall_tied": 11
+ },
+ "drop_upper": {
+  "pairs": 330,
+  "reversed": 9,
+  "reversed_shortfall_tied": 8
+ },
+ "index": {
+  "pairs": 330,
+  "reversed": 6,
+  "reversed_shortfall_tied": 5
+ }
+}

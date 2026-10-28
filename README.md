@@ -16,6 +16,15 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 1.4.2
+
+- Exact finite identity between the level-set (multislice) modularity on any grid and the fuzzy-graph modularity of transformed memberships minus a covariance of degree shares across levels, with a numerical check (`scripts/check_levelset_identity.py`).
+- Binarisations of equal size by four rules (global threshold, per-source top share, disparity filter, random thinning) on the planted sweep, and partial correlations of the cost index and the Q_F drop with the recovery shortfall given retained mass and mean out-degree (`scripts/nonnested_binarisation.py`, `scripts/nonnested_summary.py`).
+- Decisions under rescaling: pairs of cuts whose order changes under monotone rescalings (`scripts/rescaling_decisions.py`); cost index and Q_F drop on co-practice graphs rebuilt at three orness values, quantile and absolute cuts (`scripts/orness_decision.py`).
+- Junyi expert criterion with a two-way cluster bootstrap over exercises, Kendall tau-b, ranking over reached pairs, and transition graphs rebuilt at pruning thresholds 0.1 and 0.3 (`scripts/junyi_cluster_bootstrap.py`).
+- Held-out next-concept MRR under three tie rules (expected reciprocal rank under random tie-breaking, average rank, pessimistic rank) (`scripts/heldout_transitions.py`).
+- Weights-only nulls with more draws for one graph (`scripts/weights_null_more_draws.py`).
+
 ## What is in version 1.4.1
 
 - Cost decomposition on the real graphs: no-cut (support) baseline, optimiser-seed dispersion of every index, and the index under permuted memberships (`scripts/cost_decomposition.py`); the Q_F drop of the same cuts (`scripts/real_qf_drop.py`).
