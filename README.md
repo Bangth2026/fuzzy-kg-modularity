@@ -16,6 +16,13 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 1.4.3
+
+- The rank-coded Q_F drop implied by the level-set identity: one Leiden run on memberships replaced by their quantile-grid ranks; validity against the recovery shortfall, disagreements with the cost index and the Q_F drop, and the size of the covariance term (`scripts/rank_drop_audit.py`, `scripts/rank_drop_summary.py`; merged into `scripts/cost_index_validity_extended.py`).
+- Junyi transition graph rebuilt at five pruning thresholds (none, 0.05, 0.1, 0.2, 0.3) and evaluated on one fixed set of annotated pairs with cluster-bootstrap intervals for Spearman rho and Kendall tau-b (`scripts/junyi_pruning_fixed_pairs.py`); graded composition without pruning against hop count at every threshold on the same resamples (`scripts/junyi_pruning_cross.py`).
+- Degree-preserving null with more draws for one graph (`scripts/degree_null_more_draws.py`).
+- Equal-size binarisations on the LFR-style benchmark (`scripts/nonnested_lfr.py`).
+
 ## What is in version 1.4.2
 
 - Exact finite identity between the level-set (multislice) modularity on any grid and the fuzzy-graph modularity of transformed memberships minus a covariance of degree shares across levels, with a numerical check (`scripts/check_levelset_identity.py`).

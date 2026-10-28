@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "fuzzykg: binarisation and t-norm composition on fuzzy knowledge graphs"
-version: 1.4.2
+version: 1.4.3
 date-released: 2026-10-28
 doi: 10.5281/zenodo.23689762
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity

@@ -13,34 +13,49 @@ Adds to scripts/cost_index_validity.py:
 * 95% bootstrap intervals over benchmark graphs for every pooled Spearman
   correlation and every concordance.
 
+The rank-coded Q_F drop of scripts/rank_drop_audit.py (Lemma 2) is merged by graph
+key when its results exist; graphs it does not cover are then left out.
+
 Usage: python scripts/cost_index_validity_extended.py
 """
 from __future__ import annotations
 import json
+import os
 import numpy as np
 from scipy.stats import spearmanr
 
 CUTS = ("q0.50", "q0.75", "a0.6")
 
 
-def graphs(path):
+def _key(r):
+    return tuple(r.get(k) for k in ("n", "mixing", "shift", "seed"))
+
+
+def graphs(path, rank_path=None):
     rows = json.load(open(path)); out = []
+    rank = {}
+    if rank_path and os.path.exists(rank_path):
+        rank = {_key(r): r for r in json.load(open(rank_path))}
     for r in rows:
         g = []
+        rr = rank.get(_key(r))
         for c in CUTS:
             cc = r["cuts"].get(c)
             if cc is None:
                 continue
+            if rank and (rr is None or rr["cuts"].get(c) is None):
+                continue
             g.append({"loss_fuzzy": r["fuzzy"]["ari"] - cc["ari"], "shortfall": 1.0 - cc["ari"],
                       "cost index": cc["cost_index"], "relative index": cc["cost_index"] / max(r["multislice"]["Qbar"], 1e-12),
                       "equal-weighted index": cc["cost_index_equal"], "Q_F drop": cc["cost_fuzzy"],
-                      "retained mass": -cc["retained_mass"], "mean out-degree": -cc["mean_out_degree_cut"]})
+                      "retained mass": -cc["retained_mass"], "mean out-degree": -cc["mean_out_degree_cut"],
+                      "rank-coded Q_F drop": rr["cuts"][c]["rank_drop"] if rr else float("nan")})
         if g:
             out.append(g)
     return out
 
 
-FEATS = ["cost index", "relative index", "equal-weighted index", "Q_F drop", "retained mass", "mean out-degree"]
+FEATS = ["cost index", "relative index", "equal-weighted index", "Q_F drop", "rank-coded Q_F drop", "retained mass", "mean out-degree"]
 
 
 def pooled(gs, feat, loss):
@@ -84,7 +99,8 @@ def analyse(gs, rng, B=1000):
 
 def main():
     rng = np.random.default_rng(11)
-    res = {"planted_sweep": analyse(graphs("results/levelset_shift.json"), rng), "lfr": analyse(graphs("results/levelset_lfr.json"), rng)}
+    res = {"planted_sweep": analyse(graphs("results/levelset_shift.json", "results/rank_drop_shift.json"), rng),
+           "lfr": analyse(graphs("results/levelset_lfr.json", "results/rank_drop_lfr.json"), rng)}
     json.dump(res, open("results/cost_index_validity_extended.json", "w"), indent=1)
 
 

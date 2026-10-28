@@ -1,0 +1,37 @@
+{
+ "rescale_pairs": {
+  "index": {
+   "pairs": 330,
+   "disagree": 1,
+   "disagree_untied": 0,
+   "rank_agrees_with_shortfall": 0
+  },
+  "drop_identity": {
+   "pairs": 330,
+   "disagree": 6,
+   "disagree_untied": 1,
+   "rank_agrees_with_shortfall": 0
+  }
+ },
+ "shift": {
+  "graphs": 110,
+  "pairs": 330,
+  "covariance_changes_order": 4,
+  "abs_cov_median": 3.9482330246976005e-05,
+  "abs_cov_max": 0.00011282580340288284
+ },
+ "lfr": {
+  "graphs": 300,
+  "pairs": 900,
+  "covariance_changes_order": 0,
+  "abs_cov_median": 4.664147547300823e-05,
+  "abs_cov_max": 0.0002807961461804842
+ },
+ "rescale": {
+  "graphs": 110,
+  "pairs": 330,
+  "covariance_changes_order": 1,
+  "abs_cov_median": 3.96352292769131e-05,
+  "abs_cov_max": 0.00011282580340288284
+ }
+}
