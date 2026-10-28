@@ -1,0 +1,80 @@
+{
+ "planted_sweep": {
+  "n_cells": 330,
+  "n_loss_gt_0.02": 125,
+  "n_loss_gt_0.10": 58,
+  "rho_cost_vs_loss_reference": 0.8983809666191581,
+  "features": {
+   "cost index": {
+    "rho_all": 0.925595999271956,
+    "rho_loss_gt_0.02": 0.8197862055097314,
+    "auc_flag_loss_gt_0.10": 0.990998985801217
+   },
+   "retained mass": {
+    "rho_all": 0.804309903366477,
+    "rho_loss_gt_0.02": 0.5461086490737639,
+    "auc_flag_loss_gt_0.10": 0.9156947261663286
+   },
+   "mean out-degree": {
+    "rho_all": 0.497309789781471,
+    "rho_loss_gt_0.02": -0.1762355751307448,
+    "auc_flag_loss_gt_0.10": 0.6790060851926977
+   },
+   "singleton share": {
+    "rho_all": 0.5900962390498405,
+    "rho_loss_gt_0.02": -0.17366545893275875,
+    "auc_flag_loss_gt_0.10": 0.7146615111561867
+   },
+   "crisp modularity": {
+    "rho_all": 0.4424626298035925,
+    "rho_loss_gt_0.02": 0.778351426039975,
+    "auc_flag_loss_gt_0.10": 0.9357885395537525
+   }
+  },
+  "partial_rho_cost_given_degree": 0.914259993243896,
+  "partial_rho_cost_given_degree_loss_gt_0.02": 0.9216783528412994,
+  "rule_deg_below_2": {
+   "precision": 0.0,
+   "recall": 0.0
+  },
+  "rule_cost_same_flag_rate": {
+   "threshold": Infinity,
+   "precision": 0.0,
+   "recall": 0.0
+  }
+ },
+ "lfr": {
+  "n_cells": 900,
+  "n_loss_gt_0.02": 586,
+  "n_loss_gt_0.10": 404,
+  "rho_cost_vs_loss_reference": 0.8893908357840462,
+  "features": {
+   "cost index": {
+    "rho_all": 0.8965304049965169,
+    "rho_loss_gt_0.02": 0.8449326134984104,
+    "auc_flag_loss_gt_0.10": 0.9609300143724049
+   },
+   "retained mass": {
+    "rho_all": 0.6959819732501342,
+    "rho_loss_gt_0.02": 0.3939790230526373,
+    "auc_flag_loss_gt_0.10": 0.8347672468859788
+   },
+   "mean out-degree": {
+    "rho_all": 0.448288852277681,
+    "rho_loss_gt_0.02": 0.035829644599602264,
+    "auc_flag_loss_gt_0.10": 0.6859879032258065
+   }
+  },
+  "partial_rho_cost_given_degree": 0.9204163882917102,
+  "partial_rho_cost_given_degree_loss_gt_0.02": 0.9313273772587475,
+  "rule_deg_below_2": {
+   "precision": 0.6688888888888889,
+   "recall": 0.745049504950495
+  },
+  "rule_cost_same_flag_rate": {
+   "threshold": 0.02984828696071229,
+   "precision": 0.8066666666666666,
+   "recall": 0.8985148514851485
+  }
+ }
+}

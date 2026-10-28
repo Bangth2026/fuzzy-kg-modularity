@@ -44,7 +44,7 @@ def single_cut(G: FuzzyGraph, alpha: float, seeds):
     except ValueError:
         return None
     best = max((fuzzy_leiden(Ga, 1.0, seed=s, n_iterations=0) for s in seeds), key=lambda r: r.Q_F)
-    return best.membership
+    return best.membership, best.Q_F
 
 
 def evaluate(G: FuzzyGraph, truth, seeds, with_alg1=False, with_persistence=True):
@@ -66,10 +66,12 @@ def evaluate(G: FuzzyGraph, truth, seeds, with_alg1=False, with_persistence=True
             "a0.4": 0.4}
     rec["cuts"] = {}
     for name, a in cuts.items():
-        memb = single_cut(G, a, seeds)
-        if memb is None:
+        sc = single_cut(G, a, seeds)
+        if sc is None:
             rec["cuts"][name] = None
             continue
+        memb, q_level = sc
+        sizes = np.bincount(memb)
         retained = float(G.mu[G.mu >= a].sum() / G.W)
         rec["cuts"][name] = {
             "alpha": a, "ari": ari(truth, memb), "k": int(np.unique(memb).size), "retained_mass": retained,
@@ -79,6 +81,8 @@ def evaluate(G: FuzzyGraph, truth, seeds, with_alg1=False, with_persistence=True
             "cost_fuzzy": f.Q_F - fuzzy_modularity(G, memb, 1.0),
             "ari_vs_multislice": ari(ms.membership, memb),
             "persistence_cost": persistence_cost(tracks, a, G.W, 0.05) if tracks is not None else None,
+            "singleton_share": float((sizes == 1).sum() / G.n),
+            "crisp_modularity": float(q_level),
         }
     if with_alg1:
         t0 = time.perf_counter()

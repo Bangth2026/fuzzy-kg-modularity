@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from data.loaders import load_assistments  # noqa: E402
-from fuzzykg.construction import ConstructionConfig, build_fuzzy_graph  # noqa: E402
+from fuzzykg.construction import ConstructionConfig, TransitionConfig, build_fuzzy_graph, build_transition_graph  # noqa: E402
 
 
 def main():
@@ -34,6 +34,8 @@ def main():
     ap.add_argument("--min-support", type=int, default=20)
     ap.add_argument("--tau-e", type=float, default=0.2)
     ap.add_argument("--orness", type=float, default=None, help="regenerate OWA weights from an orness target (Section 8.4)")
+    ap.add_argument("--construction", default="copractice", choices=["copractice", "transition"],
+                    help="co-practice construction of Section 7.1 or the order-preserving transition construction")
     ap.add_argument("--out", default=str(ROOT / "data" / "graphs"))
     for c in ("user", "kc", "correct", "order"):
         ap.add_argument(f"--{c}", default=None, help=f"column override for {c}")
@@ -49,12 +51,15 @@ def main():
         cfg.owa_weights = tuple(owa_weights_from_orness(args.orness, 3))
         print(f"OWA weights from orness {args.orness}: {cfg.owa_weights}")
     t0 = time.perf_counter()
-    G, tab = build_fuzzy_graph(df, cfg)
+    if args.construction == "copractice":
+        G, tab = build_fuzzy_graph(df, cfg)
+    else:
+        G, tab = build_transition_graph(df, TransitionConfig(min_support=args.min_support, tau_E=args.tau_e))
     dt = time.perf_counter() - t0
     print(G.summary(), f"build {dt:.1f} s")
 
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
-    name = f"assist{args.release}_{args.level}"
+    name = f"assist{args.release}_{args.level}" + ("" if args.construction == "copractice" else "_transition")
     import pandas as pd
     pd.DataFrame({"src": G.src, "dst": G.dst, "mu": G.mu}).to_csv(out / f"{name}_edges.csv", index=False)
     pd.DataFrame({"id": range(G.n), "label": G.labels}).to_csv(out / f"{name}_nodes.csv", index=False)

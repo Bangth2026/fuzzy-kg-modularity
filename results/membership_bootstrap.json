@@ -1,0 +1,26 @@
+{
+ "2009_kc": {
+  "edges": 5069,
+  "mu_sd_across_edges": 0.11853535060690826,
+  "bootstrap_sd_mean": 0.0817387877887425,
+  "bootstrap_sd_median": 0.041863156756849075,
+  "bootstrap_sd_q90": 0.21165437379473004,
+  "share_edges_dropped_some_resample": 0.3547050700335372
+ },
+ "2017_kc": {
+  "edges": 5494,
+  "mu_sd_across_edges": 0.06495280921880306,
+  "bootstrap_sd_mean": 0.04131339831217619,
+  "bootstrap_sd_median": 0.027071124458092483,
+  "bootstrap_sd_q90": 0.07714356991145889,
+  "share_edges_dropped_some_resample": 0.10720786312340735
+ },
+ "2015_kc": {
+  "edges": 6963,
+  "mu_sd_across_edges": 0.0990598619282442,
+  "bootstrap_sd_mean": 0.06318291523780395,
+  "bootstrap_sd_median": 0.03378520714839359,
+  "bootstrap_sd_q90": 0.1708273910827822,
+  "share_edges_dropped_some_resample": 0.23725405715927042
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "n_annotated": 1954,
+ "n_map_edges": 981,
+ "score_by_relation": {
+  "parent_is_B": 6.121733133364342,
+  "parent_is_A": 5.168228626732076,
+  "unrelated": 4.013243581374807
+ },
+ "graphs": {
+  "junyi_copractice": {
+   "n_pairs": 1954,
+   "coverage": 0.95496417604913,
+   "rho_directed": 0.3101943642051059,
+   "rho_directed_ci": [
+    0.2701288758440267,
+    0.3493964042457839
+   ],
+   "rho_difference": 0.24018541401843949,
+   "rho_difference_ci": [
+    0.20019437823534197,
+    0.28326328913619414
+   ],
+   "rho_undirected": 0.27658056757131433,
+   "rho_undirected_ci": [
+    0.23137062766530317,
+    0.32010291838496163
+   ],
+   "map_links": 896,
+   "map_auc_undirected": 0.8632388990752552,
+   "map_auc_directed": 0.9507010323660714,
+   "map_links_present": 0.9754464285714286,
+   "map_direction_accuracy": 0.9519450800915332
+  },
+  "junyi_transition": {
+   "n_pairs": 1873,
+   "coverage": 0.2172984516817939,
+   "rho_directed": 0.3754756671233894,
+   "rho_directed_ci": [
+    0.3391589899545843,
+    0.4086311636451981
+   ],
+   "rho_difference": 0.18677821620173835,
+   "rho_difference_ci": [
+    0.13953520067173286,
+    0.23349646395396859
+   ],
+   "rho_undirected": 0.4081444857112697,
+   "rho_undirected_ci": [
+    0.37342004486309066,
+    0.44278123317741774
+   ],
+   "map_links": 756,
+   "map_auc_undirected": 0.6671849192351837,
+   "map_auc_directed": 0.6574214047759022,
+   "map_links_present": 0.33994708994708994,
+   "map_direction_accuracy": 0.9610894941634242
+  }
+ }
+}

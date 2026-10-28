@@ -1,0 +1,26 @@
+{
+ "junyi_copractice": {
+  "n": 716,
+  "m": 191962,
+  "min": 1.1,
+  "product": 0.51,
+  "yager_5": 0.82,
+  "product_L3": 0.2
+ },
+ "junyi_transition": {
+  "n": 628,
+  "m": 1078,
+  "min": 0.04,
+  "product": 0.1,
+  "yager_5": 0.11,
+  "product_L3": 0.01
+ },
+ "assist2017_item": {
+  "n": 867,
+  "m": 33604,
+  "min": 0.7,
+  "product": 0.36,
+  "yager_5": 0.64,
+  "product_L3": 0.1
+ }
+}

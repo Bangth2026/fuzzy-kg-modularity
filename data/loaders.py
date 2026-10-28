@@ -91,3 +91,28 @@ def load_mooccubex_cs(root: Optional[str] = None, discipline: str = "计算机�
         if (full or (a in assessed and b in assessed)) and a != b:
             rows.append((a, b, float(w)))
     return pd.DataFrame(rows, columns=["src", "dst", "mu"]), assessed
+
+
+def load_junyi(path: Optional[str] = None) -> pd.DataFrame:
+    """Junyi Academy problem log (Chang, Hsu and Chen, EDM 2015; release of Jan 2015).
+    One row per problem attempt; KC = exercise; correct = first attempt correct
+    without hints; order = time_done (microseconds)."""
+    p = Path(path) if path else RAW / "junyi" / "junyi" / "junyi_ProblemLog_original.csv"
+    df = pd.read_csv(p, usecols=["user_id", "exercise", "time_done", "correct"],
+                     dtype={"user_id": "int64", "exercise": "category", "time_done": "int64", "correct": "string"})
+    df["correct"] = (df["correct"].str.lower() == "true").astype("int8")
+    out = pd.DataFrame({"user_id": df["user_id"].astype("int64"), "kc": df["exercise"].astype(str),
+                        "correct": df["correct"], "order": df["time_done"]})
+    out = out.drop_duplicates(subset=["user_id", "order", "kc"], keep="first")
+    return out.reset_index(drop=True)
+
+
+def load_junyi_expert(root: Optional[str] = None):
+    """Expert information released with Junyi: the exercise table (knowledge-map
+    parent, topic, area) and the crowd-annotated pairwise prerequisite scores
+    (1-9, training and testing files pooled).  Returns (exercises, annotations)."""
+    root = Path(root) if root else RAW / "junyi" / "junyi"
+    ex = pd.read_csv(root / "junyi_Exercise_table.csv", encoding="utf-8-sig")
+    ann = pd.concat([pd.read_csv(root / "relationship_annotation_training.csv"),
+                     pd.read_csv(root / "relationship_annotation_testing.csv")], ignore_index=True)
+    return ex, ann
