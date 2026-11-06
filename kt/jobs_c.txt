@@ -1,0 +1,316 @@
+--data assist09 --frac 0.1 --sub 0 --seed 1 --cond empty
+--data assist09 --frac 0.1 --sub 0 --seed 2 --cond empty
+--data assist12 --frac 0.1 --sub 0 --seed 1 --cond empty
+--data assist12 --frac 0.1 --sub 0 --seed 2 --cond empty
+--data assist15 --frac 0.1 --sub 0 --seed 1 --cond empty
+--data assist15 --frac 0.1 --sub 0 --seed 2 --cond empty
+--data assist17 --frac 0.1 --sub 0 --seed 1 --cond empty
+--data assist17 --frac 0.1 --sub 0 --seed 2 --cond empty
+--data junyi --frac 0.1 --sub 0 --seed 1 --cond empty
+--data junyi --frac 0.1 --sub 0 --seed 2 --cond empty
+--data algebra05 --frac 0.1 --sub 0 --seed 1 --cond empty
+--data algebra05 --frac 0.1 --sub 0 --seed 2 --cond empty
+--data eedi --frac 0.1 --sub 0 --seed 1 --cond empty
+--data eedi --frac 0.1 --sub 0 --seed 2 --cond empty
+--data ednet --frac 0.1 --sub 0 --seed 1 --cond empty
+--data ednet --frac 0.1 --sub 0 --seed 2 --cond empty
+--data assist09 --frac 0.05 --sub 0 --cond empty
+--data assist09 --frac 0.05 --sub 0 --cond support
+--data assist09 --frac 0.05 --sub 1 --cond empty
+--data assist09 --frac 0.05 --sub 1 --cond support
+--data assist09 --frac 0.05 --sub 2 --cond empty
+--data assist09 --frac 0.05 --sub 2 --cond support
+--data assist09 --frac 0.05 --sub 3 --cond empty
+--data assist09 --frac 0.05 --sub 3 --cond support
+--data assist09 --frac 0.05 --sub 4 --cond empty
+--data assist09 --frac 0.05 --sub 4 --cond support
+--data assist12 --frac 0.05 --sub 0 --cond empty
+--data assist12 --frac 0.05 --sub 0 --cond support
+--data assist12 --frac 0.05 --sub 1 --cond empty
+--data assist12 --frac 0.05 --sub 1 --cond support
+--data assist12 --frac 0.05 --sub 2 --cond empty
+--data assist12 --frac 0.05 --sub 2 --cond support
+--data assist12 --frac 0.05 --sub 3 --cond empty
+--data assist12 --frac 0.05 --sub 3 --cond support
+--data assist12 --frac 0.05 --sub 4 --cond empty
+--data assist12 --frac 0.05 --sub 4 --cond support
+--data assist15 --frac 0.05 --sub 0 --cond empty
+--data assist15 --frac 0.05 --sub 0 --cond support
+--data assist15 --frac 0.05 --sub 1 --cond empty
+--data assist15 --frac 0.05 --sub 1 --cond support
+--data assist15 --frac 0.05 --sub 2 --cond empty
+--data assist15 --frac 0.05 --sub 2 --cond support
+--data assist15 --frac 0.05 --sub 3 --cond empty
+--data assist15 --frac 0.05 --sub 3 --cond support
+--data assist15 --frac 0.05 --sub 4 --cond empty
+--data assist15 --frac 0.05 --sub 4 --cond support
+--data assist17 --frac 0.05 --sub 0 --cond empty
+--data assist17 --frac 0.05 --sub 0 --cond support
+--data assist17 --frac 0.05 --sub 1 --cond empty
+--data assist17 --frac 0.05 --sub 1 --cond support
+--data assist17 --frac 0.05 --sub 2 --cond empty
+--data assist17 --frac 0.05 --sub 2 --cond support
+--data assist17 --frac 0.05 --sub 3 --cond empty
+--data assist17 --frac 0.05 --sub 3 --cond support
+--data assist17 --frac 0.05 --sub 4 --cond empty
+--data assist17 --frac 0.05 --sub 4 --cond support
+--data junyi --frac 0.05 --sub 0 --cond empty
+--data junyi --frac 0.05 --sub 0 --cond support
+--data junyi --frac 0.05 --sub 1 --cond empty
+--data junyi --frac 0.05 --sub 1 --cond support
+--data junyi --frac 0.05 --sub 2 --cond empty
+--data junyi --frac 0.05 --sub 2 --cond support
+--data junyi --frac 0.05 --sub 3 --cond empty
+--data junyi --frac 0.05 --sub 3 --cond support
+--data junyi --frac 0.05 --sub 4 --cond empty
+--data junyi --frac 0.05 --sub 4 --cond support
+--data algebra05 --frac 0.05 --sub 0 --cond empty
+--data algebra05 --frac 0.05 --sub 0 --cond support
+--data algebra05 --frac 0.05 --sub 1 --cond empty
+--data algebra05 --frac 0.05 --sub 1 --cond support
+--data algebra05 --frac 0.05 --sub 2 --cond empty
+--data algebra05 --frac 0.05 --sub 2 --cond support
+--data algebra05 --frac 0.05 --sub 3 --cond empty
+--data algebra05 --frac 0.05 --sub 3 --cond support
+--data algebra05 --frac 0.05 --sub 4 --cond empty
+--data algebra05 --frac 0.05 --sub 4 --cond support
+--data eedi --frac 0.05 --sub 0 --cond empty
+--data eedi --frac 0.05 --sub 0 --cond support
+--data eedi --frac 0.05 --sub 1 --cond empty
+--data eedi --frac 0.05 --sub 1 --cond support
+--data eedi --frac 0.05 --sub 2 --cond empty
+--data eedi --frac 0.05 --sub 2 --cond support
+--data eedi --frac 0.05 --sub 3 --cond empty
+--data eedi --frac 0.05 --sub 3 --cond support
+--data eedi --frac 0.05 --sub 4 --cond empty
+--data eedi --frac 0.05 --sub 4 --cond support
+--data ednet --frac 0.05 --sub 0 --cond empty
+--data ednet --frac 0.05 --sub 0 --cond support
+--data ednet --frac 0.05 --sub 1 --cond empty
+--data ednet --frac 0.05 --sub 1 --cond support
+--data ednet --frac 0.05 --sub 2 --cond empty
+--data ednet --frac 0.05 --sub 2 --cond support
+--data ednet --frac 0.05 --sub 3 --cond empty
+--data ednet --frac 0.05 --sub 3 --cond support
+--data ednet --frac 0.05 --sub 4 --cond empty
+--data ednet --frac 0.05 --sub 4 --cond support
+--data bridge06 --frac 0.05 --sub 0 --cond empty
+--data bridge06 --frac 0.05 --sub 0 --cond support
+--data bridge06 --frac 0.05 --sub 1 --cond empty
+--data bridge06 --frac 0.05 --sub 1 --cond support
+--data bridge06 --frac 0.05 --sub 2 --cond empty
+--data bridge06 --frac 0.05 --sub 2 --cond support
+--data bridge06 --frac 0.05 --sub 3 --cond empty
+--data bridge06 --frac 0.05 --sub 3 --cond support
+--data bridge06 --frac 0.05 --sub 4 --cond empty
+--data bridge06 --frac 0.05 --sub 4 --cond support
+--data statics11 --frac 0.05 --sub 0 --cond empty
+--data statics11 --frac 0.05 --sub 0 --cond support
+--data statics11 --frac 0.05 --sub 1 --cond empty
+--data statics11 --frac 0.05 --sub 1 --cond support
+--data statics11 --frac 0.05 --sub 2 --cond empty
+--data statics11 --frac 0.05 --sub 2 --cond support
+--data statics11 --frac 0.05 --sub 3 --cond empty
+--data statics11 --frac 0.05 --sub 3 --cond support
+--data statics11 --frac 0.05 --sub 4 --cond empty
+--data statics11 --frac 0.05 --sub 4 --cond support
+--data assist09 --frac 0.25 --sub 0 --cond empty
+--data assist09 --frac 0.25 --sub 0 --cond support
+--data assist09 --frac 0.25 --sub 0 --cond recency
+--data assist09 --frac 0.25 --sub 0 --cond rewired
+--data assist09 --frac 0.25 --sub 1 --cond empty
+--data assist09 --frac 0.25 --sub 1 --cond support
+--data assist09 --frac 0.25 --sub 1 --cond recency
+--data assist09 --frac 0.25 --sub 1 --cond rewired
+--data assist09 --frac 0.25 --sub 2 --cond empty
+--data assist09 --frac 0.25 --sub 2 --cond support
+--data assist09 --frac 0.25 --sub 2 --cond recency
+--data assist09 --frac 0.25 --sub 2 --cond rewired
+--data assist12 --frac 0.25 --sub 0 --cond empty
+--data assist12 --frac 0.25 --sub 0 --cond support
+--data assist12 --frac 0.25 --sub 0 --cond recency
+--data assist12 --frac 0.25 --sub 0 --cond rewired
+--data assist12 --frac 0.25 --sub 1 --cond empty
+--data assist12 --frac 0.25 --sub 1 --cond support
+--data assist12 --frac 0.25 --sub 1 --cond recency
+--data assist12 --frac 0.25 --sub 1 --cond rewired
+--data assist12 --frac 0.25 --sub 2 --cond empty
+--data assist12 --frac 0.25 --sub 2 --cond support
+--data assist12 --frac 0.25 --sub 2 --cond recency
+--data assist12 --frac 0.25 --sub 2 --cond rewired
+--data assist15 --frac 0.25 --sub 0 --cond empty
+--data assist15 --frac 0.25 --sub 0 --cond support
+--data assist15 --frac 0.25 --sub 0 --cond recency
+--data assist15 --frac 0.25 --sub 0 --cond rewired
+--data assist15 --frac 0.25 --sub 1 --cond empty
+--data assist15 --frac 0.25 --sub 1 --cond support
+--data assist15 --frac 0.25 --sub 1 --cond recency
+--data assist15 --frac 0.25 --sub 1 --cond rewired
+--data assist15 --frac 0.25 --sub 2 --cond empty
+--data assist15 --frac 0.25 --sub 2 --cond support
+--data assist15 --frac 0.25 --sub 2 --cond recency
+--data assist15 --frac 0.25 --sub 2 --cond rewired
+--data assist17 --frac 0.25 --sub 0 --cond empty
+--data assist17 --frac 0.25 --sub 0 --cond support
+--data assist17 --frac 0.25 --sub 0 --cond recency
+--data assist17 --frac 0.25 --sub 0 --cond rewired
+--data assist17 --frac 0.25 --sub 1 --cond empty
+--data assist17 --frac 0.25 --sub 1 --cond support
+--data assist17 --frac 0.25 --sub 1 --cond recency
+--data assist17 --frac 0.25 --sub 1 --cond rewired
+--data assist17 --frac 0.25 --sub 2 --cond empty
+--data assist17 --frac 0.25 --sub 2 --cond support
+--data assist17 --frac 0.25 --sub 2 --cond recency
+--data assist17 --frac 0.25 --sub 2 --cond rewired
+--data junyi --frac 0.25 --sub 0 --cond empty
+--data junyi --frac 0.25 --sub 0 --cond support
+--data junyi --frac 0.25 --sub 0 --cond recency
+--data junyi --frac 0.25 --sub 0 --cond rewired
+--data junyi --frac 0.25 --sub 1 --cond empty
+--data junyi --frac 0.25 --sub 1 --cond support
+--data junyi --frac 0.25 --sub 1 --cond recency
+--data junyi --frac 0.25 --sub 1 --cond rewired
+--data junyi --frac 0.25 --sub 2 --cond empty
+--data junyi --frac 0.25 --sub 2 --cond support
+--data junyi --frac 0.25 --sub 2 --cond recency
+--data junyi --frac 0.25 --sub 2 --cond rewired
+--data algebra05 --frac 0.25 --sub 0 --cond empty
+--data algebra05 --frac 0.25 --sub 0 --cond support
+--data algebra05 --frac 0.25 --sub 0 --cond recency
+--data algebra05 --frac 0.25 --sub 0 --cond rewired
+--data algebra05 --frac 0.25 --sub 1 --cond empty
+--data algebra05 --frac 0.25 --sub 1 --cond support
+--data algebra05 --frac 0.25 --sub 1 --cond recency
+--data algebra05 --frac 0.25 --sub 1 --cond rewired
+--data algebra05 --frac 0.25 --sub 2 --cond empty
+--data algebra05 --frac 0.25 --sub 2 --cond support
+--data algebra05 --frac 0.25 --sub 2 --cond recency
+--data algebra05 --frac 0.25 --sub 2 --cond rewired
+--data eedi --frac 0.25 --sub 0 --cond empty
+--data eedi --frac 0.25 --sub 0 --cond support
+--data eedi --frac 0.25 --sub 0 --cond recency
+--data eedi --frac 0.25 --sub 0 --cond rewired
+--data eedi --frac 0.25 --sub 1 --cond empty
+--data eedi --frac 0.25 --sub 1 --cond support
+--data eedi --frac 0.25 --sub 1 --cond recency
+--data eedi --frac 0.25 --sub 1 --cond rewired
+--data eedi --frac 0.25 --sub 2 --cond empty
+--data eedi --frac 0.25 --sub 2 --cond support
+--data eedi --frac 0.25 --sub 2 --cond recency
+--data eedi --frac 0.25 --sub 2 --cond rewired
+--data ednet --frac 0.25 --sub 0 --cond empty
+--data ednet --frac 0.25 --sub 0 --cond support
+--data ednet --frac 0.25 --sub 0 --cond recency
+--data ednet --frac 0.25 --sub 0 --cond rewired
+--data ednet --frac 0.25 --sub 1 --cond empty
+--data ednet --frac 0.25 --sub 1 --cond support
+--data ednet --frac 0.25 --sub 1 --cond recency
+--data ednet --frac 0.25 --sub 1 --cond rewired
+--data ednet --frac 0.25 --sub 2 --cond empty
+--data ednet --frac 0.25 --sub 2 --cond support
+--data ednet --frac 0.25 --sub 2 --cond recency
+--data ednet --frac 0.25 --sub 2 --cond rewired
+--data bridge06 --frac 0.25 --sub 0 --cond empty
+--data bridge06 --frac 0.25 --sub 0 --cond support
+--data bridge06 --frac 0.25 --sub 0 --cond recency
+--data bridge06 --frac 0.25 --sub 0 --cond rewired
+--data bridge06 --frac 0.25 --sub 1 --cond empty
+--data bridge06 --frac 0.25 --sub 1 --cond support
+--data bridge06 --frac 0.25 --sub 1 --cond recency
+--data bridge06 --frac 0.25 --sub 1 --cond rewired
+--data bridge06 --frac 0.25 --sub 2 --cond empty
+--data bridge06 --frac 0.25 --sub 2 --cond support
+--data bridge06 --frac 0.25 --sub 2 --cond recency
+--data bridge06 --frac 0.25 --sub 2 --cond rewired
+--data statics11 --frac 0.25 --sub 0 --cond empty
+--data statics11 --frac 0.25 --sub 0 --cond support
+--data statics11 --frac 0.25 --sub 0 --cond recency
+--data statics11 --frac 0.25 --sub 0 --cond rewired
+--data statics11 --frac 0.25 --sub 1 --cond empty
+--data statics11 --frac 0.25 --sub 1 --cond support
+--data statics11 --frac 0.25 --sub 1 --cond recency
+--data statics11 --frac 0.25 --sub 1 --cond rewired
+--data statics11 --frac 0.25 --sub 2 --cond empty
+--data statics11 --frac 0.25 --sub 2 --cond support
+--data statics11 --frac 0.25 --sub 2 --cond recency
+--data statics11 --frac 0.25 --sub 2 --cond rewired
+--data assist09 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data assist09 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data assist09 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data assist09 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data assist09 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data assist09 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data assist12 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data assist12 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data assist12 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data assist12 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data assist12 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data assist12 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data assist15 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data assist15 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data assist15 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data assist15 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data assist15 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data assist15 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data assist17 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data assist17 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data assist17 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data assist17 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data assist17 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data assist17 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data junyi --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data junyi --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data junyi --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data junyi --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data junyi --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data junyi --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data algebra05 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data algebra05 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data algebra05 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data algebra05 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data algebra05 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data algebra05 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data eedi --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data eedi --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data eedi --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data eedi --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data eedi --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data eedi --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data ednet --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data ednet --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data ednet --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data ednet --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data ednet --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data ednet --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data bridge06 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data bridge06 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data bridge06 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data bridge06 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data bridge06 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data bridge06 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data statics11 --frac 0.1 --sub 0 --cond empty --lr_scalar 0.05
+--data statics11 --frac 0.1 --sub 0 --cond support --lr_scalar 0.05
+--data statics11 --frac 0.1 --sub 1 --cond empty --lr_scalar 0.05
+--data statics11 --frac 0.1 --sub 1 --cond support --lr_scalar 0.05
+--data statics11 --frac 0.1 --sub 2 --cond empty --lr_scalar 0.05
+--data statics11 --frac 0.1 --sub 2 --cond support --lr_scalar 0.05
+--data statics11 --frac 1.0 --sub 0 --cond empty
+--data statics11 --frac 1.0 --sub 0 --cond support
+--data algebra05 --frac 1.0 --sub 0 --cond empty
+--data algebra05 --frac 1.0 --sub 0 --cond support
+--data bridge06 --frac 1.0 --sub 0 --cond empty
+--data bridge06 --frac 1.0 --sub 0 --cond support
+--data assist17 --frac 1.0 --sub 0 --cond empty
+--data assist17 --frac 1.0 --sub 0 --cond support
+--data assist09 --frac 1.0 --sub 0 --cond empty
+--data assist09 --frac 1.0 --sub 0 --cond support
+--data assist15 --frac 1.0 --sub 0 --cond empty
+--data assist15 --frac 1.0 --sub 0 --cond support
+--data eedi --frac 1.0 --sub 0 --cond empty
+--data eedi --frac 1.0 --sub 0 --cond support
+--data ednet --frac 1.0 --sub 0 --cond empty
+--data ednet --frac 1.0 --sub 0 --cond support
+--data assist12 --frac 1.0 --sub 0 --cond empty
+--data assist12 --frac 1.0 --sub 0 --cond support
+--data junyi --frac 1.0 --sub 0 --cond empty
+--data junyi --frac 1.0 --sub 0 --cond support

@@ -2,7 +2,7 @@
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *Binarisation and t-norm composition on fuzzy knowledge graphs: a multislice reference, a calibrated null test and expert-labelled criteria.* Submitted to **Information Sciences**. Saigon International University, Ho Chi Minh City, Vietnam. ORCID 0000-0001-5094-3128.
+> Hai Bang Truong. *When does a concept graph help a neural knowledge tracer? A controlled learning-curve study with fuzzy prerequisite graphs on ten corpora.* Submitted to **Neurocomputing** (earlier title: *Fuzzy prerequisite knowledge graphs for neural knowledge tracing: when the graph helps, what it should carry, and a certified modularity audit*).
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -15,6 +15,14 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 3. **Composition.** Best paths under every continuous Archimedean t-norm are shortest paths through the additive generator; all-pairs best-path strengths for ten operators, with optional hop limit and path floor (`fuzzykg/paths_fast.py`). The operators are judged against expert prerequisite labels (Junyi Academy crowd scores and knowledge map; MOOCCubeX held-out expert edges) and against the learner's next concept in held-out logs, with direct-edge, bigram and popularity baselines and paired bootstrap intervals over learners.
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
+
+## What is in version 2.1.0
+
+The knowledge-tracing experiments live in `kt/` (see `kt/README.md`). Version 2.1.0 adds the controls of revision R5: a graph-free recency bias and a degree-preserving rewiring of the graph, run with the release-2.0.0 model on ten corpora (five subsamples at 10%, three at 25%); the empty-graph control rerun on the 10% sample of release 2.0.0 with three seeds; the support graph against the control at 5%, 10%, 25% and 100%; one cell with a larger learning rate for the graph scalars; preprocessing of Bridge to Algebra 2006 and Statics 2011; and a memory-light Junyi preprocessing. Run files in `kt/runs_r5/`, results in `kt/results_r5/`.
+
+## What is in version 2.0.0
+
+`kt/`: preprocessing of eight corpora, fuzzy prerequisite graphs from training learners, DKT, SAKT, AKT, GKT and FKG-KT training on CPU, and the 527 run files of the first Neurocomputing version (archived on Zenodo, 10.5281/zenodo.23830895).
 
 ## What is in version 1.4.3
 

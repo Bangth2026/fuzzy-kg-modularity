@@ -1,0 +1,26 @@
+{
+ "rank_drop": {
+  "rho_shortfall": 0.9344862602045558,
+  "rho_loss": 0.7606211645921548,
+  "concordance": 0.9925093632958801,
+  "pairs": 267
+ },
+ "qf_drop": {
+  "rho_shortfall": 0.8665596232527474,
+  "rho_loss": 0.869065235085922,
+  "concordance": 1.0,
+  "pairs": 267
+ },
+ "retained_mass": {
+  "rho_shortfall": 0.7936872396444943,
+  "rho_loss": 0.8473851676537022,
+  "concordance": 0.9925093632958801,
+  "pairs": 267
+ },
+ "mean_outdeg": {
+  "rho_shortfall": 0.753789218438102,
+  "rho_loss": 0.6902141259850161,
+  "concordance": 0.9925093632958801,
+  "pairs": 267
+ }
+}
