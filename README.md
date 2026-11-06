@@ -2,7 +2,7 @@
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *Binarisation and t-norm composition on fuzzy knowledge graphs: a multislice reference, a calibrated null test and expert-labelled criteria.* Submitted to **Information Sciences**. Saigon International University, Ho Chi Minh City, Vietnam. ORCID 0000-0001-5094-3128.
+> Hai Bang Truong. *Fuzzy prerequisite knowledge graphs for neural knowledge tracing: when the graph helps, what it should carry, and a certified modularity audit.* Submitted to **Neurocomputing**.
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
