@@ -74,6 +74,18 @@ def ednet():
     tagpart={}
     for qid,t in tag.items(): tagpart.setdefault(t,part[qid])
     return finish(pd.DataFrame({'user':d.user,'kc':d.kc,'correct':d.correct,'order':d.timestamp*1000+d.solving_id%1000}),'ednet',meta={k:str(v) for k,v in tagpart.items()})
+
+def bridge06():
+    d=pd.read_csv(f'{R}/bridge/bridge_to_algebra_2006_2007/bridge_to_algebra_2006_2007_train.txt',sep='\t',usecols=['Row','Anon Student Id','KC(SubSkills)','Correct First Attempt','Problem Hierarchy'])
+    d=d.dropna(subset=['KC(SubSkills)']); d['kc']=d['KC(SubSkills)'].str.split('~~').str[0]
+    unit=d.groupby('kc')['Problem Hierarchy'].agg(lambda s:s.str.split(',').str[0].mode().iloc[0]).to_dict()
+    return finish(pd.DataFrame({'user':d['Anon Student Id'],'kc':d.kc,'correct':d['Correct First Attempt'],'order':d.Row}),'bridge06',meta=unit)
+def statics():
+    d=pd.read_csv(f'{R}/statics/AllData_student_step_2011F.csv',usecols=['Row','Anon Student Id','KC (F2011)','First Attempt','Problem Hierarchy'],encoding='utf-8-sig')
+    d=d.dropna(subset=['KC (F2011)']); d=d[d['First Attempt'].isin(['correct','incorrect','hint'])]
+    d['kc']=d['KC (F2011)'].str.split('~~').str[0]; d['c']=(d['First Attempt']=='correct').astype(int)
+    unit=d.groupby('kc')['Problem Hierarchy'].agg(lambda s:s.astype(str).str.split(',').str[1].mode().iloc[0]).to_dict()
+    return finish(pd.DataFrame({'user':d['Anon Student Id'],'kc':d.kc,'correct':d.c,'order':d.Row}),'statics11',meta=unit)
 if __name__=='__main__':
     out={}
     for f in sys.argv[1:]: out[f]=globals()[f]()
