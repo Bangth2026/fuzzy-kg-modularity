@@ -1,0 +1,360 @@
+{
+ "pykt": {
+  "assist2015|dkt": {
+   "mean": 0.7274993798357068,
+   "sd": 0.0004772523353175252,
+   "n": 3,
+   "epochs": 15.0,
+   "secs": 2788.7224222024283,
+   "published": 0.7271,
+   "published_sd": 0.0005
+  },
+  "assist2015|fkg_empty": {
+   "mean": 0.7291442670090446,
+   "sd": 0.0003812370891158066,
+   "n": 3,
+   "epochs": 22.333333333333332,
+   "secs": 2344.1528231302896,
+   "published": null,
+   "published_sd": null
+  },
+  "assist2015|fkg_support": {
+   "mean": 0.729214480264929,
+   "sd": 0.0002899234510390407,
+   "n": 3,
+   "epochs": 20.666666666666668,
+   "secs": 1441.2245530287425,
+   "published": null,
+   "published_sd": null
+  },
+  "statics2011|dkt": {
+   "mean": 0.8199411682323783,
+   "sd": 0.0011023789133976496,
+   "n": 5,
+   "epochs": 38.4,
+   "secs": 496.7917850971222,
+   "published": 0.8222,
+   "published_sd": 0.0013
+  },
+  "statics2011|fkg_empty": {
+   "mean": 0.8258336310098556,
+   "sd": 0.000575995283509748,
+   "n": 5,
+   "epochs": 67.6,
+   "secs": 244.57371850013732,
+   "published": null,
+   "published_sd": null
+  },
+  "statics2011|fkg_support": {
+   "mean": 0.8278763517395851,
+   "sd": 0.000488876872874408,
+   "n": 5,
+   "epochs": 55.8,
+   "secs": 211.85774245262147,
+   "published": null,
+   "published_sd": null
+  },
+  "statics2011|ourdkt": {
+   "mean": 0.8163531510735844,
+   "sd": 0.000451488927157049,
+   "n": 5,
+   "epochs": 57.0,
+   "secs": 195.42417826652527,
+   "published": null,
+   "published_sd": null
+  },
+  "statics2011|sakt": {
+   "mean": 0.7842388202615981,
+   "sd": 0.0011449997316013442,
+   "n": 5,
+   "epochs": 16.0,
+   "secs": 255.28261256217957,
+   "published": 0.7965,
+   "published_sd": 0.0014
+  },
+  "statics2011|simplekt": {
+   "mean": 0.8142482280802525,
+   "sd": 0.0005973153219950239,
+   "n": 5,
+   "epochs": 37.6,
+   "secs": 923.3793568134308,
+   "published": 0.8199,
+   "published_sd": 0.0011
+  },
+  "statics2011|support-empty": {
+   "mean": 0.0020427207297294856,
+   "pos": 5,
+   "n": 5
+  },
+  "statics2011|edges": 1505.0,
+  "assist2015|support-empty": {
+   "mean": 7.021325588441041e-05,
+   "pos": 2,
+   "n": 3
+  },
+  "assist2015|edges": 1487.0
+ },
+ "dkteq": {
+  "transition:support|auc": {
+   "mean": 0.0009622390252475299,
+   "pos": 7,
+   "n": 8,
+   "p": 0.1953125,
+   "per": {
+    "assist09": 0.00166,
+    "assist12": 0.00071,
+    "assist15": 0.00259,
+    "assist17": 0.00206,
+    "junyi": 0.00441,
+    "algebra05": -0.005,
+    "eedi": 3e-05,
+    "ednet": 0.00124
+   },
+   "p_holm": 1.0
+  },
+  "transition:support|new": {
+   "mean": 0.005020634495560908,
+   "pos": 8,
+   "n": 8,
+   "p": 0.0078125,
+   "per": {
+    "assist09": 0.0066,
+    "assist12": 0.00344,
+    "assist15": 0.00885,
+    "assist17": 0.002,
+    "junyi": 0.01701,
+    "algebra05": 0.00015,
+    "eedi": 0.00086,
+    "ednet": 0.00124
+   },
+   "p_holm": 0.09375
+  },
+  "dkteq:support|auc": {
+   "mean": 4.340183664504338e-05,
+   "pos": 7,
+   "n": 8,
+   "p": 0.1953125,
+   "per": {
+    "assist09": 0.00218,
+    "assist12": 0.00074,
+    "assist15": 0.00142,
+    "assist17": 0.00108,
+    "junyi": 0.00256,
+    "algebra05": -0.00811,
+    "eedi": 7e-05,
+    "ednet": 0.00041
+   },
+   "p_holm": 1.0
+  },
+  "dkteq:support|new": {
+   "mean": 0.0020957360221658533,
+   "pos": 7,
+   "n": 8,
+   "p": 0.1953125,
+   "per": {
+    "assist09": 0.00795,
+    "assist12": 0.00242,
+    "assist15": 0.0046,
+    "assist17": 0.002,
+    "junyi": 0.00645,
+    "algebra05": -0.0084,
+    "eedi": 0.00155,
+    "ednet": 0.00018
+   },
+   "p_holm": 1.0
+  },
+  "dkteq:rank|auc": {
+   "mean": 6.268763437622393e-06,
+   "pos": 7,
+   "n": 8,
+   "p": 0.1953125,
+   "per": {
+    "assist09": 0.00212,
+    "assist12": 0.00093,
+    "assist15": 0.00139,
+    "assist17": 0.00132,
+    "junyi": 0.00263,
+    "algebra05": -0.00898,
+    "eedi": 0.00011,
+    "ednet": 0.00054
+   },
+   "p_holm": 1.0
+  },
+  "dkteq:rank|new": {
+   "mean": 0.0022043451562454713,
+   "pos": 7,
+   "n": 8,
+   "p": 0.1484375,
+   "per": {
+    "assist09": 0.00773,
+    "assist12": 0.00272,
+    "assist15": 0.00324,
+    "assist17": 0.00228,
+    "junyi": 0.00655,
+    "algebra05": -0.0067,
+    "eedi": 0.00174,
+    "ednet": 7e-05
+   },
+   "p_holm": 1.0
+  },
+  "dkt10:support|auc": {
+   "mean": -0.0009566858130881095,
+   "pos": 5,
+   "n": 8,
+   "p": 0.4609375,
+   "per": {
+    "assist09": 0.00116,
+    "assist12": 0.00091,
+    "assist15": 0.00216,
+    "assist17": 0.00015,
+    "junyi": 0.00185,
+    "algebra05": -0.0135,
+    "eedi": -9e-05,
+    "ednet": -0.00029
+   },
+   "p_holm": 1.0
+  },
+  "dkt10:support|new": {
+   "mean": 0.0020849860755684374,
+   "pos": 6,
+   "n": 8,
+   "p": 0.1953125,
+   "per": {
+    "assist09": 0.00525,
+    "assist12": 0.00349,
+    "assist15": 0.00507,
+    "assist17": 0.00126,
+    "junyi": 0.01005,
+    "algebra05": -0.00945,
+    "eedi": 0.00105,
+    "ednet": -4e-05
+   },
+   "p_holm": 1.0
+  },
+  "dkt10:rank|auc": {
+   "mean": 9.265295464465362e-05,
+   "pos": 5,
+   "n": 8,
+   "p": 0.3828125,
+   "per": {
+    "assist09": 0.00414,
+    "assist12": 0.0012,
+    "assist15": 0.00176,
+    "assist17": 0.00062,
+    "junyi": 0.00182,
+    "algebra05": -0.00859,
+    "eedi": -0.00014,
+    "ednet": -7e-05
+   },
+   "p_holm": 1.0
+  },
+  "dkt10:rank|new": {
+   "mean": 0.003366533436791719,
+   "pos": 6,
+   "n": 8,
+   "p": 0.1484375,
+   "per": {
+    "assist09": 0.01151,
+    "assist12": 0.00325,
+    "assist15": 0.0031,
+    "assist17": 0.00172,
+    "junyi": 0.01123,
+    "algebra05": -0.00531,
+    "eedi": 0.00149,
+    "ednet": -5e-05
+   },
+   "p_holm": 1.0
+  },
+  "op-minus-dkteq|auc": {
+   "mean": 0.0009188371886024865,
+   "pos": 5,
+   "n": 8,
+   "p": 0.109375,
+   "p_holm": 1.0
+  },
+  "op-minus-dkteq|new": {
+   "mean": 0.0029248984733950545,
+   "pos": 6,
+   "n": 8,
+   "p": 0.1484375,
+   "p_holm": 1.0
+  },
+  "n_seeds": 48,
+  "edges": {
+   "assist09": {
+    "op": 59,
+    "dkteq": 59,
+    "dkt10": 1110
+   },
+   "assist12": {
+    "op": 235,
+    "dkteq": 235,
+    "dkt10": 2600
+   },
+   "assist15": {
+    "op": 79,
+    "dkteq": 79,
+    "dkt10": 1000
+   },
+   "assist17": {
+    "op": 182,
+    "dkteq": 182,
+    "dkt10": 860
+   },
+   "junyi": {
+    "op": 146,
+    "dkteq": 146,
+    "dkt10": 6910
+   },
+   "algebra05": {
+    "op": 98,
+    "dkteq": 98,
+    "dkt10": 1090
+   },
+   "eedi": {
+    "op": 248,
+    "dkteq": 248,
+    "dkt10": 570
+   },
+   "ednet": {
+    "op": 584,
+    "dkteq": 584,
+    "dkt10": 1420
+   }
+  }
+ },
+ "pykt_pub": {
+  "statics2011|dkt": [
+   0.8222,
+   0.0013
+  ],
+  "statics2011|sakt": [
+   0.7965,
+   0.0014
+  ],
+  "statics2011|akt": [
+   0.8309,
+   0.0009
+  ],
+  "statics2011|simplekt": [
+   0.8199,
+   0.0011
+  ],
+  "assist2015|dkt": [
+   0.7271,
+   0.0005
+  ],
+  "assist2015|sakt": [
+   0.7114,
+   0.0003
+  ],
+  "assist2015|akt": [
+   0.7281,
+   0.0004
+  ],
+  "assist2015|simplekt": [
+   0.7248,
+   0.0005
+  ]
+ }
+}

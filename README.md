@@ -16,6 +16,10 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.0.0
+
+`kt/r2/`: code, the 957 learning-curve run files and the analysis of revision R2 (Sections 6.1 to 6.5 and 6.8 of the manuscript); see `kt/r2/README.md`.
+
 ## What is in version 2.1.0
 
 Archived on Zenodo: [10.5281/zenodo.24027065](https://doi.org/10.5281/zenodo.24027065) (all versions: 10.5281/zenodo.23830894).

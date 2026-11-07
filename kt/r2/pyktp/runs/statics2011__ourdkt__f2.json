@@ -1,0 +1,1 @@
+{"tag": "statics2011__ourdkt__f2", "dataset": "statics2011", "model": "ourdkt", "fold": 2, "seed": 42, "valid_auc": 0.8151996020538252, "test_auc": 0.8164712976723416, "test_acc": 0.7965578363542798, "epochs": 56, "secs": 196.07507371902466, "maxep": 200}

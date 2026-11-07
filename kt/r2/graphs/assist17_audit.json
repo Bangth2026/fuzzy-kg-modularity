@@ -1,0 +1,53 @@
+{
+ "name": "assist17",
+ "K": 86,
+ "n_train_learners": 1151,
+ "n_train_interactions": 144774,
+ "transition": {
+  "nodes_with_edges": 79,
+  "edges": 1233,
+  "mu_mean": 0.10573936359066216,
+  "mu_sd": 0.09608977030295286,
+  "reciprocity": 0.0,
+  "Q_F": 0.18537671601644393,
+  "k": 12,
+  "Q_F_rank": 0.13193921656475927,
+  "cuts": {
+   "cut25": {
+    "alpha": 0.04347826086956519,
+    "retained_edges": 926,
+    "retained_mass": 0.9385195260923873,
+    "mean_outdeg": 10.767441860465116,
+    "qf_drop": 0.05133975032266194,
+    "rank_drop": 0.012512498025779278
+   },
+   "cut50": {
+    "alpha": 0.07826086956521738,
+    "retained_edges": 617,
+    "retained_mass": 0.7934240761906871,
+    "mean_outdeg": 7.174418604651163,
+    "qf_drop": 0.04189523693366995,
+    "rank_drop": 0.014207072383794955
+   },
+   "cut75": {
+    "alpha": 0.13432835820895517,
+    "retained_edges": 309,
+    "retained_mass": 0.5508484540330214,
+    "mean_outdeg": 3.5930232558139537,
+    "qf_drop": 0.05992219264716542,
+    "rank_drop": 0.05553639173695965
+   },
+   "support": {
+    "qf_drop": 0.06308392900507373,
+    "rank_drop": 0.014458418882897284,
+    "retained_mass": 1.0
+   },
+   "permuted": {
+    "qf_drop": 0.13061435169388788,
+    "rank_drop": 0.07228187681507436,
+    "retained_mass": 1.0
+   }
+  },
+  "product3_edges": 6065
+ }
+}

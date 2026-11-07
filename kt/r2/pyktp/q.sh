@@ -1,0 +1,1 @@
+while read a b c; do PYTHONPATH=/home/claude/pd22:/home/claude/pyktp:/home/claude/rel/fuzzy-kg-modularity-2.0.0 python3 /home/claude/pyktp/run_pykt.py $a $b $c 2>&1 | grep -E "__f[0-9]|Error|Killed" >> /home/claude/pyktp/log.txt; done < $1

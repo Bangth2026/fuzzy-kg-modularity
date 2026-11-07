@@ -1,0 +1,1 @@
+{"tag": "statics2011__simplekt__f4", "dataset": "statics2011", "model": "simplekt", "fold": 4, "seed": 42, "valid_auc": 0.8150565848443454, "test_auc": 0.8145973538246916, "test_acc": 0.7934987706558408, "epochs": 36, "secs": 944.0071351528168, "maxep": 200}
