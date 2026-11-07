@@ -2,7 +2,7 @@
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *When does a concept graph help a neural knowledge tracer? A controlled learning-curve study with fuzzy prerequisite graphs on ten corpora.* Submitted to **Neurocomputing** (earlier title: *Fuzzy prerequisite knowledge graphs for neural knowledge tracing: when the graph helps, what it should carry, and a certified modularity audit*).
+> Hai Bang Truong. *When does a concept graph help a neural knowledge tracer? A controlled learning-curve study with empty-graph and random-graph controls on ten corpora.* Submitted to **Neurocomputing**.
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -16,15 +16,19 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.1.0
+
+`kt/src/r6_controls.py`, `kt/src/r6_analyse.py`, run files in `kt/runs_r6/` and results in `kt/results_r6/`: the probe trained for a fixed number of parameter updates instead of 30 epochs (support graph, empty-graph control, degree-preserving rewiring and an Erdős–Rényi graph with the same number of edges, at 5% and 10% of the training learners); two further graph controls under the epoch budget (Erdős–Rényi graph, and the empty graph with a degree feature in the KC embedding); the number of updates taken by every learning-curve run; the support-versus-control comparison pooled over the learning-curve runs and the runs of version 2.1.0; bootstrap and mixed-model intervals for the controls; and run counts by set. See the section "Release 3.1.0" of `kt/README.md`.
+
 ## What is in version 3.0.0
 
-`kt/r2/`: code, the 957 learning-curve run files and the analysis of revision R2 (Sections 6.1 to 6.5 and 6.8 of the manuscript); see `kt/r2/README.md`.
+`kt/r2/`: code, the 957 learning-curve run files and their analysis (Sections 6.1 to 6.5 and 6.9 of the manuscript); see `kt/r2/README.md`.
 
 ## What is in version 2.1.0
 
 Archived on Zenodo: [10.5281/zenodo.24027065](https://doi.org/10.5281/zenodo.24027065) (all versions: 10.5281/zenodo.23830894).
 
-The knowledge-tracing experiments live in `kt/` (see `kt/README.md`). Version 2.1.0 adds the controls of revision R5: a graph-free recency bias and a degree-preserving rewiring of the graph, run with the release-2.0.0 model on ten corpora (five subsamples at 10%, three at 25%); the empty-graph control rerun on the 10% sample of release 2.0.0 with three seeds; the support graph against the control at 5%, 10%, 25% and 100%; one cell with a larger learning rate for the graph scalars; preprocessing of Bridge to Algebra 2006 and Statics 2011; and a memory-light Junyi preprocessing. Run files in `kt/runs_r5/`, results in `kt/results_r5/`.
+The knowledge-tracing experiments live in `kt/` (see `kt/README.md`). Version 2.1.0 adds graph controls: a graph-free recency bias and a degree-preserving rewiring of the graph, run with the release-2.0.0 model on ten corpora (five subsamples at 10%, three at 25%); the empty-graph control rerun on the 10% sample of release 2.0.0 with three seeds; the support graph against the control at 5%, 10%, 25% and 100%; one cell with a larger learning rate for the graph scalars; preprocessing of Bridge to Algebra 2006 and Statics 2011; and a memory-light Junyi preprocessing. Run files in `kt/runs_r5/`, results in `kt/results_r5/`.
 
 ## What is in version 2.0.0
 

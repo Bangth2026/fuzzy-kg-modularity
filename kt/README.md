@@ -1,6 +1,6 @@
 # Release 2.0.0: fuzzy prerequisite KGs for neural knowledge tracing
 
-Adds the experiments of the Neurocomputing revision.
+Adds the knowledge-tracing experiments of the Neurocomputing manuscript.
 
 | Step | Script | Output |
 |---|---|---|
@@ -15,7 +15,7 @@ Adds the experiments of the Neurocomputing revision.
 
 Per-run JSON files of all 527 training runs are in `results/runs/`. Prediction files are not included (size); `train.py` regenerates them.
 
-# Release 2.1.0: controls of revision R5
+# Release 2.1.0: recency and degree-preserving controls
 
 Adds the runs of Section 6.6 of the revised manuscript (recency and degree-preserving controls), the
 rerun empty-graph control of Table 4, a repetition of the support-versus-control comparison at 5%,
@@ -41,3 +41,25 @@ the learned beta_pre, beta_suc, beta_same, beta_rec and the mean norm of the gra
 Subsample s >= 1 is drawn with seed 12345 + s, without replacement and independently of the others;
 subsample 0 is the 10% sample of release 2.0.0. Prediction files (`*_pred.npz`) are not included
 (size); their SHA-256 checksums are in `results_r5/pred_checksums_sha256.txt`.
+
+# Release 3.1.0: training budget by updates, and two further graph controls
+
+Adds `src/r6_controls.py` (training and evaluation), `src/r6_analyse.py` (all statistics), run files in
+`runs_r6/` and results in `results_r6/r6_results.json`. The model and data pipeline are those of
+`src/r5_controls.py`; with `--budget epochs` and an existing condition the script reproduces the run
+of release 2.1.0 exactly (Statics 2011, 10%, subsample 0, support graph: test AUC 0.7450).
+
+| Step | Script | Output |
+|---|---|---|
+| One run, budget by epochs (30 epochs, patience 3) or by updates (at most 2,000 updates, validation every 25, patience 8 evaluations) | `src/r6_controls.py --data <c> --frac <f> --sub <s> --cond {empty,support,rewired,er,degfeat} --budget {epochs,steps}` | `runs_r6/<tag>.json`, `_pred.npz` |
+| Queue (two workers) | `src/r6_runq.sh runs_r6/jobs/jobs_e.txt` (job lists of the original run in `runs_r6/jobs/`, run in the order a, c, d, e; finished runs are skipped) | |
+| Update counts of every learning-curve run, pooled support-versus-control comparison (kt/r2 runs and runs_r5), bootstrap and mixed-model intervals, step-budget table, controls table, run counts by set | `src/r6_analyse.py` | `results_r6/r6_results.json` |
+
+Conditions added: `er`, a directed Erdős–Rényi graph with as many edges as the support graph of the
+subsample (uniform over ordered pairs, no self-loops, no reciprocal pairs, seed 2000 + s); `degfeat`,
+the empty graph plus the standardised log in- and out-degree of every KC in the support graph,
+mapped by a learned linear layer into the KC embedding before the layer normalisation.
+Subsamples are drawn as in release 2.1.0 (subsample s >= 1 with seed 12345 + s). The learning-curve
+runs of `kt/r2` draw subsample s >= 1 with seed 12345 + 1000 s, so the two sets share subsample 0
+only; the pooled comparison averages the two runs on subsample 0. Prediction files are not
+included (size); their SHA-256 checksums are in `results_r6/pred_checksums_sha256.txt`.
