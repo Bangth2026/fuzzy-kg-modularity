@@ -1,0 +1,53 @@
+{
+ "name": "junyi",
+ "K": 690,
+ "n_train_learners": 210,
+ "n_train_interactions": 18423,
+ "transition": {
+  "nodes_with_edges": 86,
+  "edges": 91,
+  "mu_mean": 0.24885445818907176,
+  "mu_sd": 0.2506010597731884,
+  "reciprocity": 0.0,
+  "Q_F": 0.8744661065579056,
+  "k": 628,
+  "Q_F_rank": 0.8520610226082015,
+  "cuts": {
+   "cut25": {
+    "alpha": 0.08395544852498495,
+    "retained_edges": 68,
+    "retained_mass": 0.9456223721946925,
+    "mean_outdeg": 0.09855072463768116,
+    "qf_drop": 0.022181110800378212,
+    "rank_drop": 0.03322855062425634
+   },
+   "cut50": {
+    "alpha": 0.13043478260869557,
+    "retained_edges": 46,
+    "retained_mass": 0.8467148675995002,
+    "mean_outdeg": 0.06666666666666667,
+    "qf_drop": 0.09631345430946703,
+    "rank_drop": 0.16992558651677414
+   },
+   "cut75": {
+    "alpha": 0.34615384615384615,
+    "retained_edges": 23,
+    "retained_mass": 0.643086620493012,
+    "mean_outdeg": 0.03333333333333333,
+    "qf_drop": 0.2765666103075872,
+    "rank_drop": 0.45127604027918383
+   },
+   "support": {
+    "qf_drop": 1.1102230246251565e-16,
+    "rank_drop": 0.0,
+    "retained_mass": 1.0
+   },
+   "permuted": {
+    "qf_drop": 0.07022075988637133,
+    "rank_drop": 0.04040942215591903,
+    "retained_mass": 1.0
+   }
+  },
+  "product3_edges": 248
+ }
+}

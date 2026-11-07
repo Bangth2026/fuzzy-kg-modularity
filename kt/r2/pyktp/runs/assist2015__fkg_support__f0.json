@@ -1,0 +1,1 @@
+{"tag": "assist2015__fkg_support__f0", "dataset": "assist2015", "model": "fkg_support", "fold": 0, "seed": 42, "valid_auc": 0.7343099720691187, "test_auc": 0.7295158115450479, "test_acc": 0.7516940085592011, "epochs": 21, "secs": 1148.86824965477, "maxep": 200, "edges": 1475}

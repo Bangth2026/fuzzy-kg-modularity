@@ -1,0 +1,1 @@
+{"tag": "statics2011__fkg_support__f0", "dataset": "statics2011", "model": "fkg_support", "fold": 0, "seed": 42, "valid_auc": 0.8278769081552344, "test_auc": 0.8273898685493764, "test_acc": 0.8000171536394305, "epochs": 57, "secs": 198.32773900032043, "maxep": 200, "edges": 1500}

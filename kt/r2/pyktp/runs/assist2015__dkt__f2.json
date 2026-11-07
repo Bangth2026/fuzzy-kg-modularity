@@ -1,0 +1,1 @@
+{"tag": "assist2015__dkt__f2", "dataset": "assist2015", "model": "dkt", "fold": 2, "seed": 42, "valid_auc": 0.731706188668651, "test_auc": 0.7278067954387456, "test_acc": 0.7510847598668569, "epochs": 15, "secs": 1464.5765116214752, "maxep": 200}

@@ -1,0 +1,1 @@
+{"tag": "statics2011__sakt__f2", "dataset": "statics2011", "model": "sakt", "fold": 2, "seed": 42, "valid_auc": 0.7829068871449922, "test_auc": 0.783255897704648, "test_acc": 0.7845502887529304, "epochs": 16, "secs": 245.2701919078827, "maxep": 200}
