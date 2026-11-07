@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
-title: "fuzzykg: binarisation and t-norm composition on fuzzy knowledge graphs"
-version: 3.0.0
+title: "fuzzy-kg-modularity: code and run files for \"When does a concept graph help a neural knowledge tracer?\""
+version: 3.1.0
 date-released: 2026-11-07
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
 license: MIT
@@ -13,8 +13,8 @@ authors:
     email: truonghaibang@siu.edu.vn
 preferred-citation:
   type: article
-  title: "Binarisation and t-norm composition on fuzzy knowledge graphs: a multislice reference, a calibrated null test and expert-labelled criteria"
-  journal: Information Sciences
+  title: "When does a concept graph help a neural knowledge tracer? A controlled learning-curve study with empty-graph and random-graph controls on ten corpora"
+  journal: Neurocomputing
   year: 2026
   notes: submitted
   authors:

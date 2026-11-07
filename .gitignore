@@ -3,3 +3,6 @@ __pycache__/
 *.egg-info/
 data/raw
 results/*_partial*.json
+kt/data/
+kt/graphs_r5/
+kt/runs_r6/*_pred.npz
