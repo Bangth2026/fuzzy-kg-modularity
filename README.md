@@ -18,6 +18,8 @@ Every analysis is run on graphs from two constructions of the same logs: a **co-
 
 ## What is in version 2.1.0
 
+Archived on Zenodo: [10.5281/zenodo.24027065](https://doi.org/10.5281/zenodo.24027065) (all versions: 10.5281/zenodo.23830894).
+
 The knowledge-tracing experiments live in `kt/` (see `kt/README.md`). Version 2.1.0 adds the controls of revision R5: a graph-free recency bias and a degree-preserving rewiring of the graph, run with the release-2.0.0 model on ten corpora (five subsamples at 10%, three at 25%); the empty-graph control rerun on the 10% sample of release 2.0.0 with three seeds; the support graph against the control at 5%, 10%, 25% and 100%; one cell with a larger learning rate for the graph scalars; preprocessing of Bridge to Algebra 2006 and Statics 2011; and a memory-light Junyi preprocessing. Run files in `kt/runs_r5/`, results in `kt/results_r5/`.
 
 ## What is in version 2.0.0
