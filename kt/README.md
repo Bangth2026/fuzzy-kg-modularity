@@ -17,7 +17,7 @@ Per-run JSON files of all 527 training runs are in `results/runs/`. Prediction f
 
 # Release 2.1.0: recency and degree-preserving controls
 
-Adds the runs of Section 6.6 of the revised manuscript (recency and degree-preserving controls), the
+Adds the runs of Section 6.6 of the manuscript (recency and degree-preserving controls), the
 rerun empty-graph control of Table 4, a repetition of the support-versus-control comparison at 5%,
 10%, 25% and 100% of the training learners, one cell with a larger learning rate for the graph
 scalars, and two corpora (Bridge to Algebra 2006, Statics 2011). The model is `models.FKGKT2` of
@@ -63,3 +63,25 @@ Subsamples are drawn as in release 2.1.0 (subsample s >= 1 with seed 12345 + s).
 runs of `kt/r2` draw subsample s >= 1 with seed 12345 + 1000 s, so the two sets share subsample 0
 only; the pooled comparison averages the two runs on subsample 0. Prediction files are not
 included (size); their SHA-256 checksums are in `results_r6/pred_checksums_sha256.txt`.
+
+# Release 3.2.0: zero-initialised degree feature, complete random-graph controls
+
+Adds the condition `degfeat0` to `src/r6_controls.py`: the degree-feature control with its linear map
+initialised at zero (weight and bias), so that at the first update the model is the empty-graph
+control and departs from it only through training. With `degfeat` (release 3.1.0) the map has
+PyTorch's default random initialisation and adds a fixed random vector to every KC embedding, which
+the tracers on the smallest corpora, with a few dozen updates, do not undo. Also adds the Erdős–Rényi
+control on subsamples 3 and 4 at 10% under the epoch budget (so that it is paired with every
+subsample of release 2.1.0), and, under the update budget, the Erdős–Rényi control on the six larger
+corpora and the degree-preserving control on their subsample 1. Every other condition and run file is
+unchanged; with an existing condition the script reproduces the archived runs (Statics 2011, 10%,
+subsample 0, support graph: 0.7450 under the epoch budget, 0.7557 under the update budget; EdNet,
+update budget, 0.6736; ASSISTments 2012, epoch budget, 0.7049).
+
+| Step | Script | Output |
+|---|---|---|
+| Preprocessing: `src/prep.py` with one corpus per call (`a12` and `ednet` draw their learners from a fresh generator); Junyi with `src/prep_junyi_lowmem.py` | | `data/<corpus>.parquet` |
+| Runs of this release (job list in `runs_r6/jobs/jobs_f.txt`) | `src/r6_runq.sh runs_r6/jobs/jobs_f.txt` | `runs_r6/<tag>.json` |
+| Controls table at 10% (lower block), update-budget table with rows of four corpora reported as descriptive and outside the Holm family, comparisons of the graph controls pooled over both budgets with bootstrap and mixed-model intervals, recency control with intervals, learned scalars under the update budget, share of first attempts by corpus, run counts by set | `src/r32_analyse.py` | `results_r6/r32_results.json`, `results_r6/run_counts.csv` |
+
+`results_r6/r6_results.json` (release 3.1.0) is left as it was.

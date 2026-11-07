@@ -1,4 +1,4 @@
-"""Tables and statistics of revision R5 from runs_r5/*.json -> results_r5/r5_results.json."""
+"""Tables and statistics of release 2.1.0 from runs_r5/*.json -> results_r5/r5_results.json."""
 import json, glob, collections, os, sys, numpy as np, pandas as pd
 from scipy.stats import wilcoxon
 ROOT = os.environ.get('KT_ROOT', '/home/claude/kt'); OUT = f'{ROOT}/results_r5'; os.makedirs(OUT, exist_ok=True)

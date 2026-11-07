@@ -16,6 +16,10 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.2.0
+
+`kt/src/r32_analyse.py`, new run files in `kt/runs_r6/` and `kt/results_r6/r32_results.json`: the degree-feature control with a zero-initialised map (`degfeat0`), under the epoch and the update budget; the Erdős–Rényi control on every subsample of the epoch-budget control runs and on all ten corpora under the update budget; the degree-preserving control on all subsamples under the update budget; pooled comparisons of the graph controls over both budgets with intervals; run counts by set. See the section "Release 3.2.0" of `kt/README.md`.
+
 ## What is in version 3.1.0
 
 `kt/src/r6_controls.py`, `kt/src/r6_analyse.py`, run files in `kt/runs_r6/` and results in `kt/results_r6/`: the probe trained for a fixed number of parameter updates instead of 30 epochs (support graph, empty-graph control, degree-preserving rewiring and an Erdős–Rényi graph with the same number of edges, at 5% and 10% of the training learners); two further graph controls under the epoch budget (Erdős–Rényi graph, and the empty graph with a degree feature in the KC embedding); the number of updates taken by every learning-curve run; the support-versus-control comparison pooled over the learning-curve runs and the runs of version 2.1.0; bootstrap and mixed-model intervals for the controls; and run counts by set. See the section "Release 3.1.0" of `kt/README.md`.
@@ -32,7 +36,7 @@ The knowledge-tracing experiments live in `kt/` (see `kt/README.md`). Version 2.
 
 ## What is in version 2.0.0
 
-`kt/`: preprocessing of eight corpora, fuzzy prerequisite graphs from training learners, DKT, SAKT, AKT, GKT and FKG-KT training on CPU, and the 527 run files of the first Neurocomputing version (archived on Zenodo, 10.5281/zenodo.23830895).
+`kt/`: preprocessing of eight corpora, fuzzy prerequisite graphs from training learners, DKT, SAKT, AKT, GKT and FKG-KT training on CPU, and the 527 run files of release 2.0.0 (archived on Zenodo, 10.5281/zenodo.23830895).
 
 ## What is in version 1.4.3
 

@@ -20,6 +20,10 @@ same data loading, graph construction, subsamples and evaluation):
             standardised over the KCs of the corpus, mapped by a learned linear layer into the KC
             embedding before the layer normalisation of Eq. (2); the tracer is told how many
             neighbours each KC has and nothing about which ones.
+   degfeat0 (release 3.2.0) as degfeat, but the linear map of the degree feature is initialised at
+            zero (weight and bias), so at step 0 the model equals the empty-graph control and moves
+            away from it only through the gradient; with degfeat the map has PyTorch's default random
+            initialisation, which adds a fixed random vector to every KC embedding before training.
 The conditions of release 2.1.0 (empty, support, rewired) are unchanged.
 """
 import sys, os, json, time, argparse, numpy as np, torch, torch.nn as nn, torch.nn.functional as F
@@ -46,9 +50,11 @@ def erdos_renyi(K, E, seed):
 
 class FKGKT3Deg(FKGKT3):
     """Empty-graph control plus a degree feature in the KC embedding."""
-    def __init__(s, K, A, deg, d=64, drop=0.2):
+    def __init__(s, K, A, deg, d=64, drop=0.2, zero_init=False):
         super().__init__(K, A, recency=False, d=d)
         s.register_buffer('phi', torch.tensor(deg, dtype=torch.float32)); s.Wdeg = nn.Linear(deg.shape[1], d)
+        if zero_init:
+            nn.init.zeros_(s.Wdeg.weight); nn.init.zeros_(s.Wdeg.bias)
         base = s.base
         def kc_repr():
             Z = base.E.weight[:base.K] + s.Wdeg(s.phi)
@@ -84,10 +90,11 @@ def main(argv=None):
         np.savez_compressed(gpath, support=sup, rewired=rw)
     er = erdos_renyi(K, int(sup.sum()), seed=2000 + a.sub)
     Z0 = np.zeros((K, K), np.float32)
-    A = {'empty': Z0, 'support': sup, 'rewired': rw, 'er': er, 'degfeat': Z0}[a.cond]
+    A = {'empty': Z0, 'support': sup, 'rewired': rw, 'er': er, 'degfeat': Z0, 'degfeat0': Z0}[a.cond]
     torch.manual_seed(seed); rng = np.random.default_rng(seed)
     tq, trr, _ = seqs(df, K, 'train'); vq, vr, _ = seqs(df, K, 'valid'); sq, sr, _ = seqs(df, K, 'test')
-    m = FKGKT3Deg(K, A, degree_features(sup)) if a.cond == 'degfeat' else FKGKT3(K, A, recency=False)
+    m = (FKGKT3Deg(K, A, degree_features(sup), zero_init=(a.cond == 'degfeat0')) if a.cond in ('degfeat', 'degfeat0')
+         else FKGKT3(K, A, recency=False))
     opt = torch.optim.Adam(m.parameters(), lr=a.lr)
     best = -1; bad = 0; t0 = time.time(); hist = []; state = None; best_at = 0; steps = 0; stop = False
     def step(qa, ra, qn, y):
@@ -120,6 +127,7 @@ def main(argv=None):
                test_acc=float(((P > 0.5) == Y).mean()), test_rmse=float(np.sqrt(((P - Y) ** 2).mean())), test_ece=ece(P, Y),
                n_pred=int(len(Y)), n_first=int(NEW.sum()), valid_auc=float(best), steps=steps, best_step=best_at, hit_max=bool(hit),
                n_evals=len(hist), valid_hist=hist, steps_per_epoch=int(np.ceil(len(tq) / a.bs)),
+               deg_map_norm=float(m.Wdeg.weight.detach().norm()) if hasattr(m, 'Wdeg') else None,
                beta_pre=float(m.bpre.detach()), beta_suc=float(m.bsuc.detach()), beta_same=float(m.bsame.detach()),
                lr=a.lr, max_steps=a.max_steps, eval_every=a.eval_every, patience_evals=a.patience_evals, max_epochs=a.epochs, secs=time.time() - t0)
     np.savez_compressed(f'{a.out}/{tag}_pred.npz', p=P.astype(np.float32), y=Y.astype(np.int8), new=NEW)

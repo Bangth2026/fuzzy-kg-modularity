@@ -1,4 +1,4 @@
-"""R2 analysis: every number reported in the revised manuscript is computed here from run JSON files.
+"""R2 analysis: every number reported in the manuscript is computed here from run JSON files.
 Inputs: runs/ (R2 runs) and the R1 runs of release 2.0.0. Output: paper/r2_results.json, paper/r2_*.csv."""
 import json, glob, re, os, sys, warnings
 import numpy as np, pandas as pd

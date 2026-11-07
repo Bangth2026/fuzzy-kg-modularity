@@ -1,4 +1,4 @@
-"""Single source of truth for the numbers in the R2 manuscript.
+"""Single source of truth for the numbers of the learning-curve runs (run set R2).
 Builds a flat dictionary S of formatted values from paper/r2_results.json and paper/r2_runs.csv.
 render(template) fills {key} fields and raises KeyError on any key that is not computed here."""
 import json, string, numpy as np, pandas as pd

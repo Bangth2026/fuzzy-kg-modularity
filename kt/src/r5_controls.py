@@ -1,4 +1,4 @@
-"""Release 3.1.0, revision R5: controls that separate the graph from recency.
+"""Release 2.1.0: controls that separate the graph from recency.
 
 Conditions (all FKG-KT, same code path as release 2.0.0 models.FKGKT2, A always passed so the
 layer normalisation and the same-KC bias are kept):
