@@ -16,6 +16,10 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.3.0
+
+Channel-separating controls (`support_emb`, `support_att`, `er_emb`, `er_att` in `kt/src/r6_controls.py`, 128 run files in `kt/runs_r6`) and `kt/src/r33_analyse.py` with `kt/results_r6/r33_results.json`: the graph read only in the embedding refinement or only in the attention bias; rise of the graph gain from 5% to 10% under both budgets on the same units; updates to the selected checkpoint; graph controls pooled over both budgets with a budget fixed effect. See the section "Release 3.3.0" of `kt/README.md`.
+
 ## What is in version 3.2.0
 
 `kt/src/r32_analyse.py`, new run files in `kt/runs_r6/` and `kt/results_r6/r32_results.json`: the degree-feature control with a zero-initialised map (`degfeat0`), under the epoch and the update budget; the Erdős–Rényi control on every subsample of the epoch-budget control runs and on all ten corpora under the update budget; the degree-preserving control on all subsamples under the update budget; pooled comparisons of the graph controls over both budgets with intervals; run counts by set. See the section "Release 3.2.0" of `kt/README.md`.

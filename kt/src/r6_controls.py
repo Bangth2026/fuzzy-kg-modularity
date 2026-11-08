@@ -24,6 +24,13 @@ same data loading, graph construction, subsamples and evaluation):
             zero (weight and bias), so at step 0 the model equals the empty-graph control and moves
             away from it only through the gradient; with degfeat the map has PyTorch's default random
             initialisation, which adds a fixed random vector to every KC embedding before training.
+   support_emb, er_emb, support_att, er_att (release 3.3.0) separate the two places where the graph is
+            read. *_emb: the graph enters the embedding refinement of Eq. (2) only; the attention
+            bias of Eq. (3) gets a zero matrix (the prerequisite and successor terms vanish, the
+            same-KC term is kept). *_att: the graph enters the attention bias of Eq. (3) only; the
+            neighbour matrices of Eq. (2) are set to zero. Both are built from the full model with
+            the graph and then have one of the two matrices zeroed, so their initial weights are
+            those of the corresponding full-graph run.
 The conditions of release 2.1.0 (empty, support, rewired) are unchanged.
 """
 import sys, os, json, time, argparse, numpy as np, torch, torch.nn as nn, torch.nn.functional as F
@@ -90,11 +97,15 @@ def main(argv=None):
         np.savez_compressed(gpath, support=sup, rewired=rw)
     er = erdos_renyi(K, int(sup.sum()), seed=2000 + a.sub)
     Z0 = np.zeros((K, K), np.float32)
-    A = {'empty': Z0, 'support': sup, 'rewired': rw, 'er': er, 'degfeat': Z0, 'degfeat0': Z0}[a.cond]
+    A = {'empty': Z0, 'support': sup, 'rewired': rw, 'er': er, 'degfeat': Z0, 'degfeat0': Z0,
+         'support_emb': sup, 'support_att': sup, 'er_emb': er, 'er_att': er}[a.cond]
     torch.manual_seed(seed); rng = np.random.default_rng(seed)
     tq, trr, _ = seqs(df, K, 'train'); vq, vr, _ = seqs(df, K, 'valid'); sq, sr, _ = seqs(df, K, 'test')
     m = (FKGKT3Deg(K, A, degree_features(sup), zero_init=(a.cond == 'degfeat0')) if a.cond in ('degfeat', 'degfeat0')
          else FKGKT3(K, A, recency=False))
+    with torch.no_grad():
+        if a.cond.endswith('_emb'): m.S.zero_()
+        if a.cond.endswith('_att'): m.base.Ain.zero_(); m.base.Aout.zero_()
     opt = torch.optim.Adam(m.parameters(), lr=a.lr)
     best = -1; bad = 0; t0 = time.time(); hist = []; state = None; best_at = 0; steps = 0; stop = False
     def step(qa, ra, qn, y):

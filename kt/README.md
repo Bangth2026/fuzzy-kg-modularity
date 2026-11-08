@@ -85,3 +85,21 @@ update budget, 0.6736; ASSISTments 2012, epoch budget, 0.7049).
 | Controls table at 10% (lower block), update-budget table with rows of four corpora reported as descriptive and outside the Holm family, comparisons of the graph controls pooled over both budgets with bootstrap and mixed-model intervals, recency control with intervals, learned scalars under the update budget, share of first attempts by corpus, run counts by set | `src/r32_analyse.py` | `results_r6/r32_results.json`, `results_r6/run_counts.csv` |
 
 `results_r6/r6_results.json` (release 3.1.0) is left as it was.
+
+# Release 3.3.0: channel-separating controls and analyses of the training budget
+
+Adds four conditions to `src/r6_controls.py` that read a graph at one of the probe's two entry points
+only: `support_emb` and `er_emb` (the graph in the embedding refinement of Eq. (2), with the
+prerequisite and successor terms of the attention bias of Eq. (3) given a zero matrix) and
+`support_att` and `er_att` (the graph in the attention bias only, with the neighbour matrices of
+Eq. (2) set to zero). Each variant is built from the full-graph model and then has one matrix
+zeroed, so its initial weights are those of the full-graph run with the same graph. 128 runs under
+the update budget at 10% (job list `runs_r6/jobs/jobs_g.txt`).
+
+`src/r33_analyse.py` writes `results_r6/r33_results.json`, `results_r6/table6_upper_by_corpus.csv`
+and `results_r6/checkpoint_updates.csv`: the rise of the graph gain from 5% to 10% under the two
+budgets on the same corpus x subsample units, with a bootstrap interval for the difference of the
+rises; the updates to the selected checkpoint by corpus under the two budgets; the per-corpus values
+of the upper rows of Table 6; the graph controls pooled over both budgets with a fixed effect for
+the budget; and the channel-separating controls. These are the tables of Supplementary Section S8.
+Earlier results files are unchanged.
