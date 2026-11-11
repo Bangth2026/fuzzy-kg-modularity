@@ -103,3 +103,23 @@ rises; the updates to the selected checkpoint by corpus under the two budgets; t
 of the upper rows of Table 6; the graph controls pooled over both budgets with a fixed effect for
 the budget; and the channel-separating controls. These are the tables of Supplementary Section S8.
 Earlier results files are unchanged.
+
+# Release 3.4.0: robustness of the main comparisons and decision-level metrics
+
+Adds `src/r34_analyse.py`, which reads the archived run files only (no new training runs) and writes
+`results_r6/r34_results.json`:
+
+- for the main comparisons (the support graph against the empty-graph control, pooled over the two
+  sets of epoch-budget runs at 10% and 25%, and under the update budget at 10%; the recency,
+  degree-preserving and Erdos-Renyi controls on first attempts at 10%): the mean of corpus means, a
+  corpus-then-subsample bootstrap interval, a mixed-model interval (random intercept per corpus) and
+  leave-one-corpus-out summaries (range of the mean, smallest number of corpora with a positive
+  difference, largest Wilcoxon p over the nine remaining corpora);
+- accuracy at the 0.5 threshold, RMSE and ECE of the support graph against the control on all test
+  predictions, by training budget and size;
+- the number of test predictions and first attempts per corpus at 10%;
+- the expected overlap between two subsamples of one corpus (m^2 / N learners, a share m / N of each).
+
+These are the values of Table 9 and Section 6.10 of the manuscript. The mixed model needs
+`statsmodels` (added to `requirements.txt`). Run with `KT_ROOT=<checkout>/kt python kt/src/r34_analyse.py`.
+Earlier results files are unchanged.

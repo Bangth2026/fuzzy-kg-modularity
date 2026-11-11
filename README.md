@@ -2,7 +2,7 @@
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *When does a concept graph help a neural knowledge tracer? A controlled learning-curve study with empty-graph and random-graph controls on ten corpora.* Submitted to **Neurocomputing**.
+> Hai Bang Truong. *Where does a concept graph help a neural knowledge tracer? Embedding mixing, first attempts and data per concept in a controlled study on ten corpora.* Submitted to **Neural Networks**.
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

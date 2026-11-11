@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
-title: "fuzzy-kg-modularity: code and run files for \"When does a concept graph help a neural knowledge tracer?\""
-version: 3.3.0
-date-released: 2026-11-08
+title: "fuzzy-kg-modularity: code and run files for \"Where does a concept graph help a neural knowledge tracer?\""
+version: 3.4.0
+date-released: 2026-11-11
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
 license: MIT
 authors:
@@ -13,8 +13,8 @@ authors:
     email: truonghaibang@siu.edu.vn
 preferred-citation:
   type: article
-  title: "When does a concept graph help a neural knowledge tracer? A controlled learning-curve study with empty-graph and random-graph controls on ten corpora"
-  journal: Neurocomputing
+  title: "Where does a concept graph help a neural knowledge tracer? Embedding mixing, first attempts and data per concept in a controlled study on ten corpora"
+  journal: Neural Networks
   year: 2026
   notes: submitted
   authors:
