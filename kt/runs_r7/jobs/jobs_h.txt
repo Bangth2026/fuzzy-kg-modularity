@@ -1,0 +1,396 @@
+--data statics11 --frac 0.1 --sub 0 --cond empty
+--data statics11 --frac 0.1 --sub 0 --cond support
+--data statics11 --frac 0.1 --sub 0 --cond uniform_emb
+--data statics11 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 0 --cond support_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data statics11 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data statics11 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data statics11 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data statics11 --frac 0.1 --sub 1 --cond empty
+--data statics11 --frac 0.1 --sub 1 --cond support
+--data statics11 --frac 0.1 --sub 1 --cond uniform_emb
+--data statics11 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 1 --cond support_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 1 --cond support_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 1 --cond support_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 1 --cond support_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 1 --cond empty --lr 0.005
+--data statics11 --frac 0.1 --sub 1 --cond support --lr 0.005
+--data statics11 --frac 0.1 --sub 1 --cond empty --lr 0.01
+--data statics11 --frac 0.1 --sub 1 --cond support --lr 0.01
+--data statics11 --frac 0.1 --sub 2 --cond empty
+--data statics11 --frac 0.1 --sub 2 --cond support
+--data statics11 --frac 0.1 --sub 2 --cond uniform_emb
+--data statics11 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 2 --cond support_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 2 --cond support_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 2 --cond support_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 2 --cond support_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 2 --cond empty --lr 0.005
+--data statics11 --frac 0.1 --sub 2 --cond support --lr 0.005
+--data statics11 --frac 0.1 --sub 2 --cond empty --lr 0.01
+--data statics11 --frac 0.1 --sub 2 --cond support --lr 0.01
+--data statics11 --frac 0.1 --sub 3 --cond empty
+--data statics11 --frac 0.1 --sub 3 --cond support
+--data statics11 --frac 0.1 --sub 3 --cond uniform_emb
+--data statics11 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 3 --cond support_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 3 --cond support_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 3 --cond support_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 3 --cond support_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 3 --cond empty --lr 0.005
+--data statics11 --frac 0.1 --sub 3 --cond support --lr 0.005
+--data statics11 --frac 0.1 --sub 3 --cond empty --lr 0.01
+--data statics11 --frac 0.1 --sub 3 --cond support --lr 0.01
+--data statics11 --frac 0.1 --sub 4 --cond empty
+--data statics11 --frac 0.1 --sub 4 --cond support
+--data statics11 --frac 0.1 --sub 4 --cond uniform_emb
+--data statics11 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 4 --cond support_l2 --l2 0.0001
+--data statics11 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 4 --cond support_l2 --l2 0.001
+--data statics11 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 4 --cond support_l2 --l2 0.01
+--data statics11 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 4 --cond support_l2 --l2 0.1
+--data statics11 --frac 0.1 --sub 4 --cond empty --lr 0.005
+--data statics11 --frac 0.1 --sub 4 --cond support --lr 0.005
+--data statics11 --frac 0.1 --sub 4 --cond empty --lr 0.01
+--data statics11 --frac 0.1 --sub 4 --cond support --lr 0.01
+--data algebra05 --frac 0.1 --sub 0 --cond empty
+--data algebra05 --frac 0.1 --sub 0 --cond support
+--data algebra05 --frac 0.1 --sub 0 --cond uniform_emb
+--data algebra05 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 0 --cond support_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data algebra05 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data algebra05 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data algebra05 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data algebra05 --frac 0.1 --sub 1 --cond empty
+--data algebra05 --frac 0.1 --sub 1 --cond support
+--data algebra05 --frac 0.1 --sub 1 --cond uniform_emb
+--data algebra05 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 1 --cond support_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 1 --cond support_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 1 --cond support_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 1 --cond support_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 1 --cond empty --lr 0.005
+--data algebra05 --frac 0.1 --sub 1 --cond support --lr 0.005
+--data algebra05 --frac 0.1 --sub 1 --cond empty --lr 0.01
+--data algebra05 --frac 0.1 --sub 1 --cond support --lr 0.01
+--data algebra05 --frac 0.1 --sub 2 --cond empty
+--data algebra05 --frac 0.1 --sub 2 --cond support
+--data algebra05 --frac 0.1 --sub 2 --cond uniform_emb
+--data algebra05 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 2 --cond support_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 2 --cond support_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 2 --cond support_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 2 --cond support_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 2 --cond empty --lr 0.005
+--data algebra05 --frac 0.1 --sub 2 --cond support --lr 0.005
+--data algebra05 --frac 0.1 --sub 2 --cond empty --lr 0.01
+--data algebra05 --frac 0.1 --sub 2 --cond support --lr 0.01
+--data algebra05 --frac 0.1 --sub 3 --cond empty
+--data algebra05 --frac 0.1 --sub 3 --cond support
+--data algebra05 --frac 0.1 --sub 3 --cond uniform_emb
+--data algebra05 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 3 --cond support_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 3 --cond support_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 3 --cond support_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 3 --cond support_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 3 --cond empty --lr 0.005
+--data algebra05 --frac 0.1 --sub 3 --cond support --lr 0.005
+--data algebra05 --frac 0.1 --sub 3 --cond empty --lr 0.01
+--data algebra05 --frac 0.1 --sub 3 --cond support --lr 0.01
+--data algebra05 --frac 0.1 --sub 4 --cond empty
+--data algebra05 --frac 0.1 --sub 4 --cond support
+--data algebra05 --frac 0.1 --sub 4 --cond uniform_emb
+--data algebra05 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 4 --cond support_l2 --l2 0.0001
+--data algebra05 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 4 --cond support_l2 --l2 0.001
+--data algebra05 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 4 --cond support_l2 --l2 0.01
+--data algebra05 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 4 --cond support_l2 --l2 0.1
+--data algebra05 --frac 0.1 --sub 4 --cond empty --lr 0.005
+--data algebra05 --frac 0.1 --sub 4 --cond support --lr 0.005
+--data algebra05 --frac 0.1 --sub 4 --cond empty --lr 0.01
+--data algebra05 --frac 0.1 --sub 4 --cond support --lr 0.01
+--data assist17 --frac 0.1 --sub 0 --cond empty
+--data assist17 --frac 0.1 --sub 0 --cond support
+--data assist17 --frac 0.1 --sub 0 --cond uniform_emb
+--data assist17 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 0 --cond support_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data assist17 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data assist17 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data assist17 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data assist17 --frac 0.1 --sub 1 --cond empty
+--data assist17 --frac 0.1 --sub 1 --cond support
+--data assist17 --frac 0.1 --sub 1 --cond uniform_emb
+--data assist17 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 1 --cond support_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 1 --cond support_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 1 --cond support_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 1 --cond support_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 1 --cond empty --lr 0.005
+--data assist17 --frac 0.1 --sub 1 --cond support --lr 0.005
+--data assist17 --frac 0.1 --sub 1 --cond empty --lr 0.01
+--data assist17 --frac 0.1 --sub 1 --cond support --lr 0.01
+--data assist17 --frac 0.1 --sub 2 --cond empty
+--data assist17 --frac 0.1 --sub 2 --cond support
+--data assist17 --frac 0.1 --sub 2 --cond uniform_emb
+--data assist17 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 2 --cond support_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 2 --cond support_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 2 --cond support_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 2 --cond support_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 2 --cond empty --lr 0.005
+--data assist17 --frac 0.1 --sub 2 --cond support --lr 0.005
+--data assist17 --frac 0.1 --sub 2 --cond empty --lr 0.01
+--data assist17 --frac 0.1 --sub 2 --cond support --lr 0.01
+--data assist17 --frac 0.1 --sub 3 --cond empty
+--data assist17 --frac 0.1 --sub 3 --cond support
+--data assist17 --frac 0.1 --sub 3 --cond uniform_emb
+--data assist17 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 3 --cond support_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 3 --cond support_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 3 --cond support_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 3 --cond support_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 3 --cond empty --lr 0.005
+--data assist17 --frac 0.1 --sub 3 --cond support --lr 0.005
+--data assist17 --frac 0.1 --sub 3 --cond empty --lr 0.01
+--data assist17 --frac 0.1 --sub 3 --cond support --lr 0.01
+--data assist17 --frac 0.1 --sub 4 --cond empty
+--data assist17 --frac 0.1 --sub 4 --cond support
+--data assist17 --frac 0.1 --sub 4 --cond uniform_emb
+--data assist17 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 4 --cond support_l2 --l2 0.0001
+--data assist17 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 4 --cond support_l2 --l2 0.001
+--data assist17 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 4 --cond support_l2 --l2 0.01
+--data assist17 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 4 --cond support_l2 --l2 0.1
+--data assist17 --frac 0.1 --sub 4 --cond empty --lr 0.005
+--data assist17 --frac 0.1 --sub 4 --cond support --lr 0.005
+--data assist17 --frac 0.1 --sub 4 --cond empty --lr 0.01
+--data assist17 --frac 0.1 --sub 4 --cond support --lr 0.01
+--data bridge06 --frac 0.1 --sub 0 --cond empty
+--data bridge06 --frac 0.1 --sub 0 --cond support
+--data bridge06 --frac 0.1 --sub 0 --cond uniform_emb
+--data bridge06 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 0 --cond support_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data bridge06 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data bridge06 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data bridge06 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data bridge06 --frac 0.1 --sub 1 --cond empty
+--data bridge06 --frac 0.1 --sub 1 --cond support
+--data bridge06 --frac 0.1 --sub 1 --cond uniform_emb
+--data bridge06 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 1 --cond support_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 1 --cond support_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 1 --cond support_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 1 --cond empty_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 1 --cond support_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 1 --cond empty --lr 0.005
+--data bridge06 --frac 0.1 --sub 1 --cond support --lr 0.005
+--data bridge06 --frac 0.1 --sub 1 --cond empty --lr 0.01
+--data bridge06 --frac 0.1 --sub 1 --cond support --lr 0.01
+--data bridge06 --frac 0.1 --sub 2 --cond empty
+--data bridge06 --frac 0.1 --sub 2 --cond support
+--data bridge06 --frac 0.1 --sub 2 --cond uniform_emb
+--data bridge06 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 2 --cond support_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 2 --cond support_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 2 --cond support_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 2 --cond empty_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 2 --cond support_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 2 --cond empty --lr 0.005
+--data bridge06 --frac 0.1 --sub 2 --cond support --lr 0.005
+--data bridge06 --frac 0.1 --sub 2 --cond empty --lr 0.01
+--data bridge06 --frac 0.1 --sub 2 --cond support --lr 0.01
+--data bridge06 --frac 0.1 --sub 3 --cond empty
+--data bridge06 --frac 0.1 --sub 3 --cond support
+--data bridge06 --frac 0.1 --sub 3 --cond uniform_emb
+--data bridge06 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 3 --cond support_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 3 --cond support_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 3 --cond support_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 3 --cond empty_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 3 --cond support_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 3 --cond empty --lr 0.005
+--data bridge06 --frac 0.1 --sub 3 --cond support --lr 0.005
+--data bridge06 --frac 0.1 --sub 3 --cond empty --lr 0.01
+--data bridge06 --frac 0.1 --sub 3 --cond support --lr 0.01
+--data bridge06 --frac 0.1 --sub 4 --cond empty
+--data bridge06 --frac 0.1 --sub 4 --cond support
+--data bridge06 --frac 0.1 --sub 4 --cond uniform_emb
+--data bridge06 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 4 --cond support_l2 --l2 0.0001
+--data bridge06 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 4 --cond support_l2 --l2 0.001
+--data bridge06 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 4 --cond support_l2 --l2 0.01
+--data bridge06 --frac 0.1 --sub 4 --cond empty_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 4 --cond support_l2 --l2 0.1
+--data bridge06 --frac 0.1 --sub 4 --cond empty --lr 0.005
+--data bridge06 --frac 0.1 --sub 4 --cond support --lr 0.005
+--data bridge06 --frac 0.1 --sub 4 --cond empty --lr 0.01
+--data bridge06 --frac 0.1 --sub 4 --cond support --lr 0.01
+--data assist09 --frac 0.1 --sub 0 --cond empty
+--data assist09 --frac 0.1 --sub 0 --cond support
+--data assist09 --frac 0.1 --sub 0 --cond uniform_emb
+--data assist09 --frac 0.1 --sub 1 --cond empty
+--data assist09 --frac 0.1 --sub 1 --cond support
+--data assist09 --frac 0.1 --sub 1 --cond uniform_emb
+--data assist09 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data assist09 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data assist09 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data assist09 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data assist09 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data assist09 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data assist09 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data assist09 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data assist09 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data assist09 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data assist15 --frac 0.1 --sub 0 --cond empty
+--data assist15 --frac 0.1 --sub 0 --cond support
+--data assist15 --frac 0.1 --sub 0 --cond uniform_emb
+--data assist15 --frac 0.1 --sub 1 --cond empty
+--data assist15 --frac 0.1 --sub 1 --cond support
+--data assist15 --frac 0.1 --sub 1 --cond uniform_emb
+--data assist15 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data assist15 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data assist15 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data assist15 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data assist15 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data assist15 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data assist15 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data assist15 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data assist15 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data assist15 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data assist12 --frac 0.1 --sub 0 --cond empty
+--data assist12 --frac 0.1 --sub 0 --cond support
+--data assist12 --frac 0.1 --sub 0 --cond uniform_emb
+--data assist12 --frac 0.1 --sub 1 --cond empty
+--data assist12 --frac 0.1 --sub 1 --cond support
+--data assist12 --frac 0.1 --sub 1 --cond uniform_emb
+--data assist12 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data assist12 --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data assist12 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data assist12 --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data assist12 --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data assist12 --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data assist12 --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data assist12 --frac 0.1 --sub 0 --cond support --lr 0.005
+--data assist12 --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data assist12 --frac 0.1 --sub 0 --cond support --lr 0.01
+--data eedi --frac 0.1 --sub 0 --cond empty
+--data eedi --frac 0.1 --sub 0 --cond support
+--data eedi --frac 0.1 --sub 0 --cond uniform_emb
+--data eedi --frac 0.1 --sub 1 --cond empty
+--data eedi --frac 0.1 --sub 1 --cond support
+--data eedi --frac 0.1 --sub 1 --cond uniform_emb
+--data eedi --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data eedi --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data eedi --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data eedi --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data eedi --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data eedi --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data eedi --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data eedi --frac 0.1 --sub 0 --cond support --lr 0.005
+--data eedi --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data eedi --frac 0.1 --sub 0 --cond support --lr 0.01
+--data junyi --frac 0.1 --sub 0 --cond empty
+--data junyi --frac 0.1 --sub 0 --cond support
+--data junyi --frac 0.1 --sub 0 --cond uniform_emb
+--data junyi --frac 0.1 --sub 1 --cond empty
+--data junyi --frac 0.1 --sub 1 --cond support
+--data junyi --frac 0.1 --sub 1 --cond uniform_emb
+--data junyi --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data junyi --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data junyi --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data junyi --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data junyi --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data junyi --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data junyi --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data junyi --frac 0.1 --sub 0 --cond support --lr 0.005
+--data junyi --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data junyi --frac 0.1 --sub 0 --cond support --lr 0.01
+--data ednet --frac 0.1 --sub 0 --cond empty
+--data ednet --frac 0.1 --sub 0 --cond support
+--data ednet --frac 0.1 --sub 0 --cond uniform_emb
+--data ednet --frac 0.1 --sub 1 --cond empty
+--data ednet --frac 0.1 --sub 1 --cond support
+--data ednet --frac 0.1 --sub 1 --cond uniform_emb
+--data ednet --frac 0.1 --sub 0 --cond empty_l2 --l2 0.001
+--data ednet --frac 0.1 --sub 0 --cond support_l2 --l2 0.001
+--data ednet --frac 0.1 --sub 0 --cond empty_l2 --l2 0.01
+--data ednet --frac 0.1 --sub 0 --cond support_l2 --l2 0.01
+--data ednet --frac 0.1 --sub 0 --cond empty_l2 --l2 0.1
+--data ednet --frac 0.1 --sub 0 --cond support_l2 --l2 0.1
+--data ednet --frac 0.1 --sub 0 --cond empty --lr 0.005
+--data ednet --frac 0.1 --sub 0 --cond support --lr 0.005
+--data ednet --frac 0.1 --sub 0 --cond empty --lr 0.01
+--data ednet --frac 0.1 --sub 0 --cond support --lr 0.01

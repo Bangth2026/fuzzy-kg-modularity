@@ -12,6 +12,12 @@ Reads only archived run files (kt/r2, runs_r5, runs_r6); no new training runs.
 3. Overlap between subsamples: two subsamples of m learners drawn without replacement and
    independently from N training learners share m^2 / N learners in expectation, a share m / N of
    each subsample.
+4. Learning-curve model of the pooled support-versus-control gains (epoch budget): the mixed model of
+   r6_analyse.py (random intercept per corpus, quadratic in log10 interactions per KC) refitted
+   (a) as published, (b) with a random slope, (c) with the regressor centred within corpus, so that the
+   quadratic term uses within-corpus variation only, and (d) without the 100% cell.
+5. Learned attention scalars (beta_pre, beta_suc) in the channel-separating runs of release 3.3.0
+   (support_att, er_att) and in the full-graph runs under the update budget.
 """
 import json, glob, os, collections, warnings, numpy as np, pandas as pd
 warnings.filterwarnings("ignore")
@@ -151,7 +157,61 @@ for c in CORP:
         ov[c][str(fr)] = dict(N=N, m=m, expected_shared=m * m / N, share=m / N)
 res['subsample_overlap'] = ov
 
+# 4. learning-curve model variants -------------------------------------------------------------
+import statsmodels.formula.api as smf
+from scipy.stats import chi2
+ipk = {(r['data'], round(r['frac'], 2)): r['n_train_inter'] / r['K'] for r in R5m}
+recs = []
+for (c, fr), S in A.items():
+    if (c, fr) not in ipk: continue
+    for sid, L in S.items():
+        for k, key in enumerate(('all', 'first')):
+            recs.append(dict(corpus=c, frac=fr, key=key, x=float(np.log10(ipk[(c, fr)])), g=float(np.mean([t[k] for t in L]))))
+Dc = pd.DataFrame(recs)
+
+
+def fitm(f, e, re=None):
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        for meth in (['bfgs'], ['lbfgs'], ['powell'], ['nm']):
+            try: return smf.mixedlm(f, e, groups=e['corpus'], re_formula=re).fit(reml=False, method=meth)
+            except Exception: continue
+    raise RuntimeError('mixedlm failed')
+
+
+curve = {}
+for key in ('all', 'first'):
+    d = Dc[Dc.key == key].copy(); d['x2'] = d.x ** 2
+    d['xw'] = d.x - d.groupby('corpus').x.transform('mean'); d['xw2'] = d.xw ** 2
+    out = {}
+    for name, e, f1, f0, re, q, l in (
+            ('published', d, 'g ~ x + x2', 'g ~ x', None, 'x2', 'x'),
+            ('random_slope', d, 'g ~ x + x2', 'g ~ x', '~x', 'x2', 'x'),
+            ('within_centred', d, 'g ~ xw + xw2', 'g ~ xw', None, 'xw2', 'xw'),
+            ('without_100', d[d.frac < 1.0], 'g ~ x + x2', 'g ~ x', None, 'x2', 'x')):
+        m1 = fitm(f1, e, re); m0 = fitm(f0, e, re)
+        b1, b2 = float(m1.params[l]), float(m1.params[q])
+        peak = float(10 ** (-b1 / (2 * b2))) if (b2 < 0 and q == 'x2') else None
+        out[name] = dict(b2=b2, p=float(chi2.sf(max(0.0, 2 * (m1.llf - m0.llf)), 1)), p_wald=float(m1.pvalues[q]), llf1=float(m1.llf), llf0=float(m0.llf), converged=bool(m1.converged and m0.converged), peak=peak, n=int(len(e)))
+    curve[key] = out
+res['curve_variants'] = curve
+
+# 5. learned attention scalars -------------------------------------------------------------------
+R6all = [json.load(open(f)) for f in glob.glob(f'{ROOT}/runs_r6/*.json')]
+beta = {}
+for cond in ('support', 'support_att', 'er_att', 'support_emb', 'er'):
+    v = [r for r in R6all if r['cond'] == cond and r['budget'] == 'steps' and round(r['frac'], 2) == 0.1]
+    if not v: continue
+    dp = np.array([abs(r['beta_pre'] - 1) for r in v]); ds = np.array([abs(r['beta_suc'] - 1) for r in v])
+    beta[cond] = dict(n=len(v), pre_median_abs_change=float(np.median(dp)), pre_max_abs_change=float(dp.max()),
+                      suc_median_abs_change=float(np.median(ds)), suc_max_abs_change=float(ds.max()),
+                      best_step_median=float(np.median([r['best_step'] for r in v])))
+res['beta_steps_10'] = beta
+
 json.dump(res, open(f'{OUT}/r34_results.json', 'w'), indent=1)
+for key, o in curve.items():
+    for n, v in o.items(): print('curve', key, n, {k: (round(x, 5) if isinstance(x, float) else x) for k, x in v.items()})
+for c, v in beta.items(): print('beta', c, {k: round(x, 3) for k, x in v.items()})
 for r in rows:
     print(f"{r['label']:24s} {r['budget']:6s} {r['frac']:.2f} {r['key']:5s} {r['mean']:+.4f} {r['pos']}/{r['n']} "
           f"boot=[{r['boot'][0]:+.4f},{r['boot'][1]:+.4f}] mixed=[{r['mixed'].get('lo',0):+.4f},{r['mixed'].get('hi',0):+.4f}] "

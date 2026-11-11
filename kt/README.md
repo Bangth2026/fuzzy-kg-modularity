@@ -120,6 +120,32 @@ Adds `src/r34_analyse.py`, which reads the archived run files only (no new train
 - the number of test predictions and first attempts per corpus at 10%;
 - the expected overlap between two subsamples of one corpus (m^2 / N learners, a share m / N of each).
 
-These are the values of Table 9 and Section 6.10 of the manuscript. The mixed model needs
+- refits of the learning-curve mixed model (random slope; regressor centred within corpus; without
+  the 100% cell);
+- the learned attention scalars in the channel-separating runs of release 3.3.0.
+
+These are the values of Table 9 and Sections 6.2, 6.7 and 6.10 of the manuscript. The mixed model needs
 `statsmodels` (added to `requirements.txt`). Run with `KT_ROOT=<checkout>/kt python kt/src/r34_analyse.py`.
+
+New runs of this release (update budget, 10% of the training learners, the subsamples of Table 6:
+five on Statics 2011, Algebra 2005, Bridge to Algebra and ASSISTments 2017, two on the other six):
+
+| Step | Script | Output |
+|---|---|---|
+| One run | `src/r7_controls.py --data <c> --frac 0.1 --sub <s> --cond {empty,support,uniform_emb,empty_l2,support_l2} [--l2 x] [--lr x]` | `runs_r7/<tag>.json`, `_pred.npz` |
+| Queue (two workers; job list `runs_r7/jobs/jobs_h.txt`) | `src/r7_runq.sh runs_r7/jobs/jobs_h.txt` | |
+| Analysis | `src/r7_analyse.py` | `results_r7/r7_results.json` |
+
+Conditions: `uniform_emb`, the complete graph read in the embedding refinement only (every KC mixed with
+the mean embedding of all other KCs; the attention bias gets a zero matrix); `empty_l2` and
+`support_l2`, the control and the support graph with the penalty lambda * mean_k ||E_k - mean_j E_j||^2
+on the KC embedding table, lambda in {1e-4, 1e-3, 1e-2, 1e-1}; `--lr 0.005` and `--lr 0.01` for the
+control and the support graph (default 0.002). On the six larger corpora the shrinkage grid is
+{1e-3, 1e-2, 1e-1} and both grids were run on subsample 0 only; 396 runs in all. Per-prediction files keep the target KC, which the
+analysis uses to split first attempts by the training interactions on the target KC (terciles within
+corpus), to decompose first-attempt AUC into within-KC and between-KC parts, and to score a trivial
+predictor (training-set correct rate of the target KC). `empty` and `support` reproduce the archived
+runs of release 3.1.0 on the same subsamples. Prediction files are not included (size); their SHA-256
+checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi archive on the EduData
+mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
