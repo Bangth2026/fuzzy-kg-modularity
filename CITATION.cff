@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
-title: "fuzzy-kg-modularity: code and run files for \"Where does a concept graph help a neural knowledge tracer?\""
-version: 3.4.0
-date-released: 2026-11-11
+title: "fuzzy-kg-modularity: code and run files for \"Where does a graph prior act inside a neural sequence model?\""
+version: 3.5.0
+date-released: 2026-11-12
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
 license: MIT
 authors:
@@ -13,7 +13,7 @@ authors:
     email: truonghaibang@siu.edu.vn
 preferred-citation:
   type: article
-  title: "Where does a concept graph help a neural knowledge tracer? Embedding mixing, first attempts and data per concept in a controlled study on ten corpora"
+  title: "Where does a graph prior act inside a neural sequence model? Null-graph controls and a decomposition of the gain in knowledge tracing on ten corpora"
   journal: Neural Networks
   year: 2026
   notes: submitted

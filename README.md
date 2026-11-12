@@ -2,11 +2,11 @@
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *Where does a concept graph help a neural knowledge tracer? Embedding mixing, first attempts and data per concept in a controlled study on ten corpora.* Submitted to **Neural Networks**.
+> Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Null-graph controls and a decomposition of the gain in knowledge tracing on ten corpora.* Submitted to **Neural Networks**.
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23689762.svg)](https://doi.org/10.5281/zenodo.23689762)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24131157.svg)](https://doi.org/10.5281/zenodo.24131157)
 
 A fuzzy knowledge graph built from learner logs carries graded prerequisite edges. Pipelines that consume it discard the grades at two points: they threshold the graph before running a crisp community detector, and they replace max-min composition along paths by a non-idempotent t-norm. This repository measures what each shortcut costs.
 
@@ -15,6 +15,14 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 3. **Composition.** Best paths under every continuous Archimedean t-norm are shortest paths through the additive generator; all-pairs best-path strengths for ten operators, with optional hop limit and path floor (`fuzzykg/paths_fast.py`). The operators are judged against expert prerequisite labels (Junyi Academy crowd scores and knowledge map; MOOCCubeX held-out expert edges) and against the learner's next concept in held-out logs, with direct-edge, bigram and popularity baselines and paired bootstrap intervals over learners.
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
+
+## What is in version 3.5.0
+
+The null-graph ladder beyond the probe (Section 6.6 of the manuscript): 280 runs on six corpora at 10% of the training learners under the update budget. GKT with the empty, Erdős–Rényi, degree-preserving and support graphs; SAKT with the embedding refinement over the ladder empty, uniform, Erdős–Rényi, support; a parameter-sharing (hashed) KC table; and the paired probe runs. Code in `kt/src/r8_controls.py` and `kt/src/r8_analyse.py`, run files in `kt/runs_r8/`, results in `kt/results_r8/r8_results.json`, the Colab notebook that ran them in `kt/FKG_KT_r8_runs.ipynb`. See the section "Release 3.5.0" of `kt/README.md`.
+
+## What is in version 3.4.0
+
+Robustness of the main comparisons and decision-level metrics, and the uniform-mixing, tuned-shrinkage and learning-rate controls (`kt/src/r34_analyse.py`, `kt/src/r7_controls.py`, `kt/runs_r7/`). See the section "Release 3.4.0" of `kt/README.md`. Archived on Zenodo: [10.5281/zenodo.24131158](https://doi.org/10.5281/zenodo.24131158).
 
 ## What is in version 3.3.0
 
@@ -145,7 +153,7 @@ tests/              pytest tests
 }
 ```
 
-Archived on Zenodo: https://doi.org/10.5281/zenodo.23689762 (all versions; resolves to the latest). See also `CITATION.cff`.
+Archived on Zenodo: https://doi.org/10.5281/zenodo.24131157 (all versions; resolves to the latest). See also `CITATION.cff`.
 
 ## License
 

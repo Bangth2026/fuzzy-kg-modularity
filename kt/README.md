@@ -149,3 +149,32 @@ runs of release 3.1.0 on the same subsamples. Prediction files are not included 
 checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi archive on the EduData
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
+
+# Release 3.5.0: the null-graph ladder beyond the probe
+
+New runs for Section 6.6 of the manuscript: update budget (at most 2000 updates, evaluation every 25,
+patience 8), 10% of the training learners, six corpora (Statics 2011, Algebra 2005, Bridge to Algebra
+and ASSISTments 2017 with subsamples 0-4; ASSISTments 2009 and 2015 with subsamples 0-1). 280 runs:
+
+| Family | Conditions | Units |
+|---|---|---|
+| Probe (FKG-KT, graph in the embedding refinement only) | `empty`, `uniform_emb`, `er_emb`, `support_emb` | 24 |
+| Parameter-sharing control | `hash`: each KC embedding is the mean of k rows of a shared table (k = clip(round(2E/K), 2, 8), rows drawn with seed 3000+s), no graph | 24 |
+| SAKT-E (SAKT with the refined KC table) | `sakte_empty`, `sakte_uniform`, `sakte_er`, `sakte_support` | 24 |
+| GKT (graph routes the state) | `gkt_empty`, `gkt_er`, `gkt_rewired`, `gkt_support` | 16 (subsamples 0-2 / 0-1) |
+
+Graphs: support of the order-preserving graph of the subsample; Erdős–Rényi with as many edges (seed 2000+s);
+degree-preserving rewiring of the support graph (seed 1000+s). GKT batch size 32/16/8 by number of KCs.
+
+| Step | Script | Output |
+|---|---|---|
+| One run | `src/r8_controls.py --data <c> --frac 0.1 --sub <s> --cond <cond>` | `runs_r8/<tag>.json` |
+| Job list | `jobs_r8.txt` | |
+| All runs on Google Colab (resumable, writes to Drive) | `FKG_KT_r8_runs.ipynb` | |
+| Analysis | `R8_RUNS=<dir> src/r8_analyse.py` | `results_r8/r8_results.json` |
+
+The runs were made on a Colab T4 GPU, except the GKT runs on ASSISTments 2009 subsample 1 and on
+ASSISTments 2015 (CPU); all conditions of one unit ran on the same device (field `device` of each run
+file). Against the archived CPU runs of the same probe conditions (runs_r6, runs_r7) the GPU runs differ
+by 0.0014 AUC on first attempts on average (at most 0.020; 96 runs), so the analysis pairs runs within
+runs_r8 only. Per-prediction files (`_pred.npz`) were not archived for this release.
