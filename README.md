@@ -16,6 +16,15 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.8.0
+
+The random-vector controls with the two maps of the embedding refinement frozen at initialisation (`rvecF_emb`, `rvec1F_emb`;
+64 CPU runs, `kt/src/r11_controls.py`, `kt/runs_r11/`), the support graph on the rebuilt EdNet data, and reruns that reproduce
+the archived control exactly. `kt/src/r11_analyse.py` (`kt/results_r11/`) adds the support graph against the controls without a
+graph, the frozen-map comparisons, first attempts at KCs with and without training interactions, the share of KCs without an
+Erdős–Rényi neighbour, and the units and strata behind the neighbour split by position. See the section "Release 3.8.0" of
+`kt/README.md`.
+
 ## What is in version 3.7.0
 
 Controls without a graph: a fixed random vector per KC with no graph (two variances) and Erdős–Rényi mixing of a second, trainable table, on the 32 units of the complete ladder (96 CPU runs, `kt/src/r10_controls.py`, `kt/runs_r10/`), on corpora rebuilt from public copies of the raw files, with reruns that reproduce the archived control exactly on nine corpora. Analyses of the per-prediction files: first attempts split by a previously practised neighbour for the frozen-random-table control and for the learned-minus-frozen contrast, the same split within terciles of the position in the sequence, the AUC of the empty-graph control in each group, training length, an inventory of the runs of Section 5.4, and Fig. 4 with the rungs ER(R) − U and RV − U (`kt/src/r10_analyse.py`, `kt/src/r10_figures.py`, `kt/results_r10/`). See the section "Release 3.7.0" of `kt/README.md`.

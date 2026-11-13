@@ -150,6 +150,38 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.8.0: random-vector controls with frozen maps, graph against the controls without a graph
+
+## Runs (`src/r11_controls.py`, `runs_r11/`)
+
+Same 32 units as release 3.7.0 (10% of the training learners, update budget, training seed 0, CPU with one thread, graph read
+in the embedding refinement only), on the corpora rebuilt as described under release 3.7.0:
+
+| Condition | Runs | |
+|---|---|---|
+| `rvecF_emb` | 32 | `rvec_emb` with W_in, W_out and their biases frozen at their initial values (`requires_grad=False`). The model is built with the same generator calls as `rvec_emb`, so the component tanh(W_in q_in,k + b_in) + tanh(W_out q_out,k + b_out) equals the one `rvec_emb` starts from, but stays fixed. |
+| `rvec1F_emb` | 32 | the same for `rvec1_emb` |
+| `support_emb` on EdNet (`runs_r11/base/`, with `src/r9_controls.py`) | 2 | so that the support graph is compared with the controls without a graph on the rebuilt EdNet data |
+| `empty` on Statics 2011 and Junyi, subsample 0 (`runs_r11/repro/`) | 2 | reruns; both reproduce the test AUC of `runs_r9` exactly |
+
+Job list: `jobs_r11.txt` (run with `NT=1`, two jobs at a time).
+
+## Analysis (`src/r11_analyse.py`, `results_r11/r11_results.json`)
+
+1. `support_emb` against `rvec_emb` and `rvec1_emb`, first attempts and all predictions (Table 6, third block). On EdNet every
+   condition comes from the rebuilt data (`runs_r10/repro`, `runs_r10/base`, `runs_r11/base`); on the other corpora from
+   `runs_r9` and `runs_r7`, which the reruns reproduce exactly.
+2. Frozen maps: `rvecF_emb`, `rvec1F_emb` against `empty`, `uniform_emb` and their trainable counterparts.
+3. First attempts at KCs with no training interaction in the subsample (n_k = 0) against the others, for `rvec_emb`,
+   `rvecF_emb`, `erR_emb` and `support_emb` against `empty`, and `rvec_emb - rvecF_emb`.
+4. Share of KCs without an in-neighbour, without an out-neighbour and without either in the Erdos-Renyi graph (zero rows of
+   `rvec_emb`), and share of first attempts at KCs without training interactions.
+5. Neighbour split of `r10_analyse.py` per unit: units that enter the analysis within terciles of position, the units that
+   drop out (fewer than 30 first attempts with a practised neighbour in every tercile) and every summary with Junyi left out.
+
+Summaries as in `r10_analyse.py`. The suffixes r5 to r11 of the run and result directories number the run sets in the order
+in which they were made; every release keeps the directories of the earlier ones unchanged.
+
 # Release 3.7.0: controls without a graph, neighbour split for the frozen table, run inventory
 
 ## Controls without a graph (`src/r10_controls.py`, `runs_r10/`)
