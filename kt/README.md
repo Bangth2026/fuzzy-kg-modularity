@@ -185,7 +185,7 @@ the target KC in the support / Erdos-Renyi graph occurs earlier in the learner's
   -> support on 32 units of 10 corpora (`uniform_emb` from `runs_r7`).
 - `erR_emb`: frozen-random-table control. The refinement mixes, over the Erdos-Renyi graph, a table R drawn once from N(0, 1)
   (seed 4000 + subsample) and never trained, instead of the learned table E; E, W_in, W_out are trained.
-- `--rep j`: training seed sub + 100 j, same subsample and graphs (seed replicates on subsamples 0-1 of the four small corpora).
+- `--rep j`: training seed sub + 100 j, same subsample and graphs (seed replicates on subsamples 0-1 of the four small corpora for the probe, of Statics 2011 and ASSISTments 2017 for GKT).
 - `gkt_uniform`: GKT with the complete graph (Statics 2011, ASSISTments 2017, subsamples 0-1).
 
 | Step | Script | Output |
