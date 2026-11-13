@@ -1,0 +1,7 @@
+--data ednet --sub 1 --cond empty --out /home/claude/kt/runs_r10/base
+--data ednet --sub 0 --cond uniform_emb --out /home/claude/kt/runs_r10/base
+--data ednet --sub 1 --cond uniform_emb --out /home/claude/kt/runs_r10/base
+--data ednet --sub 0 --cond er_emb --out /home/claude/kt/runs_r10/base
+--data ednet --sub 1 --cond er_emb --out /home/claude/kt/runs_r10/base
+--data ednet --sub 0 --cond erR_emb --out /home/claude/kt/runs_r10/base
+--data ednet --sub 1 --cond erR_emb --out /home/claude/kt/runs_r10/base

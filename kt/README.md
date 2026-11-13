@@ -150,10 +150,41 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
-# Release 3.7.0: neighbour split for the frozen table, position in the sequence, run inventory
+# Release 3.7.0: controls without a graph, neighbour split for the frozen table, run inventory
 
-Analyses of the per-prediction files in `runs_r9/` (release 3.6.0); no model is trained and no data file is read.
-`src/r10_analyse.py` writes `results_r10/r10_results.json`:
+## Controls without a graph (`src/r10_controls.py`, `runs_r10/`)
+
+Does the gain of sparse mixing need a graph? Three controls on the 32 units of release 3.6.0 (10% of the training learners,
+update budget, training seed 0, CPU with one thread, graph read in the embedding refinement only), 96 runs. The KC embedding is
+LN(E_k + tanh(W_in q_in,k) + tanh(W_out q_out,k)) with the learned table E kept:
+
+- `rvec_emb`: q_in, q_out fixed random matrices drawn without a graph (seed 5000 + subsample), never trained; row k has the
+  variance of row k of A_in R in `erR_emb` (1 / in-degree, resp. 1 / out-degree, of KC k in the Erdos-Renyi graph; 0 without
+  neighbours), rows drawn independently.
+- `rvec1_emb`: the same with unit variance for every KC (seed 6000 + subsample).
+- `erE2_emb`: Erdos-Renyi mixing (seed 2000 + s) of a second table initialised as R (seed 4000 + s) and trained.
+
+Data. These runs use the ten corpora rebuilt with `src/prep.py` and `src/prep_junyi_lowmem.py` from public copies of the raw
+files on Hugging Face: `Lucy9999/assist2009` (`skill_builder_data.csv`, used as `skill_builder_data_corrected.csv`),
+`Lucy9999/assist2012`, `Lucy9999/assist2015`, `Lucy9999/assist2017`, `Lucy9999/junyi2015`, `Lucy9999/AL2005`,
+`Lucy9999/BD2006`, `Lucy9999/NIPS34` (Eedi tasks 3-4), `Lucy9999/statics2011`, `Lucy9999/EdNet-KT1` and
+`Unggi/ednet5000_raw_data` (`ednet_content/questions.csv`). Each rebuilt corpus matches Table 1 (learners, interactions after
+the cap, correct rate). Corpora with more than 6,000 eligible learners (ASSISTments 2012 and 2015, EdNet) are drawn by
+`prep.py` with a fresh generator (each run separately); Junyi with `prep_junyi_lowmem.py`.
+
+Reproduction. The empty-graph control was rerun on subsample 0 of every corpus (`runs_r10/repro/`): the test AUC of
+`runs_r9` is reproduced to the last digit on nine corpora. On EdNet the rebuilt copy of EdNet-KT1 differs in under 0.5% of the
+test interactions (largest difference in test AUC 6.5e-6), so on EdNet `empty`, `uniform_emb`, `er_emb` and `erR_emb` were
+rerun on the rebuilt data with `src/r9_controls.py` (`runs_r10/base/`) and the EdNet comparisons are made within those data.
+
+| Step | Script | Output |
+|---|---|---|
+| One run | `src/r10_controls.py --data <c> --sub <s> --cond {rvec_emb,rvec1_emb,erE2_emb,empty}` | `runs_r10/<tag>.json`, `_pred.npz` |
+| Job lists | `jobs_r10.txt`, `jobs_r10_junyi.txt`, `jobs_r10_ednet_base.txt` (the last with `src/r9_controls.py`) | |
+
+## Analyses (`src/r10_analyse.py`, `results_r10/`)
+
+`src/r10_analyse.py` reads run and per-prediction files only and writes `results_r10/r10_results.json`:
 
 1. First attempts split by whether an in- or out-neighbour of the target KC (Erdos-Renyi graph `er`, support graph `sup`)
    occurs earlier in the learner's sequence, for `support_emb`, `er_emb` and `erR_emb` against `empty`, and for the contrast
@@ -165,8 +196,10 @@ Analyses of the per-prediction files in `runs_r9/` (release 3.6.0); no model is 
    in each group, weighted by stratum size).
 4. Spearman correlation of the first-attempt gain of `erR_emb` over `empty` with the update of the control's selected
    checkpoint (`best_step`), over units and within corpus.
-5. Inventory of the run files of `runs_r8/` and `runs_r9/` by release, model, training seed and device (Supplementary
-   Table S6.10).
+5. Inventory of the run files of `runs_r8/`, `runs_r9/` and `runs_r10/` by release, model, training seed and device
+   (Supplementary Table S6.10).
+6. The controls without a graph against `empty`, `uniform_emb` (`runs_r7`), `er_emb` and `erR_emb` on the same units, and
+   the reproduction check (Table 6, third block; Supplementary Table S6.11).
 
 Summaries as in `r9_analyse.py`: mean over corpora of subsample means, corpora with a positive value, unadjusted Wilcoxon p
 over corpora, 95% mixed-model interval (random intercept per corpus) and corpus-then-subsample bootstrap interval.
@@ -174,9 +207,10 @@ over corpora, 95% mixed-model interval (random intercept per corpus) and corpus-
 | Step | Script | Output |
 |---|---|---|
 | Analysis | `src/r10_analyse.py` (`R9_RUNS`, `R8_RUNS` default to `runs_r9`, `runs_r8`) | `results_r10/r10_results.json` |
-| Fig. 4 with the rung ER(R) - U | `src/r10_figures.py` (reads `results_r9/r9_results.json`, `results_r8/r8_results.json`) | `results_r10/fig4_ladder.png` |
+| Fig. 4 with the rungs ER(R) - U and RV - U | `src/r10_figures.py` (reads `results_r9/r9_results.json`, `results_r8/r8_results.json`) | `results_r10/fig4_ladder.png` |
 
-In the manuscript that accompanies this release the ladder tables are Tables 6 (probe) and 7 (beyond the probe), the
+In the manuscript that accompanies this release the ladder tables are Tables 6 (probe; third block: controls without a graph)
+and 7 (beyond the probe), the
 robustness table is Table 8, the telescoping identity is Eq. (1) and the graph, the refinement and the attention logit are
 Eqs. (2) to (4); the epoch-budget graph controls are Supplementary Table S5.2. Earlier sections of this file keep the
 numbering of the manuscript at their release.

@@ -24,8 +24,16 @@ empty-graph control, er_emb, erR_emb and support_emb exist:
    empty-graph control with the update at which the control's selected checkpoint was taken (best_step),
    over all units and after centring both within corpus.
 
-6. Run sets of Section 5.4 (Supplementary Table S6.10): run files of runs_r8 and runs_r9 grouped by
+6. Run sets of Section 5.4 (Supplementary Table S6.10): run files of runs_r8, runs_r9 and runs_r10 grouped by
    release, model, training seed and device, with the corpora and subsamples of each group.
+
+7. Controls without a graph (runs_r10, kt/src/r10_controls.py), paired with empty, er_emb and erR_emb of runs_r9 and
+   uniform_emb of runs_r7 on the same units: rvec_emb (a fixed random vector per KC with the row variance that the
+   frozen table receives through the Erdos-Renyi graph, no graph), rvec1_emb (unit variance, no graph) and erE2_emb
+   (Erdos-Renyi mixing of a second, trainable table). Differences on first attempts and on all predictions, and the
+   reproduction of runs_r9 by the reruns of the empty-graph control in runs_r10/repro (subsample 0 of every corpus).
+   A corpus whose rerun does not reproduce runs_r9 exactly is compared within its rebuilt data, with empty, uniform_emb,
+   er_emb and erR_emb rerun by r9_controls.py into runs_r10/base.
 
 Every quantity is summarised as in r9_analyse.py: mean over corpora of subsample means, number of
 corpora with a positive value, Wilcoxon p over corpora (unadjusted), 95% mixed-model interval (random
@@ -147,7 +155,8 @@ training_length = dict(units=int(len(TL)), best_step_min=float(TL.best.min()), b
 # 6. run sets --------------------------------------------------------------------------------
 R8 = os.environ.get('R8_RUNS', f'{REPO}/runs_r8')
 rs = []
-for rel, path in (('3.5.0', R8), ('3.6.0', R9)):
+R10i = os.environ.get('R10_RUNS', f'{REPO}/runs_r10')
+for rel, path in (('3.5.0', R8), ('3.6.0', R9), ('3.7.0', R10i), ('3.7.0 rerun', f'{R10i}/repro'), ('3.7.0 rerun', f'{R10i}/base')):
     for f in glob.glob(f'{path}/*.json'):
         r = json.load(open(f))
         rs.append(dict(release=rel, family=r['family'], cond=r['cond'], data=r['data'], sub=int(r['sub']),
@@ -159,9 +168,49 @@ for (rel, fam, rep_any, dev), g in RS.assign(rep_any=RS.rep > 0).groupby(['relea
                          conditions=sorted(g.cond.unique().tolist()), runs=int(len(g)),
                          subsamples={c: sorted(int(v) for v in gg['sub'].unique()) for c, gg in g.groupby('data')}))
 
+# 7. controls without a graph -----------------------------------------------------------------
+R10 = os.environ.get('R10_RUNS', f'{REPO}/runs_r10'); R7 = os.environ.get('R7_RUNS', f'{REPO}/runs_r7')
+def load_runs(path, conds):
+    out = []
+    for f in glob.glob(f'{path}/*.json'):
+        r = json.load(open(f))
+        if r.get('budget') != 'steps' or abs(r.get('frac', 0.1) - 0.1) > 1e-9 or r.get('rep', 0): continue
+        if r.get('lr', 0.002) != 0.002 or r.get('l2', 0) not in (0, 0.0, None): continue
+        if r['cond'] in conds: out.append(r)
+    return out
+BASE = {'empty', 'er_emb', 'erR_emb', 'uniform_emb'}
+RP = []
+for f in glob.glob(f'{R10}/repro/*.json'):
+    b = json.load(open(f)); a = json.load(open(f'{R9}/' + os.path.basename(f)))
+    RP.append(dict(data=b['data'], same_all=a['test_auc'] == b['test_auc'], same_first=a['test_auc_first'] == b['test_auc_first'],
+                   abs_diff=abs(a['test_auc'] - b['test_auc'])))
+# a corpus whose rebuilt data do not reproduce the archived control exactly is paired within the rebuilt data:
+# its reference conditions come from runs_r10/repro and runs_r10/base instead of runs_r9 / runs_r7
+REBUILT = sorted({r['data'] for r in RP if not (r['same_all'] and r['same_first'])})
+arch = [r for r in load_runs(R9, {'empty', 'er_emb', 'erR_emb'}) + load_runs(R7, {'uniform_emb'}) if r['data'] not in REBUILT]
+reb = [r for r in load_runs(f'{R10}/base', BASE) + load_runs(f'{R10}/repro', BASE) if r['data'] in REBUILT]
+NG = pd.DataFrame(arch + reb + load_runs(R10, {'rvec_emb', 'rvec1_emb', 'erE2_emb'}))
+nograph = {'units': {}, 'paired_within_rebuilt_data': REBUILT}
+if len(NG) and 'rvec_emb' in set(NG.cond):
+    NG = NG.drop_duplicates(['data', 'sub', 'cond'])
+    for key, col in (('first', 'test_auc_first'), ('all', 'test_auc')):
+        T = NG.pivot_table(index=['data', 'sub'], columns='cond', values=col, aggfunc='first')
+        out = {}
+        for a_, b_ in (('rvec_emb', 'empty'), ('rvec_emb', 'uniform_emb'), ('erR_emb', 'rvec_emb'), ('er_emb', 'rvec_emb'),
+                       ('rvec1_emb', 'empty'), ('rvec1_emb', 'uniform_emb'), ('rvec_emb', 'rvec1_emb'),
+                       ('erE2_emb', 'empty'), ('erE2_emb', 'uniform_emb'), ('erE2_emb', 'erR_emb'), ('er_emb', 'erE2_emb'),
+                       ('erR_emb', 'uniform_emb'), ('er_emb', 'uniform_emb')):
+            if a_ in T and b_ in T:
+                j = (T[a_] - T[b_]).dropna().rename('d').reset_index()
+                out[f'{a_} - {b_}'] = summ(j.to_dict('records'))
+        nograph[key] = out
+        nograph['units'][key] = {c: int(T[c].notna().sum()) for c in T.columns}
+    nograph['reproduction'] = dict(n=len(RP), all_identical=bool(all(r['same_all'] and r['same_first'] for r in RP)),
+                                   max_abs_diff=max([r['abs_diff'] for r in RP], default=None), corpora=sorted(r['data'] for r in RP))
+
 res = {'n_units': int(sum(1 for t in units.values() if not set(CONDS) - set(t))),
        'min_stratum': MIN_STRATUM, 'summary': {k: summ(v) for k, v in S.items()},
-       'training_length_erR': training_length, 'run_sets': run_sets,
+       'training_length_erR': training_length, 'controls_without_graph': nograph, 'run_sets': run_sets,
        'run_totals': {'all': int(len(RS)), 'by_device': {k: int(v) for k, v in RS.device.value_counts().items()}}}
 json.dump(res, open(f'{OUT}/r10_results.json', 'w'), indent=1)
 
@@ -173,5 +222,8 @@ def fmt(v):
             f"{v['pos']}/{v['n']}  p={v.get('p_wilcoxon', np.nan):.3f}  units={v['units']}")
 
 
+for key in ('first', 'all'):
+    for k, v in nograph.get(key, {}).items(): print(f'NOGRAPH {key:5s} {k:28s}', fmt(v))
+if 'reproduction' in nograph: print('REPRO', nograph['reproduction'])
 print('units', res['n_units'], 'training length', {k: round(v, 3) for k, v in training_length.items()})
 for k in sorted(res['summary']): print(f'{k:55s}', fmt(res['summary'][k]))

@@ -18,7 +18,7 @@ Every analysis is run on graphs from two constructions of the same logs: a **co-
 
 ## What is in version 3.7.0
 
-Analyses of the per-prediction files of release 3.6.0, with no new training runs: first attempts split by a previously practised Erdős–Rényi neighbour for the frozen-random-table control and for the contrast between the learned and the frozen table, the same split within terciles of the position in the learner's sequence, the AUC of the empty-graph control in each group, the relation of the frozen table's gain to training length, an inventory of the 540 runs of Section 5.4, and Fig. 4 with the frozen-random-table rung. Code in `kt/src/r10_analyse.py` and `kt/src/r10_figures.py`, results in `kt/results_r10/`. See the section "Release 3.7.0" of `kt/README.md`.
+Controls without a graph: a fixed random vector per KC with no graph (two variances) and Erdős–Rényi mixing of a second, trainable table, on the 32 units of the complete ladder (96 CPU runs, `kt/src/r10_controls.py`, `kt/runs_r10/`), on corpora rebuilt from public copies of the raw files, with reruns that reproduce the archived control exactly on nine corpora. Analyses of the per-prediction files: first attempts split by a previously practised neighbour for the frozen-random-table control and for the learned-minus-frozen contrast, the same split within terciles of the position in the sequence, the AUC of the empty-graph control in each group, training length, an inventory of the runs of Section 5.4, and Fig. 4 with the rungs ER(R) − U and RV − U (`kt/src/r10_analyse.py`, `kt/src/r10_figures.py`, `kt/results_r10/`). See the section "Release 3.7.0" of `kt/README.md`.
 
 ## What is in version 3.6.0
 

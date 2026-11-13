@@ -1,0 +1,7 @@
+--data junyi --sub 0 --cond empty --out /home/claude/kt/repro
+--data junyi --sub 0 --cond rvec_emb
+--data junyi --sub 1 --cond rvec_emb
+--data junyi --sub 0 --cond erE2_emb
+--data junyi --sub 1 --cond erE2_emb
+--data junyi --sub 0 --cond rvec1_emb
+--data junyi --sub 1 --cond rvec1_emb

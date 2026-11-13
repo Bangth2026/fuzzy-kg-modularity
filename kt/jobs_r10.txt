@@ -1,0 +1,99 @@
+--data statics11 --sub 0 --cond empty --out /home/claude/kt/repro
+--data algebra05 --sub 0 --cond empty --out /home/claude/kt/repro
+--data bridge06 --sub 0 --cond empty --out /home/claude/kt/repro
+--data assist17 --sub 0 --cond empty --out /home/claude/kt/repro
+--data assist09 --sub 0 --cond empty --out /home/claude/kt/repro
+--data assist12 --sub 0 --cond empty --out /home/claude/kt/repro
+--data assist15 --sub 0 --cond empty --out /home/claude/kt/repro
+--data eedi --sub 0 --cond empty --out /home/claude/kt/repro
+--data ednet --sub 0 --cond empty --out /home/claude/kt/repro
+--data statics11 --sub 0 --cond rvec_emb
+--data statics11 --sub 1 --cond rvec_emb
+--data statics11 --sub 2 --cond rvec_emb
+--data statics11 --sub 3 --cond rvec_emb
+--data statics11 --sub 4 --cond rvec_emb
+--data algebra05 --sub 0 --cond rvec_emb
+--data algebra05 --sub 1 --cond rvec_emb
+--data algebra05 --sub 2 --cond rvec_emb
+--data algebra05 --sub 3 --cond rvec_emb
+--data algebra05 --sub 4 --cond rvec_emb
+--data bridge06 --sub 0 --cond rvec_emb
+--data bridge06 --sub 1 --cond rvec_emb
+--data bridge06 --sub 2 --cond rvec_emb
+--data bridge06 --sub 3 --cond rvec_emb
+--data bridge06 --sub 4 --cond rvec_emb
+--data assist17 --sub 0 --cond rvec_emb
+--data assist17 --sub 1 --cond rvec_emb
+--data assist17 --sub 2 --cond rvec_emb
+--data assist17 --sub 3 --cond rvec_emb
+--data assist17 --sub 4 --cond rvec_emb
+--data assist09 --sub 0 --cond rvec_emb
+--data assist09 --sub 1 --cond rvec_emb
+--data assist12 --sub 0 --cond rvec_emb
+--data assist12 --sub 1 --cond rvec_emb
+--data assist15 --sub 0 --cond rvec_emb
+--data assist15 --sub 1 --cond rvec_emb
+--data eedi --sub 0 --cond rvec_emb
+--data eedi --sub 1 --cond rvec_emb
+--data ednet --sub 0 --cond rvec_emb
+--data ednet --sub 1 --cond rvec_emb
+--data statics11 --sub 0 --cond erE2_emb
+--data statics11 --sub 1 --cond erE2_emb
+--data statics11 --sub 2 --cond erE2_emb
+--data statics11 --sub 3 --cond erE2_emb
+--data statics11 --sub 4 --cond erE2_emb
+--data algebra05 --sub 0 --cond erE2_emb
+--data algebra05 --sub 1 --cond erE2_emb
+--data algebra05 --sub 2 --cond erE2_emb
+--data algebra05 --sub 3 --cond erE2_emb
+--data algebra05 --sub 4 --cond erE2_emb
+--data bridge06 --sub 0 --cond erE2_emb
+--data bridge06 --sub 1 --cond erE2_emb
+--data bridge06 --sub 2 --cond erE2_emb
+--data bridge06 --sub 3 --cond erE2_emb
+--data bridge06 --sub 4 --cond erE2_emb
+--data assist17 --sub 0 --cond erE2_emb
+--data assist17 --sub 1 --cond erE2_emb
+--data assist17 --sub 2 --cond erE2_emb
+--data assist17 --sub 3 --cond erE2_emb
+--data assist17 --sub 4 --cond erE2_emb
+--data assist09 --sub 0 --cond erE2_emb
+--data assist09 --sub 1 --cond erE2_emb
+--data assist12 --sub 0 --cond erE2_emb
+--data assist12 --sub 1 --cond erE2_emb
+--data assist15 --sub 0 --cond erE2_emb
+--data assist15 --sub 1 --cond erE2_emb
+--data eedi --sub 0 --cond erE2_emb
+--data eedi --sub 1 --cond erE2_emb
+--data ednet --sub 0 --cond erE2_emb
+--data ednet --sub 1 --cond erE2_emb
+--data statics11 --sub 0 --cond rvec1_emb
+--data statics11 --sub 1 --cond rvec1_emb
+--data statics11 --sub 2 --cond rvec1_emb
+--data statics11 --sub 3 --cond rvec1_emb
+--data statics11 --sub 4 --cond rvec1_emb
+--data algebra05 --sub 0 --cond rvec1_emb
+--data algebra05 --sub 1 --cond rvec1_emb
+--data algebra05 --sub 2 --cond rvec1_emb
+--data algebra05 --sub 3 --cond rvec1_emb
+--data algebra05 --sub 4 --cond rvec1_emb
+--data bridge06 --sub 0 --cond rvec1_emb
+--data bridge06 --sub 1 --cond rvec1_emb
+--data bridge06 --sub 2 --cond rvec1_emb
+--data bridge06 --sub 3 --cond rvec1_emb
+--data bridge06 --sub 4 --cond rvec1_emb
+--data assist17 --sub 0 --cond rvec1_emb
+--data assist17 --sub 1 --cond rvec1_emb
+--data assist17 --sub 2 --cond rvec1_emb
+--data assist17 --sub 3 --cond rvec1_emb
+--data assist17 --sub 4 --cond rvec1_emb
+--data assist09 --sub 0 --cond rvec1_emb
+--data assist09 --sub 1 --cond rvec1_emb
+--data assist12 --sub 0 --cond rvec1_emb
+--data assist12 --sub 1 --cond rvec1_emb
+--data assist15 --sub 0 --cond rvec1_emb
+--data assist15 --sub 1 --cond rvec1_emb
+--data eedi --sub 0 --cond rvec1_emb
+--data eedi --sub 1 --cond rvec1_emb
+--data ednet --sub 0 --cond rvec1_emb
+--data ednet --sub 1 --cond rvec1_emb
