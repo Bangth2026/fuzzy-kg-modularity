@@ -150,9 +150,40 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.7.0: neighbour split for the frozen table, position in the sequence, run inventory
+
+Analyses of the per-prediction files in `runs_r9/` (release 3.6.0); no model is trained and no data file is read.
+`src/r10_analyse.py` writes `results_r10/r10_results.json`:
+
+1. First attempts split by whether an in- or out-neighbour of the target KC (Erdos-Renyi graph `er`, support graph `sup`)
+   occurs earlier in the learner's sequence, for `support_emb`, `er_emb` and `erR_emb` against `empty`, and for the contrast
+   `er_emb - erR_emb` (learned against frozen neighbour table over the same graph), on each group and seen - unseen within
+   unit (a group enters a unit only with more than 20 first attempts and both outcome classes, as in `r9_analyse.py`).
+   The `er_emb` and `support_emb` rows reproduce section 4 of `r9_analyse.py`.
+2. AUC of the empty-graph control, base rate and median position of each group.
+3. The seen - unseen difference within terciles of the position of first attempts (strata with at least 30 first attempts
+   in each group, weighted by stratum size).
+4. Spearman correlation of the first-attempt gain of `erR_emb` over `empty` with the update of the control's selected
+   checkpoint (`best_step`), over units and within corpus.
+5. Inventory of the run files of `runs_r8/` and `runs_r9/` by release, model, training seed and device (Supplementary
+   Table S6.10).
+
+Summaries as in `r9_analyse.py`: mean over corpora of subsample means, corpora with a positive value, unadjusted Wilcoxon p
+over corpora, 95% mixed-model interval (random intercept per corpus) and corpus-then-subsample bootstrap interval.
+
+| Step | Script | Output |
+|---|---|---|
+| Analysis | `src/r10_analyse.py` (`R9_RUNS`, `R8_RUNS` default to `runs_r9`, `runs_r8`) | `results_r10/r10_results.json` |
+| Fig. 4 with the rung ER(R) - U | `src/r10_figures.py` (reads `results_r9/r9_results.json`, `results_r8/r8_results.json`) | `results_r10/fig4_ladder.png` |
+
+In the manuscript that accompanies this release the ladder tables are Tables 6 (probe) and 7 (beyond the probe), the
+robustness table is Table 8, the telescoping identity is Eq. (1) and the graph, the refinement and the attention logit are
+Eqs. (2) to (4); the epoch-budget graph controls are Supplementary Table S5.2. Earlier sections of this file keep the
+numbering of the manuscript at their release.
+
 # Release 3.6.0: complete null-graph ladder, frozen random table, neighbour split, seed replicates
 
-New runs for Sections 5.4, 6.4 to 6.6 and Supplementary Section S6 of the revised Neural Networks manuscript. All runs on a
+New runs for Sections 5.4, 6.4 to 6.6 and Supplementary Section S6 of the Neural Networks manuscript. All runs on a
 CPU with one thread (`NT=1`), at 10% of the training learners under the update budget (at most 2000 updates, evaluation every
 25, patience 8), so that they pair with the archived CPU runs of `runs_r6` and `runs_r7`; every rerun of an archived condition
 reproduces its test AUC exactly (128 runs compared). 260 run files in `runs_r9/`, each with a

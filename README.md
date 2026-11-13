@@ -16,9 +16,13 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.7.0
+
+Analyses of the per-prediction files of release 3.6.0, with no new training runs: first attempts split by a previously practised Erdős–Rényi neighbour for the frozen-random-table control and for the contrast between the learned and the frozen table, the same split within terciles of the position in the learner's sequence, the AUC of the empty-graph control in each group, the relation of the frozen table's gain to training length, an inventory of the 540 runs of Section 5.4, and Fig. 4 with the frozen-random-table rung. Code in `kt/src/r10_analyse.py` and `kt/src/r10_figures.py`, results in `kt/results_r10/`. See the section "Release 3.7.0" of `kt/README.md`.
+
 ## What is in version 3.6.0
 
-The complete null-graph ladder with the graph read in the embedding refinement (32 units of 10 corpora), the frozen-random-table control, first attempts split by a previously practised graph neighbour, seed replicates for the probe and for GKT, GKT with the complete graph, and Figures 3 and 4 of the revised manuscript: 260 CPU runs with per-prediction files (`kt/runs_r9/`), `kt/src/r9_controls.py`, `kt/src/r9_analyse.py`, `kt/src/r9_figures.py`, results in `kt/results_r9/`. See the section "Release 3.6.0" of `kt/README.md`.
+The complete null-graph ladder with the graph read in the embedding refinement (32 units of 10 corpora), the frozen-random-table control, first attempts split by a previously practised graph neighbour, seed replicates for the probe and for GKT, GKT with the complete graph, and Figures 3 and 4 of the manuscript: 260 CPU runs with per-prediction files (`kt/runs_r9/`), `kt/src/r9_controls.py`, `kt/src/r9_analyse.py`, `kt/src/r9_figures.py`, results in `kt/results_r9/`. See the section "Release 3.6.0" of `kt/README.md`.
 
 ## What is in version 3.5.0
 
