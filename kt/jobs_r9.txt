@@ -1,0 +1,261 @@
+--data statics11 --sub 0 --cond dp_emb
+--data statics11 --sub 1 --cond dp_emb
+--data statics11 --sub 2 --cond dp_emb
+--data statics11 --sub 3 --cond dp_emb
+--data statics11 --sub 4 --cond dp_emb
+--data algebra05 --sub 0 --cond dp_emb
+--data algebra05 --sub 1 --cond dp_emb
+--data algebra05 --sub 2 --cond dp_emb
+--data algebra05 --sub 3 --cond dp_emb
+--data algebra05 --sub 4 --cond dp_emb
+--data bridge06 --sub 0 --cond dp_emb
+--data bridge06 --sub 1 --cond dp_emb
+--data bridge06 --sub 2 --cond dp_emb
+--data bridge06 --sub 3 --cond dp_emb
+--data bridge06 --sub 4 --cond dp_emb
+--data assist17 --sub 0 --cond dp_emb
+--data assist17 --sub 1 --cond dp_emb
+--data assist17 --sub 2 --cond dp_emb
+--data assist17 --sub 3 --cond dp_emb
+--data assist17 --sub 4 --cond dp_emb
+--data assist09 --sub 0 --cond dp_emb
+--data assist09 --sub 1 --cond dp_emb
+--data assist15 --sub 0 --cond dp_emb
+--data assist15 --sub 1 --cond dp_emb
+--data statics11 --sub 0 --cond erR_emb
+--data statics11 --sub 1 --cond erR_emb
+--data statics11 --sub 2 --cond erR_emb
+--data statics11 --sub 3 --cond erR_emb
+--data statics11 --sub 4 --cond erR_emb
+--data algebra05 --sub 0 --cond erR_emb
+--data algebra05 --sub 1 --cond erR_emb
+--data algebra05 --sub 2 --cond erR_emb
+--data algebra05 --sub 3 --cond erR_emb
+--data algebra05 --sub 4 --cond erR_emb
+--data bridge06 --sub 0 --cond erR_emb
+--data bridge06 --sub 1 --cond erR_emb
+--data bridge06 --sub 2 --cond erR_emb
+--data bridge06 --sub 3 --cond erR_emb
+--data bridge06 --sub 4 --cond erR_emb
+--data assist17 --sub 0 --cond erR_emb
+--data assist17 --sub 1 --cond erR_emb
+--data assist17 --sub 2 --cond erR_emb
+--data assist17 --sub 3 --cond erR_emb
+--data assist17 --sub 4 --cond erR_emb
+--data assist09 --sub 0 --cond erR_emb
+--data assist09 --sub 1 --cond erR_emb
+--data assist15 --sub 0 --cond erR_emb
+--data assist15 --sub 1 --cond erR_emb
+--data statics11 --sub 0 --cond empty
+--data statics11 --sub 1 --cond empty
+--data statics11 --sub 2 --cond empty
+--data statics11 --sub 3 --cond empty
+--data statics11 --sub 4 --cond empty
+--data algebra05 --sub 0 --cond empty
+--data algebra05 --sub 1 --cond empty
+--data algebra05 --sub 2 --cond empty
+--data algebra05 --sub 3 --cond empty
+--data algebra05 --sub 4 --cond empty
+--data bridge06 --sub 0 --cond empty
+--data bridge06 --sub 1 --cond empty
+--data bridge06 --sub 2 --cond empty
+--data bridge06 --sub 3 --cond empty
+--data bridge06 --sub 4 --cond empty
+--data assist17 --sub 0 --cond empty
+--data assist17 --sub 1 --cond empty
+--data assist17 --sub 2 --cond empty
+--data assist17 --sub 3 --cond empty
+--data assist17 --sub 4 --cond empty
+--data assist09 --sub 0 --cond empty
+--data assist09 --sub 1 --cond empty
+--data assist15 --sub 0 --cond empty
+--data assist15 --sub 1 --cond empty
+--data statics11 --sub 0 --cond support_emb
+--data statics11 --sub 1 --cond support_emb
+--data statics11 --sub 2 --cond support_emb
+--data statics11 --sub 3 --cond support_emb
+--data statics11 --sub 4 --cond support_emb
+--data algebra05 --sub 0 --cond support_emb
+--data algebra05 --sub 1 --cond support_emb
+--data algebra05 --sub 2 --cond support_emb
+--data algebra05 --sub 3 --cond support_emb
+--data algebra05 --sub 4 --cond support_emb
+--data bridge06 --sub 0 --cond support_emb
+--data bridge06 --sub 1 --cond support_emb
+--data bridge06 --sub 2 --cond support_emb
+--data bridge06 --sub 3 --cond support_emb
+--data bridge06 --sub 4 --cond support_emb
+--data assist17 --sub 0 --cond support_emb
+--data assist17 --sub 1 --cond support_emb
+--data assist17 --sub 2 --cond support_emb
+--data assist17 --sub 3 --cond support_emb
+--data assist17 --sub 4 --cond support_emb
+--data assist09 --sub 0 --cond support_emb
+--data assist09 --sub 1 --cond support_emb
+--data assist15 --sub 0 --cond support_emb
+--data assist15 --sub 1 --cond support_emb
+--data statics11 --sub 0 --cond er_emb
+--data statics11 --sub 1 --cond er_emb
+--data statics11 --sub 2 --cond er_emb
+--data statics11 --sub 3 --cond er_emb
+--data statics11 --sub 4 --cond er_emb
+--data algebra05 --sub 0 --cond er_emb
+--data algebra05 --sub 1 --cond er_emb
+--data algebra05 --sub 2 --cond er_emb
+--data algebra05 --sub 3 --cond er_emb
+--data algebra05 --sub 4 --cond er_emb
+--data bridge06 --sub 0 --cond er_emb
+--data bridge06 --sub 1 --cond er_emb
+--data bridge06 --sub 2 --cond er_emb
+--data bridge06 --sub 3 --cond er_emb
+--data bridge06 --sub 4 --cond er_emb
+--data assist17 --sub 0 --cond er_emb
+--data assist17 --sub 1 --cond er_emb
+--data assist17 --sub 2 --cond er_emb
+--data assist17 --sub 3 --cond er_emb
+--data assist17 --sub 4 --cond er_emb
+--data assist09 --sub 0 --cond er_emb
+--data assist09 --sub 1 --cond er_emb
+--data assist15 --sub 0 --cond er_emb
+--data assist15 --sub 1 --cond er_emb
+--data statics11 --sub 0 --cond support
+--data statics11 --sub 1 --cond support
+--data algebra05 --sub 0 --cond support
+--data algebra05 --sub 1 --cond support
+--data bridge06 --sub 0 --cond support
+--data bridge06 --sub 1 --cond support
+--data assist17 --sub 0 --cond support
+--data assist17 --sub 1 --cond support
+--data statics11 --sub 0 --cond empty --rep 1
+--data statics11 --sub 1 --cond empty --rep 1
+--data algebra05 --sub 0 --cond empty --rep 1
+--data algebra05 --sub 1 --cond empty --rep 1
+--data bridge06 --sub 0 --cond empty --rep 1
+--data bridge06 --sub 1 --cond empty --rep 1
+--data assist17 --sub 0 --cond empty --rep 1
+--data assist17 --sub 1 --cond empty --rep 1
+--data statics11 --sub 0 --cond support --rep 1
+--data statics11 --sub 1 --cond support --rep 1
+--data algebra05 --sub 0 --cond support --rep 1
+--data algebra05 --sub 1 --cond support --rep 1
+--data bridge06 --sub 0 --cond support --rep 1
+--data bridge06 --sub 1 --cond support --rep 1
+--data assist17 --sub 0 --cond support --rep 1
+--data assist17 --sub 1 --cond support --rep 1
+--data statics11 --sub 0 --cond empty --rep 2
+--data statics11 --sub 1 --cond empty --rep 2
+--data algebra05 --sub 0 --cond empty --rep 2
+--data algebra05 --sub 1 --cond empty --rep 2
+--data bridge06 --sub 0 --cond empty --rep 2
+--data bridge06 --sub 1 --cond empty --rep 2
+--data assist17 --sub 0 --cond empty --rep 2
+--data assist17 --sub 1 --cond empty --rep 2
+--data statics11 --sub 0 --cond support --rep 2
+--data statics11 --sub 1 --cond support --rep 2
+--data algebra05 --sub 0 --cond support --rep 2
+--data algebra05 --sub 1 --cond support --rep 2
+--data bridge06 --sub 0 --cond support --rep 2
+--data bridge06 --sub 1 --cond support --rep 2
+--data assist17 --sub 0 --cond support --rep 2
+--data assist17 --sub 1 --cond support --rep 2
+--data statics11 --sub 2 --cond support
+--data statics11 --sub 3 --cond support
+--data statics11 --sub 4 --cond support
+--data algebra05 --sub 2 --cond support
+--data algebra05 --sub 3 --cond support
+--data algebra05 --sub 4 --cond support
+--data bridge06 --sub 2 --cond support
+--data bridge06 --sub 3 --cond support
+--data bridge06 --sub 4 --cond support
+--data assist17 --sub 2 --cond support
+--data assist17 --sub 3 --cond support
+--data assist17 --sub 4 --cond support
+--data assist09 --sub 0 --cond support
+--data assist09 --sub 1 --cond support
+--data assist15 --sub 0 --cond support
+--data assist15 --sub 1 --cond support
+--data assist12 --sub 0 --cond dp_emb
+--data assist12 --sub 1 --cond dp_emb
+--data assist12 --sub 0 --cond erR_emb
+--data assist12 --sub 1 --cond erR_emb
+--data assist12 --sub 0 --cond empty
+--data assist12 --sub 1 --cond empty
+--data assist12 --sub 0 --cond support_emb
+--data assist12 --sub 1 --cond support_emb
+--data assist12 --sub 0 --cond er_emb
+--data assist12 --sub 1 --cond er_emb
+--data assist12 --sub 0 --cond support
+--data assist12 --sub 1 --cond support
+--data eedi --sub 0 --cond dp_emb
+--data eedi --sub 1 --cond dp_emb
+--data eedi --sub 0 --cond erR_emb
+--data eedi --sub 1 --cond erR_emb
+--data eedi --sub 0 --cond empty
+--data eedi --sub 1 --cond empty
+--data eedi --sub 0 --cond support_emb
+--data eedi --sub 1 --cond support_emb
+--data eedi --sub 0 --cond er_emb
+--data eedi --sub 1 --cond er_emb
+--data eedi --sub 0 --cond support
+--data eedi --sub 1 --cond support
+--data junyi --sub 0 --cond dp_emb
+--data junyi --sub 1 --cond dp_emb
+--data junyi --sub 0 --cond erR_emb
+--data junyi --sub 1 --cond erR_emb
+--data junyi --sub 0 --cond empty
+--data junyi --sub 1 --cond empty
+--data junyi --sub 0 --cond support_emb
+--data junyi --sub 1 --cond support_emb
+--data junyi --sub 0 --cond er_emb
+--data junyi --sub 1 --cond er_emb
+--data junyi --sub 0 --cond support
+--data junyi --sub 1 --cond support
+--data ednet --sub 0 --cond dp_emb
+--data ednet --sub 1 --cond dp_emb
+--data ednet --sub 0 --cond erR_emb
+--data ednet --sub 1 --cond erR_emb
+--data ednet --sub 0 --cond empty
+--data ednet --sub 1 --cond empty
+--data ednet --sub 0 --cond support_emb
+--data ednet --sub 1 --cond support_emb
+--data ednet --sub 0 --cond er_emb
+--data ednet --sub 1 --cond er_emb
+--data ednet --sub 0 --cond support
+--data ednet --sub 1 --cond support
+--data statics11 --sub 0 --cond gkt_support
+--data statics11 --sub 0 --cond gkt_empty
+--data statics11 --sub 1 --cond gkt_empty
+--data assist17 --sub 0 --cond gkt_empty
+--data assist17 --sub 1 --cond gkt_empty
+--data statics11 --sub 0 --cond gkt_uniform
+--data statics11 --sub 1 --cond gkt_uniform
+--data assist17 --sub 0 --cond gkt_uniform
+--data assist17 --sub 1 --cond gkt_uniform
+--data statics11 --sub 0 --cond gkt_er
+--data statics11 --sub 1 --cond gkt_er
+--data assist17 --sub 0 --cond gkt_er
+--data assist17 --sub 1 --cond gkt_er
+--data statics11 --sub 0 --cond gkt_rewired
+--data statics11 --sub 1 --cond gkt_rewired
+--data assist17 --sub 0 --cond gkt_rewired
+--data assist17 --sub 1 --cond gkt_rewired
+--data statics11 --sub 0 --cond gkt_support
+--data statics11 --sub 1 --cond gkt_support
+--data assist17 --sub 0 --cond gkt_support
+--data assist17 --sub 1 --cond gkt_support
+--data statics11 --sub 0 --cond gkt_rewired --rep 1
+--data statics11 --sub 1 --cond gkt_rewired --rep 1
+--data assist17 --sub 0 --cond gkt_rewired --rep 1
+--data assist17 --sub 1 --cond gkt_rewired --rep 1
+--data statics11 --sub 0 --cond gkt_support --rep 1
+--data statics11 --sub 1 --cond gkt_support --rep 1
+--data assist17 --sub 0 --cond gkt_support --rep 1
+--data assist17 --sub 1 --cond gkt_support --rep 1
+--data statics11 --sub 0 --cond gkt_rewired --rep 2
+--data statics11 --sub 1 --cond gkt_rewired --rep 2
+--data assist17 --sub 0 --cond gkt_rewired --rep 2
+--data assist17 --sub 1 --cond gkt_rewired --rep 2
+--data statics11 --sub 0 --cond gkt_support --rep 2
+--data statics11 --sub 1 --cond gkt_support --rep 2
+--data assist17 --sub 0 --cond gkt_support --rep 2
+--data assist17 --sub 1 --cond gkt_support --rep 2

@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "fuzzy-kg-modularity: code and run files for \"Where does a graph prior act inside a neural sequence model?\""
-version: 3.5.0
-date-released: 2026-11-12
+version: 3.6.0
+date-released: 2026-11-13
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
 license: MIT
 authors:
@@ -13,7 +13,7 @@ authors:
     email: truonghaibang@siu.edu.vn
 preferred-citation:
   type: article
-  title: "Where does a graph prior act inside a neural sequence model? Null-graph controls and a decomposition of the gain in knowledge tracing on ten corpora"
+  title: "Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora"
   journal: Neural Networks
   year: 2026
   notes: submitted

@@ -2,7 +2,7 @@
 
 Reference implementation and reproduction scripts for
 
-> Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Null-graph controls and a decomposition of the gain in knowledge tracing on ten corpora.* Submitted to **Neural Networks**.
+> Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks**.
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -15,6 +15,10 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 3. **Composition.** Best paths under every continuous Archimedean t-norm are shortest paths through the additive generator; all-pairs best-path strengths for ten operators, with optional hop limit and path floor (`fuzzykg/paths_fast.py`). The operators are judged against expert prerequisite labels (Junyi Academy crowd scores and knowledge map; MOOCCubeX held-out expert edges) and against the learner's next concept in held-out logs, with direct-edge, bigram and popularity baselines and paired bootstrap intervals over learners.
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
+
+## What is in version 3.6.0
+
+The complete null-graph ladder with the graph read in the embedding refinement (32 units of 10 corpora), the frozen-random-table control, first attempts split by a previously practised graph neighbour, seed replicates for the probe and for GKT, GKT with the complete graph, and Figures 3 and 4 of the revised manuscript: 260 CPU runs with per-prediction files (`kt/runs_r9/`), `kt/src/r9_controls.py`, `kt/src/r9_analyse.py`, `kt/src/r9_figures.py`, results in `kt/results_r9/`. See the section "Release 3.6.0" of `kt/README.md`.
 
 ## What is in version 3.5.0
 

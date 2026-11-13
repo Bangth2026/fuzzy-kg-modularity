@@ -150,6 +150,55 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.6.0: complete null-graph ladder, frozen random table, neighbour split, seed replicates
+
+New runs for Sections 5.4, 6.4 to 6.6 and Supplementary Section S6 of the revised Neural Networks manuscript. All runs on a
+CPU with one thread (`NT=1`), at 10% of the training learners under the update budget (at most 2000 updates, evaluation every
+25, patience 8), so that they pair with the archived CPU runs of `runs_r6` and `runs_r7`; every rerun of an archived condition
+reproduces its test AUC exactly (128 runs compared). 260 run files in `runs_r9/`, each with a
+per-prediction file `<tag>_pred.npz` (p, y, new = first attempt, kc = target KC, nb_sup / nb_er = an in- or out-neighbour of
+the target KC in the support / Erdos-Renyi graph occurs earlier in the learner's sequence, pos = position).
+
+| Condition | Runs |
+|---|---|
+| `dp_emb` | 32 |
+| `empty` | 32 |
+| `empty` (seed replicate 1) | 8 |
+| `empty` (seed replicate 2) | 8 |
+| `erR_emb` | 32 |
+| `er_emb` | 32 |
+| `gkt_empty` | 4 |
+| `gkt_er` | 4 |
+| `gkt_rewired` | 4 |
+| `gkt_rewired` (seed replicate 1) | 4 |
+| `gkt_rewired` (seed replicate 2) | 4 |
+| `gkt_support` | 4 |
+| `gkt_support` (seed replicate 1) | 4 |
+| `gkt_support` (seed replicate 2) | 4 |
+| `gkt_uniform` | 4 |
+| `support` | 32 |
+| `support` (seed replicate 1) | 8 |
+| `support` (seed replicate 2) | 8 |
+| `support_emb` | 32 |
+
+- `dp_emb`: degree-preserving rewiring read in the embedding refinement only; completes the ladder empty -> uniform -> ER -> DP
+  -> support on 32 units of 10 corpora (`uniform_emb` from `runs_r7`).
+- `erR_emb`: frozen-random-table control. The refinement mixes, over the Erdos-Renyi graph, a table R drawn once from N(0, 1)
+  (seed 4000 + subsample) and never trained, instead of the learned table E; E, W_in, W_out are trained.
+- `--rep j`: training seed sub + 100 j, same subsample and graphs (seed replicates on subsamples 0-1 of the four small corpora).
+- `gkt_uniform`: GKT with the complete graph (Statics 2011, ASSISTments 2017, subsamples 0-1).
+
+| Step | Script | Output |
+|---|---|---|
+| One run | `src/r9_controls.py --data <c> --sub <s> --cond <cond> [--rep j]` | `runs_r9/<tag>.json`, `_pred.npz` |
+| Job list | `jobs_r9.txt` | |
+| Analysis | `src/r9_analyse.py` | `results_r9/r9_results.json` |
+| Figures 3 and 4 | `src/r9_figures.py` | `results_r9/fig3_learning_curve.png`, `fig4_ladder.png` |
+
+Data: the ten corpora are rebuilt with `src/prep.py` (Junyi with `src/prep_junyi_lowmem.py`); the Junyi archive of the
+mirror is RAR with a problem log over 2 GB, which this release extracted with the `unrar-cffi` Python package by streaming the
+file to disk.
+
 # Release 3.5.0: the null-graph ladder beyond the probe
 
 New runs for Section 6.6 of the manuscript: update budget (at most 2000 updates, evaluation every 25,
