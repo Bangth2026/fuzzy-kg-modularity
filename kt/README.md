@@ -150,6 +150,33 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.9.0: first-attempt contrasts of the random-vector controls by training data on the target KC
+
+No new training runs. `src/r12_analyse.py` reads the run and per-prediction files of `runs_r7`, `runs_r9`, `runs_r10` and
+`runs_r11` (the same 32 units and the same choice of runs per corpus as `src/r11_analyse.py`) and the rebuilt corpora of
+release 3.7.0, from which it counts n_k, the training interactions on KC k in each subsample. Before any number is computed,
+the test targets and responses of each rebuilt corpus are compared with the per-prediction files of every condition; all 32
+units agree at every test prediction.
+
+1. First attempts at KCs with n_k = 0 against first attempts at KCs with n_k > 0, for `rvec_emb`, `rvecF_emb`, `rvec1_emb`,
+   `rvec1F_emb`, `erR_emb` and `support_emb` against `empty`, and for `rvec_emb - rvecF_emb` and `rvec1_emb - rvec1F_emb`
+   (the values of `r11_analyse.py`, section 3, are reproduced exactly).
+2. Pooled quintiles of log10(n_k + 1) over the first attempts of all units, as in `r9_analyse.py` (section 5), with cuts
+   computed once on the empty-graph control: the AUC difference per unit and quintile, its summary per quintile, and the slope
+   per decade of n_k from a mixed model with a random intercept per corpus (153 unit-quintiles).
+3. Inventory of the run sets of Section 5.4 of the manuscript, releases 3.5.0 to 3.8.0 (721 runs: 268 on a GPU, 453 on a
+   CPU), in `results_r12/r12_results.json` and as `results_r12/run_sets_section54.csv` (Supplementary Table S6.10).
+
+| Step | Script | Output |
+|---|---|---|
+| Rebuild the corpora (as in release 3.7.0) | `src/prep.py <corpus>` one corpus per call; `src/prep_junyi_lowmem.py` | `data/<corpus>.parquet` |
+| Analysis | `PYTHONPATH=<checkout> KT_ROOT=<kt dir with data/> python src/r12_analyse.py` | `results_r12/r12_results.json`, `results_r12/run_sets_section54.csv` |
+
+Names of run and result directories. The suffixes r5 to r11 of `runs_r*` and `results_r*`, and r12 of `results_r12`, number
+the run sets and analyses in the order in which they were made. `kt/r2` holds the runs of release 2.0.0 and the learning-curve
+runs. The scripts `src/r32_analyse.py`, `src/r33_analyse.py` and `src/r34_analyse.py` are the analysis scripts of releases
+3.2.0, 3.3.0 and 3.4.0 (r3x = release 3.x); they read the run sets of `runs_r5` to `runs_r7` and write to `results_r6/`.
+
 # Release 3.8.0: random-vector controls with frozen maps, graph against the controls without a graph
 
 ## Runs (`src/r11_controls.py`, `runs_r11/`)

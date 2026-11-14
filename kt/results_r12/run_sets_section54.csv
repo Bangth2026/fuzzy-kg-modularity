@@ -1,0 +1,14 @@
+release,model,device,seeds,conditions,corpora,subsamples,runs
+3.5.0,gkt,cpu,0,gkt_empty gkt_er gkt_rewired gkt_support,2,assist09: 1; assist15: 0 1,12
+3.5.0,gkt,cuda,0,gkt_empty gkt_er gkt_rewired gkt_support,5,algebra05: 0 1 2; assist09: 0; assist17: 0 1 2; bridge06: 0 1 2; statics11: 0 1 2,52
+3.5.0,probe,cuda,0,empty er_emb hash support_emb uniform_emb,6,algebra05: 0 1 2 3 4; assist09: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; statics11: 0 1 2 3 4,120
+3.5.0,sakte,cuda,0,sakte_empty sakte_er sakte_support sakte_uniform,6,algebra05: 0 1 2 3 4; assist09: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; statics11: 0 1 2 3 4,96
+3.6.0,gkt,cpu,0,gkt_empty gkt_er gkt_rewired gkt_support gkt_uniform,2,assist17: 0 1; statics11: 0 1,20
+3.6.0,gkt,cpu,1 2,gkt_rewired gkt_support,2,assist17: 0 1; statics11: 0 1,16
+3.6.0,probe,cpu,0,dp_emb empty erR_emb er_emb support support_emb,10,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,192
+3.6.0,probe,cpu,1 2,empty support,4,algebra05: 0 1; assist17: 0 1; bridge06: 0 1; statics11: 0 1,32
+3.7.0,probe,cpu,0,erE2_emb rvec1_emb rvec_emb,10,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,96
+3.7.0 rerun,probe,cpu,0,empty erR_emb er_emb uniform_emb,10,algebra05: 0; assist09: 0; assist12: 0; assist15: 0; assist17: 0; bridge06: 0; ednet: 0 1; eedi: 0; junyi: 0; statics11: 0,17
+3.8.0,probe,cpu,0,rvec1F_emb rvecF_emb,10,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,64
+3.8.0 EdNet rebuilt,probe,cpu,0,support_emb,1,ednet: 0 1,2
+3.8.0 rerun,probe,cpu,0,empty,2,junyi: 0; statics11: 0,2

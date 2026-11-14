@@ -16,6 +16,14 @@ A fuzzy knowledge graph built from learner logs carries graded prerequisite edge
 
 Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
 
+## What is in version 3.9.0
+
+No new training runs. `kt/src/r12_analyse.py` (`kt/results_r12/`) splits the first-attempt contrasts of the random-vector
+controls by training interactions on the target KC (n_k = 0 against n_k > 0, and pooled quintiles of log n_k with a slope
+per decade), after checking the rebuilt corpora against the archived per-prediction files, and lists every run set of
+Section 5.4 of the manuscript (721 runs). It also explains the names of the run and result directories. See the section
+"Release 3.9.0" of `kt/README.md`.
+
 ## What is in version 3.8.0
 
 The random-vector controls with the two maps of the embedding refinement frozen at initialisation (`rvecF_emb`, `rvec1F_emb`;
