@@ -178,7 +178,7 @@ tests/              pytest tests
 }
 ```
 
-Archived on Zenodo: https://doi.org/10.5281/zenodo.24131157 (all versions; resolves to the latest). See also `CITATION.cff`.
+Archived on Zenodo: https://doi.org/10.5281/zenodo.24131157 (all versions; resolves to the latest). Version 3.9.0: https://doi.org/10.5281/zenodo.24212530. See also `CITATION.cff`.
 
 ## License
 

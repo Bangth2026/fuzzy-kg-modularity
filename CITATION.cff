@@ -3,6 +3,7 @@ message: "If you use this software, please cite the paper below."
 title: "fuzzy-kg-modularity: code and run files for \"Where does a graph prior act inside a neural sequence model?\""
 version: 3.9.0
 date-released: 2026-11-14
+doi: 10.5281/zenodo.24212530
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
 license: MIT
 authors:
