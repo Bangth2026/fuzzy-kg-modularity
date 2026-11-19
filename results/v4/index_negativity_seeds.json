@@ -1,0 +1,79 @@
+{
+ "n_values": 520,
+ "n_negative": 13,
+ "share_negative": 0.025,
+ "min_value": -0.008472246161754238,
+ "negative_cells": [
+  [
+   "assist2009_kc",
+   "nocut",
+   -0.0006448496980026308,
+   1
+  ],
+  [
+   "assist2009_kc",
+   "q0.25",
+   -0.00031283562610802396,
+   1
+  ],
+  [
+   "assist2017_item",
+   "nocut",
+   -0.008472246161754238,
+   1
+  ],
+  [
+   "assist2017_item",
+   "q0.25",
+   -0.006471606290944898,
+   4
+  ],
+  [
+   "assist2017_item",
+   "q0.50",
+   -0.005551036044006197,
+   2
+  ],
+  [
+   "junyi_copractice",
+   "nocut",
+   -0.0034959665326865785,
+   2
+  ],
+  [
+   "junyi_copractice",
+   "q0.25",
+   -4.666903167432901e-05,
+   1
+  ],
+  [
+   "junyi_copractice",
+   "q0.50",
+   -0.0022998069726386516,
+   1
+  ]
+ ],
+ "n_graph_cut_cells": 52,
+ "cells_with_any_negative_seed": 8,
+ "qbar_star_sd": {
+  "mooccubex_cs": 0.006090625721041867,
+  "junyi_transition": 0.0007109084579978871,
+  "assist2017_kc": 0.0005242291700866474,
+  "mooccubex_cs_full": 0.004539899750180653,
+  "assist2009_kc": 0.0015721251386641923,
+  "assist2009_kc_transition": 0.0011096313028705154,
+  "assist2015_kc": 0.0012766791996030183,
+  "assist2015_kc_transition": 0.005153911524084377,
+  "assist2017_kc_transition": 0.0009055741627140009,
+  "assist2017_item_transition": 0.00039560148751612554,
+  "assist2009_item": 1.2819751242557092e-16,
+  "assist2017_item": 0.0030986331066831297,
+  "junyi_copractice": 0.0014013750204816319
+ },
+ "pairs_of_cuts": 78,
+ "pairs_whose_order_flips_across_single_seeds": 18,
+ "seed_sd_range": [
+  5.233641528945917e-17,
+  0.02395914919549425
+ ]
+}

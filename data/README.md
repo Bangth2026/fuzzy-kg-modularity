@@ -11,10 +11,24 @@ scripts will find them.
 | ASSISTments 2017 | `anonymized_full_release_competition_dataset.csv` | ASSISTments Data Portal; EduData mirror | `data/raw/assist2017/anonymized_full_release_competition_dataset.csv` |
 | MOOCCubeX | `prerequisites/cs.json`, `relations/concept-problem.txt` | https://github.com/THU-KEG/MOOCCubeX | `data/raw/MOOCCubeX/prerequisites/cs.json`, `data/raw/MOOCCubeX/relations/concept-problem.txt` |
 | Junyi Academy (Jan 2015 release; non-commercial use, cite Chang, Hsu and Chen, EDM 2015) | `junyi_ProblemLog_original.csv`, `junyi_Exercise_table.csv`, `relationship_annotation_{training,testing}.csv` | PSLC DataShop, dataset 1198: https://pslcdatashop.web.cmu.edu/Files?datasetId=1198 | `data/raw/junyi/junyi/` |
+| ASSISTments 2012–13 (v4.0.0) | `2012-2013-data-with-predictions-4-final.csv` | ASSISTments Data Portal; EduData mirror `base.ustc.edu.cn/data/ASSISTment/` | `data/raw/assist2012/` |
+| KDD Cup 2010 Algebra I 2005–06 (v4.0.0) | `algebra_2005_2006_train.txt` | PSLC DataShop / KDD Cup 2010; EduData mirror `base.ustc.edu.cn/data/KDD_Cup_2010/` | `data/raw/algebra2005/algebra_2005_2006/` |
+| KDD Cup 2010 Bridge to Algebra 2006–07 (v4.0.0) | `bridge_to_algebra_2006_2007_train.txt` | as above | `data/raw/bridge2006/bridge_to_algebra_2006_2007/` |
+| Eedi, NeurIPS 2020 Education Challenge, tasks 3–4 (v4.0.0) | `train_data/train_task_3_4.csv`, `metadata/*.csv` | EduData mirror `base.ustc.edu.cn/data/NIPS2020/public_data.zip` | `data/raw/eedi/` |
+| EdNet-KT1 with EdNet-Contents (v4.0.0) | `EdNet-KT1.zip`, `contents/questions.csv` | EduData mirror `base.ustc.edu.cn/data/EdNet/` | `data/raw/ednet/` |
 
 The 22.4 GB MOOCCubeX interaction log is **not** required: the MOOCCubeX-CS
 graph of Table 2 is built from the two small files above (the released
 prerequisite confidences are used directly as `mu_E`).
+
+## Added corpora (version 4.0.0)
+
+KC level throughout. ASSISTments 2012: skill, original problems only, order `problem_log_id`. KDD Cup sets:
+first KC of a step (`KC(Default)` for Algebra 2005, `KC(SubSkills)` for Bridge to Algebra 2006), order `Row`,
+grouping = curriculum unit (first field of `Problem Hierarchy`). Eedi: the level-3 subject of a question,
+order `DateAnswered`, grouping = its level-2 parent subject. EdNet: 20,000 learner files drawn with seed 2026,
+KC = first tag of a question, correct = answer equals the key, order = timestamp, grouping = TOEIC part.
+The same preprocessing as below applies (learners with fewer than 15 interactions dropped).
 
 ## Preprocessing (Section 8, stated in the paper and implemented in `loaders.py`)
 

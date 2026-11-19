@@ -1,0 +1,96 @@
+id,label
+0,Changing axis bounds
+1,Changing axis intervals
+2,Choose Graphical Refl-v
+3,Choose Graphical a
+4,Choose Graphical h
+5,Choose Graphical k
+6,"Convert unit, standard"
+7,Correctly placing points
+8,Define Variable
+9,Edit Algebraic a
+10,Edit Algebraic h
+11,Edit Algebraic k
+12,Edit Algebraic refl-v
+13,Entering a computed linear value
+14,Entering a given
+15,Entering a given linear value
+16,Entering a point
+17,"Entering slope, GLF"
+18,"Entering slope, SIF"
+19,Entering the slope
+20,Entering the y-intercept
+21,"Entering x-intercept, GLF"
+22,"Entering x-intercept, SIF"
+23,"Entering y-intercept, GLF"
+24,"Entering y-intercept, SIF"
+25,Excluding the line when shading
+26,"Find X, Simple"
+27,"Find X, negative slope"
+28,"Find X, positive slope"
+29,"Find Y, Simple"
+30,"Find Y, any form"
+31,"Find Y, negative slope"
+32,"Find Y, positive slope"
+33,Identify Parent Curve
+34,Identify Parent Description
+35,Identify Parent Equation
+36,Identifying units
+37,Including the line when shading
+38,Labelling point of intersection
+39,Labelling the axes
+40,"Negative Constant, GLF"
+41,"Negative Constant, SIF"
+42,Placing coordinate point
+43,"Positive Constants, GLF"
+44,"Positive Constants, SIF"
+45,Setting the slope
+46,Setting the y-intercept
+47,Shading SIF equation with positive slope
+48,Shading greater than
+49,Using difficult numbers
+50,Using large numbers
+51,Using simple numbers
+52,Using small numbers
+53,"Write expression, negative slope"
+54,"Write expression, positive slope"
+55,"Write expression, quadratic"
+56,"[SkillRule: Add/Subtract; [Typein Skill: {Isolate positive; Isolate negative; Remove constant; Consolidate vars, no coeff; Consolidate vars with coeff; Consolidate vars, any}]]"
+57,"[SkillRule: Apply Exponent; {Expand Exponents; eval radical; Expand Exponents, radical}]"
+58,[SkillRule: Calculate Eliminate Parens; [Typein Skill: Eliminate Parens]]
+59,[SkillRule: Calculate negative coefficient; [Typein Skill: Make variable positive]]
+60,[SkillRule: Consolidate vars with coeff; CLT]
+61,"[SkillRule: Consolidate vars, any; {Combine variables to right, sub; Combine variables to right, add; Combine variables to right, gen; Combine variables to right; Combine variables to left, add; Combine variables to left, sub; Combine variables to left, gen; ax+b=cx; ax+b=cx, move left; ax+b=cx+d, pos; ax+b=cx+d, neg; ax+b=cx+d, move right; ax+b=cx+d, move two; ax+b=cx+d, move two2; x+b=cx+d, pos; x+b=cx+d, neg; x+b=cx+d, move right; x+b=cx+d, move two; x+b=cx+d, move two2; ax+b=x+d, pos; ax+b=x+d, neg; ax+b=x+d, move right; ax+b=x+d, move two; ax+b=x+d, move two2; x+b=x+d, pos; x+b=x+d, neg; x+b=x+d, move right; x+b=x+d, move two; x+b=x+d, move two2}]"
+62,"[SkillRule: Consolidate vars, no coeff; CLT]"
+63,"[SkillRule: Done?; {doneleft; doneright; done no solution; Done No Solution, domain exception; Done No Solution, range exception; done infinite solutions}]"
+64,"[SkillRule: Eliminate Parens; {CLT nested; CLT nested, parens; Distribute Mult right; Distribute Mult left; (+/-x +/-a)/b=c, mult; (+/-x +/-a)*b=c, div; [var expr]/[const expr] = [const expr], multiply; Distribute Division left; Distribute Division right; Distribute both mult left; Distribute both mult right; Distribute both divide left; Distribute both divide right; Distribute subex}]"
+65,[SkillRule: Extract to consolidate vars; {factor; factorb; factorc; factord}]
+66,"[SkillRule: Isolate negative; x+a=b, negative]"
+67,"[SkillRule: Isolate positive; x+a=b, positive]"
+68,[SkillRule: Make variable positive; {add x in -x; move neg var to other side}]
+69,"[SkillRule: Make variable positive; {ax+b=c, divide; ax=b; [const expr]*[var fact] + [const expr] = [const expr], divide; [var expr]*[const expr] = [const expr], divide; a/b*x=c; a/b*x=c, reciprocal; ax/b=c, reciprocal; ax/b=c; x/a=b; ax=b; (+/-x +/-a)/b=c, mult; a=x*(b+c); a=x*(b-c); a=x*(b*c+d); x/a+b=c, multiply; [var expr]/[const expr] = [const expr], multiply}]"
+70,[SkillRule: Multiply/Divide; [Typein Skill: {Remove coefficient; Variable in denominator}]]
+71,"[SkillRule: Remove coefficient; {ax+b=c, divide; ax=b; [const expr]*[var fact] + [const expr] = [const expr], divide; [var expr]*[const expr] = [const expr], divide; a/b*x=c; a/b*x=c, reciprocal; ax/b=c, reciprocal; ax/b=c; x/a=b; ax=b; (+/-x +/-a)/b=c, mult; a=x*(b+c); a=x*(b-c); a=x*(b*c+d); x/a+b=c, multiply; [var expr]/[const expr] = [const expr], multiply}]"
+72,"[SkillRule: Remove constant; {ax+b=c, positive; ax+b=c, negative; x+a=b, positive; x+a=b, negative; [var expr]+[const expr]=[const expr], positive; [var expr]+[const expr]=[const expr], negative; [var expr]+[const expr]=[const expr], all; Combine constants to right; Combine constants to left; a-x=b, positive; a/x+b=c, positive; a/x+b=c, negative}]"
+73,"[SkillRule: Remove negative coefficient; {ax/b=c, reciprocal; ax/b=c; ax=b; x/a=b}]"
+74,"[SkillRule: Remove positive coefficient; {ax/b=c, reciprocal; ax/b=c; x/a=b; ax=b}]"
+75,[SkillRule: Select Combine Terms; CLT]
+76,"[SkillRule: Select Eliminate Parens; {CLT nested; CLT nested, parens; Distribute Mult right; Distribute Mult left; Distribute subex}]"
+77,"[SkillRule: Select Multiply/Divide, nested; {MT; MT no fraction coeff}]"
+78,[SkillRule: Select Multiply; {MT; MT no fraction coeff}]
+79,"[SkillRule: Variable in denominator; {a/x=[anything]; a/x=b; a/x=b, sophisticated}]"
+80,"[SkillRule: ax+b=c, negative; ax+b=c, negative]"
+81,[SkillRule: invert-mult; {ivm}]
+82,combine-like-terms-sp
+83,combine-like-terms-whole-sp
+84,distribute-sp
+85,factor-quadratic-sp
+86,factor-sp
+87,perform-mult-r-sp
+88,perform-mult-row2-sp
+89,perform-mult-sp
+90,perform-mult-whole-sp
+91,qft-den-sp
+92,qft-num1-sp
+93,qft-num2-sp
+94,simplify-fractions-sp

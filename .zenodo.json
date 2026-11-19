@@ -1,0 +1,10 @@
+{
+  "title": "Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs (code, results and run files)",
+  "version": "4.0.0",
+  "upload_type": "software",
+  "description": "Reference implementation, reproduction scripts and result files for the manuscript submitted to Knowledge-Based Systems: fuzzy-graph modularity and the rank-coded cut audit, the calibrated null test (Algorithm 1) with the density-matched and the structure-matched floor, generator shortest paths for t-norm path inference, the pre-deployment audit (Algorithm 2) as a command-line tool, and every analysis on twenty-three graphs from ten public datasets (results/ and results/v4/). Datasets are not redistributed; see data/README.md.",
+  "creators": [{"name": "Truong, Hai Bang", "affiliation": "Saigon International University", "orcid": "0000-0001-5094-3128"}],
+  "license": "MIT",
+  "keywords": ["fuzzy knowledge graphs", "prerequisite relations", "community detection", "triangular norms", "null models", "learning analytics", "knowledge-based systems"],
+  "related_identifiers": [{"identifier": "https://github.com/Bangth2026/fuzzy-kg-modularity/tree/v4.0.0", "relation": "isSupplementTo", "scheme": "url"}]
+}

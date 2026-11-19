@@ -1,20 +1,47 @@
 # Binarisation and t-norm composition on fuzzy knowledge graphs
 
-Reference implementation and reproduction scripts for
+Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks**.
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.0.0 below).
+>
+> **(B)** Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks** (code: `kt/`; versions 2.0.0 to 3.9.0).
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24131157.svg)](https://doi.org/10.5281/zenodo.24131157)
 
-A fuzzy knowledge graph built from learner logs carries graded prerequisite edges. Pipelines that consume it discard the grades at two points: they threshold the graph before running a crisp community detector, and they replace max-min composition along paths by a non-idempotent t-norm. This repository measures what each shortcut costs.
+A fuzzy knowledge graph built from learner logs carries graded prerequisite edges. Pipelines that consume it discard the grades at two points: they threshold the graph before running a crisp community detector, and they replace max-min composition along paths by a non-idempotent t-norm. Manuscript (A) measures what each decision costs and turns the measurements into a pre-deployment audit (Algorithm 2, `fuzzykg/audit.py`, `scripts/fkg_audit.py`).
 
-1. **Binarising before partitioning.** The multislice modularity of the α-cut family with one shared partition (`Qbar`) is the reference; the cost index `cost(α₀) = Qbar(Π*) − Qbar(Π_α₀)` prices a single cut. The index is checked against a recovery loss defined from the ground truth alone, on planted partitions and an LFR-style benchmark, next to the free proxies (retained mass, mean out-degree, singleton share, crisp modularity).
-2. **What the grades carry.** A calibrated null test (`fuzzykg/nulltest.py`): a degree-preserving null with a decision floor read off planted graphs of the same size, density and number of communities; two weights-only nulls (global, and row-wise keeping every out-strength); and a power calibration that tilts the observed memberships toward internal edges on the observed topology, so that a null result has a detectable effect size.
-3. **Composition.** Best paths under every continuous Archimedean t-norm are shortest paths through the additive generator; all-pairs best-path strengths for ten operators, with optional hop limit and path floor (`fuzzykg/paths_fast.py`). The operators are judged against expert prerequisite labels (Junyi Academy crowd scores and knowledge map; MOOCCubeX held-out expert edges) and against the learner's next concept in held-out logs, with direct-edge, bigram and popularity baselines and paired bootstrap intervals over learners.
+## Quick start: audit your own graph (Algorithm 2)
 
-Every analysis is run on graphs from two constructions of the same logs: a **co-practice** construction (precedence share and mastery gain, OWA-aggregated; dense, nearly reciprocal) and an **order-preserving transition** construction (directional dominance and successor preference of consecutive runs, Gödel conjunction; sparse, no reciprocal edges).
+```bash
+pip install -e .
+# edges.csv: src,dst,mu (node labels or integer ids); optional grouping JSON {label: group};
+# optional pairs.csv: pre,post,score (external prerequisite scores, e.g. expert ratings)
+python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json --pairs pairs.csv --out my_audit
+```
+
+The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.0.0 (revision for Knowledge-Based Systems)
+
+All new results are in `results/v4/`; `scripts/v4_summarise.py` assembles the tables of the revised manuscript (`results/v4/tables.md`) and every quoted number (`results/v4/paper_numbers.json`).
+
+| Topic | Script | Output |
+|---|---|---|
+| Five further corpora (ASSISTments 2012, KDD Cup 2010 Algebra 2005 and Bridge to Algebra 2006, Eedi, EdNet), both constructions, external groupings | `scripts/v4_build_new.py`, loaders in `data/loaders.py` | `data/graphs/<corpus>_*`, `results/v4/new_corpora_stats.json` |
+| Descriptive statistics of every log after preprocessing | `scripts/v4_corpus_stats.py` | `results/v4/corpus_stats.json` |
+| Algorithm 1 on the ten new graphs | `scripts/v4_algorithm1.py --new` | `results/v4/algorithm1_new.json` |
+| Structure-matched (degree-corrected) decision floor on all 23 graphs | `fuzzykg.nulltest.structure_matched_floor`, `scripts/v4_algorithm1.py --dcfloor` | `results/v4/dcfloor.json` |
+| Cost decomposition and Table 4 rows for the new graphs | `scripts/cost_decomposition.py`, `scripts/v4_table4_new.py` | `results/v4/cost_decomposition_new.json`, `results/v4/table4_new.json` |
+| Cut audit against external groupings, observed and tilted memberships | `scripts/v4_protocol_external.py` | `results/v4/protocol_external.json` |
+| Sensitivity to horizon, support, pruning threshold and membership operator | `scripts/v4_sensitivity.py` | `results/v4/sensitivity.json` |
+| Next concept with popularity, recency, bigram, second-order Markov and GRU baselines; Junyi without suggested attempts | `scripts/v4_nextconcept_baselines.py` | `results/v4/nextconcept_*.json` |
+| Inter-rater reliability of the Junyi crowd labels | `scripts/v4_junyi_labels.py` | `results/v4/junyi_labels.json` |
+| Negative single-seed cost indices and seed sensitivity | inline in `scripts/v4_summarise.py` | `results/v4/index_negativity_seeds.json` |
+| Run time and peak memory against nodes and edges | `scripts/v4_scaling.py` | `results/v4/scaling.json` |
+| Algorithm 2 as a tool | `fuzzykg/audit.py`, `scripts/fkg_audit.py`, `tests/test_v4.py` | `results/v4/audits/` |
+
+Code changes: `fuzzykg/nulltest.py` adds `planted_dc_like`, `structure_matched_floor` and `outcome`; `fuzzykg/fastcount.encode` accepts a categorical KC column with the same coding as strings (the Junyi log now loads in about 4 GB); `data/loaders.py` adds loaders for the five corpora, a parquet cache and `load_any`. Every graph of release 1.4.3 is rebuilt byte for byte (checked for the ASSISTments 2017 and Junyi transition graphs).
 
 ## What is in version 3.9.0
 
@@ -171,8 +198,8 @@ tests/              pytest tests
 ```bibtex
 @article{truong2026fuzzykg,
   author  = {Truong, Hai Bang},
-  title   = {Binarisation and t-norm composition on fuzzy knowledge graphs: a multislice reference, a calibrated null test and expert-labelled criteria},
-  journal = {Information Sciences},
+  title   = {Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs},
+  journal = {Knowledge-Based Systems},
   year    = {2026},
   note    = {submitted},
 }

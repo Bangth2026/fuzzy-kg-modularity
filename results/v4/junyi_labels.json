@@ -1,0 +1,71 @@
+{
+ "n_pairs": 1954,
+ "raters_per_pair": {
+  "min": 3,
+  "max": 15,
+  "mean": 6.905834186284545
+ },
+ "mean_check_max_abs_diff": 4.615385851280962e-10,
+ "icc1_single": 0.46494116072692515,
+ "icc1_mean_of_k": 0.857143133113437,
+ "k0": 6.90487429849727,
+ "krippendorff_alpha_interval": 0.46842148626921765,
+ "split_half": {
+  "pairs": 1258,
+  "rho_half_mean": 0.7833082491668548,
+  "rho_half_ci": [
+   0.7651055112679114,
+   0.8003221925008137
+  ],
+  "spearman_brown": 0.878462443508507
+ },
+ "ceiling_sqrt_reliability": 0.9372632733167917,
+ "low_sd_pairs": 978,
+ "median_rater_sd": 1.776388345929897,
+ "criterion": {
+  "junyi_transition": {
+   "direct_edge": {
+    "rho_all": 0.36476194590592914,
+    "rho_low_sd": 0.4552634797969368,
+    "rho_high_sd": 0.22821762620743835
+   },
+   "hop_baseline": {
+    "rho_all": 0.4245654319365102,
+    "rho_low_sd": 0.5150833575128307,
+    "rho_high_sd": 0.30286041185431095
+   },
+   "min": {
+    "rho_all": 0.3983282199421528,
+    "rho_low_sd": 0.48302118352230144,
+    "rho_high_sd": 0.2877713787574801
+   },
+   "product": {
+    "rho_all": 0.4256921597364666,
+    "rho_low_sd": 0.5151829368182843,
+    "rho_high_sd": 0.30393252616243766
+   }
+  },
+  "junyi_copractice": {
+   "direct_edge": {
+    "rho_all": 0.3101943642051059,
+    "rho_low_sd": 0.4038988069016969,
+    "rho_high_sd": 0.17561163432200616
+   },
+   "hop_baseline": {
+    "rho_all": 0.2597468276511357,
+    "rho_low_sd": 0.30150880138869146,
+    "rho_high_sd": 0.16869426238880347
+   },
+   "min": {
+    "rho_all": 0.0032096397826408087,
+    "rho_low_sd": 0.03120070095565397,
+    "rho_high_sd": -0.05884405351429194
+   },
+   "product": {
+    "rho_all": 0.29425325972622224,
+    "rho_low_sd": 0.3736449992795553,
+    "rho_high_sd": 0.18495369688758914
+   }
+  }
+ }
+}
