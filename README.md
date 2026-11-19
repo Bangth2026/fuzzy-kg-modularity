@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.1.0 below).
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.2.0 below).
 >
 > **(B)** Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks** (code: `kt/`; versions 2.0.0 to 3.9.0).
 
@@ -21,6 +21,21 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.2.0
+
+Analyses added for the revision of manuscript (A). Every earlier result is unchanged; new results are in `results/v5/`, and `docs/figure2.png` is Fig. 2 of the main article. The main article now has seven tables (data, protocol, benchmarks, Algorithm 1 with the weighted SBM, the cut audit against groupings, composition on Junyi, decisions) and two figures; `docs/paper_map.md` maps each to its script and result file.
+
+| Topic | Script | Output |
+|---|---|---|
+| Agreement of the cut audit with ARI loss: 2 × 2 tables, sensitivity, specificity, precision, balanced accuracy, Cohen's κ, Fisher exact p, bootstrap over graphs; flag-all and retained-share baselines | `scripts/v5_audit_agreement.py` | `results/v5/audit_agreement.json` |
+| Weighted stochastic block model check of the membership question (degree-corrected SBM with logit(μ) as a real-normal edge covariate, row and global nulls refitted 20 times; inside/between and directional diagnostics) | `scripts/v5_weighted_sbm.py` (needs graph-tool, conda-forge) | `results/v5/weighted_sbm.json`, `results/v5/sbm_partitions/` |
+| Sensitivity of the cut audit to the resolution γ ∈ {0.5, 1, 2} | `scripts/v5_gamma_audit.py` | `results/v5/gamma_audit.json` |
+| Junyi: orientation of knowledge-map links by membership, precedence and gain, with a learner bootstrap; pruning threshold for the hop distance cross-fitted over exercises; correlation over pairs reached by every score at each threshold; learners who never accepted a suggestion | `scripts/v5_junyi_followup.py` | `results/v5/junyi_followup.json` |
+| Junyi: which edges a compensatory conjunction (mean of asym and pref) adds, and their memberships within and between topics | `scripts/v5_conjunction.py` | `results/v5/conjunction.json` |
+| Fig. 2 (correlation against the pruning threshold; cost of quantile cuts by construction) | `scripts/v5_figure2.py` | `docs/figure2.png`, `docs/figure2.pdf` |
+
+`data/graphs/junyi_topics.json` maps every Junyi exercise to its topic (from `junyi_Exercise_table.csv`), so that the Junyi groupings no longer need the raw files. Note for anyone reusing graph-tool: edge covariates need `WeightedBlockState` (`minimize_blockmodel_dl(g, state=WeightedBlockState, state_args=dict(rec=[w], rec_types=[...]))`); passing `recs` to `BlockState` is accepted without error and ignored.
 
 ## What is in version 4.1.0
 
