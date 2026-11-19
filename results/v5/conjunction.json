@@ -1,0 +1,32 @@
+{
+ "min": {
+  "mu_same_topic_mean": 0.40782766842211915,
+  "mu_cross_topic_mean": 0.36521272384289355,
+  "pref_below_0.2_share": 0.0,
+  "edges": 1078,
+  "same_topic_share": 0.8228200371057514,
+  "asym_median": 0.4697416571085259,
+  "asym_below_0.2_share": 0.0,
+  "back_to_forward_ratio_median": 0.3607838179519596
+ },
+ "mean": {
+  "mu_same_topic_mean": 0.4274356416770319,
+  "mu_cross_topic_mean": 0.3142347925625142,
+  "pref_below_0.2_share": 0.7562093435836783,
+  "edges": 6764,
+  "same_topic_share": 0.3202247191011236,
+  "asym_median": 0.5135135135135136,
+  "asym_below_0.2_share": 0.08441750443524541,
+  "back_to_forward_ratio_median": 0.32142857142857145
+ },
+ "mean_only": {
+  "mu_same_topic_mean": 0.3326274126989938,
+  "mu_cross_topic_mean": 0.3049079949225005,
+  "pref_below_0.2_share": 0.8995779106577559,
+  "edges": 5686,
+  "same_topic_share": 0.22493844530425608,
+  "asym_median": 0.5191090555014606,
+  "asym_below_0.2_share": 0.10042208934224411,
+  "back_to_forward_ratio_median": 0.31656118143459916
+ }
+}
