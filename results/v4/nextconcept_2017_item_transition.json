@@ -1,0 +1,151 @@
+{
+ "release": "2017",
+ "level": "item",
+ "construction": "transition",
+ "graph": "FuzzyGraph(n=282, m=376, W=161.632, mu min/mean/max=0.203/0.430/1.000, reciprocity=0.000)",
+ "n_nodes": 282,
+ "n_test_events": 11792,
+ "n_test_learners": 289,
+ "scores": {
+  "direct_edge": {
+   "mrr_learner_mean": 0.22425928957960792,
+   "mrr_ci": [
+    0.20314816531675903,
+    0.24608185013131
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.2155670529749366,
+   "n_events": 11792
+  },
+  "hop_distance": {
+   "mrr_learner_mean": 0.24210375919631597,
+   "mrr_ci": [
+    0.223300657239097,
+    0.26172660789708213
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.22676863604356665,
+   "n_events": 11792
+  },
+  "product": {
+   "mrr_learner_mean": 0.2139725088891729,
+   "mrr_ci": [
+    0.1983648188349176,
+    0.23009700821755116
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.20131367217305524,
+   "n_events": 11792
+  },
+  "selected_operator": {
+   "mrr_learner_mean": 0.24078914743679172,
+   "mrr_ci": [
+    0.2205147558790486,
+    0.261163949751424
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.23519640130233882,
+   "n_events": 11792
+  },
+  "popularity": {
+   "mrr_learner_mean": 0.04074742364775251,
+   "mrr_ci": [
+    0.036986399439853546,
+    0.04513158817949407
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.04073064250744761,
+   "n_events": 11792
+  },
+  "bigram": {
+   "mrr_learner_mean": 0.440074065670165,
+   "mrr_ci": [
+    0.4102345909502442,
+    0.46994726605974374
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.43685750988279837,
+   "n_events": 11792
+  },
+  "recency": {
+   "mrr_learner_mean": 0.035426460832609696,
+   "mrr_ci": [
+    0.02950113560142023,
+    0.04244194990692558
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.030209969648624612,
+   "n_events": 11792
+  },
+  "markov2_backoff": {
+   "mrr_learner_mean": 0.4869454351418209,
+   "mrr_ci": [
+    0.4521260334221904,
+    0.5233860470387467
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.48693288387829586,
+   "n_events": 11792
+  },
+  "gru": {
+   "mrr_learner_mean": 0.49699977423502334,
+   "mrr_ci": [
+    0.4630438528267727,
+    0.5326409379776951
+   ],
+   "mrr_learner_mean_average_rank_ties": 0.49699977423502345,
+   "n_events": 11792
+  }
+ },
+ "paired": {
+  "popularity-selected_operator": {
+   "diff": -0.20004172378903923,
+   "ci": [
+    -0.2234250310030154,
+    -0.17818718344945883
+   ],
+   "p": 0.0005,
+   "p_holm": 0.003
+  },
+  "recency-selected_operator": {
+   "diff": -0.20536268660418205,
+   "ci": [
+    -0.22850158792101588,
+    -0.18431696432530964
+   ],
+   "p": 0.0005,
+   "p_holm": 0.003
+  },
+  "bigram-selected_operator": {
+   "diff": 0.19928491823337321,
+   "ci": [
+    0.1773920284745523,
+    0.22334018302397357
+   ],
+   "p": 0.0005,
+   "p_holm": 0.003
+  },
+  "markov2_backoff-selected_operator": {
+   "diff": 0.2461562877050292,
+   "ci": [
+    0.21953449498078165,
+    0.27437778712812616
+   ],
+   "p": 0.0005,
+   "p_holm": 0.003
+  },
+  "gru-selected_operator": {
+   "diff": 0.2562106267982317,
+   "ci": [
+    0.22939520299317046,
+    0.283339242824392
+   ],
+   "p": 0.0005,
+   "p_holm": 0.003
+  },
+  "selected_operator-hop_distance": {
+   "diff": -0.0013146117595242142,
+   "ci": [
+    -0.005713383699562999,
+    0.0029388583487359133
+   ],
+   "p": 0.577,
+   "p_holm": 0.577
+  }
+ },
+ "selected_operator": "min_hopbreak",
+ "gru_val_loss": 3.0251152527727134,
+ "gru_time_s": 446.4770830059997
+}

@@ -13,6 +13,7 @@ interactions of learner ``u`` in log order, ``kc`` holds integer KC codes in
 from __future__ import annotations
 
 import numpy as np
+import pandas as pd
 
 try:
     from numba import njit
@@ -107,7 +108,15 @@ def transition_matrix(ptr, kc, K):
 def encode(d):
     """Integer-code a preprocessed frame (sorted by learner and log order).
     Returns (ptr, kc codes, correct, labels)."""
-    labels, kc = np.unique(d["kc"].astype(str).to_numpy(), return_inverse=True)
+    col = d["kc"]
+    if isinstance(col.dtype, pd.CategoricalDtype):
+        # same coding as np.unique on the strings: categories in sorted string order
+        c = col.cat.remove_unused_categories()
+        cats = np.asarray(c.cat.categories.astype(str))
+        order = np.argsort(cats, kind="stable"); rank = np.empty_like(order); rank[order] = np.arange(order.size)
+        labels, kc = cats[order], rank[c.cat.codes.to_numpy()]
+    else:
+        labels, kc = np.unique(col.astype(str).to_numpy(), return_inverse=True)
     users = d["user_id"].to_numpy()
     change = np.ones(len(users), dtype=bool)
     change[1:] = users[1:] != users[:-1]

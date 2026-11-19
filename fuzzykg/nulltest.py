@@ -234,3 +234,95 @@ def membership_degree_correlation(G: FuzzyGraph) -> Dict:
             "rho_mu_indeg_dst": float(spearmanr(G.mu, kin[G.dst]).statistic),
             "rho_mu_indeg_src": float(spearmanr(G.mu, kin[G.src]).statistic),
             "rho_mu_outdeg_dst": float(spearmanr(G.mu, kout[G.dst]).statistic)}
+
+
+# ---------------------------------------------------------------------------
+# Version 4.0.0: a degree- and size-matched decision floor (Algorithm 1, step 3').
+# The floor of ``density_matched_floor`` plants k equal communities in a graph with the
+# observed n and m but homogeneous out-degrees.  On sparse, degree-heterogeneous graphs
+# such a planted structure is harder to recover than one that keeps the observed degree
+# sequence and community sizes, so that floor is conservative (Section 9.3 of the
+# manuscript).  The structure-matched floor below plants communities with the sizes of
+# the observed partition and draws every edge so that each node keeps its observed
+# out-degree exactly and its in-degree in expectation (a directed degree-corrected
+# planted partition).
+# ---------------------------------------------------------------------------
+def planted_dc_like(G: FuzzyGraph, sizes: Sequence[int], p_in: float, rng) -> tuple:
+    """Directed degree-corrected planted partition matched to G: community sizes ``sizes``
+    (e.g. those of the observed partition), every node keeps its observed out-degree, the
+    endpoint of an out-edge is drawn inside the source's community with probability p_in and
+    otherwise from another community, in both cases with probability proportional to the
+    observed in-degree (+1, so that sources without in-edges remain reachable); memberships
+    resampled from the observed distribution."""
+    n = G.n
+    sizes = [int(s) for s in sizes if s > 0]
+    k = len(sizes)
+    truth = np.repeat(np.arange(k), sizes)[:n]
+    if truth.size < n:
+        truth = np.concatenate([truth, rng.integers(0, k, n - truth.size)])
+    rng.shuffle(truth)
+    kout = np.bincount(G.src, minlength=n)
+    kin = np.bincount(G.dst, minlength=n).astype(float) + 1.0
+    members = [np.flatnonzero(truth == c) for c in range(k)]
+    wts = [kin[m] / kin[m].sum() for m in members]
+    mass = np.array([kin[m].sum() for m in members])
+    src, dst = [], []
+    for u in range(n):
+        d = int(kout[u])
+        if d == 0:
+            continue
+        cu = truth[u]
+        chosen = set()
+        tries = 0
+        while len(chosen) < d and tries < 30 * d:
+            tries += 1
+            if k == 1 or rng.random() < p_in:
+                c = cu
+            else:
+                p = mass.copy(); p[cu] = 0.0; p = p / p.sum()
+                c = int(rng.choice(k, p=p))
+            v = int(members[c][rng.choice(members[c].size, p=wts[c])])
+            if v != u:
+                chosen.add(v)
+        for v in chosen:
+            src.append(u); dst.append(v)
+    mu = rng.choice(G.mu, size=len(src), replace=True)
+    return FuzzyGraph(n, np.asarray(src, dtype=np.int64), np.asarray(dst, dtype=np.int64), mu), truth
+
+
+def structure_matched_floor(G: FuzzyGraph, membership: np.ndarray, p_grid: Optional[Sequence[float]] = None,
+                            graph_seeds: int = 2, draws: int = 20, seeds=(0, 1, 2), rng_seed: int = 0,
+                            ari_min: float = 0.5) -> Dict:
+    """Decision floor read off degree-corrected planted partitions with the community sizes
+    of the observed partition ``membership`` and the observed out-degrees (Algorithm 1, step 3')."""
+    from sklearn.metrics import adjusted_rand_score as ari
+    rng = np.random.default_rng(rng_seed)
+    sizes = np.bincount(np.asarray(membership, dtype=np.int64))
+    sizes = sizes[sizes > 0]
+    k = max(2, int(sizes.size))
+    base = float(np.sum((sizes / sizes.sum()) ** 2))   # in-community share of a structureless graph
+    if p_grid is None:
+        p_grid = sorted({min(0.95, base + d) for d in (0.0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.45, 0.6, 0.75, 0.9)})
+    rows = []
+    for p in p_grid:
+        for gs in range(graph_seeds):
+            Gp, truth = planted_dc_like(G, sizes, p, rng)
+            r = best_qf(Gp, 1.0, seeds)
+            t = degree_test(Gp, draws, 1.0, seeds, rng_seed=int(rng.integers(1 << 30)), obs=r.Q_F)
+            rows.append({"p_in": float(p), "graph_seed": gs, "Q_F": r.Q_F, "k_found": r.n_communities,
+                         "ari": float(ari(truth, r.membership)), "delta_Q": t["delta_Q"], "z": t["z"]})
+    ps = sorted({r["p_in"] for r in rows})
+    agg = [{"p_in": p, "ari": float(np.mean([r["ari"] for r in rows if r["p_in"] == p])),
+            "delta_Q": float(np.mean([r["delta_Q"] for r in rows if r["p_in"] == p]))} for p in ps]
+    rec = [a for a in agg if a["ari"] >= ari_min]
+    return {"k": k, "sizes": sizes.tolist(), "p_structureless": base, "rows": rows, "by_p_in": agg,
+            "floor": rec[0]["delta_Q"] if rec else None, "floor_p_in": rec[0]["p_in"] if rec else None}
+
+
+def outcome(z_deg: float, dq_deg: float, floor: Optional[float], z_min: float = 3.0) -> str:
+    """Three-valued outcome of Algorithm 1 for one floor."""
+    if not (z_deg >= z_min):
+        return "no structure detected"
+    if floor is None:
+        return "floor undefined"
+    return "structure" if dq_deg >= floor else "excess below floor"

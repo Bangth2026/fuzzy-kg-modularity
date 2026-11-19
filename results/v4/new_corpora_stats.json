@@ -1,0 +1,101 @@
+{
+ "eedi": {
+  "interactions": 1380285,
+  "learners": 4918,
+  "kcs": 57,
+  "correct_rate": 0.5376078128792242,
+  "load_s": 4.631264295999927,
+  "groups": 25,
+  "copractice": {
+   "summary": "FuzzyGraph(n=57, m=2618, W=1133.879, mu min/mean/max=0.200/0.433/0.761, reciprocity=0.984)",
+   "n": 57,
+   "m": 2618,
+   "build_s": 3.5353529059999573
+  },
+  "transition": {
+   "summary": "FuzzyGraph(n=50, m=78, W=27.563, mu min/mean/max=0.207/0.353/0.632, reciprocity=0.000)",
+   "n": 50,
+   "m": 78,
+   "build_s": 1.653317818000005
+  }
+ },
+ "algebra2005": {
+  "interactions": 606950,
+  "learners": 564,
+  "kcs": 109,
+  "correct_rate": 0.7552961528956257,
+  "load_s": 4.2872876629999155,
+  "groups": 23,
+  "copractice": {
+   "summary": "FuzzyGraph(n=95, m=2281, W=990.337, mu min/mean/max=0.201/0.434/0.758, reciprocity=0.959)",
+   "n": 95,
+   "m": 2281,
+   "build_s": 1.041399651000006
+  },
+  "transition": {
+   "summary": "FuzzyGraph(n=78, m=175, W=100.201, mu min/mean/max=0.204/0.573/1.000, reciprocity=0.000)",
+   "n": 78,
+   "m": 175,
+   "build_s": 1.0202118850000943
+  }
+ },
+ "assist2012": {
+  "interactions": 2565431,
+  "learners": 20056,
+  "kcs": 265,
+  "correct_rate": 0.6998866857070021,
+  "load_s": 24.54414503099997,
+  "copractice": {
+   "summary": "FuzzyGraph(n=258, m=19984, W=9062.024, mu min/mean/max=0.200/0.453/0.798, reciprocity=0.933)",
+   "n": 258,
+   "m": 19984,
+   "build_s": 5.625677472000007
+  },
+  "transition": {
+   "summary": "FuzzyGraph(n=235, m=542, W=256.650, mu min/mean/max=0.200/0.474/1.000, reciprocity=0.000)",
+   "n": 235,
+   "m": 542,
+   "build_s": 3.6629158050000115
+  }
+ },
+ "ednet": {
+  "interactions": 2313640,
+  "learners": 9121,
+  "kcs": 142,
+  "correct_rate": 0.6575915008385056,
+  "load_s": 40.426702711000075,
+  "groups": 7,
+  "copractice": {
+   "summary": "FuzzyGraph(n=142, m=19153, W=8448.483, mu min/mean/max=0.233/0.441/0.682, reciprocity=1.000)",
+   "n": 142,
+   "m": 19153,
+   "build_s": 5.670298456999944
+  },
+  "transition": {
+   "summary": "FuzzyGraph(n=73, m=76, W=30.025, mu min/mean/max=0.201/0.395/0.966, reciprocity=0.000)",
+   "n": 73,
+   "m": 76,
+   "build_s": 4.706709249000028
+  }
+ },
+ "bridge2006": {
+  "interactions": 1817336,
+  "learners": 1125,
+  "kcs": 492,
+  "correct_rate": 0.8321565192127378,
+  "load_s": 13.521959874000004,
+  "groups": 34,
+  "copractice": {
+   "summary": "FuzzyGraph(n=462, m=8504, W=4297.075, mu min/mean/max=0.201/0.505/0.775, reciprocity=0.758)",
+   "n": 462,
+   "m": 8504,
+   "build_s": 3.30612976000009
+  },
+  "transition": {
+   "summary": "FuzzyGraph(n=422, m=768, W=518.577, mu min/mean/max=0.201/0.675/1.000, reciprocity=0.000)",
+   "n": 422,
+   "m": 768,
+   "build_s": 2.5841360420000683
+  }
+ }
+}

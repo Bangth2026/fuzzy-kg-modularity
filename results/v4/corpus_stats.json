@@ -1,0 +1,90 @@
+{
+ "2009_kc": {
+  "learners": 2445,
+  "interactions": 247625,
+  "nodes": 111,
+  "correct_rate": 0.6585401312468451,
+  "per_learner_median": 42.0,
+  "per_learner_mean": 101.27811860940696
+ },
+ "2009_item": {
+  "learners": 2445,
+  "interactions": 247625,
+  "nodes": 15844,
+  "correct_rate": 0.6585401312468451,
+  "per_learner_median": 42.0,
+  "per_learner_mean": 101.27811860940696
+ },
+ "2015_kc": {
+  "learners": 11996,
+  "interactions": 629709,
+  "nodes": 100,
+  "correct_rate": 0.7296370228153004,
+  "per_learner_median": 37.0,
+  "per_learner_mean": 52.49324774924975
+ },
+ "2017_kc": {
+  "learners": 1686,
+  "interactions": 248566,
+  "nodes": 86,
+  "correct_rate": 0.4308352711151163,
+  "per_learner_median": 123.5,
+  "per_learner_mean": 147.429418742586
+ },
+ "2017_item": {
+  "learners": 1686,
+  "interactions": 248566,
+  "nodes": 1183,
+  "correct_rate": 0.4308352711151163,
+  "per_learner_median": 123.5,
+  "per_learner_mean": 147.429418742586
+ },
+ "junyi_kc": {
+  "learners": 111769,
+  "interactions": 25265344,
+  "nodes": 722,
+  "correct_rate": 0.8305394931491928,
+  "per_learner_median": 61.0,
+  "per_learner_mean": 226.04965598690157
+ },
+ "assist2012_kc": {
+  "learners": 20056,
+  "interactions": 2565431,
+  "nodes": 265,
+  "correct_rate": 0.6998866857070021,
+  "per_learner_median": 67.0,
+  "per_learner_mean": 127.9133925009972
+ },
+ "algebra2005_kc": {
+  "learners": 564,
+  "interactions": 606950,
+  "nodes": 109,
+  "correct_rate": 0.7552961528956257,
+  "per_learner_median": 583.5,
+  "per_learner_mean": 1076.1524822695035
+ },
+ "bridge2006_kc": {
+  "learners": 1125,
+  "interactions": 1817336,
+  "nodes": 492,
+  "correct_rate": 0.8321565192127378,
+  "per_learner_median": 1379.0,
+  "per_learner_mean": 1615.409777777778
+ },
+ "eedi_kc": {
+  "learners": 4918,
+  "interactions": 1380285,
+  "nodes": 57,
+  "correct_rate": 0.5376078128792242,
+  "per_learner_median": 239.0,
+  "per_learner_mean": 280.65982106547375
+ },
+ "ednet_kc": {
+  "learners": 9121,
+  "interactions": 2313640,
+  "nodes": 142,
+  "correct_rate": 0.6575915008385056,
+  "per_learner_median": 42.0,
+  "per_learner_mean": 253.66078280890252
+ }
+}

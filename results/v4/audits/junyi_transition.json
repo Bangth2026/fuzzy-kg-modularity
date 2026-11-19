@@ -1,0 +1,140 @@
+{
+ "graph": {
+  "n_active": 628,
+  "m": 1078,
+  "density": 0.0027377360598949602,
+  "reciprocity": 0.0,
+  "mean_out_degree": 1.71656050955414,
+  "mu_mean": 0.40027715412283144,
+  "mu_sd": 0.1813005142210881
+ },
+ "cuts": {
+  "rule": "flag a cut whose audit exceeds the no-cut value by > 2 x max(seed SD)",
+  "seeds": 10,
+  "cuts": {
+   "support": {
+    "alpha": null,
+    "n_active": 628,
+    "m": 1078,
+    "density": 0.0027377360598949602,
+    "reciprocity": 0.0,
+    "mean_out_degree": 1.71656050955414,
+    "mu_mean": 1.0,
+    "mu_sd": 0.0,
+    "retained_edges": 1.0,
+    "qf_drop": 0.01020457897344953,
+    "qf_drop_sd": 0.0026129734723596633,
+    "rank_drop": 0.017967477296349444,
+    "rank_drop_sd": 0.0029871042418613304,
+    "low_degree_warning": true
+   },
+   "q0.25": {
+    "alpha": 0.2531179231081382,
+    "n_active": 592,
+    "m": 808,
+    "density": 0.0023094160149997713,
+    "reciprocity": 0.0,
+    "mean_out_degree": 1.364864864864865,
+    "mu_mean": 1.0,
+    "mu_sd": 0.0,
+    "retained_edges": 0.7495361781076066,
+    "qf_drop": 0.03211616577226981,
+    "qf_drop_sd": 0.0031845165475033995,
+    "rank_drop": 0.019509643693558176,
+    "rank_drop_sd": 0.002328636793469377,
+    "low_degree_warning": true,
+    "flag_qf_drop": true,
+    "flag_rank_drop": false
+   },
+   "q0.50": {
+    "alpha": 0.34040554406149603,
+    "n_active": 526,
+    "m": 539,
+    "density": 0.0019518377693282635,
+    "reciprocity": 0.0,
+    "mean_out_degree": 1.0247148288973384,
+    "mu_mean": 1.0,
+    "mu_sd": 0.0,
+    "retained_edges": 0.5,
+    "qf_drop": 0.1266948208153778,
+    "qf_drop_sd": 0.004671668295307527,
+    "rank_drop": 0.10973599723059255,
+    "rank_drop_sd": 0.0033580497410992884,
+    "low_degree_warning": true,
+    "flag_qf_drop": true,
+    "flag_rank_drop": true
+   },
+   "q0.75": {
+    "alpha": 0.5,
+    "n_active": 364,
+    "m": 271,
+    "density": 0.0020509793237065963,
+    "reciprocity": 0.0,
+    "mean_out_degree": 0.7445054945054945,
+    "mu_mean": 1.0,
+    "mu_sd": 0.0,
+    "retained_edges": 0.25139146567717996,
+    "qf_drop": 0.3960902134227088,
+    "qf_drop_sd": 0.0012487648881993392,
+    "rank_drop": 0.4094814880800712,
+    "rank_drop_sd": 0.0015327683070903244,
+    "low_degree_warning": true,
+    "flag_qf_drop": true,
+    "flag_rank_drop": true
+   }
+  }
+ },
+ "paths": {
+  "direct_edge": {
+   "rho": 0.3754756671233894,
+   "reached": 0.12920448478376936,
+   "minus_hop": [
+    -0.1307632448335966,
+    -0.01984162458895187
+   ],
+   "beats_hop": false
+  },
+  "hop_distance": {
+   "rho": 0.44779523521918896,
+   "reached": 0.44741057127602774
+  },
+  "min": {
+   "rho": 0.4187733020948202,
+   "reached": 0.4468766684463428,
+   "minus_hop": [
+    -0.052648899439616835,
+    -0.010969940538481946
+   ],
+   "beats_hop": false
+  },
+  "product": {
+   "rho": 0.4482493216977026,
+   "reached": 0.4468766684463428,
+   "minus_hop": [
+    -0.00964738380988418,
+    0.008222313147829854
+   ],
+   "beats_hop": false
+  },
+  "lukasiewicz": {
+   "rho": 0.4151404071236998,
+   "reached": 0.16871329418045916,
+   "minus_hop": [
+    -0.08854203771426669,
+    0.021303214620148562
+   ],
+   "beats_hop": false
+  },
+  "yager_5": {
+   "rho": 0.46632339192234845,
+   "reached": 0.3817405232247731,
+   "minus_hop": [
+    -0.011004198866078682,
+    0.04782515288265421
+   ],
+   "beats_hop": false
+  },
+  "recommendation": "hop distance on the support (no operator beats it)",
+  "composition_below_direct_edge": []
+ }
+}

@@ -101,7 +101,11 @@ def load_junyi(path: Optional[str] = None) -> pd.DataFrame:
     df = pd.read_csv(p, usecols=["user_id", "exercise", "time_done", "correct"],
                      dtype={"user_id": "int64", "exercise": "category", "time_done": "int64", "correct": "string"})
     df["correct"] = (df["correct"].str.lower() == "true").astype("int8")
-    out = pd.DataFrame({"user_id": df["user_id"].astype("int64"), "kc": df["exercise"].astype(str),
+    # version 4.0.0: the exercise column stays categorical (categories in sorted order), which
+    # gives the same node coding as strings (fuzzykg.fastcount.encode) at a fraction of the memory
+    kc = df["exercise"].cat.remove_unused_categories()
+    kc = kc.cat.reorder_categories(sorted(kc.cat.categories.astype(str)))
+    out = pd.DataFrame({"user_id": df["user_id"].astype("int64"), "kc": kc,
                         "correct": df["correct"], "order": df["time_done"]})
     out = out.drop_duplicates(subset=["user_id", "order", "kc"], keep="first")
     return out.reset_index(drop=True)
@@ -116,3 +120,154 @@ def load_junyi_expert(root: Optional[str] = None):
     ann = pd.concat([pd.read_csv(root / "relationship_annotation_training.csv"),
                      pd.read_csv(root / "relationship_annotation_testing.csv")], ignore_index=True)
     return ex, ann
+
+
+# ---------------------------------------------------------------------------
+# Version 4.0.0: five further public corpora (KC level) and an external grouping of
+# their KCs, plus a dispatcher used by the v4 scripts.  Raw files from the USTC EduData
+# mirror (base.ustc.edu.cn/data/): ASSISTment/2012-2013-data-with-predictions-4-final.zip,
+# KDD_Cup_2010/algebra_2005_2006.zip, KDD_Cup_2010/bridge_to_algebra_2006_2007.zip,
+# NIPS2020/public_data.zip (Eedi), EdNet/EdNet-KT1.zip with EdNet/EdNet-Contents.zip.
+# ---------------------------------------------------------------------------
+import numpy as _np
+
+
+def load_assist2012(path: Optional[str] = None) -> pd.DataFrame:
+    """ASSISTments 2012-13: skill level, original (non-scaffolding) problems, order = problem_log_id."""
+    p = Path(path) if path else RAW / "assist2012" / "2012-2013-data-with-predictions-4-final.csv"
+    parts = []
+    for c in pd.read_csv(p, usecols=["problem_log_id", "user_id", "skill_id", "correct", "original"], chunksize=2_000_000):
+        c = c[(c.original == 1)].dropna(subset=["skill_id"])
+        c = c[c.correct.isin([0, 1])]
+        parts.append(c)
+    d = pd.concat(parts)
+    d["skill_id"] = d["skill_id"].astype(int)
+    return _finish(d, "user_id", "skill_id", "correct", "problem_log_id")
+
+
+def _kdd(path: Path, kc_col: str):
+    d = pd.read_csv(path, sep="\t", usecols=["Row", "Anon Student Id", kc_col, "Correct First Attempt", "Problem Hierarchy"],
+                    dtype={"Anon Student Id": "category", kc_col: "string", "Problem Hierarchy": "string"})
+    d = d.dropna(subset=[kc_col])
+    d["kc"] = d[kc_col].str.split("~~").str[0]
+    unit = d.groupby("kc")["Problem Hierarchy"].agg(lambda s: s.str.split(",").str[0].mode().iloc[0]).to_dict()
+    out = _finish(d, "Anon Student Id", "kc", "Correct First Attempt", "Row")
+    return out, {str(k): str(v) for k, v in unit.items()}
+
+
+def load_algebra2005(path: Optional[str] = None):
+    """KDD Cup 2010, Algebra I 2005-06 (training file): KC = first KC(Default) of a step;
+    order = Row; grouping = curriculum unit (first field of the problem hierarchy)."""
+    p = Path(path) if path else RAW / "algebra2005" / "algebra_2005_2006" / "algebra_2005_2006_train.txt"
+    return _kdd(p, "KC(Default)")
+
+
+def load_bridge2006(path: Optional[str] = None):
+    """KDD Cup 2010, Bridge to Algebra 2006-07 (training file): KC = first KC(SubSkills)."""
+    p = Path(path) if path else RAW / "bridge2006" / "bridge_to_algebra_2006_2007" / "bridge_to_algebra_2006_2007_train.txt"
+    return _kdd(p, "KC(SubSkills)")
+
+
+def load_eedi(root: Optional[str] = None):
+    """Eedi (NeurIPS 2020 Education Challenge, tasks 3-4): KC = the level-3 subject of a
+    question; order = DateAnswered; grouping = the parent (level-2) subject."""
+    import ast
+    root = Path(root) if root else RAW / "eedi"
+    t = pd.read_csv(root / "train_data" / "train_task_3_4.csv")
+    a = pd.read_csv(root / "metadata" / "answer_metadata_task_3_4.csv", usecols=["AnswerId", "DateAnswered"])
+    q = pd.read_csv(root / "metadata" / "question_metadata_task_3_4.csv")
+    s = pd.read_csv(root / "metadata" / "subject_metadata.csv", encoding="utf-8-sig")
+    lvl = dict(zip(s.SubjectId, s.Level)); par = dict(zip(s.SubjectId, s.ParentId))
+
+    def leaf(lst):
+        l3 = [x for x in ast.literal_eval(lst) if lvl.get(x) == 3]
+        return l3[0] if l3 else None
+    q["kc"] = q.SubjectId.map(leaf)
+    t = t.merge(a, on="AnswerId", how="left")
+    t["kc"] = t.QuestionId.map(dict(zip(q.QuestionId, q.kc)))
+    t = t.dropna(subset=["kc", "DateAnswered"])
+    t["kc"] = t.kc.astype(int).astype(str)
+    t["order"] = pd.to_datetime(t.DateAnswered).astype("int64") // 1000 + t.AnswerId % 1000
+    grp = {k: str(par.get(int(k))) for k in t.kc.unique()}
+    return _finish(t, "UserId", "kc", "IsCorrect", "order"), grp
+
+
+def load_ednet(n_users: int = 20000, seed: int = 2026, root: Optional[str] = None):
+    """EdNet-KT1 (Santa TOEIC): n_users learner files drawn at random; KC = first tag of a
+    question; correct = answer equals the key; order = timestamp; grouping = TOEIC part."""
+    import zipfile
+    root = Path(root) if root else RAW / "ednet"
+    q = pd.read_csv(root / "contents" / "questions.csv")
+    key = dict(zip(q.question_id, q.correct_answer))
+    tag = dict(zip(q.question_id, q.tags.astype(str).str.split(";").str[0]))
+    part = dict(zip(q.question_id, q.part))
+    z = zipfile.ZipFile(root / "EdNet-KT1.zip")
+    names = [n for n in z.namelist() if n.endswith(".csv")]
+    pick = _np.random.default_rng(seed).choice(len(names), min(n_users, len(names)), replace=False)
+    rows = []
+    for i in pick:
+        d = pd.read_csv(z.open(names[i]))
+        if len(d) < 15:
+            continue
+        d["user"] = names[i].rsplit("/", 1)[-1][:-4]
+        rows.append(d)
+    d = pd.concat(rows, ignore_index=True)
+    d["correct"] = (d.user_answer == d.question_id.map(key)).astype(int)
+    d["kc"] = d.question_id.map(tag)
+    d["order"] = d.timestamp * 1000 + d.solving_id % 1000
+    tagpart = {}
+    for qid, t in tag.items():
+        tagpart.setdefault(str(t), str(part[qid]))
+    return _finish(d, "user", "kc", "correct", "order"), tagpart
+
+
+def load_junyi_with_suggested(path: Optional[str] = None) -> pd.DataFrame:
+    p = Path(path) if path else RAW / "junyi" / "junyi" / "junyi_ProblemLog_original.csv"
+    df = pd.read_csv(p, usecols=["user_id", "exercise", "time_done", "correct", "suggested"],
+                     dtype={"user_id": "int64", "exercise": "category", "time_done": "int64", "correct": "string", "suggested": "string"})
+    kc = df["exercise"].cat.remove_unused_categories()
+    kc = kc.cat.reorder_categories(sorted(kc.cat.categories.astype(str)))
+    out = pd.DataFrame({"user_id": df["user_id"].astype("int64"), "kc": kc,
+                        "correct": (df["correct"].str.lower() == "true").astype("int8"), "order": df["time_done"],
+                        "suggested": df["suggested"].str.lower() == "true"})
+    return out.drop_duplicates(subset=["user_id", "order", "kc"], keep="first").reset_index(drop=True)
+
+
+NEW_CORPORA = {"assist2012": load_assist2012, "algebra2005": load_algebra2005, "bridge2006": load_bridge2006,
+               "eedi": load_eedi, "ednet": load_ednet}
+
+
+def load_any(release: str, level: str = "kc", keep_suggested: bool = False, use_cache: bool = True):
+    """Dispatcher: '2009', '2015', '2017', 'junyi', or one of NEW_CORPORA (KC level)."""
+    if use_cache and release in NEW_CORPORA:
+        return cached(release, level)[0]
+    if release == "junyi":
+        return load_junyi_with_suggested() if keep_suggested else load_junyi()
+    if release in ("2009", "2015", "2017"):
+        return load_assistments(release, level)
+    r = NEW_CORPORA[release]()
+    return r[0] if isinstance(r, tuple) else r
+
+
+def load_groups(release: str):
+    r = NEW_CORPORA[release]()
+    return r[1] if isinstance(r, tuple) else None
+
+
+def cached(release: str, level: str = "kc", keep_suggested: bool = False):
+    """load_any with a parquet cache under data/raw/cache (and the grouping as JSON)."""
+    c = RAW / "cache"; c.mkdir(parents=True, exist_ok=True)
+    tag = f"{release}_{level}" + ("_sugg" if keep_suggested else "")
+    f = c / f"{tag}.parquet"; g = c / f"{tag}_groups.json"
+    if f.exists():
+        return pd.read_parquet(f), (json.load(open(g)) if g.exists() else None)
+    if release in NEW_CORPORA:
+        r = NEW_CORPORA[release]()
+        df, grp = (r if isinstance(r, tuple) else (r, None))
+    else:
+        df, grp = load_any(release, level, keep_suggested), None
+    df["user_id"] = df["user_id"].astype(str); df["kc"] = df["kc"].astype(str)
+    df.to_parquet(f)
+    if grp is not None:
+        json.dump(grp, open(g, "w"))
+    return df, grp

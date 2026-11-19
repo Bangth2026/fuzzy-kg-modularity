@@ -1,0 +1,67 @@
+"""Version 4.0.0: structure-matched planted partitions, the three-valued outcome, the
+categorical node coding and the audit tool (Algorithm 2)."""
+import numpy as np
+import pandas as pd
+
+from fuzzykg import FuzzyGraph
+from fuzzykg.fastcount import encode
+from fuzzykg.nulltest import planted_dc_like, outcome
+from fuzzykg.audit import rank_code, cut_audit, audit, report_markdown
+
+
+def _graph(seed=0, n=60, m=500):
+    rng = np.random.default_rng(seed)
+    e = set()
+    while len(e) < m:
+        u = int(rng.integers(0, n)); v = int(rng.integers(0, n))
+        if u != v:
+            e.add((u, v))
+    e = sorted(e)
+    return FuzzyGraph.from_edges([(u, v, w) for (u, v), w in zip(e, rng.uniform(0.1, 1, len(e)))], n=n)
+
+
+def test_dc_planted_keeps_out_degrees_and_sizes():
+    G = _graph(1); rng = np.random.default_rng(2)
+    sizes = [10, 20, 30]
+    H, truth = planted_dc_like(G, sizes, 0.8, rng)
+    assert sorted(np.bincount(truth).tolist()) == sizes
+    assert (np.bincount(H.src, minlength=G.n) == np.bincount(G.src, minlength=G.n)).all()
+    assert (H.src != H.dst).all()
+    internal = (truth[H.src] == truth[H.dst]).mean()
+    assert internal > 0.6
+
+
+def test_outcome_rule():
+    assert outcome(2.0, 0.5, 0.1) == "no structure detected"
+    assert outcome(4.0, 0.05, 0.1) == "excess below floor"
+    assert outcome(4.0, 0.2, 0.1) == "structure"
+    assert outcome(4.0, 0.2, None) == "floor undefined"
+
+
+def test_categorical_encode_matches_strings():
+    rng = np.random.default_rng(3)
+    k = rng.choice(["b", "a", "c", "aa", "d"], 200)
+    d1 = pd.DataFrame({"user_id": np.repeat(np.arange(20), 10), "kc": k, "correct": rng.integers(0, 2, 200)})
+    d2 = d1.assign(kc=pd.Categorical(k, categories=["d", "c", "b", "aa", "a"]))
+    p1, c1, r1, l1 = encode(d1); p2, c2, r2, l2 = encode(d2)
+    assert (p1 == p2).all() and (c1 == c2).all() and list(l1) == list(l2)
+
+
+def test_rank_code_is_rescaling_invariant():
+    mu = np.random.default_rng(4).uniform(0.05, 1, 300)
+    assert np.allclose(rank_code(mu), rank_code(mu ** 3))
+
+
+def test_cut_audit_flags_a_cut_that_removes_most_edges():
+    G = _graph(5, n=80, m=900)
+    rep = cut_audit(G, {"q0.90": float(np.quantile(G.mu, 0.9))}, seeds=range(4))
+    r = rep["cuts"]["q0.90"]
+    assert r["retained_edges"] < 0.15 and r["low_degree_warning"]
+    assert r["qf_drop"] > rep["cuts"]["support"]["qf_drop"]
+
+
+def test_audit_runs_without_null_test_and_renders():
+    G = _graph(6)
+    rep = audit(G, null_test=False, seeds=range(3))
+    md = report_markdown(rep)
+    assert "| q0.50 |" in md and "Rule:" in md
