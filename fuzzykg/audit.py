@@ -38,7 +38,7 @@ def _leiden(G: FuzzyGraph, seed: int) -> np.ndarray:
 
 
 def rank_code(mu: np.ndarray, L: int = 8) -> np.ndarray:
-    """Grid ranks N_A(e)/L on the L-level quantile grid (Lemma 2(ii))."""
+    """Grid ranks N_A(e)/L on the L-level quantile grid (Lemma 2(ii) of Supplementary material B; Lemma 1 of the main article)."""
     qs = np.unique(np.quantile(mu, np.arange(L) / L))
     return (mu[:, None] >= qs[None, :]).sum(1) / len(qs)
 
