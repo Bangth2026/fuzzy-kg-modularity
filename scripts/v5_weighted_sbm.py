@@ -105,8 +105,11 @@ def best(g, w, seeds):
     return sts[i]
 
 
+CLIP = float(os.environ.get("SBM_CLIP", 1e-4))  # version 4.4.0: memberships are clipped to [CLIP, 1 - CLIP] before the logit
+
+
 def logit(mu):
-    m = np.clip(mu, 1e-4, 1 - 1e-4)
+    m = np.clip(mu, CLIP, 1 - CLIP)
     return np.log(m / (1 - m))
 
 

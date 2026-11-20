@@ -37,7 +37,7 @@ arrow((26, 31.6), (25.2, 28.9), c=BLUE)
 arrow((45, 35.2), (45, 28.9), c=ORANGE)
 box(3, 8.4, 45, 9.2, "audit (default): $Q_F(\\Pi_F)-Q_F(\\Pi_{\\alpha_0})$\nunit-invariant: $Q_F$ drop on rank-coded $\\mu_E$ (Lemma 2)\ncost index $\\bar{Q}(\\Pi^*)-\\bar{Q}(\\Pi_{\\alpha_0})$; vs. shortfall")
 arrow((7.5, 19.6), (12, 17.8), c=INK); arrow((25.2, 19.6), (25.2, 17.8), c=BLUE); arrow((42.7, 19.6), (38, 17.8), c=ORANGE)
-box(1, 0.8, 49, 6.6, "Algorithm 1: degree-preserving null with a\ndensity-matched floor; weights-only nulls\n(global, row) with calibrated power", edge=GREY, fill="s", fs=7.6)
+box(1, 0.8, 49, 6.6, "Algorithm 1: degree-preserving null with a density-matched\nfloor; weights-only nulls (global, row) with calibrated power;\nchecked by a weighted stochastic block model", edge=GREY, fill="s", fs=7.6)
 
 # right panel
 box(53, 35, 20.5, 8.5, "path score $S_T(\\pi)$\n$T$ = min or Archimedean")
@@ -46,7 +46,7 @@ arrow((73.8, 39.3), (76.2, 39.3))
 box(53, 16, 21, 13, "prerequisite criteria\nJunyi: expert scores,\nknowledge-map links;\nbaseline: hop distance\non the pruned support", edge=GREEN, fill="g")
 box(77.5, 16, 21.5, 13, "next-concept criterion\nheld-out learners;\nbaselines: direct edge,\nhop distance, bigram", edge=ORANGE, fill="o")
 arrow((63.5, 34.6), (63.5, 29.4), c=GREEN); arrow((88.2, 34.6), (88.2, 29.4), c=ORANGE)
-box(53, 1.5, 46, 10, "both constructions of Section 4 on every log:\nco-practice (dense, reciprocal) vs.\norder-preserving transition (sparse)", edge=GREY, fill="s")
+box(53, 0.8, 46, 11, "both constructions of Section 4 on every log:\nco-practice (dense, reciprocal) vs.\norder-preserving transition (sparse)\nAlgorithm 2: both halves as a pre-deployment audit", edge=GREY, fill="s")
 arrow((63.5, 15.6), (70, 11.8)); arrow((88.2, 15.6), (82, 11.8))
 
 fig.savefig("docs/figure1.png", dpi=600)

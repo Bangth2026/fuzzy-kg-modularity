@@ -1,0 +1,42 @@
+{
+ "assist2017_kc": {
+  "n": 83,
+  "m": 5494,
+  "B_topology": 3,
+  "B_weighted": 3,
+  "ari_topology_vs_weighted": 1.0,
+  "dl_topology_nats": 6328.0464383747,
+  "dl_weighted_nats": 6328.0464383747,
+  "nulls": {
+   "row": {
+    "mean": 6328.0464383747,
+    "sd": 3.73248750142067e-12,
+    "z": null,
+    "delta_bits": 0.0,
+    "share_null_below_obs": 0.85
+   },
+   "global": {
+    "mean": 6328.0464383747,
+    "sd": 1.6692191556689924e-12,
+    "z": null,
+    "delta_bits": 0.0,
+    "share_null_below_obs": 0.95
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   6328.0464383747,
+   6328.046438374708,
+   6328.046438374708,
+   6328.0464383747,
+   6331.598617889548
+  ],
+  "weight_inside_mean": -0.13433695886909996,
+  "weight_between_mean": -0.12211274969805658,
+  "between_share": 0.4113578449217328,
+  "directional_gap_mean": 0.11793650096905599,
+  "time_s": 2329.2771213054657
+ }
+}

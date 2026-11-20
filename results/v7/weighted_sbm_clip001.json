@@ -1,0 +1,82 @@
+{
+ "mooccubex_cs": {
+  "n": 59,
+  "m": 91,
+  "B_topology": 2,
+  "B_weighted": 2,
+  "ari_topology_vs_weighted": 0.0297304738384158,
+  "dl_topology_nats": 425.5300420259805,
+  "dl_weighted_nats": 567.6312441156979,
+  "nulls": {
+   "row": {
+    "mean": 576.3591225137717,
+    "sd": 0.6316404063901215,
+    "z": 13.817796185577135,
+    "delta_bits": 12.591666882383,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 577.2634598366878,
+    "sd": 1.5424696443912773,
+    "z": 6.244671171335261,
+    "delta_bits": 13.89634985344493,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   566.8408084953533,
+   569.3360140026992,
+   566.8408084953529,
+   569.0488952103776,
+   566.8408084953528
+  ],
+  "weight_inside_mean": 3.965474187620552,
+  "weight_between_mean": 3.1085999730605702,
+  "between_share": 0.5494505494505495,
+  "directional_gap_mean": 2.672287125075128,
+  "time_s": 19.347071647644043
+ },
+ "mooccubex_cs_full": {
+  "n": 287,
+  "m": 725,
+  "B_topology": 3,
+  "B_weighted": 4,
+  "ari_topology_vs_weighted": 0.28324164307844396,
+  "dl_topology_nats": 3920.55817491572,
+  "dl_weighted_nats": 5187.874944250241,
+  "nulls": {
+   "row": {
+    "mean": 5265.708123402523,
+    "sd": 10.54593662952582,
+    "z": 7.38039511202535,
+    "delta_bits": 112.2895415796187,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 5395.975053775239,
+    "sd": 8.003425460617828,
+    "z": 26.001380352573836,
+    "delta_bits": 300.2249960201642,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   5196.046046427316,
+   5214.105842987681,
+   5213.285378700639,
+   5208.428952594443,
+   5191.258468932735
+  ],
+  "weight_inside_mean": 3.343127498246632,
+  "weight_between_mean": 3.9369080086057977,
+  "between_share": 0.5517241379310345,
+  "directional_gap_mean": 2.883767278336217,
+  "time_s": 175.30526208877563
+ }
+}
