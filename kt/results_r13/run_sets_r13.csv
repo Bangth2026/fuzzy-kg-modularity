@@ -1,0 +1,11 @@
+set,model,device,fraction,seeds,lr,conditions,subsamples,runs
+EdNet reruns,FKG-KT (probe),cpu,10%,subsample,0.002,empty rvec_emb,ednet: 0 1,4
+GKT on a CPU,GKT,cpu,10%,subsample,0.002,gkt_empty gkt_support gkt_uniform,algebra05: 0 1 2; assist09: 0 1; assist15: 0 1; assist17: 2; bridge06: 0 1 2; statics11: 2,30
+SAKT-E on a CPU,SAKT-E,cpu,10%,subsample,0.002,sakte_empty sakte_er sakte_rvec sakte_rvecF sakte_support sakte_uniform,algebra05: 0 1 2 3 4; assist09: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; statics11: 0 1 2 3 4,144
+capacity,FKG-KT (probe),cpu,10%,subsample,0.002,empty_d128 tvec_emb,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,64
+learning rate,FKG-KT (probe),cpu,10%,subsample,0.005,empty rvec_emb,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,34
+learning rate,FKG-KT (probe),cpu,10%,subsample,0.01,empty rvec_emb,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,34
+state channel,FKG-KT (probe),cpu,10%,subsample,0.002,st_dp st_empty st_er st_support st_uniform,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,160
+"update budget, larger samples",FKG-KT (probe),cpu,100%,subsample,0.002,empty rvec_emb support,algebra05: 0; assist09: 0; assist12: 0; assist15: 0; assist17: 0; bridge06: 0; ednet: 0; eedi: 0; junyi: 0; statics11: 0,30
+"update budget, larger samples",FKG-KT (probe),cpu,25%,subsample,0.002,empty rvec_emb support support_emb,algebra05: 0 1 2; assist09: 0 1 2; assist12: 0 1 2; assist15: 0 1 2; assist17: 0 1 2; bridge06: 0 1 2; ednet: 0 1 2; eedi: 0 1 2; junyi: 0 1 2; statics11: 0 1 2,120
+"update budget, larger samples",FKG-KT (probe),cpu,25%,subsample + 100,0.002,empty,algebra05: 0; assist09: 0; assist12: 0; assist15: 0; assist17: 0; bridge06: 0; ednet: 0; eedi: 0; junyi: 0; statics11: 0,10
