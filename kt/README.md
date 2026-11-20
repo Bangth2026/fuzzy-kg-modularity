@@ -150,6 +150,38 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.10.0: revision runs for IEEE Transactions on Learning Technologies
+
+New runs and analyses for the revision of the manuscript *When Does a Concept Graph Help a Knowledge Tracer? Null-Graph
+Controls for First-Attempt Predictions on Ten Corpora* (IEEE TLT). Every run is on a CPU with one thread (`NT=1`,
+torch 2.15.0+cpu), on the ten corpora rebuilt as under release 3.7.0, under the update budget (at most 2,000 updates,
+validation every 25, patience 8), and pairs with runs on the same corpus x subsample unit and device. A rerun of an archived
+condition reproduces its test AUC to the last digit (Statics 2011, 10%, subsample 0, empty graph: 0.74711).
+
+| Set | Conditions | Units | Script |
+|---|---|---|---|
+| State-routing channel inside the probe (entry point S) | `st_empty`, `st_uniform`, `st_er`, `st_dp`, `st_support` | 32 units at 10% | `src/r13_controls.py` |
+| SAKT-E on a CPU | `sakte_empty`, `sakte_uniform`, `sakte_er`, `sakte_support`, `sakte_rvec`, `sakte_rvecF` | 24 units at 10% (six corpora) | `src/r13_controls.py` |
+| Capacity controls | `empty_d128` (every width doubled), `tvec_emb` (random codes made trainable) | 32 units at 10% | `src/r13_controls.py` |
+| Learning rate for the random code | `rvec_emb` with `--lr 0.005` and `--lr 0.01` (empty-graph control from `runs_r7`) | 32 units at 10% | `src/r13_controls.py` |
+| EdNet reruns on the data rebuilt for this release | `empty`, `rvec_emb`, `empty --lr 0.005`, `empty --lr 0.01` | 2 units | `src/r13_controls.py` |
+| Update budget at 25% and 100% | `empty`, `support`, `support_emb`, `rvec_emb` (25%, subsamples 0-2); `empty`, `support`, `rvec_emb` (100%); `empty --rep 1` (25%, subsample 0) | 30 + 10 units | `src/r13_controls.py --dump` |
+| GKT with the complete graph, on a CPU | `gkt_uniform` on the five CPU units of releases 3.5.0/3.6.0; `gkt_empty`, `gkt_support`, `gkt_uniform` rerun on a CPU on the GPU units of release 3.5.0 (16 units in all) | 16 units at 10% | `src/r9_controls.py --out runs_r13/gkt` |
+
+`--dump` writes `<tag>_cand.npz`: for at most 400 test learners at positions t in {10, 25, 50, 100, 150}, the predicted
+probability of a correct first attempt at every KC the learner has not attempted by then (float16), and the mask of the
+KCs already attempted. A position-t score at the KC actually attempted next equals the per-prediction file to float16
+precision. The per-prediction files of this release also keep `uid`, the index of the test learner.
+
+| Analysis | Script | Output |
+|---|---|---|
+| Update budget along the learning curve (Holm over six tests); capacity, learning-rate, SAKT-E, state-channel and GKT ladders; the reordered ladder empty -> RV(F) -> RV -> ER -> DP -> G; next-KC decision agreement and 0.5-threshold flips; weighting by first attempts and leaving out the four small corpora | `src/r13_analyse.py` | `results_r13/r13_results.json` |
+| What the support graph encodes: edges within a curriculum unit against an Erdos-Renyi graph, Junyi edges in the published prerequisite map, ASSISTments 2009/2017 transitions inside one assignment; KCs per learner, run length and the share of first attempts per corpus | `src/r13_graph_audit.py` (needs the raw Junyi exercise table and the raw ASSISTments 2009/2017 files) | `results_r13/graph_audit.json` |
+| Run inventory of this release (Supplementary Table S6.10, lower block) | `src/r13_inventory.py` | `results_r13/run_sets_r13.csv` |
+
+Run with `PYTHONPATH=<checkout> KT_ROOT=<kt dir with data/> bash src/r13_runq.sh jobs_r13.txt 2`, then
+`KT_ROOT=<kt dir> python src/r13_analyse.py`. Prediction and candidate files are included.
+
 # Release 3.9.0: first-attempt contrasts of the random-vector controls by training data on the target KC
 
 No new training runs. `src/r12_analyse.py` reads the run and per-prediction files of `runs_r7`, `runs_r9`, `runs_r10` and

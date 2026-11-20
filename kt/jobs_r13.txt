@@ -1,0 +1,630 @@
+python3 src/r13_controls.py --data statics11 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data statics11 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data statics11 --sub 0 --cond st_er
+python3 src/r13_controls.py --data statics11 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data statics11 --sub 0 --cond st_support
+python3 src/r13_controls.py --data statics11 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data statics11 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data statics11 --sub 1 --cond st_er
+python3 src/r13_controls.py --data statics11 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data statics11 --sub 1 --cond st_support
+python3 src/r13_controls.py --data statics11 --sub 2 --cond st_empty
+python3 src/r13_controls.py --data statics11 --sub 2 --cond st_uniform
+python3 src/r13_controls.py --data statics11 --sub 2 --cond st_er
+python3 src/r13_controls.py --data statics11 --sub 2 --cond st_dp
+python3 src/r13_controls.py --data statics11 --sub 2 --cond st_support
+python3 src/r13_controls.py --data statics11 --sub 3 --cond st_empty
+python3 src/r13_controls.py --data statics11 --sub 3 --cond st_uniform
+python3 src/r13_controls.py --data statics11 --sub 3 --cond st_er
+python3 src/r13_controls.py --data statics11 --sub 3 --cond st_dp
+python3 src/r13_controls.py --data statics11 --sub 3 --cond st_support
+python3 src/r13_controls.py --data statics11 --sub 4 --cond st_empty
+python3 src/r13_controls.py --data statics11 --sub 4 --cond st_uniform
+python3 src/r13_controls.py --data statics11 --sub 4 --cond st_er
+python3 src/r13_controls.py --data statics11 --sub 4 --cond st_dp
+python3 src/r13_controls.py --data statics11 --sub 4 --cond st_support
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond st_er
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond st_support
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond st_er
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond st_support
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond st_empty
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond st_uniform
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond st_er
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond st_dp
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond st_support
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond st_empty
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond st_uniform
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond st_er
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond st_dp
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond st_support
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond st_empty
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond st_uniform
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond st_er
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond st_dp
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond st_support
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond st_er
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond st_support
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond st_er
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond st_support
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond st_empty
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond st_uniform
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond st_er
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond st_dp
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond st_support
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond st_empty
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond st_uniform
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond st_er
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond st_dp
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond st_support
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond st_empty
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond st_uniform
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond st_er
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond st_dp
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond st_support
+python3 src/r13_controls.py --data assist17 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data assist17 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data assist17 --sub 0 --cond st_er
+python3 src/r13_controls.py --data assist17 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data assist17 --sub 0 --cond st_support
+python3 src/r13_controls.py --data assist17 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data assist17 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data assist17 --sub 1 --cond st_er
+python3 src/r13_controls.py --data assist17 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data assist17 --sub 1 --cond st_support
+python3 src/r13_controls.py --data assist17 --sub 2 --cond st_empty
+python3 src/r13_controls.py --data assist17 --sub 2 --cond st_uniform
+python3 src/r13_controls.py --data assist17 --sub 2 --cond st_er
+python3 src/r13_controls.py --data assist17 --sub 2 --cond st_dp
+python3 src/r13_controls.py --data assist17 --sub 2 --cond st_support
+python3 src/r13_controls.py --data assist17 --sub 3 --cond st_empty
+python3 src/r13_controls.py --data assist17 --sub 3 --cond st_uniform
+python3 src/r13_controls.py --data assist17 --sub 3 --cond st_er
+python3 src/r13_controls.py --data assist17 --sub 3 --cond st_dp
+python3 src/r13_controls.py --data assist17 --sub 3 --cond st_support
+python3 src/r13_controls.py --data assist17 --sub 4 --cond st_empty
+python3 src/r13_controls.py --data assist17 --sub 4 --cond st_uniform
+python3 src/r13_controls.py --data assist17 --sub 4 --cond st_er
+python3 src/r13_controls.py --data assist17 --sub 4 --cond st_dp
+python3 src/r13_controls.py --data assist17 --sub 4 --cond st_support
+python3 src/r13_controls.py --data assist09 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data assist09 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data assist09 --sub 0 --cond st_er
+python3 src/r13_controls.py --data assist09 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data assist09 --sub 0 --cond st_support
+python3 src/r13_controls.py --data assist09 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data assist09 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data assist09 --sub 1 --cond st_er
+python3 src/r13_controls.py --data assist09 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data assist09 --sub 1 --cond st_support
+python3 src/r13_controls.py --data assist12 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data assist12 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data assist12 --sub 0 --cond st_er
+python3 src/r13_controls.py --data assist12 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data assist12 --sub 0 --cond st_support
+python3 src/r13_controls.py --data assist12 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data assist12 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data assist12 --sub 1 --cond st_er
+python3 src/r13_controls.py --data assist12 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data assist12 --sub 1 --cond st_support
+python3 src/r13_controls.py --data assist15 --sub 0 --cond st_empty
+python3 src/r13_controls.py --data assist15 --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data assist15 --sub 0 --cond st_er
+python3 src/r13_controls.py --data assist15 --sub 0 --cond st_dp
+python3 src/r13_controls.py --data assist15 --sub 0 --cond st_support
+python3 src/r13_controls.py --data assist15 --sub 1 --cond st_empty
+python3 src/r13_controls.py --data assist15 --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data assist15 --sub 1 --cond st_er
+python3 src/r13_controls.py --data assist15 --sub 1 --cond st_dp
+python3 src/r13_controls.py --data assist15 --sub 1 --cond st_support
+python3 src/r13_controls.py --data eedi --sub 0 --cond st_empty
+python3 src/r13_controls.py --data eedi --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data eedi --sub 0 --cond st_er
+python3 src/r13_controls.py --data eedi --sub 0 --cond st_dp
+python3 src/r13_controls.py --data eedi --sub 0 --cond st_support
+python3 src/r13_controls.py --data eedi --sub 1 --cond st_empty
+python3 src/r13_controls.py --data eedi --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data eedi --sub 1 --cond st_er
+python3 src/r13_controls.py --data eedi --sub 1 --cond st_dp
+python3 src/r13_controls.py --data eedi --sub 1 --cond st_support
+python3 src/r13_controls.py --data ednet --sub 0 --cond st_empty
+python3 src/r13_controls.py --data ednet --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data ednet --sub 0 --cond st_er
+python3 src/r13_controls.py --data ednet --sub 0 --cond st_dp
+python3 src/r13_controls.py --data ednet --sub 0 --cond st_support
+python3 src/r13_controls.py --data ednet --sub 1 --cond st_empty
+python3 src/r13_controls.py --data ednet --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data ednet --sub 1 --cond st_er
+python3 src/r13_controls.py --data ednet --sub 1 --cond st_dp
+python3 src/r13_controls.py --data ednet --sub 1 --cond st_support
+python3 src/r13_controls.py --data junyi --sub 0 --cond st_empty
+python3 src/r13_controls.py --data junyi --sub 0 --cond st_uniform
+python3 src/r13_controls.py --data junyi --sub 0 --cond st_er
+python3 src/r13_controls.py --data junyi --sub 0 --cond st_dp
+python3 src/r13_controls.py --data junyi --sub 0 --cond st_support
+python3 src/r13_controls.py --data junyi --sub 1 --cond st_empty
+python3 src/r13_controls.py --data junyi --sub 1 --cond st_uniform
+python3 src/r13_controls.py --data junyi --sub 1 --cond st_er
+python3 src/r13_controls.py --data junyi --sub 1 --cond st_dp
+python3 src/r13_controls.py --data junyi --sub 1 --cond st_support
+python3 src/r13_controls.py --data statics11 --sub 0 --cond sakte_empty
+python3 src/r13_controls.py --data statics11 --sub 0 --cond sakte_uniform
+python3 src/r13_controls.py --data statics11 --sub 0 --cond sakte_er
+python3 src/r13_controls.py --data statics11 --sub 0 --cond sakte_support
+python3 src/r13_controls.py --data statics11 --sub 0 --cond sakte_rvec
+python3 src/r13_controls.py --data statics11 --sub 0 --cond sakte_rvecF
+python3 src/r13_controls.py --data statics11 --sub 1 --cond sakte_empty
+python3 src/r13_controls.py --data statics11 --sub 1 --cond sakte_uniform
+python3 src/r13_controls.py --data statics11 --sub 1 --cond sakte_er
+python3 src/r13_controls.py --data statics11 --sub 1 --cond sakte_support
+python3 src/r13_controls.py --data statics11 --sub 1 --cond sakte_rvec
+python3 src/r13_controls.py --data statics11 --sub 1 --cond sakte_rvecF
+python3 src/r13_controls.py --data statics11 --sub 2 --cond sakte_empty
+python3 src/r13_controls.py --data statics11 --sub 2 --cond sakte_uniform
+python3 src/r13_controls.py --data statics11 --sub 2 --cond sakte_er
+python3 src/r13_controls.py --data statics11 --sub 2 --cond sakte_support
+python3 src/r13_controls.py --data statics11 --sub 2 --cond sakte_rvec
+python3 src/r13_controls.py --data statics11 --sub 2 --cond sakte_rvecF
+python3 src/r13_controls.py --data statics11 --sub 3 --cond sakte_empty
+python3 src/r13_controls.py --data statics11 --sub 3 --cond sakte_uniform
+python3 src/r13_controls.py --data statics11 --sub 3 --cond sakte_er
+python3 src/r13_controls.py --data statics11 --sub 3 --cond sakte_support
+python3 src/r13_controls.py --data statics11 --sub 3 --cond sakte_rvec
+python3 src/r13_controls.py --data statics11 --sub 3 --cond sakte_rvecF
+python3 src/r13_controls.py --data statics11 --sub 4 --cond sakte_empty
+python3 src/r13_controls.py --data statics11 --sub 4 --cond sakte_uniform
+python3 src/r13_controls.py --data statics11 --sub 4 --cond sakte_er
+python3 src/r13_controls.py --data statics11 --sub 4 --cond sakte_support
+python3 src/r13_controls.py --data statics11 --sub 4 --cond sakte_rvec
+python3 src/r13_controls.py --data statics11 --sub 4 --cond sakte_rvecF
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond sakte_empty
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond sakte_uniform
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond sakte_er
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond sakte_support
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond sakte_rvec
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond sakte_rvecF
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond sakte_empty
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond sakte_uniform
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond sakte_er
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond sakte_support
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond sakte_rvec
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond sakte_rvecF
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond sakte_empty
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond sakte_uniform
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond sakte_er
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond sakte_support
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond sakte_rvec
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond sakte_rvecF
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond sakte_empty
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond sakte_uniform
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond sakte_er
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond sakte_support
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond sakte_rvec
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond sakte_rvecF
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond sakte_empty
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond sakte_uniform
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond sakte_er
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond sakte_support
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond sakte_rvec
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond sakte_rvecF
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond sakte_empty
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond sakte_uniform
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond sakte_er
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond sakte_support
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond sakte_rvec
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond sakte_rvecF
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond sakte_empty
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond sakte_uniform
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond sakte_er
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond sakte_support
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond sakte_rvec
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond sakte_rvecF
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond sakte_empty
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond sakte_uniform
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond sakte_er
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond sakte_support
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond sakte_rvec
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond sakte_rvecF
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond sakte_empty
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond sakte_uniform
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond sakte_er
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond sakte_support
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond sakte_rvec
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond sakte_rvecF
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond sakte_empty
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond sakte_uniform
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond sakte_er
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond sakte_support
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond sakte_rvec
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist17 --sub 0 --cond sakte_empty
+python3 src/r13_controls.py --data assist17 --sub 0 --cond sakte_uniform
+python3 src/r13_controls.py --data assist17 --sub 0 --cond sakte_er
+python3 src/r13_controls.py --data assist17 --sub 0 --cond sakte_support
+python3 src/r13_controls.py --data assist17 --sub 0 --cond sakte_rvec
+python3 src/r13_controls.py --data assist17 --sub 0 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist17 --sub 1 --cond sakte_empty
+python3 src/r13_controls.py --data assist17 --sub 1 --cond sakte_uniform
+python3 src/r13_controls.py --data assist17 --sub 1 --cond sakte_er
+python3 src/r13_controls.py --data assist17 --sub 1 --cond sakte_support
+python3 src/r13_controls.py --data assist17 --sub 1 --cond sakte_rvec
+python3 src/r13_controls.py --data assist17 --sub 1 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist17 --sub 2 --cond sakte_empty
+python3 src/r13_controls.py --data assist17 --sub 2 --cond sakte_uniform
+python3 src/r13_controls.py --data assist17 --sub 2 --cond sakte_er
+python3 src/r13_controls.py --data assist17 --sub 2 --cond sakte_support
+python3 src/r13_controls.py --data assist17 --sub 2 --cond sakte_rvec
+python3 src/r13_controls.py --data assist17 --sub 2 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist17 --sub 3 --cond sakte_empty
+python3 src/r13_controls.py --data assist17 --sub 3 --cond sakte_uniform
+python3 src/r13_controls.py --data assist17 --sub 3 --cond sakte_er
+python3 src/r13_controls.py --data assist17 --sub 3 --cond sakte_support
+python3 src/r13_controls.py --data assist17 --sub 3 --cond sakte_rvec
+python3 src/r13_controls.py --data assist17 --sub 3 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist17 --sub 4 --cond sakte_empty
+python3 src/r13_controls.py --data assist17 --sub 4 --cond sakte_uniform
+python3 src/r13_controls.py --data assist17 --sub 4 --cond sakte_er
+python3 src/r13_controls.py --data assist17 --sub 4 --cond sakte_support
+python3 src/r13_controls.py --data assist17 --sub 4 --cond sakte_rvec
+python3 src/r13_controls.py --data assist17 --sub 4 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist09 --sub 0 --cond sakte_empty
+python3 src/r13_controls.py --data assist09 --sub 0 --cond sakte_uniform
+python3 src/r13_controls.py --data assist09 --sub 0 --cond sakte_er
+python3 src/r13_controls.py --data assist09 --sub 0 --cond sakte_support
+python3 src/r13_controls.py --data assist09 --sub 0 --cond sakte_rvec
+python3 src/r13_controls.py --data assist09 --sub 0 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist09 --sub 1 --cond sakte_empty
+python3 src/r13_controls.py --data assist09 --sub 1 --cond sakte_uniform
+python3 src/r13_controls.py --data assist09 --sub 1 --cond sakte_er
+python3 src/r13_controls.py --data assist09 --sub 1 --cond sakte_support
+python3 src/r13_controls.py --data assist09 --sub 1 --cond sakte_rvec
+python3 src/r13_controls.py --data assist09 --sub 1 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist15 --sub 0 --cond sakte_empty
+python3 src/r13_controls.py --data assist15 --sub 0 --cond sakte_uniform
+python3 src/r13_controls.py --data assist15 --sub 0 --cond sakte_er
+python3 src/r13_controls.py --data assist15 --sub 0 --cond sakte_support
+python3 src/r13_controls.py --data assist15 --sub 0 --cond sakte_rvec
+python3 src/r13_controls.py --data assist15 --sub 0 --cond sakte_rvecF
+python3 src/r13_controls.py --data assist15 --sub 1 --cond sakte_empty
+python3 src/r13_controls.py --data assist15 --sub 1 --cond sakte_uniform
+python3 src/r13_controls.py --data assist15 --sub 1 --cond sakte_er
+python3 src/r13_controls.py --data assist15 --sub 1 --cond sakte_support
+python3 src/r13_controls.py --data assist15 --sub 1 --cond sakte_rvec
+python3 src/r13_controls.py --data assist15 --sub 1 --cond sakte_rvecF
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data statics11 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data eedi --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data ednet --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 0 --cond support_emb --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 1 --cond empty --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 1 --cond support --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 1 --cond support_emb --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 1 --cond rvec_emb --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 2 --cond empty --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 2 --cond support --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 2 --cond support_emb --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 2 --cond rvec_emb --dump
+python3 src/r13_controls.py --data junyi --frac 0.25 --sub 0 --cond empty --rep 1 --dump
+python3 src/r13_controls.py --data statics11 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data statics11 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data statics11 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data statics11 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data statics11 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data statics11 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data statics11 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data statics11 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data statics11 --sub 2 --cond empty_d128
+python3 src/r13_controls.py --data statics11 --sub 2 --cond tvec_emb
+python3 src/r13_controls.py --data statics11 --sub 2 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data statics11 --sub 2 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data statics11 --sub 3 --cond empty_d128
+python3 src/r13_controls.py --data statics11 --sub 3 --cond tvec_emb
+python3 src/r13_controls.py --data statics11 --sub 3 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data statics11 --sub 3 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data statics11 --sub 4 --cond empty_d128
+python3 src/r13_controls.py --data statics11 --sub 4 --cond tvec_emb
+python3 src/r13_controls.py --data statics11 --sub 4 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data statics11 --sub 4 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data algebra05 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data algebra05 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond empty_d128
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond tvec_emb
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data algebra05 --sub 2 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond empty_d128
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond tvec_emb
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data algebra05 --sub 3 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond empty_d128
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond tvec_emb
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data algebra05 --sub 4 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data bridge06 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data bridge06 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond empty_d128
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond tvec_emb
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data bridge06 --sub 2 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond empty_d128
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond tvec_emb
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data bridge06 --sub 3 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond empty_d128
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond tvec_emb
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data bridge06 --sub 4 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist17 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data assist17 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data assist17 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist17 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist17 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data assist17 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data assist17 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist17 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist17 --sub 2 --cond empty_d128
+python3 src/r13_controls.py --data assist17 --sub 2 --cond tvec_emb
+python3 src/r13_controls.py --data assist17 --sub 2 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist17 --sub 2 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist17 --sub 3 --cond empty_d128
+python3 src/r13_controls.py --data assist17 --sub 3 --cond tvec_emb
+python3 src/r13_controls.py --data assist17 --sub 3 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist17 --sub 3 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist17 --sub 4 --cond empty_d128
+python3 src/r13_controls.py --data assist17 --sub 4 --cond tvec_emb
+python3 src/r13_controls.py --data assist17 --sub 4 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist17 --sub 4 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist09 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data assist09 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data assist09 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist09 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist09 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data assist09 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data assist09 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist09 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist12 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data assist12 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data assist12 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist12 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist12 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data assist12 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data assist12 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist12 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist15 --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data assist15 --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data assist15 --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist15 --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data assist15 --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data assist15 --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data assist15 --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data assist15 --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data eedi --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data eedi --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data eedi --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data eedi --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data eedi --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data eedi --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data eedi --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data eedi --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data ednet --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data ednet --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data ednet --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data ednet --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data ednet --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data ednet --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data ednet --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data ednet --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data junyi --sub 0 --cond empty_d128
+python3 src/r13_controls.py --data junyi --sub 0 --cond tvec_emb
+python3 src/r13_controls.py --data junyi --sub 0 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data junyi --sub 0 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data junyi --sub 1 --cond empty_d128
+python3 src/r13_controls.py --data junyi --sub 1 --cond tvec_emb
+python3 src/r13_controls.py --data junyi --sub 1 --cond rvec_emb --lr 0.005
+python3 src/r13_controls.py --data junyi --sub 1 --cond rvec_emb --lr 0.01
+python3 src/r13_controls.py --data ednet --sub 0 --cond empty
+python3 src/r13_controls.py --data ednet --sub 0 --cond rvec_emb
+python3 src/r13_controls.py --data ednet --sub 0 --cond empty --lr 0.005
+python3 src/r13_controls.py --data ednet --sub 0 --cond empty --lr 0.01
+python3 src/r13_controls.py --data ednet --sub 1 --cond empty
+python3 src/r13_controls.py --data ednet --sub 1 --cond rvec_emb
+python3 src/r13_controls.py --data ednet --sub 1 --cond empty --lr 0.005
+python3 src/r13_controls.py --data ednet --sub 1 --cond empty --lr 0.01
+python3 src/r13_controls.py --data statics11 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data statics11 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data statics11 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data algebra05 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data algebra05 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data algebra05 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data bridge06 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data bridge06 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data bridge06 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist17 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist17 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist17 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist09 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist09 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist09 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist12 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist12 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist12 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data assist15 --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data assist15 --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data assist15 --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data eedi --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data eedi --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data eedi --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data ednet --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data ednet --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data ednet --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r13_controls.py --data junyi --frac 1.0 --sub 0 --cond empty --dump
+python3 src/r13_controls.py --data junyi --frac 1.0 --sub 0 --cond support --dump
+python3 src/r13_controls.py --data junyi --frac 1.0 --sub 0 --cond rvec_emb --dump
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data statics11 --sub 2 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data statics11 --sub 2 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data statics11 --sub 2 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist17 --sub 2 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist17 --sub 2 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist17 --sub 2 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 0 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 0 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 0 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 1 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 1 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 1 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 2 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 2 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data algebra05 --sub 2 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist09 --sub 0 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist09 --sub 0 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist09 --sub 0 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist09 --sub 1 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist15 --sub 0 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data assist15 --sub 1 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 0 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 0 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 0 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 1 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 1 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 1 --cond gkt_uniform
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 2 --cond gkt_empty
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 2 --cond gkt_support
+python3 src/r9_controls.py --out /home/claude/kt/runs_r13/gkt --data bridge06 --sub 2 --cond gkt_uniform
