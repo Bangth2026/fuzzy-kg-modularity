@@ -1,0 +1,102 @@
+{
+ "mooccubex_cs": {
+  "blocks": 2,
+  "between_share": 0.5054945054945055,
+  "partition": "results/v8/sbm_partitions/mooccubex_cs.npy",
+  "assortative": {
+   "observed": 1.024755912819031,
+   "null_mean": 0.19148226068317564,
+   "z": 4.059204249573328
+  },
+  "directional": {
+   "observed": 2.654611731070992,
+   "null_mean": 2.043170235175486,
+   "z": 4.05920424957333
+  },
+  "eta2": {
+   "observed": 0.4803538291468395,
+   "null_mean": 0.2233087106274468,
+   "z": 6.174992896548283
+  }
+ },
+ "assist2009_kc": {
+  "blocks": 6,
+  "between_share": 0.7285460643124877,
+  "partition": "results/v8/sbm_partitions/assist2009_kc.npy",
+  "assortative": {
+   "observed": 0.002935538379134753,
+   "null_mean": 0.006703670799669871,
+   "z": -0.24398286643108996
+  },
+  "directional": {
+   "observed": 0.22047575605884437,
+   "null_mean": 0.0844413962543087,
+   "z": 7.300270364130091
+  },
+  "eta2": {
+   "observed": 0.040819466382074,
+   "null_mean": 0.010316372637666472,
+   "z": 21.622378591065377
+  }
+ },
+ "assist2015_kc": {
+  "blocks": 5,
+  "between_share": 0.7594427689214419,
+  "partition": "results/v8/sbm_partitions/assist2015_kc.npy",
+  "assortative": {
+   "observed": -0.04554484602464834,
+   "null_mean": -0.0028570140823736957,
+   "z": -3.7583574615479263
+  },
+  "directional": {
+   "observed": 0.10407667640319362,
+   "null_mean": 0.09468944929282164,
+   "z": 0.6477943346828698
+  },
+  "eta2": {
+   "observed": 0.031888561872512065,
+   "null_mean": 0.01718035946089195,
+   "z": 13.946108834515625
+  }
+ },
+ "assist2017_kc": {
+  "blocks": 10,
+  "between_share": 0.9024390243902439,
+  "partition": "results/v8/sbm_partitions/assist2017_kc.npy",
+  "assortative": {
+   "observed": 0.0038003983030032162,
+   "null_mean": 0.0004141039104330758,
+   "z": 0.30480512228567175
+  },
+  "directional": {
+   "observed": 0.24757405815001599,
+   "null_mean": 0.12544967170715904,
+   "z": 15.540290819934375
+  },
+  "eta2": {
+   "observed": 0.36181934101561414,
+   "null_mean": 0.10844216754208195,
+   "z": 98.80382964867538
+  }
+ },
+ "mooccubex_cs_full": {
+  "blocks": 4,
+  "between_share": 0.5710344827586207,
+  "partition": "results/v8/sbm_partitions/mooccubex_cs_full.npy",
+  "assortative": {
+   "observed": -0.5642295941850288,
+   "null_mean": -0.42827977838144954,
+   "z": -1.9801656012288769
+  },
+  "directional": {
+   "observed": 2.381587867065557,
+   "null_mean": 1.5618118548415876,
+   "z": 6.710215520026772
+  },
+  "eta2": {
+   "observed": 0.5800436657608907,
+   "null_mean": 0.36472398182552956,
+   "z": 17.21021328498088
+  }
+ }
+}

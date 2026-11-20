@@ -44,12 +44,20 @@ def stats(y, br, bs, B):
 
 
 def main():
+    # version 4.5.0: WHERE_PART_DIR (partitions to hold fixed), WHERE_OUT and graph names on the command line,
+    # for the fits of results/v8/weighted_sbm_100*.json
+    import sys
+    part_dir = os.environ.get("WHERE_PART_DIR")
+    out_path = os.environ.get("WHERE_OUT", os.path.join(ROOT, "results/v6/sbm_where.json"))
     sbm = json.load(open(os.path.join(ROOT, "results/v5/weighted_sbm.json")))
+    names = sys.argv[1:] or list(sbm)
     out = {}
-    for name in sbm:
+    for name in names:
         e = pd.read_csv(os.path.join(ROOT, f"data/graphs/{name}_edges.csv"))
         p6 = os.path.join(ROOT, f"results/v6/sbm_partitions/{name}.npy")
         src = p6 if os.path.exists(p6) else os.path.join(ROOT, f"results/v5/sbm_partitions/{name}.npy")
+        if part_dir:
+            src = os.path.join(ROOT, part_dir, f"{name}.npy")
         b = np.load(src)[:, 1]
         _, b = np.unique(b, return_inverse=True)
         B = int(b.max()) + 1
@@ -67,7 +75,7 @@ def main():
                     "z": float((obs[i] - col.mean()) / col.std()) if ok else None}
         out[name] = r
         print(name, B, {k: (None if r[k]["z"] is None else round(r[k]["z"], 1)) for k in ("assortative", "directional", "eta2")}, flush=True)
-    json.dump(out, open(os.path.join(ROOT, "results/v6/sbm_where.json"), "w"), indent=1)
+    json.dump(out, open(out_path, "w"), indent=1)
 
 
 if __name__ == "__main__":

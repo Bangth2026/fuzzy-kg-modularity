@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.4.0 below).
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.5.0 below).
 >
 > **(B)** Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks** (code: `kt/`; versions 2.0.0 to 3.9.0).
 
@@ -21,6 +21,23 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.5.0
+
+Analyses behind the third-revision manuscript as submitted; `docs/paper_map_r3.md` maps every item of that version to its script and result file. New results are in `results/v8/`; no earlier result file is changed or removed. Release 4.5.0 supersedes the nested-SBM and floor-variant files of 4.4.0 (`results/v7/weighted_sbm_nested_fair.json`, `results/v7/variant_floor.json`), which the manuscript no longer cites.
+
+**Correction (nested SBM), completed.** Release 4.4.0 found that the nested runs carry no information on the weight channel and set them aside. The cause: releases 4.2.0 to 4.4.0 passed the covariate to `minimize_nested_blockmodel_dl` inside `state_args` (`base_type`, `rec`, `rec_types`), which graph-tool accepts with a `UserWarning` and ignores. `scripts/v5_weighted_sbm.py` now passes it through `base_state=WeightedBlockState, base_state_args=...` and asserts that every weighted fit, flat or nested, carries the covariate. With the covariate in place the nested model agrees with the flat one (ASSISTments 2017 KC-level co-practice: 10 level-0 blocks, row-null z = 288; Supplementary Table S11b). The flat fits were never affected.
+
+| Topic | Script | Output |
+|---|---|---|
+| Flat weighted SBM with 100 refits under each null, every fit the best of five initialisations, one-sided empirical p stored with every null, on the three KC-level co-practice graphs and the assessed MOOCCubeX graph; 50 row-null refits on the full MOOCCubeX graph | `SBM_NULL=100 SBM_NULL_INIT=5 SBM_OUT=results/v8/weighted_sbm_100.json SBM_PART_DIR=results/v8/sbm_partitions python scripts/v5_weighted_sbm.py mooccubex_cs assist2009_kc assist2015_kc assist2017_kc`; `SBM_KINDS=row SBM_NULL=50 ... mooccubex_cs_full` | `results/v8/weighted_sbm_100.json`, `results/v8/weighted_sbm_50_full.json` (Table S11a) |
+| Nested weighted SBM with the covariate, row null, five graphs | `SBM_NESTED=1 SBM_KINDS=row SBM_NULL=20 SBM_NULL_INIT=5 ...` | `results/v8/weighted_sbm_nested.json` (Table S11b) |
+| Clipping of the logit at 0.01 instead of 1e-4 (no released membership reaches 1e-4 from 0 or 1) | `SBM_CLIP=0.01 ... mooccubex_cs` | `results/v8/weighted_sbm_clip.json` |
+| Blocks of the refitted weighted SBMs held fixed: inside versus between, directional gap, block-pair eta^2 | `WHERE_PART_DIR=results/v8/sbm_partitions WHERE_OUT=results/v8/sbm_where.json python scripts/v6_sbm_where.py <graphs>` | `results/v8/sbm_where.json` |
+| Decision floor with ten planted graphs per fraction and a bootstrap interval: Junyi co-practice graph (Table 3, Table S3h) and all twelve variants of the Junyi transition construction (Table S6c) | `scripts/v8_floor_extra.py` | `results/v8/floor_extra.json`, `results/v8/floor_extra_variants.json` |
+| Seed dispersion of the Q_F drop and the flagging rule of Algorithm 2 (step 3) applied to it, against the rule on the cost index | `scripts/v8_qf_drop_seeds.py` | `results/v8/qf_drop_seeds.json` (Table S5d) |
+
+New options of `scripts/v5_weighted_sbm.py`: `SBM_PART_DIR`, `SBM_KINDS` (with `SBM_CLIP` of 4.4.0); every null in its output carries `p_empirical` and the refit `values`. The SBM runs of 4.5.0 used graph-tool 3.9 (conda-forge), whose fits can differ by a few blocks from those of 4.3.0, so every refitted graph is reported from one release. The Junyi log of the transition variants was read from the EduData mirror of the PSLC DataShop release (`data/README.md`).
 
 ## What is in version 4.4.0
 

@@ -40,6 +40,12 @@ NESTED = os.environ.get("SBM_NESTED", "0") == "1"   # hierarchical (nested) SBM 
 # (SBM_NULL_INIT; release 4.2.0 used one), and the output goes to SBM_OUT
 N_NULL_INIT = int(os.environ.get("SBM_NULL_INIT", 1))
 OUT_PATH = os.environ.get("SBM_OUT")
+# version 4.5.0: the logit is taken of memberships clipped to [SBM_CLIP, 1 - SBM_CLIP] (default 1e-4,
+# the value of every earlier release; no released membership reaches that bound, so the default
+# clip never acts), and partitions can be written elsewhere (SBM_PART_DIR)
+CLIP = float(os.environ.get("SBM_CLIP", 1e-4))
+PART_DIR = os.environ.get("SBM_PART_DIR", "results/v5/sbm_partitions")
+KINDS = tuple(os.environ.get("SBM_KINDS", "row,global").split(","))   # version 4.5.0: which nulls to refit
 
 
 def load(name):
@@ -80,10 +86,15 @@ def fit(g, w, seed):
         # recs to BlockState is silently ignored
         args.update(rec=[w], rec_types=["real-normal"])
         kw = dict(state=gt.WeightedBlockState) if not NESTED else {}
-        if NESTED:
-            args = dict(deg_corr=True, base_type=gt.WeightedBlockState, rec=[w], rec_types=["real-normal"])
     if NESTED:
-        st = gt.minimize_nested_blockmodel_dl(g, state_args=args)
+        # version 4.5.0: the nested fit takes the covariate through base_state / base_state_args.  Releases
+        # 4.2.0 and 4.3.0 passed base_type, rec and rec_types inside state_args, which graph-tool accepts
+        # with a UserWarning and ignores, so their nested "weighted" fits never saw the memberships
+        # (results/v5/weighted_sbm_nested.json and results/v6/weighted_sbm_nested.json are superseded).
+        if w is not None:
+            st = gt.minimize_nested_blockmodel_dl(g, base_state=gt.WeightedBlockState, base_state_args=args)
+        else:
+            st = gt.minimize_nested_blockmodel_dl(g, base_state_args=args)
         for _ in range(3):
             st.multiflip_mcmc_sweep(beta=np.inf, niter=10)
         return st
@@ -103,9 +114,6 @@ def best(g, w, seeds):
     sts = [fit(g, w, s) for s in seeds]
     i = int(np.argmin([st.entropy() for st in sts]))
     return sts[i]
-
-
-CLIP = float(os.environ.get("SBM_CLIP", 1e-4))  # version 4.4.0: memberships are clipped to [CLIP, 1 - CLIP] before the logit
 
 
 def logit(mu):
@@ -133,9 +141,12 @@ def run(name):
     st1 = best(g, w, range(N_INIT))
     b0 = blocks(st0); b1 = blocks(st1)
     dl_obs = st1.entropy()
+    # version 4.5.0 guard: the weighted state must carry the covariate (its levels or its base state has rec)
+    base = st1.get_levels()[0] if NESTED else st1
+    assert len(getattr(base, "rec", [])) >= 1, "weighted fit does not carry the membership covariate"
     rng = np.random.default_rng(2026)
     nulls = {}
-    for kind in ("row", "global"):
+    for kind in KINDS:
         vals = []
         for r in range(N_NULL):
             yp = row_perm(s, y, rng) if kind == "row" else rng.permutation(y)
@@ -145,7 +156,10 @@ def run(name):
         nulls[kind] = dict(mean=float(vals.mean()), sd=float(vals.std(ddof=1)),
                            z=(float((vals.mean() - dl_obs) / vals.std(ddof=1)) if vals.std(ddof=1) > 1e-9 else None),
                            delta_bits=float((vals.mean() - dl_obs) / np.log(2)),
-                           share_null_below_obs=float((vals <= dl_obs).mean()))
+                           share_null_below_obs=float((vals <= dl_obs).mean()),
+                           # version 4.5.0: one-sided empirical p, (1 + #null DL <= observed) / (N + 1)
+                           p_empirical=float((1 + (vals <= dl_obs).sum()) / (vals.size + 1)),
+                           values=[float(v) for v in vals])
     out = dict(n=int(n), m=int(len(mu)), B_topology=int(len(np.unique(b0))), B_weighted=int(len(np.unique(b1))),
                ari_topology_vs_weighted=float(ari(b0, b1)), dl_topology_nats=float(st0.entropy()),
                dl_weighted_nats=float(dl_obs), nulls=nulls, n_null=N_NULL, n_init=N_INIT, n_null_init=N_NULL_INIT,
@@ -162,8 +176,10 @@ def run(name):
     out["weight_between_mean"] = float(y[~inside].mean()) if (~inside).any() else None
     out["between_share"] = float((~inside).mean())
     out["directional_gap_mean"] = float(np.mean(gaps)) if gaps else None
-    os.makedirs(os.path.join(ROOT, "results/v5/sbm_partitions"), exist_ok=True)
-    np.save(os.path.join(ROOT, f"results/v5/sbm_partitions/{name}{'_nested' if NESTED else ''}.npy"), np.c_[b0, b1])
+    out["clip"] = CLIP
+    out["n_clipped"] = int(((mu < CLIP) | (mu > 1 - CLIP)).sum())
+    os.makedirs(os.path.join(ROOT, PART_DIR), exist_ok=True)
+    np.save(os.path.join(ROOT, PART_DIR, f"{name}{'_nested' if NESTED else ''}.npy"), np.c_[b0, b1])
     grp = groups(name, labels)
     if grp is not None:
         has = np.array([x is not None for x in grp])
