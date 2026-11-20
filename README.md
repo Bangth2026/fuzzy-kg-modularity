@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.5.0 below).
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Information Processing & Management** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.5.0 below; the revisions up to 4.5.0 were prepared for Knowledge-Based Systems).
 >
 > **(B)** Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks** (code: `kt/`; versions 2.0.0 to 3.9.0).
 
@@ -264,7 +264,7 @@ tests/              pytest tests
 @article{truong2026fuzzykg,
   author  = {Truong, Hai Bang},
   title   = {Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs},
-  journal = {Knowledge-Based Systems},
+  journal = {Information Processing \& Management},
   year    = {2026},
   note    = {submitted},
 }
