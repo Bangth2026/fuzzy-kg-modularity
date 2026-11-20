@@ -1,0 +1,72 @@
+{
+ "mooccubex_cs": {
+  "runs": 30,
+  "communities": 549,
+  "disconnected": 0
+ },
+ "mooccubex_cs_full": {
+  "runs": 30,
+  "communities": 2013,
+  "disconnected": 0
+ },
+ "assist2009_kc": {
+  "runs": 30,
+  "communities": 396,
+  "disconnected": 0
+ },
+ "assist2009_kc_transition": {
+  "runs": 30,
+  "communities": 423,
+  "disconnected": 0
+ },
+ "assist2009_item": {
+  "runs": 30,
+  "communities": 1210,
+  "disconnected": 0
+ },
+ "assist2015_kc": {
+  "runs": 30,
+  "communities": 455,
+  "disconnected": 0
+ },
+ "assist2015_kc_transition": {
+  "runs": 30,
+  "communities": 356,
+  "disconnected": 0
+ },
+ "assist2017_kc": {
+  "runs": 30,
+  "communities": 437,
+  "disconnected": 0
+ },
+ "assist2017_kc_transition": {
+  "runs": 30,
+  "communities": 477,
+  "disconnected": 0
+ },
+ "assist2017_item": {
+  "runs": 30,
+  "communities": 619,
+  "disconnected": 0
+ },
+ "assist2017_item_transition": {
+  "runs": 30,
+  "communities": 2943,
+  "disconnected": 0
+ },
+ "junyi_copractice": {
+  "runs": 30,
+  "communities": 1277,
+  "disconnected": 0
+ },
+ "junyi_transition": {
+  "runs": 30,
+  "communities": 3668,
+  "disconnected": 0
+ },
+ "total": {
+  "runs": 390,
+  "communities": 14823,
+  "disconnected": 0
+ }
+}

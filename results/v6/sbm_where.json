@@ -1,0 +1,442 @@
+{
+ "eedi_transition": {
+  "blocks": 2,
+  "between_share": 0.01282051282051282,
+  "partition": "results/v5/sbm_partitions/eedi_transition.npy",
+  "assortative": {
+   "observed": 0.4255177378395104,
+   "null_mean": -0.010591620205366333,
+   "z": 0.8788654477448505
+  },
+  "directional": {
+   "observed": null,
+   "null_mean": null,
+   "z": null
+  },
+  "eta2": {
+   "observed": 0.031663832130702195,
+   "null_mean": 0.03889226001348682,
+   "z": -0.4659486131173515
+  }
+ },
+ "eedi_copractice": {
+  "blocks": 5,
+  "between_share": 0.767379679144385,
+  "partition": "results/v5/sbm_partitions/eedi_copractice.npy",
+  "assortative": {
+   "observed": -0.026350624037768278,
+   "null_mean": -0.008351226757419677,
+   "z": -0.9848523293226261
+  },
+  "directional": {
+   "observed": 0.7295118886883388,
+   "null_mean": 0.36640192505523184,
+   "z": 19.542727401872188
+  },
+  "eta2": {
+   "observed": 0.3872454013227306,
+   "null_mean": 0.18249726941079172,
+   "z": 103.17974730193907
+  }
+ },
+ "algebra2005_transition": {
+  "blocks": 4,
+  "between_share": 0.4228571428571429,
+  "partition": "results/v5/sbm_partitions/algebra2005_transition.npy",
+  "assortative": {
+   "observed": 1.599913103732623,
+   "null_mean": 0.6889048404454111,
+   "z": 3.1679496915846106
+  },
+  "directional": {
+   "observed": 0.6200301846453894,
+   "null_mean": 0.925612272583041,
+   "z": -1.054955550802278
+  },
+  "eta2": {
+   "observed": 0.47886290761591943,
+   "null_mean": 0.2344009428837051,
+   "z": 3.582878350460605
+  }
+ },
+ "algebra2005_copractice": {
+  "blocks": 14,
+  "between_share": 0.825076720736519,
+  "partition": "results/v5/sbm_partitions/algebra2005_copractice.npy",
+  "assortative": {
+   "observed": -0.01820326703851921,
+   "null_mean": 0.025143730805105215,
+   "z": -2.0555132651656116
+  },
+  "directional": {
+   "observed": 0.570152584799687,
+   "null_mean": 0.1975240295412428,
+   "z": 21.703703291196742
+  },
+  "eta2": {
+   "observed": 0.5317216373117614,
+   "null_mean": 0.09773600649057312,
+   "z": 60.46310867365654
+  }
+ },
+ "ednet_transition": {
+  "blocks": 2,
+  "between_share": 0.27631578947368424,
+  "partition": "results/v5/sbm_partitions/ednet_transition.npy",
+  "assortative": {
+   "observed": -2.131408205696067,
+   "null_mean": -1.6458864568674296,
+   "z": -2.488592575095717
+  },
+  "directional": {
+   "observed": 0.2204495999220013,
+   "null_mean": 0.7880382840283541,
+   "z": -2.488592575095719
+  },
+  "eta2": {
+   "observed": 0.6438717323537803,
+   "null_mean": 0.41896082832987874,
+   "z": 2.9942527417526867
+  }
+ },
+ "ednet_copractice": {
+  "blocks": 22,
+  "between_share": 0.9465357907377434,
+  "partition": "results/v5/sbm_partitions/ednet_copractice.npy",
+  "assortative": {
+   "observed": -0.03606499804978561,
+   "null_mean": 0.00010749689362547326,
+   "z": -6.135401597182241
+  },
+  "directional": {
+   "observed": 0.30910273756180684,
+   "null_mean": 0.12363913004621543,
+   "z": 48.52045605659012
+  },
+  "eta2": {
+   "observed": 0.7538298748598957,
+   "null_mean": 0.13849875612671633,
+   "z": 319.2019768811893
+  }
+ },
+ "assist2017_kc": {
+  "blocks": 11,
+  "between_share": 0.9191845649799781,
+  "partition": "results/v6/sbm_partitions/assist2017_kc.npy",
+  "assortative": {
+   "observed": 0.0037061162185213214,
+   "null_mean": -0.00047682631724076406,
+   "z": 0.34864098677747496
+  },
+  "directional": {
+   "observed": 0.24081213316632988,
+   "null_mean": 0.1219720936170115,
+   "z": 12.897972221938806
+  },
+  "eta2": {
+   "observed": 0.36690883691996284,
+   "null_mean": 0.10642266167099328,
+   "z": 94.63572156548523
+  }
+ },
+ "assist2017_kc_transition": {
+  "blocks": 2,
+  "between_share": 0.5875,
+  "partition": "results/v6/sbm_partitions/assist2017_kc_transition.npy",
+  "assortative": {
+   "observed": 0.23999388011154865,
+   "null_mean": 0.1312906503992317,
+   "z": 1.0963306407646927
+  },
+  "directional": {
+   "observed": 1.6251820723269477,
+   "null_mean": 1.77389414454143,
+   "z": -0.6401182548371406
+  },
+  "eta2": {
+   "observed": 0.4084725084119558,
+   "null_mean": 0.440502225907159,
+   "z": -0.6756197546519853
+  }
+ },
+ "assist2015_kc_transition": {
+  "blocks": 2,
+  "between_share": 0.25386996904024767,
+  "partition": "results/v6/sbm_partitions/assist2015_kc_transition.npy",
+  "assortative": {
+   "observed": 0.34042238148401766,
+   "null_mean": 0.202697916037506,
+   "z": 1.788926455269945
+  },
+  "directional": {
+   "observed": 0.48110819823654627,
+   "null_mean": 0.19431801849874428,
+   "z": 2.713179784560586
+  },
+  "eta2": {
+   "observed": 0.2546117059224575,
+   "null_mean": 0.062309059394392866,
+   "z": 4.434979830755688
+  }
+ },
+ "assist2015_kc": {
+  "blocks": 5,
+  "between_share": 0.7607353152376849,
+  "partition": "results/v6/sbm_partitions/assist2015_kc.npy",
+  "assortative": {
+   "observed": -0.03988409404289178,
+   "null_mean": -0.0018046834251348894,
+   "z": -3.263631088070509
+  },
+  "directional": {
+   "observed": 0.11136701644910432,
+   "null_mean": 0.09430886141419743,
+   "z": 1.1749611647447415
+  },
+  "eta2": {
+   "observed": 0.031490585054608417,
+   "null_mean": 0.01696619368267058,
+   "z": 13.892987718995437
+  }
+ },
+ "assist2009_kc": {
+  "blocks": 9,
+  "between_share": 0.8246202406786348,
+  "partition": "results/v6/sbm_partitions/assist2009_kc.npy",
+  "assortative": {
+   "observed": -0.011414742808447079,
+   "null_mean": -0.0034842797719493385,
+   "z": -0.4308894759429624
+  },
+  "directional": {
+   "observed": 0.35263288060756054,
+   "null_mean": 0.1632631963502218,
+   "z": 7.121822397971075
+  },
+  "eta2": {
+   "observed": 0.08397971237434243,
+   "null_mean": 0.02574350072086663,
+   "z": 28.987661272613813
+  }
+ },
+ "assist2009_kc_transition": {
+  "blocks": 2,
+  "between_share": 0.4276315789473684,
+  "partition": "results/v6/sbm_partitions/assist2009_kc_transition.npy",
+  "assortative": {
+   "observed": 0.09069122309077816,
+   "null_mean": -0.36424384322256165,
+   "z": 2.9006445497880042
+  },
+  "directional": {
+   "observed": 1.215683545627054,
+   "null_mean": 1.4607100847333445,
+   "z": -1.322825561239031
+  },
+  "eta2": {
+   "observed": 0.3227064076806714,
+   "null_mean": 0.22965635477890556,
+   "z": 3.461091461782375
+  }
+ },
+ "assist2012_transition": {
+  "blocks": 4,
+  "between_share": 0.22324723247232472,
+  "partition": "results/v5/sbm_partitions/assist2012_transition.npy",
+  "assortative": {
+   "observed": -1.7202137864552103,
+   "null_mean": -1.7561651746237914,
+   "z": 0.30029364833632216
+  },
+  "directional": {
+   "observed": 3.4467825952488607,
+   "null_mean": 3.6340144414017965,
+   "z": -1.0533133427375336
+  },
+  "eta2": {
+   "observed": 0.45421004552259736,
+   "null_mean": 0.45444756272868414,
+   "z": -0.10863277432201712
+  }
+ },
+ "mooccubex_cs": {
+  "blocks": 2,
+  "between_share": 0.5054945054945055,
+  "partition": "results/v6/sbm_partitions/mooccubex_cs.npy",
+  "assortative": {
+   "observed": 1.024755912819031,
+   "null_mean": 0.19148226068317564,
+   "z": 4.059204249573328
+  },
+  "directional": {
+   "observed": 2.654611731070992,
+   "null_mean": 2.043170235175486,
+   "z": 4.05920424957333
+  },
+  "eta2": {
+   "observed": 0.4803538291468395,
+   "null_mean": 0.2233087106274468,
+   "z": 6.174992896548283
+  }
+ },
+ "mooccubex_cs_full": {
+  "blocks": 4,
+  "between_share": 0.6317241379310344,
+  "partition": "results/v6/sbm_partitions/mooccubex_cs_full.npy",
+  "assortative": {
+   "observed": -0.06719799407186411,
+   "null_mean": 0.010007871383697063,
+   "z": -1.073485404669118
+  },
+  "directional": {
+   "observed": 2.91869808921065,
+   "null_mean": 2.0992428527023272,
+   "z": 6.44052656547869
+  },
+  "eta2": {
+   "observed": 0.6263329259012588,
+   "null_mean": 0.4177968078832874,
+   "z": 19.57907960166967
+  }
+ },
+ "junyi_transition": {
+  "blocks": 4,
+  "between_share": 0.08812615955473098,
+  "partition": "results/v6/sbm_partitions/junyi_transition.npy",
+  "assortative": {
+   "observed": 0.36462876731661303,
+   "null_mean": 0.25410008250393284,
+   "z": 1.994674660574688
+  },
+  "directional": {
+   "observed": 0.6801991311506311,
+   "null_mean": 0.486888891454051,
+   "z": 1.2762819275118
+  },
+  "eta2": {
+   "observed": 0.03880486136149833,
+   "null_mean": 0.02722369098850824,
+   "z": 2.134707048146854
+  }
+ },
+ "bridge2006_transition": {
+  "blocks": 9,
+  "between_share": 0.23828125,
+  "partition": "results/v5/sbm_partitions/bridge2006_transition.npy",
+  "assortative": {
+   "observed": -0.26789459113517955,
+   "null_mean": -0.3848319981845475,
+   "z": 0.799505367569634
+  },
+  "directional": {
+   "observed": 1.6684658326631616,
+   "null_mean": 1.6372629902195945,
+   "z": 0.10097790537799356
+  },
+  "eta2": {
+   "observed": 0.30680864736986424,
+   "null_mean": 0.24096622050560548,
+   "z": 4.319211124431855
+  }
+ },
+ "assist2017_item_transition": {
+  "blocks": 7,
+  "between_share": 0.046464646464646465,
+  "partition": "results/v6/sbm_partitions/assist2017_item_transition.npy",
+  "assortative": {
+   "observed": -2.536330884111479,
+   "null_mean": -2.5151597848647547,
+   "z": -0.07416670955355176
+  },
+  "directional": {
+   "observed": 2.752120338240686,
+   "null_mean": 2.600842044413694,
+   "z": 0.22200064419687762
+  },
+  "eta2": {
+   "observed": 0.9752608060676438,
+   "null_mean": 0.945639763157433,
+   "z": 1.6342808567291394
+  }
+ },
+ "assist2009_item": {
+  "blocks": 12,
+  "between_share": 0.0,
+  "partition": "results/v5/sbm_partitions/assist2009_item.npy",
+  "assortative": {
+   "observed": null,
+   "null_mean": null,
+   "z": null
+  },
+  "directional": {
+   "observed": null,
+   "null_mean": null,
+   "z": null
+  },
+  "eta2": {
+   "observed": 0.05380534493013378,
+   "null_mean": 0.05380534493013379,
+   "z": -1.1002971203391538
+  }
+ },
+ "bridge2006_copractice": {
+  "blocks": 31,
+  "between_share": 0.3647695202257761,
+  "partition": "results/v5/sbm_partitions/bridge2006_copractice.npy",
+  "assortative": {
+   "observed": -0.4008151829198564,
+   "null_mean": -0.12384398889045482,
+   "z": -32.50853263115042
+  },
+  "directional": {
+   "observed": 0.37520826202986896,
+   "null_mean": 0.23404463472873396,
+   "z": 5.542521749840652
+  },
+  "eta2": {
+   "observed": 0.44717454810181767,
+   "null_mean": 0.13756507922791367,
+   "z": 131.09651755996143
+  }
+ },
+ "assist2012_copractice": {
+  "blocks": 14,
+  "between_share": 0.8772017614091273,
+  "partition": "results/v5/sbm_partitions/assist2012_copractice.npy",
+  "assortative": {
+   "observed": 0.04143388831359515,
+   "null_mean": 0.03241765418917133,
+   "z": 0.9755382319672861
+  },
+  "directional": {
+   "observed": 0.26013220478077975,
+   "null_mean": 0.11136326803270324,
+   "z": 14.911878308985012
+  },
+  "eta2": {
+   "observed": 0.13327903386388792,
+   "null_mean": 0.03218998680722979,
+   "z": 105.54714886255074
+  }
+ },
+ "assist2017_item": {
+  "blocks": 45,
+  "between_share": 0.752737769313177,
+  "partition": "results/v5/sbm_partitions/assist2017_item.npy",
+  "assortative": {
+   "observed": -0.0037469696440012856,
+   "null_mean": 0.023839235426532886,
+   "z": -6.461557979118737
+  },
+  "directional": {
+   "observed": 0.5632625825871184,
+   "null_mean": 0.23778709136359272,
+   "z": 33.633385268682794
+  },
+  "eta2": {
+   "observed": 0.4092075503693608,
+   "null_mean": 0.09311159923866012,
+   "z": 234.7518787904941
+  }
+ }
+}
