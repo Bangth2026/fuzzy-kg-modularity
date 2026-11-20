@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.2.0 below).
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.3.0 below).
 >
 > **(B)** Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks** (code: `kt/`; versions 2.0.0 to 3.9.0).
 
@@ -21,6 +21,22 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.3.0
+
+Analyses for the second revision of manuscript (A), the version on thirteen graphs from four corpora (MOOCCubeX, ASSISTments 2009/2015/2017, Junyi) whose numbering `docs/paper_map.md` follows. No earlier result changes; new results are in `results/v6/`.
+
+| Topic | Script | Output |
+|---|---|---|
+| Junyi transition construction varied for the community question: conjunction (min, mean, product) x pruning threshold (0.1, 0.2, 0.3) x successor preference (max or sum denominator); Algorithm 1 in full, topic test, expert correlation | `scripts/v6_transition_counts.py`, `scripts/v6_transition_sensitivity.py` | `results/v6/transition_sensitivity*.json` (Supplementary Table S6c) |
+| Decision floor of Algorithm 1 with ten planted graphs per in-community fraction and a bootstrap interval that re-reads the threshold | `scripts/v6_floor_uncertainty.py` | `results/v6/floor_uncertainty.json` (Table 3, Table S3h) |
+| Weighted SBM with the same number of initialisations for the observed fit and every null refit (release 4.2.0 gave null refits one); nested SBM on five graphs | `scripts/v5_weighted_sbm.py` with `SBM_NULL_INIT=5 SBM_OUT=...` | `results/v6/weighted_sbm_fair.json`, `results/v6/weighted_sbm_nested.json`, `results/v6/sbm_partitions/` |
+| Where the weight channel acts: inside-versus-between and directional differences of logit memberships with the SBM blocks fixed, against row permutations | `scripts/v6_sbm_where.py` | `results/v6/sbm_where.json` (Table S11a) |
+| Finer tilt grid for the power of the weights-only nulls | `scripts/v6_power_fine.py` | `results/v6/power_fine.json` (Table 3) |
+| Claim 1 check counted over 390 runs on the thirteen graphs | `scripts/v6_connectivity.py` | `results/v6/connectivity.json` |
+| Complete pass over the MOOCCubeX exercise log (22.45 GB, HTTP range requests) and the concept-level counts the constructions need | `scripts/v6_mooccubex_scan.py`, `scripts/v6_mooccubex_log.py` | `results/v6/mooccubex_log.json` (Supplementary Section S12) |
+
+The cross-fitted pruning threshold, the orientation bootstrap and the edges of the mean conjunction quoted in the revision come from release 4.2.0 (`results/v5/junyi_followup.json`, `results/v5/conjunction.json`).
 
 ## What is in version 4.2.0
 

@@ -1,0 +1,404 @@
+{
+ "assist2017_kc": {
+  "n": 83,
+  "m": 5494,
+  "B_topology": 3,
+  "B_weighted": 11,
+  "ari_topology_vs_weighted": 0.0851901569138032,
+  "dl_topology_nats": 6330.500005600873,
+  "dl_weighted_nats": 5596.262638252093,
+  "nulls": {
+   "row": {
+    "mean": 6644.927219876282,
+    "sd": 3.7865973640788955,
+    "z": 276.94113759551533,
+    "delta_bits": 1512.903191465117,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 6897.628574494421,
+    "sd": 2.8594055987649356,
+    "z": 455.11764291306815,
+    "delta_bits": 1877.474182598629,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   5633.697683865643,
+   5601.940216542795,
+   5589.420395253401,
+   5606.704360180929,
+   5603.925284293951
+  ],
+  "weight_inside_mean": -0.1259018297045403,
+  "weight_between_mean": -0.1296079459230616,
+  "between_share": 0.9191845649799781,
+  "directional_gap_mean": 0.24081213316632982,
+  "time_s": 763.743953704834
+ },
+ "junyi_transition": {
+  "n": 628,
+  "m": 1078,
+  "B_topology": 7,
+  "B_weighted": 4,
+  "ari_topology_vs_weighted": 0.4830858630136288,
+  "dl_topology_nats": 7170.6276979951945,
+  "dl_weighted_nats": 8594.33873575941,
+  "nulls": {
+   "row": {
+    "mean": 8582.143550686309,
+    "sd": 19.292762318263186,
+    "z": -0.6321119221769421,
+    "delta_bits": -17.5939330276848,
+    "share_null_below_obs": 0.7
+   },
+   "global": {
+    "mean": 8591.626022607434,
+    "sd": 20.06085699618086,
+    "z": -0.13522419069594033,
+    "delta_bits": -3.9136178117093943,
+    "share_null_below_obs": 0.55
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   8595.035760289862,
+   8595.240147608325,
+   8624.469551346814,
+   8681.471291958804,
+   8678.305177225764
+  ],
+  "weight_inside_mean": -0.39216079796759756,
+  "weight_between_mean": -0.7567895652842105,
+  "between_share": 0.08812615955473098,
+  "directional_gap_mean": 0.680199131150631,
+  "ari_grouping_topology": 0.10466474218031897,
+  "ari_grouping_weighted": 0.08649752032988713,
+  "time_s": 799.4060673713684
+ },
+ "mooccubex_cs": {
+  "n": 59,
+  "m": 91,
+  "B_topology": 2,
+  "B_weighted": 2,
+  "ari_topology_vs_weighted": 0.0297304738384158,
+  "dl_topology_nats": 425.53004202598044,
+  "dl_weighted_nats": 567.2484146990896,
+  "nulls": {
+   "row": {
+    "mean": 577.2422571898676,
+    "sd": 1.0640869338016523,
+    "z": 9.391941742084063,
+    "delta_bits": 14.418067000870797,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 577.6351428409106,
+    "sd": 1.705038000726201,
+    "z": 6.091786891199563,
+    "delta_bits": 14.984881181266967,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   567.2484146990893,
+   568.011363733539,
+   567.2484146990895,
+   567.2484146990894,
+   567.2484146990894
+  ],
+  "weight_inside_mean": 4.0162326356101525,
+  "weight_between_mean": 2.9914767227911194,
+  "between_share": 0.5054945054945055,
+  "directional_gap_mean": 2.654611731070985,
+  "time_s": 103.03595089912415
+ },
+ "mooccubex_cs_full": {
+  "n": 287,
+  "m": 725,
+  "B_topology": 4,
+  "B_weighted": 4,
+  "ari_topology_vs_weighted": 0.16085191828177228,
+  "dl_topology_nats": 3927.9224713243007,
+  "dl_weighted_nats": 5200.978222644441,
+  "nulls": {
+   "row": {
+    "mean": 5274.175047500399,
+    "sd": 11.831577018696482,
+    "z": 6.186565386870309,
+    "delta_bits": 105.60069622850841,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 5401.834437572791,
+    "sd": 7.401094493593895,
+    "z": 27.138717807508506,
+    "delta_bits": 289.774265208858,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   5190.649188736098,
+   5207.46998352348,
+   5251.960310479292,
+   5211.713447356225,
+   5211.913009789872
+  ],
+  "weight_inside_mean": 3.6332905374604505,
+  "weight_between_mean": 3.7004885315323137,
+  "between_share": 0.6317241379310344,
+  "directional_gap_mean": 2.9186980892106518,
+  "time_s": 1817.5463798046112
+ },
+ "assist2017_kc_transition": {
+  "n": 58,
+  "m": 80,
+  "B_topology": 2,
+  "B_weighted": 2,
+  "ari_topology_vs_weighted": 0.49878562397096415,
+  "dl_topology_nats": 392.67120898846593,
+  "dl_weighted_nats": 457.13158428051634,
+  "nulls": {
+   "row": {
+    "mean": 453.9669143252011,
+    "sd": 2.700935061829469,
+    "z": -1.171694203255535,
+    "delta_bits": -4.565653650583564,
+    "share_null_below_obs": 0.9
+   },
+   "global": {
+    "mean": 463.7545043040238,
+    "sd": 3.6558193334020763,
+    "z": 1.8116103175547822,
+    "delta_bits": 9.554853874118411,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   457.13158428051645,
+   457.1315842805168,
+   457.1315842805169,
+   464.1742337338028,
+   457.13158428051645
+  ],
+  "weight_inside_mean": -0.5374361432361763,
+  "weight_between_mean": -0.7774300233477247,
+  "between_share": 0.5875,
+  "directional_gap_mean": 1.6251820723269474,
+  "time_s": 340.32376170158386
+ },
+ "assist2009_kc_transition": {
+  "n": 83,
+  "m": 304,
+  "B_topology": 1,
+  "B_weighted": 2,
+  "ari_topology_vs_weighted": 0.0,
+  "dl_topology_nats": 1250.8392127397065,
+  "dl_weighted_nats": 1679.807561002021,
+  "nulls": {
+   "row": {
+    "mean": 1675.1978169811896,
+    "sd": 8.118079965927022,
+    "z": -0.5678367348165175,
+    "delta_bits": -6.65045483862099,
+    "share_null_below_obs": 0.65
+   },
+   "global": {
+    "mean": 1704.578684202394,
+    "sd": 9.657267807872367,
+    "z": 2.565023948096399,
+    "delta_bits": 35.73717659842774,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   1679.807561002021,
+   1679.807561002021,
+   1686.7226529501088,
+   1679.807561002021,
+   1679.807561002021
+  ],
+  "weight_inside_mean": -0.04869074183400855,
+  "weight_between_mean": -0.13938196492478672,
+  "between_share": 0.4276315789473684,
+  "directional_gap_mean": 1.2156835456270543,
+  "time_s": 149.90191888809204
+ },
+ "assist2015_kc_transition": {
+  "n": 99,
+  "m": 323,
+  "B_topology": 2,
+  "B_weighted": 2,
+  "ari_topology_vs_weighted": -0.10605249062667381,
+  "dl_topology_nats": 1459.2558783471127,
+  "dl_weighted_nats": 1794.8640107298436,
+  "nulls": {
+   "row": {
+    "mean": 1795.6778157881126,
+    "sd": 3.542607578545804,
+    "z": 0.2297192224161364,
+    "delta_bits": 1.174072521815118,
+    "share_null_below_obs": 0.3
+   },
+   "global": {
+    "mean": 1799.7404526994674,
+    "sd": 4.023593103491303,
+    "z": 1.2119620061463117,
+    "delta_bits": 7.035218646759042,
+    "share_null_below_obs": 0.15
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   1794.864010729843,
+   1799.487587649542,
+   1796.5897670769714,
+   1806.818071088855,
+   1811.9679269964888
+  ],
+  "weight_inside_mean": -0.46300184710565423,
+  "weight_between_mean": -0.8034242285896717,
+  "between_share": 0.25386996904024767,
+  "directional_gap_mean": 0.4811081982365465,
+  "time_s": 51.63621258735657
+ },
+ "assist2017_item_transition": {
+  "n": 362,
+  "m": 495,
+  "B_topology": 5,
+  "B_weighted": 7,
+  "ari_topology_vs_weighted": 0.27457401974359597,
+  "dl_topology_nats": 2975.1452077328877,
+  "dl_weighted_nats": 3432.9047629566358,
+  "nulls": {
+   "row": {
+    "mean": 3428.802467933474,
+    "sd": 24.908081159659503,
+    "z": -0.16469735251247536,
+    "delta_bits": -5.9183606861789855,
+    "share_null_below_obs": 0.55
+   },
+   "global": {
+    "mean": 4001.2625776588,
+    "sd": 44.01409309836183,
+    "z": 12.913087029465983,
+    "delta_bits": 819.967000721301,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   3549.2371332891817,
+   3577.250757172062,
+   3467.9959392546452,
+   3575.8164753527753,
+   3567.2072759399707
+  ],
+  "weight_inside_mean": 0.3452970929765088,
+  "weight_between_mean": 2.8816279770879887,
+  "between_share": 0.046464646464646465,
+  "directional_gap_mean": 2.752120338240686,
+  "time_s": 37.02771353721619
+ },
+ "assist2009_kc": {
+  "n": 110,
+  "m": 5069,
+  "B_topology": 7,
+  "B_weighted": 9,
+  "ari_topology_vs_weighted": 0.4880838378819713,
+  "dl_topology_nats": 7786.898250680625,
+  "dl_weighted_nats": 11429.52839114631,
+  "nulls": {
+   "row": {
+    "mean": 11534.765696467068,
+    "sd": 10.17989027726852,
+    "z": 10.337764205155551,
+    "delta_bits": 151.8253385027746,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 11548.33755044018,
+    "sd": 12.695193533562767,
+    "z": 9.358593784314412,
+    "delta_bits": 171.40538492545173,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   11465.77572441347,
+   11500.660485576645,
+   11475.059271059508,
+   11532.872936856596,
+   11473.41461511028
+  ],
+  "weight_inside_mean": -0.11286184349534613,
+  "weight_between_mean": -0.10144710068689905,
+  "between_share": 0.8246202406786348,
+  "directional_gap_mean": 0.3526328806075605,
+  "time_s": 154.33627200126648
+ },
+ "assist2015_kc": {
+  "n": 100,
+  "m": 6963,
+  "B_topology": 3,
+  "B_weighted": 5,
+  "ari_topology_vs_weighted": 0.11389567028647972,
+  "dl_topology_nats": 9225.7429054022,
+  "dl_weighted_nats": 12713.342087393381,
+  "nulls": {
+   "row": {
+    "mean": 12940.209487924518,
+    "sd": 2.768331907328911,
+    "z": 81.9509394558238,
+    "delta_bits": 327.3004736856413,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 13011.039485745521,
+    "sd": 2.6746258841382726,
+    "z": 111.3043136677989,
+    "delta_bits": 429.48656028817896,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   12739.712265426748,
+   12715.077427952981,
+   12756.765036277639,
+   12750.518566503835,
+   12756.96658836992
+  ],
+  "weight_inside_mean": -0.25072677487947226,
+  "weight_between_mean": -0.2108426808365805,
+  "between_share": 0.7607353152376849,
+  "directional_gap_mean": 0.1113670164491043,
+  "time_s": 184.9987609386444
+ }
+}

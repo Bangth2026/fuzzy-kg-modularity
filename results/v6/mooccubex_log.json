@@ -1,0 +1,33 @@
+{
+ "scan": {
+  "records": 133384333,
+  "kept": 10658,
+  "cs_problems": 2871,
+  "bytes": 22453311654
+ },
+ "records_cs": 10658,
+ "learners": 629,
+ "problems": 440,
+ "expert_graph": {
+  "records": 408,
+  "learners": 213,
+  "concepts_seen": 22,
+  "concepts_with_20": 4,
+  "max_records_per_concept": 126,
+  "transition_pairs": 17,
+  "transition_pairs_support20": 2,
+  "copractice_pairs": 35,
+  "copractice_pairs_support20": 3
+ },
+ "all_cs": {
+  "records": 15156,
+  "learners": 629,
+  "concepts_seen": 442,
+  "concepts_with_20": 102,
+  "max_records_per_concept": 488,
+  "transition_pairs": 857,
+  "transition_pairs_support20": 112,
+  "copractice_pairs": 5261,
+  "copractice_pairs_support20": 804
+ }
+}

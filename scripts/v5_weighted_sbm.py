@@ -36,6 +36,10 @@ GRAPHS = ["eedi_transition", "eedi_copractice", "junyi_transition", "algebra2005
 N_NULL = int(os.environ.get("SBM_NULL", 20))
 N_INIT = int(os.environ.get("SBM_INIT", 5))
 NESTED = os.environ.get("SBM_NESTED", "0") == "1"   # hierarchical (nested) SBM instead of a flat one
+# version 4.3.0: every null refit gets the same number of initialisations as the observed fit
+# (SBM_NULL_INIT; release 4.2.0 used one), and the output goes to SBM_OUT
+N_NULL_INIT = int(os.environ.get("SBM_NULL_INIT", 1))
+OUT_PATH = os.environ.get("SBM_OUT")
 
 
 def load(name):
@@ -133,7 +137,7 @@ def run(name):
         for r in range(N_NULL):
             yp = row_perm(s, y, rng) if kind == "row" else rng.permutation(y)
             gp, wp = build(n, s, d, yp)
-            vals.append(best(gp, wp, [100 + r]).entropy())
+            vals.append(best(gp, wp, [100 + 10 * r + j for j in range(N_NULL_INIT)]).entropy())
         vals = np.array(vals)
         nulls[kind] = dict(mean=float(vals.mean()), sd=float(vals.std(ddof=1)),
                            z=(float((vals.mean() - dl_obs) / vals.std(ddof=1)) if vals.std(ddof=1) > 1e-9 else None),
@@ -141,7 +145,8 @@ def run(name):
                            share_null_below_obs=float((vals <= dl_obs).mean()))
     out = dict(n=int(n), m=int(len(mu)), B_topology=int(len(np.unique(b0))), B_weighted=int(len(np.unique(b1))),
                ari_topology_vs_weighted=float(ari(b0, b1)), dl_topology_nats=float(st0.entropy()),
-               dl_weighted_nats=float(dl_obs), nulls=nulls, n_null=N_NULL, n_init=N_INIT)
+               dl_weighted_nats=float(dl_obs), nulls=nulls, n_null=N_NULL, n_init=N_INIT, n_null_init=N_NULL_INIT,
+               dl_weighted_single_inits=[float(fit(g, w, s_).entropy()) for s_ in range(N_INIT)])
     # where does the weight channel act? mean logit membership inside blocks, between blocks, and the
     # directional gap between block pairs (r, s) and (s, r)
     br, bs = b1[s], b1[d]
@@ -168,7 +173,7 @@ def run(name):
 
 def main():
     names = sys.argv[1:] or GRAPHS
-    path = os.path.join(ROOT, "results/v5/weighted_sbm" + ("_nested" if NESTED else "") + ".json")
+    path = OUT_PATH or os.path.join(ROOT, "results/v5/weighted_sbm" + ("_nested" if NESTED else "") + ".json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     res = json.load(open(path)) if os.path.exists(path) else {}
     for nm in names:
