@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "fuzzy-kg-modularity: auditing thresholding and t-norm path inference in fuzzy prerequisite knowledge graphs (code, results and run files)"
-version: 4.4.0
+version: 4.5.0
 date-released: 2026-11-20
 doi: 10.5281/zenodo.23689762
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
