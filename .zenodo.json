@@ -1,8 +1,8 @@
 {
   "title": "Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs (code, results and run files)",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "upload_type": "software",
-  "description": "Reference implementation, reproduction scripts and result files for the manuscript submitted to Knowledge-Based Systems: fuzzy-graph modularity and the rank-coded cut audit, the calibrated null test (Algorithm 1), generator shortest paths for t-norm path inference, and the pre-deployment audit (Algorithm 2) as a command-line tool, with every analysis in results/, results/v4/, results/v5/ and results/v6/. Release 4.3.0 adds the analyses of the second revision: the Junyi transition construction varied for the community question, the decision floor with ten planted graphs and a bootstrap interval, the weighted SBM with matched initialisations for observed and null fits, a finer power grid, the Claim 1 check counted over 390 runs, and a complete pass over the MOOCCubeX exercise log. Datasets are not redistributed; see data/README.md.",
+  "description": "Reference implementation, reproduction scripts and result files for the manuscript submitted to Knowledge-Based Systems: fuzzy-graph modularity and the rank-coded cut audit, the calibrated null test (Algorithm 1), generator shortest paths for t-norm path inference, and the pre-deployment audit (Algorithm 2) as a command-line tool, with every analysis in results/, results/v4/, results/v5/, results/v6/ and results/v7/. Release 4.4.0 adds a ten-graph floor for the transition-construction variants, the seed dispersion of the Q_F drop, a nested weighted SBM with matched initialisations, a clipping check of the logit covariate, and Fig. 1 with the block-model check (results/v7). Release 4.3.0 added: the Junyi transition construction varied for the community question, the decision floor with ten planted graphs and a bootstrap interval, the weighted SBM with matched initialisations for observed and null fits, a finer power grid, the Claim 1 check counted over 390 runs, and a complete pass over the MOOCCubeX exercise log. Datasets are not redistributed; see data/README.md.",
   "creators": [
     {
       "name": "Truong, Hai Bang",
@@ -22,7 +22,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/Bangth2026/fuzzy-kg-modularity/tree/v4.3.0",
+      "identifier": "https://github.com/Bangth2026/fuzzy-kg-modularity/tree/v4.4.0",
       "relation": "isSupplementTo",
       "scheme": "url"
     }

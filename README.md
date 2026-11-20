@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.3.0 below).
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.4.0 below).
 >
 > **(B)** Hai Bang Truong. *Where does a graph prior act inside a neural sequence model? Evidence from null-graph controls in knowledge tracing on ten corpora.* Submitted to **Neural Networks** (code: `kt/`; versions 2.0.0 to 3.9.0).
 
@@ -21,6 +21,19 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.4.0
+
+Analyses for the third revision of manuscript (A); new results in `results/v7/`. No earlier result changes.
+
+| Topic | Script | Output |
+|---|---|---|
+| Ten-graph decision floor for variants of the Junyi transition construction near their floor | `scripts/v7_variant_floor.py` | `results/v7/variant_floor.json` (Supplementary Table S6d) |
+| Seed dispersion of the Q_F drop on the real graphs, behind the flagging rule of Algorithm 2 | `scripts/v7_qf_drop_seed_sd.py` | `results/v7/qf_drop_seed_sd.json` (Table S3i) |
+| Nested weighted SBM with five initialisations per fit; clipping of the logit covariate (option `SBM_CLIP`) on MOOCCubeX | `scripts/v5_weighted_sbm.py` | `results/v7/weighted_sbm_nested_fair.json`, `results/v7/weighted_sbm_clip*.json` (Tables S11b, S11c) |
+| Fig. 1 with the weighted SBM and Algorithm 2 | `scripts/figure1.py` | `docs/figure1.png`, `docs/figure1.pdf` |
+
+**Correction.** In the nested runs of `scripts/v5_weighted_sbm.py` (`SBM_NESTED=1`; `results/v6/weighted_sbm_nested.json`, `results/v7/weighted_sbm_nested_fair.json`) the membership covariate does not enter the description length (with and without it the description lengths agree to within 5 nats), so those runs carry no information on the weight channel and are not used; release 4.3.0 described them as finding no weight channel. The flat runs are not affected.
 
 ## What is in version 4.3.0
 

@@ -1,0 +1,82 @@
+{
+ "mooccubex_cs": {
+  "n": 59,
+  "m": 91,
+  "B_topology": 2,
+  "B_weighted": 2,
+  "ari_topology_vs_weighted": -0.014912408689450726,
+  "dl_topology_nats": 425.5300420259805,
+  "dl_weighted_nats": 526.5323097985327,
+  "nulls": {
+   "row": {
+    "mean": 538.2661163794978,
+    "sd": 3.967539286430269,
+    "z": 2.9574518949558963,
+    "delta_bits": 16.92830456510873,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 555.9820133377907,
+    "sd": 4.147351926134799,
+    "z": 7.1008450847102935,
+    "delta_bits": 42.48694125173775,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   532.0701340630554,
+   533.6398854959285,
+   534.1553844899362,
+   537.3605657791215,
+   533.6398854958866
+  ],
+  "weight_inside_mean": 3.4262234272304957,
+  "weight_between_mean": 3.2020056918581328,
+  "between_share": 0.5384615384615384,
+  "directional_gap_mean": 2.123116452084049,
+  "time_s": 18.87607502937317
+ },
+ "mooccubex_cs_full": {
+  "n": 287,
+  "m": 725,
+  "B_topology": 3,
+  "B_weighted": 4,
+  "ari_topology_vs_weighted": 0.1919670110971977,
+  "dl_topology_nats": 3926.504042429544,
+  "dl_weighted_nats": 4397.401035726071,
+  "nulls": {
+   "row": {
+    "mean": 4595.326384977244,
+    "sd": 43.29418264265215,
+    "z": 4.571638431999922,
+    "delta_bits": 285.5459198308827,
+    "share_null_below_obs": 0.0
+   },
+   "global": {
+    "mean": 4884.929444607091,
+    "sd": 49.80684382912193,
+    "z": 9.788381904977543,
+    "delta_bits": 703.3548177851337,
+    "share_null_below_obs": 0.0
+   }
+  },
+  "n_null": 20,
+  "n_init": 5,
+  "n_null_init": 5,
+  "dl_weighted_single_inits": [
+   4374.408986899218,
+   4734.151046664321,
+   4416.422697552365,
+   4521.115026303747,
+   4421.111072588707
+  ],
+  "weight_inside_mean": 3.610935996338562,
+  "weight_between_mean": 3.2317327157257103,
+  "between_share": 0.6372413793103449,
+  "directional_gap_mean": 1.1912948724667425,
+  "time_s": 149.64808630943298
+ }
+}
