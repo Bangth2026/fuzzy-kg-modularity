@@ -4,6 +4,7 @@ This map follows the numbering of the manuscript on thirteen graphs from four co
 
 | Manuscript item | Code | Results |
 |---|---|---|
+| Fig. 1 (design of the study), full width, text 7.6 to 10 pt at 190 mm | `scripts/figure1.py` | `docs/figure1.png`, `docs/figure1.pdf` |
 | Lemma 1 (inherited properties), Claim 1 | `fuzzykg/leiden.py`, `scripts/v6_connectivity.py` | `results/v6/connectivity.json` |
 | Lemma 2 (level-set modularity as a fuzzy-graph modularity; rank-coded Q_F drop) | `scripts/check_levelset_identity.py`, `scripts/rank_drop_audit.py` | `results/levelset_identity_check.json`, `results/rank_drop_*` |
 | Proposition 1 | `scripts/verify_propositions.py` | |
