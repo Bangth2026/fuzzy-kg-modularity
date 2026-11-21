@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "fuzzy-kg-modularity: auditing thresholding and t-norm path inference in fuzzy prerequisite knowledge graphs (code, results and run files)"
-version: 4.6.0
+version: 4.7.0
 date-released: 2026-11-21
 doi: 10.5281/zenodo.23689762
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
@@ -14,7 +14,7 @@ authors:
     email: truonghaibang@siu.edu.vn
 preferred-citation:
   type: article
-  title: "Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs"
+  title: "Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs"
   journal: Knowledge-Based Systems
   year: 2026
   notes: submitted

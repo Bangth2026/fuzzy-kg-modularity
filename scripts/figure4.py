@@ -1,6 +1,6 @@
 """Fig. 4 of the KBS manuscript (version 4.6.0): from a learner log to a decision.
 
-The audit of Algorithm 2 as a pipeline; D1 to D10 refer to the rows of the decision guide
+The audit of Algorithm 2 as a pipeline; D1 to D9 refer to the rows of the decision guide
 (Table 7).  Drawn for full-width (190 mm) placement with text of at least 7 pt."""
 import matplotlib
 matplotlib.use("Agg")
@@ -50,14 +50,14 @@ box(1, 2, 47, 9, "step 4: if a grouping fixed independently\nof the graph exists
 arrow((12, 14.1), (12, 11.3), c=GREY)
 
 # path lane
-box(52, 27, 22, 9, "step 5: best paths by\nDijkstra on the generator;\ndirect edge, hop distance,\nan embedding", edge=GREEN, fill="g")
+box(52, 27, 22, 9, "step 5: best paths by\nDijkstra on the generator;\ndirect edge, hop distance,\na model, degree heuristic", edge=GREEN, fill="g")
 box(78, 27, 21, 9, "D6: cuts connected\nup to a high α?\nthen not max-min", edge=RED, fill="r")
 arrow((74.3, 31.5), (77.7, 31.5), c=RED)
 box(52, 14.5, 22, 9.5, "step 6: an operator\nmust beat hop distance\n(cluster bootstrap);\nthreshold cross-fitted", edge=GREEN, fill="g")
 arrow((63, 26.7), (63, 24.3), c=GREEN)
-box(78, 14.5, 21, 9.5, "D7–D9: hop count,\nproduct unpruned, or\nan embedding where\nno path reaches", edge=GREEN, fill="w", fs=7.4)
+box(78, 14.5, 21, 9.5, "D7–D8: hop count,\nproduct unpruned, or\na model (check degree)\nwhere no path reaches", edge=GREEN, fill="w", fs=7.4)
 arrow((74.3, 19.2), (77.7, 19.2), c=GREEN)
-box(52, 2, 47, 9, "step 7: before next-step use, compare\npath scores with a bigram of the logs\n(D10: the graph explains and checks;\na sequence model recommends)", edge=ORANGE, fill="o", fs=7.4)
+box(52, 2, 47, 9, "step 7: before next-step use, compare\npath scores with a bigram of the logs\n(D9: the graph explains and checks;\na sequence model recommends)", edge=ORANGE, fill="o", fs=7.4)
 arrow((63, 14.1), (63, 11.3), c=ORANGE)
 
 fig.savefig("docs/figure4.png", dpi=600)

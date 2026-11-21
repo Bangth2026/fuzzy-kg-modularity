@@ -1,0 +1,50 @@
+{
+ "graph": "mooccubex_cs_full",
+ "n_nodes": 287,
+ "n_edges": 725,
+ "folds": 5,
+ "neg_per_pos": 20,
+ "protocol": "folds and non-edges of scripts/v9_grade_preserving_baselines.py (rng 7)",
+ "scores": {
+  "common_neighbours": {
+   "auc": 0.6012320095124851,
+   "auc_ci": [
+    0.5845611902497028,
+    0.6194747051129608
+   ],
+   "hidden_scored_positive": 0.2689655172413793
+  },
+  "adamic_adar": {
+   "auc": 0.6010099881093935,
+   "auc_ci": [
+    0.5839577312722949,
+    0.6165232806183114
+   ],
+   "hidden_scored_positive": 0.2689655172413793
+  },
+  "resource_allocation": {
+   "auc": 0.600919239001189,
+   "auc_ci": [
+    0.5850259976218787,
+    0.6179759013079668
+   ],
+   "hidden_scored_positive": 0.2689655172413793
+  },
+  "preferential_attachment": {
+   "auc": 0.7230272057074911,
+   "auc_ci": [
+    0.702567209274673,
+    0.7424465065398335
+   ],
+   "hidden_scored_positive": 0.7655172413793103
+  },
+  "jaccard": {
+   "auc": 0.598196385255648,
+   "auc_ci": [
+    0.5829587253269917,
+    0.6157442711058264
+   ],
+   "hidden_scored_positive": 0.2689655172413793
+  }
+ }
+}

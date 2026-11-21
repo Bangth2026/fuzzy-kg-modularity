@@ -1,0 +1,143 @@
+{
+ "graph": "cn15k",
+ "steps": {
+  "step1": {
+   "seconds": 79.6,
+   "describe": {
+    "graph": {
+     "n_active": 15000,
+     "m": 195026,
+     "density": 0.000866840011556326,
+     "reciprocity": 0.17767887358608594,
+     "mean_out_degree": 13.001733333333334,
+     "mu_mean": 0.6316931953819015,
+     "mu_sd": 0.2416628471830262
+    },
+    "q0.25": {
+     "n_active": 14972,
+     "m": 146289,
+     "density": 0.0006526510519857493,
+     "reciprocity": 0.18213262788042847,
+     "mean_out_degree": 9.770838899278653,
+     "mu_mean": 1.0,
+     "mu_sd": 0.0
+    },
+    "q0.50": {
+     "n_active": 14732,
+     "m": 129818,
+     "density": 0.0005981925147167671,
+     "reciprocity": 0.18740082269022787,
+     "mean_out_degree": 8.811973934292697,
+     "mu_mean": 1.0,
+     "mu_sd": 0.0
+    },
+    "q0.75": {
+     "n_active": 14732,
+     "m": 129818,
+     "density": 0.0005981925147167671,
+     "reciprocity": 0.18740082269022787,
+     "mean_out_degree": 8.811973934292697,
+     "mu_mean": 1.0,
+     "mu_sd": 0.0
+    }
+   },
+   "leiden_run_seconds": [
+    22.25,
+    30.86,
+    26.45
+   ]
+  },
+  "step3": {
+   "seconds": 1701.6,
+   "cut_audit": {
+    "rule": "flag a cut whose audit exceeds the no-cut value by > 2 x max(seed SD)",
+    "seeds": 10,
+    "cuts": {
+     "support": {
+      "alpha": null,
+      "n_active": 15000,
+      "m": 195026,
+      "density": 0.000866840011556326,
+      "reciprocity": 0.17767887358608594,
+      "mean_out_degree": 13.001733333333334,
+      "mu_mean": 1.0,
+      "mu_sd": 0.0,
+      "retained_edges": 1.0,
+      "qf_drop": 0.0049720438044002,
+      "qf_drop_sd": 0.004385523997610377,
+      "rank_drop": 0.005335997102753415,
+      "rank_drop_sd": 0.003993134289300193,
+      "low_degree_warning": false
+     },
+     "q0.25": {
+      "alpha": 0.5083762696117963,
+      "n_active": 14972,
+      "m": 146289,
+      "density": 0.0006526510519857493,
+      "reciprocity": 0.18213262788042847,
+      "mean_out_degree": 9.770838899278653,
+      "mu_mean": 1.0,
+      "mu_sd": 0.0,
+      "retained_edges": 0.7500999866684442,
+      "qf_drop": 0.004221912868874833,
+      "qf_drop_sd": 0.0030314779210343814,
+      "rank_drop": 0.004559471069655097,
+      "rank_drop_sd": 0.0030599428086281193,
+      "low_degree_warning": false,
+      "flag_qf_drop": false,
+      "flag_rank_drop": false,
+      "flag_qf_drop_alg2": false,
+      "flag_rank_drop_alg2": false
+     },
+     "q0.50": {
+      "alpha": 0.709293243275961,
+      "n_active": 14732,
+      "m": 129818,
+      "density": 0.0005981925147167671,
+      "reciprocity": 0.18740082269022787,
+      "mean_out_degree": 8.811973934292697,
+      "mu_mean": 1.0,
+      "mu_sd": 0.0,
+      "retained_edges": 0.6656445807225704,
+      "qf_drop": 0.019598449503475206,
+      "qf_drop_sd": 0.005205498585909576,
+      "rank_drop": 0.019871276460040704,
+      "rank_drop_sd": 0.0036757892236937133,
+      "low_degree_warning": false,
+      "flag_qf_drop": true,
+      "flag_rank_drop": true,
+      "flag_qf_drop_alg2": true,
+      "flag_rank_drop_alg2": true
+     },
+     "q0.75": {
+      "alpha": 0.709293243275961,
+      "n_active": 14732,
+      "m": 129818,
+      "density": 0.0005981925147167671,
+      "reciprocity": 0.18740082269022787,
+      "mean_out_degree": 8.811973934292697,
+      "mu_mean": 1.0,
+      "mu_sd": 0.0,
+      "retained_edges": 0.6656445807225704,
+      "qf_drop": 0.019598449503475206,
+      "qf_drop_sd": 0.005205498585909576,
+      "rank_drop": 0.019871276460040704,
+      "rank_drop_sd": 0.0036757892236937133,
+      "low_degree_warning": false,
+      "flag_qf_drop": true,
+      "flag_rank_drop": true,
+      "flag_qf_drop_alg2": true,
+      "flag_rank_drop_alg2": true
+     }
+    }
+   }
+  }
+ },
+ "n": 15000,
+ "m": 195026,
+ "seeds_per_draw": 3,
+ "null_draws": 50,
+ "power_draws": 10,
+ "planted_graphs_per_fraction": 2,
+ "floor_null_draws": 10
+}
