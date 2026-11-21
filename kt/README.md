@@ -150,6 +150,46 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.11.0: second revision for IEEE Transactions on Learning Technologies
+
+Runs and analyses for the second revision of the manuscript *When Does a Concept Graph Help a Knowledge Tracer? Null-Graph
+Controls by Entry Point for KC-Level First Attempts* (IEEE TLT). Every run is on a CPU with one thread (`NT=1`), under the
+update budget (at most 2,000 updates, validation every 25, patience 8), on the corpora rebuilt as under release 3.7.0, and
+pairs with runs on the same corpus x subsample unit and device. `src/r14_controls.py` reproduces every condition of
+`src/r13_controls.py` (Statics 2011, 10%, subsample 0, empty graph: 0.74711, as archived).
+
+Confirmatory replication. `prereg/replication_plan_r14.md` was written before any run on the two held-out corpora; its SHA-256
+(`prereg/replication_plan_r14.sha256`, a6dd03b238f8cbd948150103fd2b8bd43a79ab223d5fac7d72758432acdd2f6d) was recorded at
+2026-11-21 04:30 UTC and the queue started at 04:34 UTC. The plan was not changed afterwards.
+
+| Set | Conditions | Units | Script |
+|---|---|---|---|
+| Next-KC decisions with seeds crossed, 25% | `support` and `empty` with `--rep 1`/`--rep 2` and `--dump` (seed 0 and `empty --rep 1` from `runs_r13`) | 10 corpora, subsample 0 | `src/r14_controls.py` |
+| Replication on XES3G5M and Eedi tasks 1-2 (held out) | `empty`, `support`, `support_emb`, `rvec_emb`, `st_empty`, `st_er`, `st_dp`, `st_support` | 2 corpora x 5 subsamples at 10% | `src/prep_r14.py`, `src/r14_controls.py` |
+| All training learners, three seeds | `empty`, `support`, `rvec_emb` with `--rep 1`/`--rep 2` and `--dump` (seed 0 from `runs_r13`) | 10 corpora at 100% | `src/r14_controls.py` |
+| Curriculum-unit null and authored graphs | `unit_emb`, `st_unit` (unit-preserving random graph), `clique_emb`, `st_clique` (authored grouping); `map_emb`, `st_map` (Junyi prerequisite map) | 21 units of six corpora at 10% (Junyi map: 2) | `src/r14_controls.py` |
+| Cap of 500 interactions | `empty`, `support_emb`, `support` with `KT_MAXLEN=500` | Statics 2011, Algebra 2005, 5 subsamples | `src/r14_controls.py` |
+| GKT on one device (CPU) | `gkt_er`, `gkt_rewired` on the nine CPU units that lacked them; `gkt_clique` | 16 units (complete ladder); 9 units (grouping) | `src/r9_controls.py`, `src/r14_controls.py`, `--out runs_r14/gkt` |
+
+Graphs added in `src/r14_controls.py`: `unit` (UR(G)) has as many edges as the support graph G, as many of them inside one
+curriculum unit as G, each drawn uniformly among the unlinked pairs of its class and directed from the KC that training learners
+meet earlier (mean index of first encounter) to the later one (seed 7000 + s); `clique` links every pair of KCs in one unit
+(units from `data/<corpus>_groups.json`, written by `prep.py`); `map` is the Junyi prerequisite map (`junyi_Exercise_table.csv`).
+
+Data of the replication (`src/prep_r14.py`): XES3G5M from Hugging Face `Atomi/XES3G5M_interaction_sequences` (pyKT form;
+rows with `selectmasks = 1` and `is_repeat = 0`, i.e. the first KC of each answered question); Eedi tasks 1-2 from
+`Lucy9999/NIPS34` (`train_data/train_task_1_2.csv`, `metadata/answer_metadata_task_1_2.csv`,
+`metadata/question_metadata_task_1_2.csv`; KC = level-3 subject, unit = its level-2 parent). Same caps and draws as `prep.py`.
+
+| Analysis | Script | Output |
+|---|---|---|
+| Equivalence (two one-sided tests against 0.002 AUC), minimal detectable effects and bootstrap intervals for every ladder term; crossed-seed decisions; regret under simulated learners (mean of three 100% probes); 100% with three seeds; the replication by the rules of the plan; the twelve corpora pooled; curriculum null and authored graphs; cap of 500; GKT ladder on one device; Fig. 4 values | `src/r14_analyse.py` (with `src/r14_common.py`) | `results_r14/r14_results.json` |
+| Figs. 2-4 of the article | `src/r14_figures.py` | `results_r14/fig2_learning_curve.png`, `fig3_ladder.png`, `fig4_effect_scale.png` |
+| Run inventory (Supplementary Table S6.10, lowest block) | `src/r14_inventory.py` | `results_r14/run_sets_r14.csv` |
+
+Run with `PYTHONPATH=<checkout> KT_ROOT=<kt dir with data/> bash src/r14_runq.sh jobs_r14.txt 2`, then
+`KT_ROOT=<kt dir> python src/r14_analyse.py`. Prediction and candidate files are included.
+
 # Release 3.10.0: revision runs for IEEE Transactions on Learning Technologies
 
 Zenodo: 10.5281/zenodo.24410983 (concept DOI 10.5281/zenodo.24131157).
