@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Information Processing & Management** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.5.0 below; the revisions up to 4.5.0 were prepared for Knowledge-Based Systems).
+> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Information Processing & Management** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.6.0 below; the revisions up to 4.5.0 were prepared for Knowledge-Based Systems, and 4.6.0 answers a further review of the Knowledge-Based Systems version).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.10.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the revision; see `kt/README.md`.
 
@@ -21,6 +21,20 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.6.0
+
+Analyses that answer a further review of the Knowledge-Based Systems version of manuscript (A) (built on the third-revision manuscript of 4.4.0); new results in `results/v9/`, and `docs/paper_map_r4.md` maps each new item to its script and result file. No earlier result file changes.
+
+| Topic | Script | Output |
+|---|---|---|
+| Grade-preserving baselines: a UKGE-style uncertain-KG embedding (ComplEx score, logistic confidence) and a GCN encoder with a bilinear decoder, trained to regress the memberships and tuned only on held-out edges, against the Junyi expert criteria and the hidden MOOCCubeX edges | `fuzzykg/embeddings.py`, `scripts/v9_grade_preserving_baselines.py` | `results/v9/grade_preserving_baselines.json` |
+| Outside education: PPI5k (STRING protein interactions) and CN15k (ConceptNet) as released with UKGE; 10% of the pairs hidden and scored by every operator, the hop distance and both baselines; Algorithm 2 on PPI5k; percolation of the PPI5k cuts | `scripts/v9_cross_domain.py`, `scripts/v9_audit_cost.py ppi5k`, `scripts/v9_ppi_parallel_steps.py`, `scripts/v9_merge_ppi_audit.py`, `scripts/v9_ppi_percolation.py` | `results/v9/cross_domain_paths.json`, `results/v9/audit_cost_ppi5k.json`, `results/v9/ppi5k_percolation.json` |
+| Measured time and peak memory of every step of Algorithm 2 on the largest graph (Junyi co-practice) | `scripts/v9_audit_cost.py junyi_copractice` | `results/v9/audit_cost_junyi_copractice.json` |
+| Why max-min erases the graded evidence on the dense Junyi graph: reciprocity, percolation of the α-cuts, counterfactual graphs | `scripts/v9_maxmin_error.py` | `results/v9/maxmin_error.json` |
+| Fig. 4, the audit from a log to a decision | `scripts/figure4.py` | `docs/figure4.png`, `docs/figure4.pdf` |
+
+The baselines need PyTorch (`pip install -e .[baselines]`). The UKGE graphs are not redistributed: clone https://github.com/stasl0217/UKGE, copy `data/ppi5k` and `data/cn15k` to `data/raw/ukge/`, and run `python scripts/v9_cross_domain.py --write-graphs` before `scripts/v9_audit_cost.py ppi5k`. The PPI5k audit split steps 2d to 3 onto a second core (`scripts/v9_ppi_parallel_steps.py`, merged by `scripts/v9_merge_ppi_audit.py`), so its timings are not reported.
 
 ## What is in version 4.5.0
 

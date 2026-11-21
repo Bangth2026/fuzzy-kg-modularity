@@ -1,0 +1,161 @@
+{
+ "graph": "junyi_copractice",
+ "steps": {
+  "load": {
+   "seconds": 0.18,
+   "peak_rss_mb": 272.2
+  },
+  "step1_describe": {
+   "seconds": 0.03,
+   "peak_rss_mb": 272.2,
+   "describe": {
+    "graph": {
+     "n_active": 716,
+     "m": 191962,
+     "density": 0.3749697230144158,
+     "reciprocity": 0.9576687052645836,
+     "mean_out_degree": 268.1033519553073,
+     "mu_mean": 0.4701979707180111,
+     "mu_sd": 0.10601910505742482
+    },
+    "q0.25": {
+     "n_active": 716,
+     "m": 143971,
+     "density": 0.28122631558385747,
+     "reciprocity": 0.610456272443756,
+     "mean_out_degree": 201.0768156424581,
+     "mu_mean": 1.0,
+     "mu_sd": 0.0
+    },
+    "q0.50": {
+     "n_active": 716,
+     "m": 95981,
+     "density": 0.1874848615072079,
+     "reciprocity": 0.18791219095445974,
+     "mean_out_degree": 134.05167597765364,
+     "mu_mean": 1.0,
+     "mu_sd": 0.0
+    },
+    "q0.75": {
+     "n_active": 716,
+     "m": 47991,
+     "density": 0.09374340743055827,
+     "reciprocity": 0.012835740034589819,
+     "mean_out_degree": 67.02653631284916,
+     "mu_mean": 1.0,
+     "mu_sd": 0.0
+    }
+   }
+  },
+  "one_leiden_run": {
+   "seconds": 13.61,
+   "peak_rss_mb": 310.8,
+   "per_run_seconds": [
+    2.931,
+    2.545,
+    2.548,
+    2.712,
+    2.876
+   ]
+  },
+  "step2a_observed_partition": {
+   "seconds": 3.11,
+   "peak_rss_mb": 310.9,
+   "Q_F": 0.0974766665813371,
+   "k": 3
+  },
+  "step2b_degree_null": {
+   "seconds": 1309.46,
+   "peak_rss_mb": 398.4,
+   "delta_Q": 0.06834144628286265,
+   "z": 138.431849089194
+  },
+  "step2c_floor": {
+   "seconds": 2465.68,
+   "peak_rss_mb": 458.6,
+   "floor": 0.04612562698531228,
+   "outcome": "structure"
+  },
+  "step2d_global_null": {
+   "seconds": 871.06,
+   "peak_rss_mb": 458.6,
+   "z": 2.733778168942166
+  },
+  "step2e_row_null": {
+   "seconds": 848.33,
+   "peak_rss_mb": 458.6,
+   "z": -1.7321108380409127
+  },
+  "step2f_power_global": {
+   "seconds": 402.35,
+   "peak_rss_mb": 458.6,
+   "r": 0.11944960178528047
+  },
+  "step2g_power_row": {
+   "seconds": 406.09,
+   "peak_rss_mb": 458.6,
+   "r": 0.11944960178528047
+  },
+  "step3_cut_audit": {
+   "seconds": 64.89,
+   "peak_rss_mb": 458.6,
+   "cuts": {
+    "support": {
+     "qf_drop": -0.0007764623769833404,
+     "qf_drop_sd": 0.0014887045601820223,
+     "rank_drop": 0.00019279627278310368,
+     "rank_drop_sd": 0.0012550042988433568
+    },
+    "q0.25": {
+     "qf_drop": 0.0020717144505302014,
+     "qf_drop_sd": 0.0017807323237508618,
+     "rank_drop": 0.0017694879719653805,
+     "rank_drop_sd": 0.001429513565823635
+    },
+    "q0.50": {
+     "qf_drop": 0.00297131876662064,
+     "qf_drop_sd": 0.0027004393917825597,
+     "rank_drop": 0.0026258876428061515,
+     "rank_drop_sd": 0.002205230233815337
+    },
+    "q0.75": {
+     "qf_drop": 0.01675861823885627,
+     "qf_drop_sd": 0.0028614463247308396,
+     "rank_drop": 0.016993752607188894,
+     "rank_drop_sd": 0.0020871302481335076
+    }
+   }
+  },
+  "step5_all_best_paths": {
+   "seconds": 4.45,
+   "peak_rss_mb": 458.6,
+   "per_operator_seconds": {
+    "min": 0.67,
+    "product": 0.45,
+    "lukasiewicz": 0.35,
+    "yager_2.0": 0.4,
+    "yager_5.0": 0.49,
+    "yager_10.0": 0.6,
+    "schweizer_sklar_-8.0": 0.53,
+    "schweizer_sklar_-2.0": 0.38,
+    "schweizer_sklar_0.5": 0.33,
+    "hop_distance": 0.24
+   }
+  }
+ },
+ "n": 716,
+ "m": 191962,
+ "seeds_per_draw": 3,
+ "null_draws": 200,
+ "power_draws": 15,
+ "planted_graphs_per_fraction": 2,
+ "total_seconds": 6389.2,
+ "algorithm1_seconds": 6306.1,
+ "audit_without_algorithm1_seconds": 69.4,
+ "peak_rss_mb": 458.6,
+ "machine": {
+  "python": "3.13.18",
+  "processor": "x86_64",
+  "cores_used": 1
+ }
+}
