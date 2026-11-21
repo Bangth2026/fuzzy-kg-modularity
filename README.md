@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.6.0 below, which answers the latest review).
+> **(A)** Hai Bang Truong. *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.7.0 below, which answers the latest review).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.10.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the revision; see `kt/README.md`.
 
@@ -21,6 +21,19 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.7.0
+
+Analyses that answer the fifth review of the Knowledge-Based Systems version of manuscript (A); new results in `results/v10/`, and `docs/paper_map_r5.md` maps each new item to its script and result file. No earlier result file changes.
+
+| Topic | Script | Output |
+|---|---|---|
+| Membership-free link-prediction heuristics (common neighbours, Adamic-Adar, resource allocation, Jaccard, preferential attachment) on the hidden MOOCCubeX expert edges, on the folds and non-edges of the grade-preserving baselines | `scripts/v10_link_heuristics.py` | `results/v10/link_heuristics.json` |
+| Paired bootstrap of the GCN, the UKGE-style model and the product path score against preferential attachment on the same folds (needs PyTorch) | `scripts/v10_gcn_vs_heuristics.py` | `results/v10/gcn_vs_heuristics.json` |
+| Partition half of the audit on CN15k: description, Leiden timing, cut audit with the flagging rule of Algorithm 2 (Algorithm 1 not run; its estimated cost is reported) | `scripts/v10_cn15k_partition.py` | `results/v10/cn15k_partition.json` |
+| Fig. 4 with the decision guide renumbered D1 to D9 and the degree heuristic in step 5 | `scripts/figure4.py` | `docs/figure4.png`, `docs/figure4.pdf` |
+
+The manuscript of this release reads every cut decision from the Q_F drop (Algorithm 2, step 3; `results/v7/qf_drop_seed_sd.json`), restores the ten-graph decision floor of the Junyi co-practice graph and of the twelve transition variants (`results/v8/floor_extra*.json`) and the weighted SBM with 100 refits and the nested model with the covariate (`results/v8/weighted_sbm_*.json`), all produced by release 4.5.0. The CN15k raw files are read from `data/raw/ukge/cn15k` (clone https://github.com/stasl0217/UKGE).
 
 ## What is in version 4.6.0
 
