@@ -43,3 +43,55 @@ for k, (met, col6) in enumerate((('auc', 'test_auc'), ('new', 'test_auc_first'))
 ax[0].legend(frameon=False, fontsize=6.5, loc='lower right')
 fig.tight_layout(); fig.savefig(f'{OUT}/fig2_learning_curve.png', dpi=300); plt.close(fig)
 
+
+
+# ---------------- Fig. 3 of the TLT article: the ladder for every entry point
+# Panels: probe with the graph in the embedding refinement (as results_r10/fig4_ladder.png), probe with the graph in the
+# state-routing channel (runs_r13), SAKT-E (results_r8), GKT (results_r8 on a GPU, plus the CPU rows with the complete graph
+# from runs_r13). Writes kt/results_r13/fig3_ladder.png.
+import numpy as np, matplotlib.ticker
+r9 = json.load(open(f'{KT}/results_r9/r9_results.json')); r8 = json.load(open(f'{KT}/results_r8/r8_results.json'))
+r10 = json.load(open(f'{KT}/results_r10/r10_results.json'))['controls_without_graph']
+r13 = json.load(open(f'{KT}/results_r13/r13_results.json'))
+def r8get(a, b, key):
+    for c in r8['comparisons']:
+        if c['a'] == a and c['b'] == b and c['key'] == key: return c
+def get(src, ref, key):
+    if src == 'emb':
+        if ref.startswith('FR:'): return r9['frozen_random_table'][key][ref[3:]]
+        if ref.startswith('NG:'): return r10[key][ref[3:]]
+        return r9['ladder_emb'][key][ref]
+    if src == 'state': return r13['state_channel'][ref][key]
+    if src == 'cpu': return r13['gkt_cpu'][ref][key]
+    return r8get(ref[0], ref[1], key)
+panels = [('(a) Probe, embedding refinement', [('U − ∅', 'emb', 'U - empty (mixing)'), ('ER − U', 'emb', 'ER - U (sparse mixing)'),
+                                              ('ER(R) − U', 'emb', 'FR:ER(frozen R) - U'), ('RV − U', 'emb', 'NG:rvec_emb - uniform_emb'),
+                                              ('DP − ER', 'emb', 'DP - ER (degrees)'), ('G − DP', 'emb', 'G - DP (edges)'),
+                                              ('G − ∅', 'emb', 'G - empty (total)')]),
+          ('(b) Probe, state channel', [('U − ∅', 'state', 'st_uniform - st_empty'), ('ER − U', 'state', 'st_er - st_uniform'),
+                                        ('DP − ER', 'state', 'st_dp - st_er'), ('G − DP', 'state', 'st_support - st_dp'),
+                                        ('G − ∅', 'state', 'st_support - st_empty')]),
+          ('(c) SAKT-E', [('U − ∅', 'r8', ('sakte_uniform', 'sakte_empty')), ('ER − U', 'r8', ('sakte_er', 'sakte_uniform')),
+                          ('G − ER', 'r8', ('sakte_support', 'sakte_er')), ('G − ∅', 'r8', ('sakte_support', 'sakte_empty'))]),
+          ('(d) GKT', [('ER − ∅', 'r8', ('gkt_er', 'gkt_empty')), ('DP − ER', 'r8', ('gkt_rewired', 'gkt_er')),
+                       ('G − DP', 'r8', ('gkt_support', 'gkt_rewired')), ('G − ∅', 'r8', ('gkt_support', 'gkt_empty')),
+                       ('U − ∅ (CPU)', 'cpu', 'gkt_uniform - gkt_empty'), ('G − U (CPU)', 'cpu', 'gkt_support - gkt_uniform')])]
+fig, axs = plt.subplots(2, 2, figsize=(7.4, 5.2))
+for ax_, (title, rows) in zip(axs.ravel(), panels):
+    for key, colr, off in (('first', '#1f5fa8', -0.15), ('all', '#9a9a9a', 0.15)):
+        for i, (lab, src, ref) in enumerate(rows):
+            s = get(src, ref, key)
+            if not s: continue
+            mx = s.get('mixed') or {}
+            y = len(rows) - 1 - i + off
+            ax_.plot([mx.get('lo', np.nan), mx.get('hi', np.nan)], [y, y], color=colr, lw=1.2)
+            ax_.plot([s['mean']], [y], marker='o' if key == 'first' else 's', color=colr, ms=3.5,
+                     label=('first attempts' if key == 'first' else 'all predictions') if i == 0 else None)
+    ax_.axvline(0, color='0.5', lw=0.6)
+    ax_.set_yticks(range(len(rows))); ax_.set_yticklabels([r[0] for r in rows][::-1])
+    ax_.set_title(title, loc='left', fontsize=8); ax_.set_xlabel('AUC difference')
+    ax_.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(5)); ax_.tick_params(axis='x', labelsize=6.5)
+h, l = axs[0, 0].get_legend_handles_labels()
+fig.legend(h, l, frameon=False, fontsize=7, loc='lower center', ncol=2)
+fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(f'{OUT}/fig3_ladder.png', dpi=300); plt.close(fig)
+print('Fig. 3 written to', OUT)

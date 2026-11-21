@@ -181,7 +181,7 @@ precision. The per-prediction files of this release also keep `uid`, the index o
 | Update budget along the learning curve (Holm over six tests); capacity, learning-rate, SAKT-E, state-channel and GKT ladders; the reordered ladder empty -> RV(F) -> RV -> ER -> DP -> G; next-KC decision agreement and 0.5-threshold flips; weighting by first attempts and leaving out the four small corpora | `src/r13_analyse.py` | `results_r13/r13_results.json` |
 | What the support graph encodes: edges within a curriculum unit against an Erdos-Renyi graph, Junyi edges in the published prerequisite map, ASSISTments 2009/2017 transitions inside one assignment; KCs per learner, run length and the share of first attempts per corpus | `src/r13_graph_audit.py` (needs the raw Junyi exercise table and the raw ASSISTments 2009/2017 files) | `results_r13/graph_audit.json` |
 | Run inventory of this release (Supplementary Table S6.10, lower block) | `src/r13_inventory.py` | `results_r13/run_sets_r13.csv` |
-| Fig. 2 of the TLT article: the learning curve with the update-budget points at 5%, 10%, 25% and 100% | `src/r13_figures.py` | `results_r13/fig2_learning_curve.png` |
+| Figs. 2 and 3 of the TLT article: the learning curve with the update-budget points at 5%, 10%, 25% and 100%, and the ladder for every entry point (embedding refinement, state channel, SAKT-E, GKT with the CPU rows for the complete graph) | `src/r13_figures.py` | `results_r13/fig2_learning_curve.png`, `results_r13/fig3_ladder.png` |
 
 Run with `PYTHONPATH=<checkout> KT_ROOT=<kt dir with data/> bash src/r13_runq.sh jobs_r13.txt 2`, then
 `KT_ROOT=<kt dir> python src/r13_analyse.py`. Prediction and candidate files are included.
