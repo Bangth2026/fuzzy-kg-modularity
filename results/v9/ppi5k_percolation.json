@@ -1,0 +1,51 @@
+[
+ {
+  "quantile": 0,
+  "alpha": 0.15,
+  "edges": 132840,
+  "reachable_share": 0.3165651137430367,
+  "largest_component": 1912
+ },
+ {
+  "quantile": 0.25,
+  "alpha": 0.243,
+  "edges": 99662,
+  "reachable_share": 0.25824868855323685,
+  "largest_component": 1626
+ },
+ {
+  "quantile": 0.5,
+  "alpha": 0.373,
+  "edges": 66544,
+  "reachable_share": 0.18449308108920703,
+  "largest_component": 1414
+ },
+ {
+  "quantile": 0.75,
+  "alpha": 0.551,
+  "edges": 33356,
+  "reachable_share": 0.06737938223899281,
+  "largest_component": 994
+ },
+ {
+  "quantile": 0.9,
+  "alpha": 0.808,
+  "edges": 13606,
+  "reachable_share": 0.002166980014650389,
+  "largest_component": 118
+ },
+ {
+  "quantile": 0.95,
+  "alpha": 0.905,
+  "edges": 6702,
+  "reachable_share": 0.0005376825665253099,
+  "largest_component": 52
+ },
+ {
+  "quantile": 0.99,
+  "alpha": 0.938,
+  "edges": 1472,
+  "reachable_share": 0.00015089052224210347,
+  "largest_component": 32
+ }
+]

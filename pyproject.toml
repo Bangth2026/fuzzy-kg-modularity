@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fuzzykg"
-version = "4.5.0"
+version = "4.6.0"
 description = "Binarisation and t-norm composition on fuzzy knowledge graphs: multislice reference, calibrated null test, expert-labelled criteria (reference implementation)"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -30,6 +30,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=7"]
 mooc = ["requests"]
+baselines = ["torch>=2.0"]
 
 [tool.setuptools.packages.find]
 include = ["fuzzykg*"]

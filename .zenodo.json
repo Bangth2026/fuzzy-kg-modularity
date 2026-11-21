@@ -1,8 +1,8 @@
 {
   "title": "Graded or crisp prerequisite knowledge? Auditing thresholding and t-norm path inference in fuzzy knowledge graphs built from learner logs (code, results and run files)",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "upload_type": "software",
-  "description": "Reference implementation, reproduction scripts and result files for the manuscript submitted to Information Processing & Management (earlier revisions prepared for Knowledge-Based Systems): fuzzy-graph modularity and the rank-coded cut audit, the calibrated null test (Algorithm 1), generator shortest paths for t-norm path inference, and the pre-deployment audit (Algorithm 2) as a command-line tool, with every analysis in results/ and results/v4/ to results/v8/. Release 4.5.0 holds the analyses behind the third-revision manuscript: the weighted SBM with 100 refits per null and empirical p-values, the nested SBM with the membership covariate passed to graph-tool through the base state (earlier nested fits had silently ignored it), a clipping check, the decision floor with ten planted graphs for the Junyi co-practice graph and all twelve transition-construction variants, and the seed dispersion of the Q_F drop behind step 3 of Algorithm 2. Datasets are not redistributed; see data/README.md.",
+  "description": "Reference implementation, reproduction scripts and result files for the manuscript submitted to Information Processing & Management (earlier revisions prepared for Knowledge-Based Systems): fuzzy-graph modularity and the rank-coded cut audit, the calibrated null test (Algorithm 1), generator shortest paths for t-norm path inference, and the pre-deployment audit (Algorithm 2) as a command-line tool, with every analysis in results/ and results/v4/ to results/v9/. Release 4.6.0 adds the analyses that answer the fourth review of the Knowledge-Based Systems version: two grade-preserving baselines (a UKGE-style embedding and a GCN encoder with a bilinear decoder, fuzzykg/embeddings.py), the audit on two graded knowledge graphs outside education (PPI5k and CN15k from UKGE), the measured time and memory of the full audit on the largest graph, an analysis of why max-min erases the graded evidence on the dense Junyi graph, and Fig. 4 (results/v9). Release 4.5.0 held the analyses behind the third-revision manuscript: the weighted SBM with 100 refits per null and empirical p-values, the nested SBM with the membership covariate passed to graph-tool through the base state (earlier nested fits had silently ignored it), a clipping check, the decision floor with ten planted graphs for the Junyi co-practice graph and all twelve transition-construction variants, and the seed dispersion of the Q_F drop behind step 3 of Algorithm 2. Datasets are not redistributed; see data/README.md.",
   "creators": [
     {
       "name": "Truong, Hai Bang",
@@ -22,7 +22,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/Bangth2026/fuzzy-kg-modularity/tree/v4.5.0",
+      "identifier": "https://github.com/Bangth2026/fuzzy-kg-modularity/tree/v4.6.0",
       "relation": "isSupplementTo",
       "scheme": "url"
     }
