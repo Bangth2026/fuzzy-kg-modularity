@@ -152,6 +152,8 @@ Earlier results files are unchanged.
 
 # Release 3.10.0: revision runs for IEEE Transactions on Learning Technologies
 
+Zenodo: 10.5281/zenodo.24410983 (concept DOI 10.5281/zenodo.24131157).
+
 New runs and analyses for the revision of the manuscript *When Does a Concept Graph Help a Knowledge Tracer? Null-Graph
 Controls for First-Attempt Predictions on Ten Corpora* (IEEE TLT). Every run is on a CPU with one thread (`NT=1`,
 torch 2.15.0+cpu), on the ten corpora rebuilt as under release 3.7.0, under the update budget (at most 2,000 updates,
