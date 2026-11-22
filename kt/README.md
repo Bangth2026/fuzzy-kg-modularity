@@ -152,6 +152,8 @@ Earlier results files are unchanged.
 
 # Release 3.13.0: runs and analyses for the fourth version of the IEEE TLT manuscript
 
+Zenodo: 10.5281/zenodo.24439395 (concept DOI 10.5281/zenodo.24131157).
+
 New runs (CPU, one thread, torch 2.15.0+cpu, update budget at 10% of the training learners, training seed = subsample), on the ten
 corpora rebuilt from the public copies listed under release 3.7.0. A rerun of the empty-graph control on subsample 0 of Statics 2011,
 ASSISTments 2012, ASSISTments 2015, Bridge to Algebra, Junyi and EdNet (`runs_r16/repro/`) reproduces the archived test AUC to the last
