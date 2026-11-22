@@ -116,14 +116,14 @@ def _build(cfg, n, src, dst, mu):
     raise ValueError(cfg.model)
 
 
-def _train(cfg, n, src, dst, mu, edge_keys, epochs, rng, val=None):
+def _train(cfg, n, src, dst, mu, edge_keys, epochs, rng, val=None, neg_keys=None):
     torch.manual_seed(cfg.seed)
     model = _build(cfg, n, src, dst, mu)
     opt = torch.optim.Adam(model.parameters(), lr=cfg.lr, weight_decay=cfg.weight_decay)
     m = len(src); hist = []
     batch = max(cfg.batch, (1 + cfg.neg) * m // 20)      # at most about 20 optimiser steps per epoch
     for ep in range(1, epochs + 1):
-        nu, nv = _sample_neg(n, cfg.neg * m, edge_keys, rng)
+        nu, nv = _sample_neg(n, cfg.neg * m, edge_keys if neg_keys is None else neg_keys, rng)
         U = np.r_[src, nu]; V = np.r_[dst, nv]; Y = np.r_[mu, np.zeros(len(nu))]
         Wt = np.r_[np.full(m, 0.5 / m), np.full(len(nu), 0.5 / len(nu))] * len(U)   # edges and non-edges weigh equally
         perm = rng.permutation(len(U))
@@ -156,26 +156,31 @@ class GradedLinkModel:
         self.cfg = cfg or EmbedConfig(**kw)
         self.model = None; self.best_epoch = None; self.val_curve = None
 
-    def fit(self, G, grid=(("lr", (0.003, 0.01, 0.03)), ("dim", (32, 64))), refit_seeds=(0, 1, 2)):
+    def fit(self, G, grid=(("lr", (0.003, 0.01, 0.03)), ("dim", (32, 64))), refit_seeds=(0, 1, 2), exclude=None):
         """Select lr and dim by the validation MSE (seed 0), choose the epoch count on the same
         validation split, then refit on all edges with every seed in refit_seeds; score()
-        averages the refitted models."""
+        averages the refitted models.  ``exclude``: optional (u, v) pairs never drawn as
+        non-edges, in training or validation (version 4.8.0; e.g. the evaluation pairs)."""
         import itertools
         from dataclasses import replace
         torch.set_num_threads(1)
         base = self.cfg
         n, src, dst, mu = G.n, np.asarray(G.src), np.asarray(G.dst), np.asarray(G.mu, float)
         keys = np.sort(src.astype(np.int64) * n + dst)
+        nkeys = keys
+        if exclude is not None:
+            ex = np.asarray(exclude, dtype=np.int64).reshape(-1, 2)
+            nkeys = np.unique(np.r_[keys, ex[:, 0] * n + ex[:, 1]])
         rng = np.random.default_rng(base.seed)
         perm = rng.permutation(len(src)); nv = max(1, int(base.val_share * len(src)))
         va, tr = perm[:nv], perm[nv:]
-        vu, vv = _sample_neg(n, base.neg * nv, keys, rng)
+        vu, vv = _sample_neg(n, base.neg * nv, nkeys, rng)
         val = (np.r_[src[va], vu], np.r_[dst[va], vv], np.r_[mu[va], np.zeros(len(vu))])
         names = [g[0] for g in grid]; self.grid_results = []
         best = None
         for combo in itertools.product(*[g[1] for g in grid]):
             cfg = replace(base, **dict(zip(names, combo)))
-            _, hist = _train(cfg, n, src[tr], dst[tr], mu[tr], keys, cfg.epochs, np.random.default_rng(cfg.seed), val=val)
+            _, hist = _train(cfg, n, src[tr], dst[tr], mu[tr], keys, cfg.epochs, np.random.default_rng(cfg.seed), val=val, neg_keys=nkeys)
             ep, mse = min(hist, key=lambda t: t[1])
             self.grid_results.append({**dict(zip(names, combo)), "best_epoch": int(ep), "val_mse": float(mse)})
             if best is None or mse < best[2]:
@@ -184,7 +189,7 @@ class GradedLinkModel:
         self.models = []
         for sd in refit_seeds:
             cfg = replace(self.cfg, seed=sd)
-            m, _ = _train(cfg, n, src, dst, mu, keys, self.best_epoch, np.random.default_rng(1000 + sd))
+            m, _ = _train(cfg, n, src, dst, mu, keys, self.best_epoch, np.random.default_rng(1000 + sd), neg_keys=nkeys)
             self.models.append(m)
         self.model = self.models[0]
         return self

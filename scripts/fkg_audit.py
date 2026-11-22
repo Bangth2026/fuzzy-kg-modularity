@@ -21,7 +21,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("edges"); ap.add_argument("--nodes"); ap.add_argument("--grouping"); ap.add_argument("--pairs")
     ap.add_argument("--no-null-test", action="store_true"); ap.add_argument("--draws", type=int, default=200)
-    ap.add_argument("--seeds", type=int, default=10); ap.add_argument("--out", default="audit")
+    ap.add_argument("--seeds", type=int, default=20); ap.add_argument("--out", default="audit")
     a = ap.parse_args()
     e = pd.read_csv(a.edges)
     if a.nodes:

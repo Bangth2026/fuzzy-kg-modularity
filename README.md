@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.7.0 below, which answers the latest review).
+> **(A)** Hai Bang Truong. *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.8.0 below, which answers the latest review).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.10.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the revision; see `kt/README.md`.
 
@@ -21,6 +21,18 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.8.0
+
+Analyses that answer the sixth review of the Knowledge-Based Systems version of manuscript (A); new results in `results/v11/`, and `docs/paper_map_r6.md` maps each new item to its script and result file. No earlier result file changes.
+
+| Topic | Script | Output |
+|---|---|---|
+| Cut audit of Algorithm 2 (step 3) on the thirteen real graphs over 20 seeds, both partitions of a drop re-drawn per seed, for the Q_F drop under x, x^3, x^(1/3) and 1-(1-x)^3 and for the rank-coded drop; ARI with the Junyi topics per seed | `scripts/v11_cut_audit_rescale.py` | `results/v11/cut_audit_rescale_<graph>.json` (Tables S3e, S3f) |
+| Flagging rule over multipliers 2, 3 and minimum excesses 0, 0.005, 0.01, 0.02; agreement of seeds 0-9 and 10-19; bootstrap interval of the Junyi topic loss | `scripts/v11_flag_rules.py` | `results/v11/flag_rules.json` |
+| Grade-preserving baselines retrained with every evaluation pair kept out of the sampled non-edges (needs PyTorch and the Junyi annotation files) | `fuzzykg/embeddings.py` (option `exclude`), `scripts/v11_baselines_excluded.py` | `results/v11/baselines_excluded.json` (Section S13) |
+
+`fuzzykg.audit.cut_audit` and `scripts/fkg_audit.py` now flag a cut only when its excess over the no-cut drop also exceeds `min_excess` (default 0.01, the rule of the manuscript) and use 20 seeds by default; release 4.7.0 applied the 0.01 only in the manuscript. Release 4.8.0 supersedes `results/v7/qf_drop_seed_sd.json` and `results/v8/qf_drop_seeds.json` (Pi_F fixed at the best of five, ten seeds) as the source of the cut decisions.
 
 ## What is in version 4.7.0
 
