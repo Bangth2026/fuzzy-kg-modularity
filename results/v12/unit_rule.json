@@ -1,0 +1,713 @@
+{
+ "rule": "Release 4.9.0 changes how step 3 decides a cut when the unit of mu_E is arbitrary. The flags\nthemselves are those of scripts/v11_flag_rules.py (k = 2, eps = 0.01, 20 seeds, both partitions\nre-drawn per seed); only the reading changes:",
+ "graphs": {
+  "assist2009_item": {
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.0005084076892396206,
+     "excess_rank": 0.0001949750894599811,
+     "margin_eps_mu": -0.00949159231076038,
+     "margin_sd_mu": 0.0005084076892394317,
+     "margin_eps_rank": -0.009805024910540019,
+     "margin_sd_rank": 0.00019497508945976984
+    },
+    "q0.50": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.007140275845136562,
+     "excess_rank": 0.004885773601001059,
+     "margin_eps_mu": -0.002859724154863438,
+     "margin_sd_mu": 0.007140275845136373,
+     "margin_eps_rank": -0.005114226398998941,
+     "margin_sd_rank": 0.004885773601000888
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.0780642224598459,
+     "excess_rank": 0.062007837163643144,
+     "margin_eps_mu": 0.0680642224598459,
+     "margin_sd_mu": 0.0780642224598457,
+     "margin_eps_rank": 0.05200783716364314,
+     "margin_sd_rank": 0.06200783716364296
+    }
+   }
+  },
+  "assist2009_kc": {
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.005018498383694254,
+     "excess_rank": 0.0009935287742124503,
+     "margin_eps_mu": -0.004981501616305746,
+     "margin_sd_mu": -0.00010704632669202192,
+     "margin_eps_rank": -0.00900647122578755,
+     "margin_sd_rank": -0.005969196211809018
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "undecided",
+     "excess_mu": 0.010016582911830623,
+     "excess_rank": 0.002931036405066752,
+     "margin_eps_mu": 1.658291183062252e-05,
+     "margin_sd_mu": 0.0030794090289146675,
+     "margin_eps_rank": -0.007068963594933248,
+     "margin_sd_rank": -0.0030154984038432164
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.06033464318466476,
+     "excess_rank": 0.04922749956424764,
+     "margin_eps_mu": 0.05033464318466476,
+     "margin_sd_mu": 0.054897125955510585,
+     "margin_eps_rank": 0.03922749956424764,
+     "margin_sd_rank": 0.04232924530481409
+    }
+   }
+  },
+  "assist2009_kc_transition": {
+   "group": "transition",
+   "unit": "count share",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.007751549306995405,
+     "excess_rank": -0.011841805479892081,
+     "margin_eps_mu": -0.0022484506930045955,
+     "margin_sd_mu": -0.01415605529328728,
+     "margin_eps_rank": -0.021841805479892083,
+     "margin_sd_rank": -0.0330481870275566
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "flagged",
+     "excess_mu": 0.024120720788589983,
+     "excess_rank": 0.008398691467808798,
+     "margin_eps_mu": 0.014120720788589983,
+     "margin_sd_mu": 0.002213116188307298,
+     "margin_eps_rank": -0.0016013085321912018,
+     "margin_sd_rank": -0.01280769007985572
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.09457723664764223,
+     "excess_rank": 0.09561649185955745,
+     "margin_eps_mu": 0.08457723664764223,
+     "margin_sd_mu": 0.07266963204735954,
+     "margin_eps_rank": 0.08561649185955746,
+     "margin_sd_rank": 0.07441011031189293
+    }
+   }
+  },
+  "assist2015_kc": {
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.004422377852296534,
+     "excess_rank": -0.0009705230907012009,
+     "margin_eps_mu": -0.005577622147703467,
+     "margin_sd_mu": -0.00025191215166769053,
+     "margin_eps_rank": -0.010970523090701201,
+     "margin_sd_rank": -0.008481141904939746
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "undecided",
+     "excess_mu": 0.010643281213714969,
+     "excess_rank": 0.0034853498579121827,
+     "margin_eps_mu": 0.0006432812137149684,
+     "margin_sd_mu": 0.0010870012358507285,
+     "margin_eps_rank": -0.0065146501420878175,
+     "margin_sd_rank": -0.005220212737118092
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.032170002985709205,
+     "excess_rank": 0.026906254757875284,
+     "margin_eps_mu": 0.022170002985709203,
+     "margin_sd_mu": 0.023608916396039376,
+     "margin_eps_rank": 0.016906254757875286,
+     "margin_sd_rank": 0.01781299882314486
+    }
+   }
+  },
+  "assist2015_kc_transition": {
+   "group": "transition",
+   "unit": "count share",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.011962573150911766,
+     "excess_rank": -0.008365908020184339,
+     "margin_eps_mu": 0.001962573150911766,
+     "margin_sd_mu": -0.010341421074622558,
+     "margin_eps_rank": -0.01836590802018434,
+     "margin_sd_rank": -0.0317772389522354
+    },
+    "q0.50": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.012246700287906004,
+     "excess_rank": -0.008191225079418527,
+     "margin_eps_mu": 0.0022467002879060036,
+     "margin_sd_mu": -0.007214408885382741,
+     "margin_eps_rank": -0.018191225079418526,
+     "margin_sd_rank": -0.03160255601146959
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.12095944936932189,
+     "excess_rank": 0.11857301113089345,
+     "margin_eps_mu": 0.1109594493693219,
+     "margin_sd_mu": 0.10149834019603314,
+     "margin_eps_rank": 0.10857301113089346,
+     "margin_sd_rank": 0.09516168019884239
+    }
+   }
+  },
+  "assist2017_item": {
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.0002543926805970209,
+     "excess_rank": -0.0010270613669479734,
+     "margin_eps_mu": -0.00974560731940298,
+     "margin_sd_mu": -0.010161128932640926,
+     "margin_eps_rank": -0.011027061366947973,
+     "margin_sd_rank": -0.012143841075675224
+    },
+    "q0.50": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.004481331561463502,
+     "excess_rank": 0.0012566564446720775,
+     "margin_eps_mu": -0.005518668438536498,
+     "margin_sd_mu": -0.004869837966347415,
+     "margin_eps_rank": -0.008743343555327923,
+     "margin_sd_rank": -0.007991942040776884
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.04339235267443722,
+     "excess_rank": 0.03364041094811327,
+     "margin_eps_mu": 0.03339235267443722,
+     "margin_sd_mu": 0.032675414100961836,
+     "margin_eps_rank": 0.02364041094811327,
+     "margin_sd_rank": 0.0226900269246817
+    }
+   }
+  },
+  "assist2017_item_transition": {
+   "group": "transition",
+   "unit": "count share",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.03858047578929861,
+     "excess_rank": 0.01851799506172836,
+     "margin_eps_mu": 0.028580475789298607,
+     "margin_sd_mu": 0.03487061826697966,
+     "margin_eps_rank": 0.00851799506172836,
+     "margin_sd_rank": 0.016143134141887616
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.1680715003397628,
+     "excess_rank": 0.15147543703703698,
+     "margin_eps_mu": 0.1580715003397628,
+     "margin_sd_mu": 0.16436164281744386,
+     "margin_eps_rank": 0.14147543703703697,
+     "margin_sd_rank": 0.14910057611719624
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.4548066401035651,
+     "excess_rank": 0.510703624691358,
+     "margin_eps_mu": 0.4448066401035651,
+     "margin_sd_mu": 0.45109678258124614,
+     "margin_eps_rank": 0.500703624691358,
+     "margin_sd_rank": 0.5083287637715173
+    }
+   }
+  },
+  "assist2017_kc": {
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.0024918281658562434,
+     "excess_rank": -0.02068880727891073,
+     "margin_eps_mu": -0.007508171834143757,
+     "margin_sd_mu": -0.0005777865654636644,
+     "margin_eps_rank": -0.030688807278910733,
+     "margin_sd_rank": -0.028717703675151748
+    },
+    "q0.50": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.0056336919384486345,
+     "excess_rank": -0.018524245362313008,
+     "margin_eps_mu": -0.004366308061551366,
+     "margin_sd_mu": 0.0002377140848305809,
+     "margin_eps_rank": -0.02852424536231301,
+     "margin_sd_rank": -0.026553141758554024
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "undecided",
+     "excess_mu": 0.01249227912297921,
+     "excess_rank": -0.006353841979970076,
+     "margin_eps_mu": 0.00249227912297921,
+     "margin_sd_mu": 0.007853518374968855,
+     "margin_eps_rank": -0.016353841979970078,
+     "margin_sd_rank": -0.014382738376211093
+    }
+   }
+  },
+  "assist2017_kc_transition": {
+   "group": "transition",
+   "unit": "count share",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.00497366255540856,
+     "excess_rank": -0.020808278135588058,
+     "margin_eps_mu": -0.0050263374445914406,
+     "margin_sd_mu": -0.025125129462536457,
+     "margin_eps_rank": -0.030808278135588056,
+     "margin_sd_rank": -0.057041792445494
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.08699478184798012,
+     "excess_rank": 0.05912212691920273,
+     "margin_eps_mu": 0.07699478184798013,
+     "margin_sd_mu": 0.056895989830035104,
+     "margin_eps_rank": 0.04912212691920273,
+     "margin_sd_rank": 0.022888612609296796
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.26083760822567803,
+     "excess_rank": 0.29474527639571424,
+     "margin_eps_mu": 0.250837608225678,
+     "margin_sd_mu": 0.230738816207733,
+     "margin_eps_rank": 0.28474527639571423,
+     "margin_sd_rank": 0.2585117620858083
+    }
+   }
+  },
+  "junyi_copractice": {
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.002112589010477524,
+     "excess_rank": 0.0007724771913075294,
+     "margin_eps_mu": -0.007887410989522475,
+     "margin_sd_mu": -0.0027110560799481357,
+     "margin_eps_rank": -0.00922752280869247,
+     "margin_sd_rank": -0.0027246378693265203
+    },
+    "q0.50": {
+     "flag_mu": false,
+     "flag_rank": false,
+     "decision": "cut",
+     "excess_mu": 0.002663865732160845,
+     "excess_rank": 0.0013530379247258223,
+     "margin_eps_mu": -0.007336134267839155,
+     "margin_sd_mu": -0.0021597793582648146,
+     "margin_eps_rank": -0.008646962075274179,
+     "margin_sd_rank": -0.0028674680082144332
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.016896281413491674,
+     "excess_rank": 0.01611697362923222,
+     "margin_eps_mu": 0.006896281413491674,
+     "margin_sd_mu": 0.011510464256774787,
+     "margin_eps_rank": 0.006116973629232221,
+     "margin_sd_rank": 0.011958679446238775
+    }
+   }
+  },
+  "junyi_transition": {
+   "group": "transition",
+   "unit": "count share",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "flagged",
+     "excess_mu": 0.02147127621359293,
+     "excess_rank": 0.0009742603997883181,
+     "margin_eps_mu": 0.011471276213592929,
+     "margin_sd_mu": 0.015621829405795967,
+     "margin_eps_rank": -0.009025739600211682,
+     "margin_sd_rank": -0.004609096179964211
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.11595414686304227,
+     "excess_rank": 0.09117722487665277,
+     "margin_eps_mu": 0.10595414686304228,
+     "margin_sd_mu": 0.1065268994832032,
+     "margin_eps_rank": 0.08117722487665277,
+     "margin_sd_rank": 0.08245793040928961
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.3854999207495829,
+     "excess_rank": 0.3910394996791938,
+     "margin_eps_mu": 0.3754999207495829,
+     "margin_sd_mu": 0.3809585505270047,
+     "margin_eps_rank": 0.3810394996791938,
+     "margin_sd_rank": 0.3854561430994413
+    }
+   }
+  },
+  "mooccubex_cs": {
+   "group": "expert",
+   "unit": "released scale",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "flagged",
+     "excess_mu": 0.0999316213383295,
+     "excess_rank": 0.009586853063652603,
+     "margin_eps_mu": 0.0899316213383295,
+     "margin_sd_mu": 0.08262903721719655,
+     "margin_eps_rank": -0.00041314693634739684,
+     "margin_sd_rank": -0.01564262628966142
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.2328427774444635,
+     "excess_rank": 0.10392801903628798,
+     "margin_eps_mu": 0.22284277744446349,
+     "margin_sd_mu": 0.20954356762088006,
+     "margin_eps_rank": 0.09392801903628799,
+     "margin_sd_rank": 0.07713275506016734
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.3401793523821766,
+     "excess_rank": 0.21697471743010108,
+     "margin_eps_mu": 0.3301793523821766,
+     "margin_sd_mu": 0.32287676826104367,
+     "margin_eps_rank": 0.20697471743010107,
+     "margin_sd_rank": 0.19174523807678706
+    }
+   }
+  },
+  "mooccubex_cs_full": {
+   "group": "expert",
+   "unit": "released scale",
+   "cuts": {
+    "q0.25": {
+     "flag_mu": true,
+     "flag_rank": false,
+     "decision": "flagged",
+     "excess_mu": 0.06755350979223963,
+     "excess_rank": 0.0017259080792243059,
+     "margin_eps_mu": 0.05755350979223963,
+     "margin_sd_mu": 0.05684215466618317,
+     "margin_eps_rank": -0.008274091920775694,
+     "margin_sd_rank": -0.01906861204447622
+    },
+    "q0.50": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.16774539454030832,
+     "excess_rank": 0.04801814318711552,
+     "margin_eps_mu": 0.1577453945403083,
+     "margin_sd_mu": 0.15703403941425187,
+     "margin_eps_rank": 0.038018143187115515,
+     "margin_sd_rank": 0.02722362306341499
+    },
+    "q0.75": {
+     "flag_mu": true,
+     "flag_rank": true,
+     "decision": "flagged",
+     "excess_mu": 0.28685023626942474,
+     "excess_rank": 0.16458129648152153,
+     "margin_eps_mu": 0.27685023626942473,
+     "margin_sd_mu": 0.27613888114336826,
+     "margin_eps_rank": 0.15458129648152152,
+     "margin_sd_rank": 0.143786776357821
+    }
+   }
+  }
+ },
+ "counts": {
+  "co-practice": {
+   "q0.25": {
+    "cut": 6,
+    "flagged": 0,
+    "undecided": 0,
+    "n": 6
+   },
+   "q0.50": {
+    "cut": 4,
+    "flagged": 0,
+    "undecided": 2,
+    "n": 6
+   },
+   "q0.75": {
+    "cut": 0,
+    "flagged": 5,
+    "undecided": 1,
+    "n": 6
+   }
+  },
+  "transition": {
+   "q0.25": {
+    "cut": 3,
+    "flagged": 2,
+    "undecided": 0,
+    "n": 5
+   },
+   "q0.50": {
+    "cut": 1,
+    "flagged": 4,
+    "undecided": 0,
+    "n": 5
+   },
+   "q0.75": {
+    "cut": 0,
+    "flagged": 5,
+    "undecided": 0,
+    "n": 5
+   }
+  },
+  "expert": {
+   "q0.25": {
+    "cut": 0,
+    "flagged": 2,
+    "undecided": 0,
+    "n": 2
+   },
+   "q0.50": {
+    "cut": 0,
+    "flagged": 2,
+    "undecided": 0,
+    "n": 2
+   },
+   "q0.75": {
+    "cut": 0,
+    "flagged": 2,
+    "undecided": 0,
+    "n": 2
+   }
+  }
+ },
+ "warnings": [
+  {
+   "graph": "assist2009_kc_transition",
+   "audit": "cube",
+   "no_cut_drop": 0.2116944162581142
+  },
+  {
+   "graph": "assist2015_kc_transition",
+   "audit": "cube",
+   "no_cut_drop": 0.26410888856131276
+  },
+  {
+   "graph": "assist2017_kc_transition",
+   "audit": "cube",
+   "no_cut_drop": 0.07772803266333275
+  },
+  {
+   "graph": "junyi_transition",
+   "audit": "cube",
+   "no_cut_drop": 0.05903923690820141
+  }
+ ],
+ "near_threshold": [
+  {
+   "graph": "assist2009_item",
+   "cut": "q0.25",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.00949159231076038,
+   "margin_to_2sd": 0.0005084076892394317
+  },
+  {
+   "graph": "assist2009_item",
+   "cut": "q0.25",
+   "audit": "rank",
+   "margin_to_min_excess": -0.009805024910540019,
+   "margin_to_2sd": 0.00019497508945976984
+  },
+  {
+   "graph": "assist2009_kc",
+   "cut": "q0.25",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.004981501616305746,
+   "margin_to_2sd": -0.00010704632669202192
+  },
+  {
+   "graph": "assist2009_kc",
+   "cut": "q0.50",
+   "audit": "mu_E",
+   "margin_to_min_excess": 1.658291183062252e-05,
+   "margin_to_2sd": 0.0030794090289146675
+  },
+  {
+   "graph": "assist2009_kc_transition",
+   "cut": "q0.50",
+   "audit": "mu_E",
+   "margin_to_min_excess": 0.014120720788589983,
+   "margin_to_2sd": 0.002213116188307298
+  },
+  {
+   "graph": "assist2015_kc",
+   "cut": "q0.25",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.005577622147703467,
+   "margin_to_2sd": -0.00025191215166769053
+  },
+  {
+   "graph": "assist2015_kc",
+   "cut": "q0.50",
+   "audit": "mu_E",
+   "margin_to_min_excess": 0.0006432812137149684,
+   "margin_to_2sd": 0.0010870012358507285
+  },
+  {
+   "graph": "assist2017_kc",
+   "cut": "q0.25",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.007508171834143757,
+   "margin_to_2sd": -0.0005777865654636644
+  },
+  {
+   "graph": "assist2017_kc",
+   "cut": "q0.50",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.004366308061551366,
+   "margin_to_2sd": 0.0002377140848305809
+  },
+  {
+   "graph": "junyi_copractice",
+   "cut": "q0.25",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.007887410989522475,
+   "margin_to_2sd": -0.0027110560799481357
+  },
+  {
+   "graph": "junyi_copractice",
+   "cut": "q0.25",
+   "audit": "rank",
+   "margin_to_min_excess": -0.00922752280869247,
+   "margin_to_2sd": -0.0027246378693265203
+  },
+  {
+   "graph": "junyi_copractice",
+   "cut": "q0.50",
+   "audit": "mu_E",
+   "margin_to_min_excess": -0.007336134267839155,
+   "margin_to_2sd": -0.0021597793582648146
+  },
+  {
+   "graph": "junyi_copractice",
+   "cut": "q0.50",
+   "audit": "rank",
+   "margin_to_min_excess": -0.008646962075274179,
+   "margin_to_2sd": -0.0028674680082144332
+  },
+  {
+   "graph": "mooccubex_cs",
+   "cut": "q0.25",
+   "audit": "rank",
+   "margin_to_min_excess": -0.00041314693634739684,
+   "margin_to_2sd": -0.01564262628966142
+  }
+ ],
+ "sparse_lower_quartile_flags": {
+  "identity": 4,
+  "cube": 2,
+  "cuberoot": 7,
+  "one_minus_cube": 6,
+  "rank": 1
+ },
+ "sparse_n": 7,
+ "not_rejected_by_junyi": [
+  "identity",
+  "cuberoot",
+  "one_minus_cube"
+ ],
+ "sparse_lower_quartile_range_not_rejected": [
+  4,
+  7
+ ]
+}

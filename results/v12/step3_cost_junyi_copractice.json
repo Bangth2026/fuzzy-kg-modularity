@@ -1,0 +1,96 @@
+{
+ "graph": "junyi_copractice",
+ "n": 716,
+ "m": 191962,
+ "unit": "arbitrary",
+ "machine": "x86_64",
+ "python": "3.13.18",
+ "runs": {
+  "seeds_10": {
+   "seconds": 64.4,
+   "peak_rss_mb": 246.3,
+   "cuts": {
+    "support": {
+     "qf_drop": -0.0007764623769833404,
+     "qf_drop_sd": 0.0014887045601820223,
+     "rank_drop": 0.00019279627278310368,
+     "rank_drop_sd": 0.0012550042988433568,
+     "flag_qf_drop": null,
+     "flag_rank_drop": null,
+     "decision": null
+    },
+    "q0.25": {
+     "qf_drop": 0.0020717144505302014,
+     "qf_drop_sd": 0.0017807323237508618,
+     "rank_drop": 0.0017694879719653805,
+     "rank_drop_sd": 0.001429513565823635,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.00297131876662064,
+     "qf_drop_sd": 0.0027004393917825597,
+     "rank_drop": 0.0026258876428061515,
+     "rank_drop_sd": 0.002205230233815337,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.01675861823885627,
+     "qf_drop_sd": 0.0028614463247308396,
+     "rank_drop": 0.016993752607188894,
+     "rank_drop_sd": 0.0020871302481335076,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": []
+  },
+  "seeds_20": {
+   "seconds": 141.6,
+   "peak_rss_mb": 247.2,
+   "cuts": {
+    "support": {
+     "qf_drop": -0.00039980693067163606,
+     "qf_drop_sd": 0.00241182254521283,
+     "rank_drop": 0.0011525302382114418,
+     "rank_drop_sd": 0.0017485575303170249,
+     "flag_qf_drop": null,
+     "flag_rank_drop": null,
+     "decision": null
+    },
+    "q0.25": {
+     "qf_drop": 0.0017127820798058877,
+     "qf_drop_sd": 0.0022437659653503864,
+     "rank_drop": 0.0019250074295189712,
+     "rank_drop_sd": 0.0015900417866270174,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.002264058801489209,
+     "qf_drop_sd": 0.0023113770377477037,
+     "rank_drop": 0.002505568162937264,
+     "rank_drop_sd": 0.002110252966470128,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.016496474482820038,
+     "qf_drop_sd": 0.002692908578358443,
+     "rank_drop": 0.017269503867443664,
+     "rank_drop_sd": 0.0020791470914967238,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": []
+  }
+ }
+}

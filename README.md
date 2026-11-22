@@ -22,6 +22,18 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
 
+## What is in version 4.9.0
+
+Changes that answer the seventh review of the Knowledge-Based Systems version of manuscript (A); new results in `results/v12/`, and `docs/paper_map_r7.md` maps each item to the manuscript. No earlier result file changes.
+
+| Topic | Script | Output |
+|---|---|---|
+| Step 3 of Algorithm 2 read by the unit of the memberships: where the unit is meaningful (count shares, released or calibrated scores) the Q_F drop on mu_E decides; where it is arbitrary a cut is cut only when the Q_F drop and the rank-coded drop both pass, and "undecided" when they disagree. Counts by construction, lower-quartile counts on the sparse graphs under every rescaling, the range under the rescalings the Junyi topic check does not reject, cells near a threshold, no-cut drops above 0.05 | `scripts/v12_unit_rule.py` | `results/v12/unit_rule.json` (Supplementary Section S3, Table 4, Table 6) |
+| Wall-clock cost of step 3 as Algorithm 2 specifies it (20 seeds, Q_F and rank-coded drops) on Junyi co-practice, with ten seeds in the same session for comparison | `scripts/v12_step3_cost.py` | `results/v12/step3_cost_junyi_copractice.json` (Table S15) |
+| Function index of every script | - | `scripts/INDEX.md` |
+
+`fuzzykg.audit.cut_audit`, `audit` and `scripts/fkg_audit.py` take a `unit` argument (`--unit meaningful` or `--unit arbitrary`) and return, for every cut, both flags and a decision (`cut`, `flagged`, `undecided`); without a unit, a cut on which the two drops disagree is `undecided`. A no-cut drop above 0.05 is reported as a warning (`baseline_warning`). The flags themselves are unchanged from 4.8.0. Scripts keep their release prefixes, which earlier releases and archives cite; `scripts/INDEX.md` lists them by function.
+
 ## What is in version 4.8.1
 
 Completes the analyses of 4.8.0: the measured cost of the refined tilt grid of Table 3 on the Junyi co-practice graph (`scripts/v11_refined_tilt_cost.py`, `results/v11/refined_tilt_cost.json`; 261.8 s under the global and 256.9 s under the row null, reproducing the detectable correlations of Table 3), and the grade-preserving baselines with the evaluation pairs kept out of the sampled non-edges on the Junyi co-practice graph as well (`results/v11/baselines_excluded.json`). No earlier result file changes.

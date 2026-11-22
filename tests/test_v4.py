@@ -72,3 +72,14 @@ def test_cut_audit_minimum_excess_blocks_tiny_drops():
     cuts = {"q0.90": float(np.quantile(G.mu, 0.9))}
     strict = cut_audit(G, cuts, seeds=range(3), min_excess=10.0)
     assert not strict["cuts"]["q0.90"]["flag_qf_drop"] and "10.0" in strict["rule"]
+
+
+def test_step3_decision_depends_on_the_unit():
+    from fuzzykg.audit import decide
+    assert decide(True, False, "meaningful") == "flagged"
+    assert decide(False, True, "meaningful") == "cut"
+    assert decide(True, False, "arbitrary") == "undecided"
+    assert decide(False, True, "arbitrary") == "undecided"
+    assert decide(True, True, "arbitrary") == "flagged"
+    assert decide(False, False, "arbitrary") == "cut"
+    assert decide(True, False, None) == "undecided"

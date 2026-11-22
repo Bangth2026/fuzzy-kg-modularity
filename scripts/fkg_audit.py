@@ -22,6 +22,9 @@ def main():
     ap.add_argument("edges"); ap.add_argument("--nodes"); ap.add_argument("--grouping"); ap.add_argument("--pairs")
     ap.add_argument("--no-null-test", action="store_true"); ap.add_argument("--draws", type=int, default=200)
     ap.add_argument("--seeds", type=int, default=20); ap.add_argument("--out", default="audit")
+    ap.add_argument("--unit", choices=("meaningful", "arbitrary"),
+                    help="unit of mu_E: meaningful (a count share, or a released or calibrated score) or arbitrary "
+                         "(a weighted combination whose weights the builder chose); decides step 3 where the two drops disagree")
     a = ap.parse_args()
     e = pd.read_csv(a.edges)
     if a.nodes:
@@ -38,7 +41,7 @@ def main():
         p = pd.read_csv(a.pairs); idx = {l: i for i, l in enumerate(lab)}
         p = p[p.pre.astype(str).isin(idx) & p.post.astype(str).isin(idx)]
         pairs = (p.pre.astype(str).map(idx).to_numpy(), p.post.astype(str).map(idx).to_numpy(), p.score.to_numpy(float))
-    rep = audit(G, grouping=grp, pairs=pairs, null_test=not a.no_null_test, draws=a.draws, seeds=range(a.seeds))
+    rep = audit(G, grouping=grp, pairs=pairs, null_test=not a.no_null_test, draws=a.draws, seeds=range(a.seeds), unit=a.unit)
     json.dump(rep, open(a.out + ".json", "w"), indent=1, default=float)
     open(a.out + ".md", "w").write(report_markdown(rep, os.path.basename(a.edges)))
     print(report_markdown(rep, os.path.basename(a.edges)))
