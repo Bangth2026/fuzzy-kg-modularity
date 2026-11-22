@@ -1,0 +1,15 @@
+python3 src/r16_controls.py --data junyi --sub 2 --cond support_emb
+python3 src/r16_controls.py --data junyi --sub 2 --cond map_emb
+python3 src/r16_controls.py --data junyi --sub 2 --cond st_empty
+python3 src/r16_controls.py --data junyi --sub 2 --cond st_support
+python3 src/r16_controls.py --data junyi --sub 2 --cond st_map
+python3 src/r16_controls.py --data junyi --sub 3 --cond support_emb
+python3 src/r16_controls.py --data junyi --sub 3 --cond map_emb
+python3 src/r16_controls.py --data junyi --sub 3 --cond st_empty
+python3 src/r16_controls.py --data junyi --sub 3 --cond st_support
+python3 src/r16_controls.py --data junyi --sub 3 --cond st_map
+python3 src/r16_controls.py --data junyi --sub 4 --cond support_emb
+python3 src/r16_controls.py --data junyi --sub 4 --cond map_emb
+python3 src/r16_controls.py --data junyi --sub 4 --cond st_empty
+python3 src/r16_controls.py --data junyi --sub 4 --cond st_support
+python3 src/r16_controls.py --data junyi --sub 4 --cond st_map

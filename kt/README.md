@@ -150,6 +150,35 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.13.0: runs and analyses for the fourth version of the IEEE TLT manuscript
+
+New runs (CPU, one thread, torch 2.15.0+cpu, update budget at 10% of the training learners, training seed = subsample), on the ten
+corpora rebuilt from the public copies listed under release 3.7.0. A rerun of the empty-graph control on subsample 0 of Statics 2011,
+ASSISTments 2012, ASSISTments 2015, Bridge to Algebra, Junyi and EdNet (`runs_r16/repro/`) reproduces the archived test AUC to the last
+digit on every corpus (EdNet: the rebuilt copy of release 3.7.0, `runs_r13`).
+
+| Set | Conditions | Units | Script |
+|---|---|---|---|
+| Balanced subsamples | `empty`, `support` (both entry points) | subsamples 2-4 of the six larger corpora (36 runs), so that every corpus has five | `src/r16_controls.py` (passes through to `r14_controls.py`) |
+| Junyi with five subsamples | `support_emb`, `map_emb`, `st_empty`, `st_support`, `st_map` | Junyi, subsamples 2-4 (15 runs) | as above |
+| Other log-based constructions | `dkt_emb`, `corr_emb`, `st_dkt`, `st_corr`, `st_dpdkt` | the 32 units of the ladders (160 runs) | `src/r16_controls.py` |
+
+`dkt`: conditional-influence graph of a DKT trained on the subsample (same budget and seed), the |E(G)| pairs with the largest
+J[i, j] = y(j | i) / sum_k y(j | k), the larger direction of each pair; the DKT graph and the DKT AUC are cached in
+`graphs_r16/`. `corr`: the |E(G)| pairs whose proportions correct are most correlated across training learners (at least 10 in
+common), directed from the KC met earlier to the one met later. `dpdkt`: degree-preserving rewiring of `dkt`. Both new graphs have
+as many edges as the support graph G of the subsample and no reciprocal pair.
+
+| Analysis | Script | Output |
+|---|---|---|
+| Balanced subsamples, other constructions, Junyi with five subsamples; classes at delta = 0.001, 0.002, 0.003 | `src/r16_analyse.py` | `results_r16/r16_results.json` |
+| Decision-based reference point for delta: regret of the target and easiest-KC rules under a Rasch simulated learner against first-attempt AUC, 16 decision models per corpus at 25% | `src/r16_decision.py` | `results_r16/r16_decision.json` |
+| Unit tests of the graph constructions | `tests/test_kt_graphs.py` (repository root) | |
+
+Run with `PYTHONPATH=<checkout> KT_ROOT=<kt dir with data/> KT_RAW=<raw dir> bash src/r14_runq.sh jobs_r16_e1.txt 2` (then
+`jobs_r16_e2.txt`, `jobs_r16_e3.txt`; the condition `dpdkt_emb` is implemented but was not run), then the two analysis scripts. Prediction
+files are included.
+
 # Release 3.12.0: third version of the IEEE TLT manuscript (analyses only)
 
 Zenodo: 10.5281/zenodo.24435807 (concept DOI 10.5281/zenodo.24131157); this deposit also holds release 3.11.0.
