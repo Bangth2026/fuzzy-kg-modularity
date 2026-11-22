@@ -1,0 +1,3 @@
+junyi_transition ukge 0.003 64 90 rho 0.033 14.4s
+junyi_transition gnn 0.003 64 40 rho 0.037 6.1s
+junyi_transition {'direct_edge': (0.375, 0.662), 'hop_baseline': (0.447, 0.742), 'min': (0.419, 0.734), 'product': (0.448, 0.742), 'lukasiewicz': (0.415, 0.675), 'yager_5': (0.466, 0.748), 'ukge': (0.033, 0.524), 'gnn': (0.037, 0.55)}

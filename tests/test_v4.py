@@ -65,3 +65,10 @@ def test_audit_runs_without_null_test_and_renders():
     rep = audit(G, null_test=False, seeds=range(3))
     md = report_markdown(rep)
     assert "| q0.50 |" in md and "Rule:" in md
+
+
+def test_cut_audit_minimum_excess_blocks_tiny_drops():
+    G = _graph(7, n=80, m=900)
+    cuts = {"q0.90": float(np.quantile(G.mu, 0.9))}
+    strict = cut_audit(G, cuts, seeds=range(3), min_excess=10.0)
+    assert not strict["cuts"]["q0.90"]["flag_qf_drop"] and "10.0" in strict["rule"]

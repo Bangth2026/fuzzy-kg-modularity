@@ -6,8 +6,9 @@
   2. Algorithm 1 (degree null with both decision floors, weights-only nulls with power), unless
      ``null_test=False``;
   3. the cut audit: Q_F drop and rank-coded Q_F drop of every candidate cut over optimiser
-     seeds, read against the no-cut (support) value; a cut is flagged when its mean exceeds the
-     no-cut mean by more than twice the larger of the two seed SDs;
+     seeds, both partitions of a drop re-drawn for every seed, read against the no-cut (support)
+     value; a cut is flagged when its mean exceeds the no-cut mean by more than twice the larger
+     of the two seed SDs and by more than ``min_excess`` (0.01, added in release 4.8.0);
   4. optionally, agreement of every partition with an external grouping of the nodes;
   5. optionally, best paths for the composition operators scored against external prerequisite
      pairs next to the direct edge and the hop distance on the same support, with a cluster
@@ -24,7 +25,7 @@ import numpy as np
 from .graph import FuzzyGraph
 from .modularity import fuzzy_modularity
 
-CUT_RULE = "flag a cut whose audit exceeds the no-cut value by > 2 x max(seed SD)"
+CUT_RULE = "flag a cut whose audit exceeds the no-cut value by > 2 x max(seed SD) and by > {min_excess}"
 
 
 def _leiden(G: FuzzyGraph, seed: int) -> np.ndarray:
@@ -50,8 +51,8 @@ def describe(G: FuzzyGraph) -> Dict:
             "mean_out_degree": float(G.m / max(1, act.size)), "mu_mean": float(G.mu.mean()), "mu_sd": float(G.mu.std())}
 
 
-def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[int] = range(10),
-              grouping: Optional[np.ndarray] = None) -> Dict:
+def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[int] = range(20),
+              grouping: Optional[np.ndarray] = None, min_excess: float = 0.01) -> Dict:
     from sklearn.metrics import adjusted_rand_score as ari
     Gr = FuzzyGraph(G.n, G.src, G.dst, rank_code(G.mu))
     PF = [_leiden(G, s) for s in seeds]; PR = [_leiden(Gr, s) for s in seeds]
@@ -79,8 +80,8 @@ def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[i
         if c == "support" or r.get("empty"):
             continue
         for k in ("qf_drop", "rank_drop"):
-            r[f"flag_{k}"] = bool(r[k] - b[k] > 2 * max(r[k + "_sd"], b[k + "_sd"]))
-    out = {"rule": CUT_RULE, "seeds": len(list(seeds)), "cuts": rows}
+            r[f"flag_{k}"] = bool(r[k] - b[k] > max(2 * max(r[k + "_sd"], b[k + "_sd"]), min_excess))
+    out = {"rule": CUT_RULE.format(min_excess=min_excess), "seeds": len(list(seeds)), "cuts": rows}
     if has is not None:
         v = np.array([ari(gl, p[has]) for p in PF]); out["ari_grouping_PiF"] = float(v.mean())
     return out
@@ -122,7 +123,7 @@ def path_audit(G: FuzzyGraph, pairs_src: np.ndarray, pairs_dst: np.ndarray, y: n
 
 
 def audit(G: FuzzyGraph, cuts: Optional[Dict[str, Optional[float]]] = None, grouping: Optional[np.ndarray] = None,
-          pairs: Optional[tuple] = None, null_test: bool = True, draws: int = 200, seeds: Sequence[int] = range(10)) -> Dict:
+          pairs: Optional[tuple] = None, null_test: bool = True, draws: int = 200, seeds: Sequence[int] = range(20)) -> Dict:
     from .nulltest import best_qf, degree_test, density_matched_floor, structure_matched_floor, weights_only_test, weights_only_power, outcome
     if cuts is None:
         cuts = {f"q{q:.2f}": float(np.quantile(G.mu, q)) for q in (0.25, 0.5, 0.75)}
