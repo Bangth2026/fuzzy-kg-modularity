@@ -152,6 +152,8 @@ Earlier results files are unchanged.
 
 # Release 3.12.0: third version of the IEEE TLT manuscript (analyses only)
 
+Zenodo: 10.5281/zenodo.24435807 (concept DOI 10.5281/zenodo.24131157); this deposit also holds release 3.11.0.
+
 Analyses for the third version of *When Does a Concept Graph Help a Knowledge Tracer? Null-Graph Controls for
 First-Attempt Predictions on Ten Corpora* (IEEE TLT). No model is trained: every number comes from run files of
 releases 3.7.0 to 3.11.0. Supplementary Section S10 of the manuscript reports them.
