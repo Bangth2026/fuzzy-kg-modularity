@@ -1,0 +1,6 @@
+assist2009_kc_copractice {'q0.25': ('cut', 1.0, 1.0), 'q0.50': ('cut', 1.0, 0.95), 'q0.75': ('flagged', 1.0, 1.0)} 23s
+assist2009_kc_transition {'q0.25': ('cut', 0.8, 0.65), 'q0.50': ('flagged', 0.6, 0.95), 'q0.75': ('flagged', 1.0, 0.5)} 16s
+assist2015_kc_copractice {'q0.25': ('cut', 1.0, 1.0), 'q0.50': ('cut', 1.0, 1.0), 'q0.75': ('flagged', 0.95, 0.95)} 47s
+assist2015_kc_transition {'q0.25': ('flagged', 0.1, 0.6), 'q0.50': ('cut', 0.2, 0.95), 'q0.75': ('flagged', 1.0, 1.0)} 35s
+assist2017_kc_copractice {'q0.25': ('cut', 1.0, 1.0), 'q0.50': ('cut', 1.0, 1.0), 'q0.75': ('cut', 1.0, 1.0)} 18s
+assist2017_kc_transition {'q0.25': ('cut', 0.8, 0.2), 'q0.50': ('flagged', 0.9, 0.85), 'q0.75': ('flagged', 1.0, 0.95)} 13s

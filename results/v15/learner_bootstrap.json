@@ -1,0 +1,2444 @@
+{
+ "assist2009_kc_copractice": {
+  "observed": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa_star": 4.255065502465412,
+    "robust": "flagged"
+   }
+  },
+  "boot": [
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.2935102100834825,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.700077618822873,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.8260714794339155,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.777217924132723,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.450794062355996,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.9596449889187926,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.8197175492836655,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.573060401273886,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.067944321083048,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.255065502465412,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.7254878843583805,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.450794062355996,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.782858141653792,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.697588816706493,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.782858141653792,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.5226946514731017,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.5545223556118883,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.2802714564813185,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.5545223556118883,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.882084376196872,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 85.05258154439964,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.37144481261109,
+     "robust": "flagged"
+    }
+   }
+  ],
+  "min_excess": 0.03,
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 0.95,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 4.255065502465412,
+     "robust": "flagged"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     4.040869488041984,
+     4.450794062355996,
+     4.939621473695766
+    ]
+   }
+  },
+  "time_s": 22.636275625000053
+ },
+ "assist2009_kc_transition": {
+  "observed": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa_star": 1.6399996297484472,
+    "robust": "undecided"
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa_star": 1.0273507681793026,
+    "robust": "undecided"
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa_star": 2.2670899410414918,
+    "robust": "flagged"
+   }
+  },
+  "boot": [
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.539926526059492,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.1863661590503345,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.2670899410414918,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.134194403502757,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.3823722273578998,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.7138994312082168,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.2875732003183957,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.1039991779173977,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.810558243027122,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.9427271762092815,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.1652154917032231,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.1673921695684175,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.778279410038923,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.3823722273578998,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.023213025020715,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.2521496890655568,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.0090350448414473,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.2875732003183957,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.5713207233666546,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.0746078283213174,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.6107615346177147,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9282185207891962,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.3097472643005899,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.8768842935762189,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.6107615346177147,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.0090350448414473,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.035137468173687,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9282185207891962,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.6399996297484472,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.4804544143141136,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.539926526059492,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.4074646633398433,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9988548118735103,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.3215808895645087,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.20673406908459,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.2863969449369745,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.018151721718182,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.810558243027122,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.134194403502757,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 2.0169145547303304,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.8902639100224503,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.2409377607517196,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.175743265920711,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.350140084613489,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 5.2802714564813185,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.684854879435839,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.357727142105184,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.548296747979347,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.19708503049573,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.485508017172775,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 5.093675216780136,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.6107615346177147,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.333521432163324,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.8600784018072822,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.357727142105184,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.4590242156305606,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.1863661590503345,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.4144182212566396,
+     "robust": "flagged"
+    }
+   }
+  ],
+  "min_excess": 0.0075,
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": 1.6399996297484472,
+     "robust": "undecided"
+    },
+    "share_same_decision": 0.8,
+    "share_same_robust": 0.65,
+    "kappa_star_quartiles": [
+     1.415867397957164,
+     1.894148461298239,
+     2.497414997730422
+    ]
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.0273507681793026,
+     "robust": "undecided"
+    },
+    "share_same_decision": 0.6,
+    "share_same_robust": 0.95,
+    "kappa_star_quartiles": [
+     1.099078622997341,
+     1.191725594773032,
+     1.3823722273578998
+    ]
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 2.2670899410414918,
+     "robust": "flagged"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 0.5,
+    "kappa_star_quartiles": [
+     1.5794481552564799,
+     1.956010880874953,
+     2.3032149213921693
+    ]
+   }
+  },
+  "time_s": 16.266052553999998
+ },
+ "assist2015_kc_copractice": {
+  "observed": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa_star": 1.2079007474252843,
+    "robust": "undecided"
+   }
+  },
+  "boot": [
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.700077618822873,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.778279410038923,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.6253148373118644,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.7465760476621182,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.4330125702369627,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.3455698580999509,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.8600784018072822,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.5678788438269704,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.715437896342879,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": 1.036632928437698,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.3823722273578998,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.2748783617709827,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.6697684466455622,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.6107615346177147,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.5678788438269704,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.329096592460546,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.6253148373118644,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.4330125702369627,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.3455698580999509,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.810558243027122,
+     "robust": "undecided"
+    }
+   }
+  ],
+  "min_excess": 0.03,
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.2079007474252843,
+     "robust": "undecided"
+    },
+    "share_same_decision": 0.95,
+    "share_same_robust": 0.95,
+    "kappa_star_quartiles": [
+     1.4203524845171969,
+     1.6180381859647897,
+     1.7232224341726887
+    ]
+   }
+  },
+  "time_s": 46.88717900699976
+ },
+ "assist2015_kc_transition": {
+  "observed": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa_star": 1.0,
+    "robust": "undecided"
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa_star": 1.084316958237171,
+    "robust": "undecided"
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa_star": 2.8133175148587766,
+    "robust": "flagged"
+   }
+  },
+  "boot": [
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.2079007474252843,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.392799173428138,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.4722065648435405,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.2634629176544685,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.548296747979347,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.86438407149338,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.9109529749704406,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.4289112935751365,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9632190067904056,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.6548170999431815,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.2670899410414918,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9456400615886358,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.6399996297484472,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.4289112935751365,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.229826225655732,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.392799173428138,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9632190067904056,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.144441900797323,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.86438407149338,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.350140084613489,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.2079007474252843,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.2196784442513793,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 6.611690262414817,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.2980195990183812,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.7138994312082168,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.3215808895645087,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 2.6179946215854,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.6847349186952174,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.539926526059492,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.1547819846894583,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.03151936286044,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 3.9954205589498866,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.036632928437698,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.308241526761366,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.9109529749704406,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.0746078283213174,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.7881266654131336,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.39486202241965,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.4201811696858717,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.4144182212566396,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.0169145547303304,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.175743265920711,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.86438407149338,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 4.531583637600819,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.39486202241965,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.4598916608699333,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 2.9163775740531204,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.9456400615886358,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.889051999280318,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.8269167179409245,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.055449600878603,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.2487683833702317,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.19708503049573,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.8938420273308882,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.3677802830688903,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.036632928437698,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.6655157314161153,
+     "robust": "flagged"
+    }
+   }
+  ],
+  "min_excess": 0.0075,
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.0,
+     "robust": "undecided"
+    },
+    "share_same_decision": 0.1,
+    "share_same_robust": 0.6,
+    "kappa_star_quartiles": [
+     1.4528704292375678,
+     1.9544295341895208,
+     2.877382447133315
+    ]
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    },
+    "share_same_decision": 0.2,
+    "share_same_robust": 0.95,
+    "kappa_star_quartiles": [
+     1.1521969637164244,
+     1.2466445716551002,
+     1.6437039972971308
+    ]
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 2.8133175148587766,
+     "robust": "flagged"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     2.51482711629867,
+     2.86438407149338,
+     3.4289112935751365
+    ]
+   }
+  },
+  "time_s": 34.94901326199988
+ },
+ "assist2017_kc_copractice": {
+  "observed": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   },
+   "q0.75": {
+    "decision": "cut",
+    "kappa_star": Infinity,
+    "robust": "cut"
+   }
+  },
+  "boot": [
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   }
+  ],
+  "min_excess": 0.03,
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 1.0,
+    "kappa_star_quartiles": [
+     1000.0,
+     1000.0,
+     1000.0
+    ]
+   }
+  },
+  "time_s": 18.24059877100035
+ },
+ "assist2017_kc_transition": {
+  "observed": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa_star": 3.1622776601683795,
+    "robust": "cut"
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa_star": 1.8269167179409245,
+    "robust": "undecided"
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa_star": 6.731703824144983,
+    "robust": "flagged"
+   }
+  },
+  "boot": [
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.2863969449369745,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.778279410038923,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.9163775740531204,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.715437896342879,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.036632928437698,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.9988548118735103,
+     "robust": "undecided"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.485508017172775,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.6253148373118644,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.785515249258631,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.144441900797323,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.6548170999431815,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.2196784442513793,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.357727142105184,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.4590242156305606,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.6847349186952174,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 6.152654101490373,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.9809567785503388,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.2487683833702317,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.0459989534302536,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.4989296487202608,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.889051999280318,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.0746078283213174,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.6107615346177147,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.9961427410043635,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.548296747979347,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.8768842935762189,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.067944321083048,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.3455698580999509,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.064985635350429,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.4144182212566396,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 2.1287516617963727,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.229826225655732,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.8902639100224503,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.5963385442879423,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.39486202241965,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.332302267358799,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.5124725453106234,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.9632190067904056,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.093675216780136,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.1863661590503345,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 3.2487683833702317,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.186134191837929,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.7943462442492473,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 2.20673406908459,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 5.093675216780136,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.036632928437698,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.357727142105184,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.1622776601683795,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.8938420273308882,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.055449600878603,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.1673921695684175,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.333521432163324,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.7943462442492473,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.6655157314161153,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 3.75161920154464,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.0,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.308241526761366,
+     "robust": "flagged"
+    }
+   },
+   {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.2634629176544685,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 2.1096905134061714,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 3.75161920154464,
+     "robust": "flagged"
+    }
+   }
+  ],
+  "min_excess": 0.0075,
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": 3.1622776601683795,
+     "robust": "cut"
+    },
+    "share_same_decision": 0.8,
+    "share_same_robust": 0.2,
+    "kappa_star_quartiles": [
+     1.244188728003435,
+     1.4216175796389794,
+     1.8192201900196574
+    ]
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.8269167179409245,
+     "robust": "undecided"
+    },
+    "share_same_decision": 0.9,
+    "share_same_robust": 0.85,
+    "kappa_star_quartiles": [
+     1.325751912992821,
+     1.6180381859647897,
+     1.8984679718797657
+    ]
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 6.731703824144983,
+     "robust": "flagged"
+    },
+    "share_same_decision": 1.0,
+    "share_same_robust": 0.95,
+    "kappa_star_quartiles": [
+     2.8340768653708666,
+     3.2342234138108052,
+     3.9337750797310003
+    ]
+   }
+  },
+  "time_s": 12.884249888999875
+ }
+}

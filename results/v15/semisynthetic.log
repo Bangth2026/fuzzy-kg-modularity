@@ -1,0 +1,192 @@
+p0.6_n0.1_i0.0_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'f3.37', 'f14.7'], 'transition': ['f7.37', 'f43.7', 'finf']}
+p0.6_n0.1_i0.0_s0.0_N400_seed1 5s {'co-practice': ['cinf', 'f2.41', 'f15.7'], 'transition': ['f1.41', 'f88.2', 'finf']}
+p0.6_n0.1_i0.0_s0.0_N1500_seed0 7s {'co-practice': ['c4.96', 'f1.23', 'f3.34'], 'transition': ['f2.62', 'f66.1', 'finf']}
+p0.6_n0.1_i0.0_s0.0_N1500_seed1 6s {'co-practice': ['cinf', 'f1.84', 'f4.78'], 'transition': ['f15.4', 'f97.3', 'finf']}
+p0.6_n0.1_i0.0_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'f3.59', 'f15'], 'transition': ['c3.72', 'f21.5', 'finf']}
+p0.6_n0.1_i0.0_s0.2_N400_seed1 5s {'co-practice': ['cinf', 'f3.43', 'f11.8'], 'transition': ['c2.94', 'f21.9', 'finf']}
+p0.6_n0.1_i0.0_s0.2_N1500_seed0 5s {'co-practice': ['cinf', 'f1.39', 'f3.46'], 'transition': ['cinf', 'f10.6', 'finf']}
+p0.6_n0.1_i0.0_s0.2_N1500_seed1 6s {'co-practice': ['c6.85', 'f2.31', 'f3.62'], 'transition': ['c1.81', 'f7.23', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'c6.1', 'f24.6'], 'transition': ['f5.23', 'f46.6', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.0_N400_seed1 7s {'co-practice': ['cinf', 'c69.8', 'c31.1'], 'transition': ['f8.58', 'f36.8', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f1.81', 'f3.31'], 'transition': ['f2.48', 'f54.2', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.0_N1500_seed1 7s {'co-practice': ['cinf', 'f1.26', 'f3.92'], 'transition': ['f5.57', 'f39.6', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'cinf', 'cinf'], 'transition': ['c10.9', 'f22.3', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.2_N400_seed1 5s {'co-practice': ['cinf', 'cinf', 'f14.3'], 'transition': ['f4.29', 'f10.5', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.2_N1500_seed0 6s {'co-practice': ['c2.29', 'f1.46', 'f3.25'], 'transition': ['cinf', 'f12.5', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.1_i0.3_s0.2_N1500_seed1 7s {'co-practice': ['c1.65', 'f2.57', 'f1.89'], 'transition': ['cinf', 'f7.77', 'f77.7']}
+p0.6_n0.4_i0.0_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'f1.81', 'f2.59'], 'transition': ['c1.47', 'f8.35', 'f52.3']}
+p0.6_n0.4_i0.0_s0.0_N400_seed1 6s {'co-practice': ['cinf', 'f2.62', 'f3.92'], 'transition': ['cinf', 'f14.7', 'f66.7']}
+p0.6_n0.4_i0.0_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f1.98', 'f3.11'], 'transition': ['c1.25', 'c4.37', 'f18.3']}
+p0.6_n0.4_i0.0_s0.0_N1500_seed1 6s {'co-practice': ['cinf', 'f1.49', 'f3.19'], 'transition': ['c18.8', 'f3.19', 'f26.2']}
+p0.6_n0.4_i0.0_s0.2_N400_seed0 7s {'co-practice': ['c13.9', 'f1.49', 'f2.74'], 'transition': ['c2.19', 'f8.28', 'f54.7']}
+p0.6_n0.4_i0.0_s0.2_N400_seed1 6s {'co-practice': ['cinf', 'c1.14', 'f2.13'], 'transition': ['cinf', 'f15.4', 'f82.8']}
+p0.6_n0.4_i0.0_s0.2_N1500_seed0 6s {'co-practice': ['cinf', 'f1.46', 'f2.5'], 'transition': ['cinf', 'c1.02', 'f20']}
+p0.6_n0.4_i0.0_s0.2_N1500_seed1 7s {'co-practice': ['cinf', 'f2.21', 'f2.81'], 'transition': ['c1.89', 'f7.64', 'f24.1']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.0_N400_seed0 5s {'co-practice': ['cinf', 'cinf', 'f4.49'], 'transition': ['cinf', 'f7.91', 'f71']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.0_N400_seed1 5s {'co-practice': ['cinf', 'cinf', 'c2.67'], 'transition': ['cinf', 'f5.28', 'f61']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f4.14', 'f5.99'], 'transition': ['cinf', 'f2.02', 'f24.6']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.0_N1500_seed1 7s {'co-practice': ['c14.9', 'f1.02', 'f6.04'], 'transition': ['c5.05', 'f2.69', 'f16']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'cinf', 'c4.74'], 'transition': ['cinf', 'f17.2', 'f78.4']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.2_N400_seed1 5s {'co-practice': ['cinf', 'cinf', 'f4.07'], 'transition': ['cinf', 'f10.4', 'f51.9']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.2_N1500_seed0 6s {'co-practice': ['cinf', 'f5.05', 'f4.66'], 'transition': ['cinf', 'f1.67', 'f23.5']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.6_n0.4_i0.3_s0.2_N1500_seed1 7s {'co-practice': ['c3.46', 'f3', 'f5.94'], 'transition': ['cinf', 'c2.02', 'f25.3']}
+p0.8_n0.1_i0.0_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'f4.14', 'f21.3'], 'transition': ['f3.31', 'f85.1', 'finf']}
+p0.8_n0.1_i0.0_s0.0_N400_seed1 6s {'co-practice': ['cinf', 'f3.49', 'f12.4'], 'transition': ['f6.44', 'f72.3', 'finf']}
+p0.8_n0.1_i0.0_s0.0_N1500_seed0 6s {'co-practice': ['cinf', 'f2.33', 'f4.91'], 'transition': ['f1.58', 'f95.6', 'finf']}
+p0.8_n0.1_i0.0_s0.0_N1500_seed1 6s {'co-practice': ['c11.1', 'f2.15', 'f5.62'], 'transition': ['c14.6', 'f64.9', 'finf']}
+p0.8_n0.1_i0.0_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'f3.19', 'f9.82'], 'transition': ['f1.05', 'f40.7', 'finf']}
+p0.8_n0.1_i0.0_s0.2_N400_seed1 5s {'co-practice': ['cinf', 'f3.22', 'f18.6'], 'transition': ['f1.03', 'f16.4', 'finf']}
+p0.8_n0.1_i0.0_s0.2_N1500_seed0 6s {'co-practice': ['cinf', 'f1.95', 'f5.09'], 'transition': ['f1.7', 'f27.9', 'finf']}
+p0.8_n0.1_i0.0_s0.2_N1500_seed1 6s {'co-practice': ['c6.21', 'f1.09', 'f3.68'], 'transition': ['cinf', 'f12.6', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.0_N400_seed0 5s {'co-practice': ['cinf', 'c1.14', 'cinf'], 'transition': ['f3.55', 'f50.9', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.0_N400_seed1 6s {'co-practice': ['cinf', 'cinf', 'f5.73'], 'transition': ['f6.55', 'f44.5', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f3.65', 'f4.57'], 'transition': ['f1.25', 'f64.4', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.0_N1500_seed1 7s {'co-practice': ['cinf', 'f5.05', 'f11.1'], 'transition': ['c1.36', 'f48.3', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'f3.46', 'f8.58'], 'transition': ['f1.42', 'f27.1', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.2_N400_seed1 5s {'co-practice': ['cinf', 'cinf', 'f1.86'], 'transition': ['c1.01', 'f29.7', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.2_N1500_seed0 7s {'co-practice': ['cinf', 'c3.62', 'f2.02'], 'transition': ['f1.6', 'f25.7', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.1_i0.3_s0.2_N1500_seed1 6s {'co-practice': ['cinf', 'f1.41', 'f5'], 'transition': ['c3.4', 'f13.2', 'finf']}
+p0.8_n0.4_i0.0_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'f1.38', 'f2.67'], 'transition': ['cinf', 'f6.92', 'f42.9']}
+p0.8_n0.4_i0.0_s0.0_N400_seed1 6s {'co-practice': ['cinf', 'f1.12', 'f2.15'], 'transition': ['cinf', 'f9.39', 'f60.4']}
+p0.8_n0.4_i0.0_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f2.35', 'f3.52'], 'transition': ['c64.4', 'f2.05', 'f25.9']}
+p0.8_n0.4_i0.0_s0.0_N1500_seed1 6s {'co-practice': ['cinf', 'f1.39', 'f2.57'], 'transition': ['cinf', 'c2.79', 'f21.5']}
+p0.8_n0.4_i0.0_s0.2_N400_seed0 6s {'co-practice': ['c10.4', 'f1.1', 'f3.02'], 'transition': ['cinf', 'f11.4', 'f67.9']}
+p0.8_n0.4_i0.0_s0.2_N400_seed1 6s {'co-practice': ['cinf', 'f1.19', 'f2.13'], 'transition': ['cinf', 'f10.4', 'f74.3']}
+p0.8_n0.4_i0.0_s0.2_N1500_seed0 7s {'co-practice': ['cinf', 'f2.02', 'f2.86'], 'transition': ['c15.4', 'f1.2', 'f32.8']}
+p0.8_n0.4_i0.0_s0.2_N1500_seed1 6s {'co-practice': ['cinf', 'f1.6', 'f1.96'], 'transition': ['cinf', 'f2.23', 'f21.7']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'cinf', 'f6.38'], 'transition': ['c2.53', 'f6.26', 'f60.4']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.0_N400_seed1 5s {'co-practice': ['cinf', 'c2.07', 'cinf'], 'transition': ['cinf', 'f3.82', 'f55.2']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.0_N1500_seed0 8s {'co-practice': ['f1.15', 'f2.5', 'f5.88'], 'transition': ['c7.23', 'f3.31', 'f29.2']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.0_N1500_seed1 7s {'co-practice': ['cinf', 'f2.97', 'f14.5'], 'transition': ['cinf', 'f3.37', 'f30.5']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.2_N400_seed0 7s {'co-practice': ['cinf', 'f1.78', 'f12.7'], 'transition': ['c1.23', 'f9.47', 'f45.3']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.2_N400_seed1 7s {'co-practice': ['cinf', 'cinf', 'cinf'], 'transition': ['c10.2', 'f2.71', 'f60.4']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.2_N1500_seed0 6s {'co-practice': ['cinf', 'cinf', 'f18.6'], 'transition': ['cinf', 'cinf', 'f36.8']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.8_n0.4_i0.3_s0.2_N1500_seed1 7s {'co-practice': ['cinf', 'f3.11', 'f8.13'], 'transition': ['cinf', 'f1.27', 'f25.5']}
+p0.95_n0.1_i0.0_s0.0_N400_seed0 5s {'co-practice': ['cinf', 'f6.1', 'f15.1'], 'transition': ['f26.2', 'finf', 'finf']}
+p0.95_n0.1_i0.0_s0.0_N400_seed1 5s {'co-practice': ['cinf', 'f3.85', 'f16.8'], 'transition': ['f21.1', 'finf', 'finf']}
+p0.95_n0.1_i0.0_s0.0_N1500_seed0 6s {'co-practice': ['cinf', 'f2.07', 'f4.74'], 'transition': ['f20.9', 'finf', 'finf']}
+p0.95_n0.1_i0.0_s0.0_N1500_seed1 6s {'co-practice': ['cinf', 'f2.25', 'f3.65'], 'transition': ['f17.8', 'finf', 'finf']}
+p0.95_n0.1_i0.0_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'f2.31', 'f19.8'], 'transition': ['c3.28', 'f16', 'finf']}
+p0.95_n0.1_i0.0_s0.2_N400_seed1 5s {'co-practice': ['cinf', 'f2.41', 'f19.5'], 'transition': ['f1.32', 'f24.4', 'finf']}
+p0.95_n0.1_i0.0_s0.2_N1500_seed0 6s {'co-practice': ['c8.98', 'f1.91', 'f2.84'], 'transition': ['c2.17', 'f11', 'finf']}
+p0.95_n0.1_i0.0_s0.2_N1500_seed1 6s {'co-practice': ['cinf', 'f1.84', 'f4.53'], 'transition': ['f1.12', 'f18.1', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.0_N400_seed0 5s {'co-practice': ['cinf', 'cinf', 'cinf'], 'transition': ['f13.9', 'f77', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.0_N400_seed1 5s {'co-practice': ['cinf', 'cinf', 'cinf'], 'transition': ['f15.5', 'f67.3', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.0_N1500_seed0 6s {'co-practice': ['cinf', 'f2.57', 'f4.07'], 'transition': ['f21.3', 'finf', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.0_N1500_seed1 7s {'co-practice': ['cinf', 'f4.29', 'f10.6'], 'transition': ['f6.85', 'f63.2', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'cinf', 'f6.49'], 'transition': ['c1.55', 'f14.6', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.2_N400_seed1 6s {'co-practice': ['cinf', 'c44.5', 'f10.5'], 'transition': ['f2.09', 'f31.9', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.2_N1500_seed0 6s {'co-practice': ['cinf', 'c1.25', 'f2.53'], 'transition': ['cinf', 'f8.9', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.1_i0.3_s0.2_N1500_seed1 7s {'co-practice': ['cinf', 'f10.6', 'f10'], 'transition': ['f1.29', 'f15.3', 'finf']}
+p0.95_n0.4_i0.0_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'f1.53', 'f3.19'], 'transition': ['cinf', 'f8.13', 'f61.5']}
+p0.95_n0.4_i0.0_s0.0_N400_seed1 6s {'co-practice': ['cinf', 'f1.65', 'f3.49'], 'transition': ['f1.15', 'f8.28', 'finf']}
+p0.95_n0.4_i0.0_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f1.68', 'f2.48'], 'transition': ['c3.65', 'f4.26', 'f28.4']}
+p0.95_n0.4_i0.0_s0.0_N1500_seed1 7s {'co-practice': ['cinf', 'f2.39', 'f3.52'], 'transition': ['c1.41', 'f2.07', 'f28.6']}
+p0.95_n0.4_i0.0_s0.2_N400_seed0 7s {'co-practice': ['cinf', 'c1.7', 'f2.92'], 'transition': ['c9.73', 'f4.91', 'f47']}
+p0.95_n0.4_i0.0_s0.2_N400_seed1 7s {'co-practice': ['cinf', 'f2.37', 'f2.69'], 'transition': ['cinf', 'f8.43', 'f65.5']}
+p0.95_n0.4_i0.0_s0.2_N1500_seed0 6s {'co-practice': ['cinf', 'f2.13', 'f2.94'], 'transition': ['cinf', 'c1.68', 'f23.3']}
+p0.95_n0.4_i0.0_s0.2_N1500_seed1 6s {'co-practice': ['cinf', 'f1.81', 'f13.7'], 'transition': ['cinf', 'f1.98', 'f21.3']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.0_N400_seed0 6s {'co-practice': ['cinf', 'cinf', 'f5.99'], 'transition': ['c1.31', 'f12.6', 'f63.8']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.0_N400_seed1 5s {'co-practice': ['cinf', 'cinf', 'f5.28'], 'transition': ['f2.31', 'f9.56', 'finf']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.0_N1500_seed0 7s {'co-practice': ['cinf', 'f2.02', 'f10.2'], 'transition': ['c8.13', 'f5.42', 'f30']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.0_N1500_seed1 7s {'co-practice': ['cinf', 'f2.94', 'f13.6'], 'transition': ['c5.23', 'f3.11', 'f26.4']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.2_N400_seed0 5s {'co-practice': ['cinf', 'cinf', 'c1.02'], 'transition': ['cinf', 'f10.5', 'f49.1']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.2_N400_seed1 6s {'co-practice': ['cinf', 'cinf', 'f2.29'], 'transition': ['c1.01', 'f28.6', 'f81.3']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.2_N1500_seed0 8s {'co-practice': ['cinf', 'cinf', 'f14.7'], 'transition': ['c28.4', 'c7.43', 'f36.2']}
+/home/claude/fuzzy-kg-modularity/scripts/v15_semisynthetic.py:72: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return float(spearmanr(score[mask], T[mask]).correlation)
+p0.95_n0.4_i0.3_s0.2_N1500_seed1 7s {'co-practice': ['c4.7', 'f4.03', 'f8.2'], 'transition': ['cinf', 'f1.46', 'f34.3']}

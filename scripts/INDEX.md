@@ -105,3 +105,12 @@ Scripts keep the name of the release that introduced them (prefix `v4_` to `v13_
 | `weights_null_more_draws.py` | - | Weights-only nulls (global and row) with more draws for one graph. |
 | `v14_gamma_step3.py` | v14 | Step 3 of Algorithm 2 at gamma 0.5, 1 and 2 on the thirteen real graphs, with community counts (results/v14/gamma_step3.json). |
 | `v13_absolute_reading.py` | v13 | Absolute reading of step 3 where the no-cut drop exceeds 0.05, and the permutation reference of step 4 (results/v13/absolute_reading.json). |
+| `v15_checks.py` | v15 | Numerical check of Proposition 1, check of the kappa* search and cost of the unit-robust audit (Supplementary S17). |
+| `v15_crossdomain.py` | v15 | Path results and path value of the grades on PPI5k and CN15k (Section 8). |
+| `v15_figures.py` | v15 | Figures 1 to 3 of the release 5.0.0 manuscript. |
+| `v15_learner_bootstrap.py` | v15 | Stability of the step-3 decisions under a bootstrap of the learners (Section 8.2). |
+| `v15_partitions.py` | v15 | Cached Leiden partitions of the 23 graphs reused by every v15 script. |
+| `v15_semisynthetic.py` | v15 | Semi-synthetic logs with a known answer: the audit, paths and value of grades (Section 7). |
+| `v15_simplex_real.py` | v15 | Unit-robust cut audit (Algorithm 1) on the 23 real graphs (Section 8.2). |
+| `v15_summarise.py` | v15 | Collects every number of the release 5.0.0 manuscript into results/v15/summary.json. |
+| `v15_value_paths.py` | v15 | Value of grades at three levels, connectivity level and hop-penalised score on the real graphs (Sections 8.1, 8.3). |

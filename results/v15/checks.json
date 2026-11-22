@@ -1,0 +1,15 @@
+{
+ "proposition1_max_abs_error": 2.4868995751603507e-14,
+ "proposition1_evaluations": 200,
+ "kappa_search": {
+  "cuts": 69,
+  "reversals_inside_0.99kappa": 0,
+  "finite_kappa": 47,
+  "reversal_found_at_1.25kappa": 47
+ },
+ "junyi_copractice_step3_partitions_s": 47.40128310099999,
+ "junyi_copractice_stats_s": 2.2337667100000544,
+ "junyi_copractice_1e6_rescalings_s": 2.519581628999731,
+ "junyi_copractice_kappa_search_s": 0.07202980700003536,
+ "junyi_copractice_one_leiden_on_QF_s": 0.6342178859999876
+}

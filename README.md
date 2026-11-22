@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.11.0 below, which answers the latest review).
+> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 5.0.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.12.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983, version 3.12.0 (with 3.11.0): 10.5281/zenodo.24435807; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the first revision, 3.11.0 those of the second (with a preregistered replication on two held-out corpora; plan in `kt/prereg/`), and 3.12.0 the analyses of the third version (entry point x edge term, claims at three smallest effects of interest, regret under a Rasch simulated learner); see `kt/README.md`.
 
@@ -21,6 +21,23 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4, and `--gamma` (version 4.11.0) for the resolution, 1 by default); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 5.0.0
+
+The analyses of the restructured manuscript (A). New code in `fuzzykg/simplex.py`, `fuzzykg/pathscore.py` and `fuzzykg/semisynthetic.py`, new results in `results/v15/`, figures in `docs/v5_figure*.{png,pdf}`, and `docs/paper_map_r10.md` maps every table and figure to its script. No earlier result file changes. Every number of the manuscript is in `results/v15/summary.json`.
+
+| Topic | Script | Output |
+|---|---|---|
+| Leiden partitions of the 23 educational graphs (support, quantile cuts, Q_F; nine resolutions; global and row permutations) reused by every v15 script | `scripts/v15_partitions.py` | `results/v15/partitions/*.npz` |
+| Unit-robust cut audit (Algorithm 1): excess of a cut in closed form over a cone of increasing rescalings (Proposition 1), its range over the family (Proposition 2), robustness radius kappa*, resolution sweep, minimum excess 0.0025 to 0.05, external groupings | `scripts/v15_simplex_real.py` | `results/v15/simplex_real.json` |
+| Semi-synthetic learner logs from a known prerequisite DAG with known communities (96 worlds, 192 graphs): audit against the true loss, calibration of the minimum excess, paths, value of grades | `scripts/v15_semisynthetic.py` | `results/v15/semisynthetic.json` |
+| Value of grades (edge, path, partition) with global and row nulls on the Junyi graphs and the graphs with a grouping; connectivity level of max-min (Proposition 3); hop-penalised score with cross-fitted lambda | `scripts/v15_value_paths.py` | `results/v15/value_paths.json` |
+| The same path analyses on PPI5k and CN15k | `scripts/v15_crossdomain.py` | `results/v15/crossdomain.json` |
+| Stability of the decisions under a bootstrap of the learners (ASSISTments KC level, both constructions) | `scripts/v15_learner_bootstrap.py` | `results/v15/learner_bootstrap.json` |
+| Numerical check of Proposition 1, check of the kappa* search, cost on Junyi co-practice | `scripts/v15_checks.py`, `tests/test_simplex.py` | `results/v15/checks.json` |
+| All numbers of the manuscript; Figures 1 to 3 | `scripts/v15_summarise.py`, `scripts/v15_figures.py` | `results/v15/summary.json`, `docs/v5_figure*` |
+
+Run order: `v15_partitions.py`, `v15_simplex_real.py`, `v15_semisynthetic.py`, `v15_value_paths.py`, `v15_crossdomain.py`, `v15_summarise.py` (selects the minimum excess by density class on the calibration worlds), `v15_learner_bootstrap.py` and `v15_checks.py` (both read the selected values), `v15_summarise.py` again, `v15_figures.py`. Files ending in `_pass1.json` and `learner_bootstrap_delta0.01.json` are the first passes, run before the minimum excess was calibrated, kept for transparency. The Junyi problem log is not needed by any v15 script (the graphs are in `data/graphs/`); the Junyi exercise table and annotation files are.
 
 ## What is in version 4.11.0
 
