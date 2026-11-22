@@ -160,7 +160,7 @@ releases 3.7.0 to 3.11.0. Supplementary Section S10 of the manuscript reports th
 |---|---|---|
 | Entry point x edge term: (G - DP) in the state channel minus (G - DP) in the embedding refinement, and the same for the degree, KC-input and total terms, on the 32 units at 10% that carry both ladders (`runs_r9`, `runs_r7`, `runs_r13`); every ladder term with its 90% interval, TOST p and class at delta = 0.001, 0.002, 0.003; the update-budget gain at 10% (`runs_r6`) | `src/r15_analyse.py` | `results_r15/r15_results.json` |
 | Each claim of Table VI at delta = 0.001, 0.002, 0.003 (classes B, N, S, E, U; intervals of release 3.11.0 taken from Supplementary Section S9) | `src/r15_delta.py` | `results_r15/r15_delta.json` |
-| Regret of next-KC choices at 25% (support graph seed 0, control seeds 0 and 100; candidate files of `runs_r13`) under four simulated learners: the empty, support and random-code probes at 100% (seed 0) and a Rasch model fitted to the test learners' answers | `src/r15_regret.py` | `results_r15/r15_regret.json` |
+| Regret of next-KC choices at 25% (support graph and control, seeds 0, 100, 200; candidate files of `runs_r13`, `runs_r14`) under six simulated learners: the empty, support and random-code probes at 100% (seed 0), the three-seed means of the empty and support probes (reproducing Supplementary Table S9.19) and a Rasch model fitted to the test learners' answers | `src/r15_regret.py` | `results_r15/r15_regret.json` |
 | Update-budget gain at 10% with subsamples 0 and 1 only on every corpus | `src/r15_subsample2.py` | `results_r15/r15_subsample2.json` |
 
 Run with `python src/r15_analyse.py && python src/r15_delta.py && python src/r15_regret.py && python src/r15_subsample2.py`
