@@ -27,7 +27,7 @@ references:
     title: "When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora"
     journal: IEEE Transactions on Learning Technologies
     year: 2026
-    notes: submitted; code in kt/ (releases 2.0.0 to 3.10.0, Zenodo 10.5281/zenodo.24131157)
+    notes: submitted; code in kt/ (releases 2.0.0 to 3.12.0, Zenodo 10.5281/zenodo.24131157)
     authors:
       - family-names: Truong
         given-names: Hai Bang
