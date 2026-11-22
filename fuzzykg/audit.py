@@ -13,10 +13,17 @@
      is meaningful (``unit="meaningful"``: a count share, or a released or calibrated score) the
      Q_F drop on mu_E decides; where it is arbitrary (``unit="arbitrary"``: a weighted combination
      whose weights the builder chose) a cut is cut only when both drops pass, flagged when both
-     flag, and "undecided" when they disagree (keep the graded graph unless step 4 shows no loss,
-     or fix a unit first). A no-cut drop above 0.05 is reported as a warning, since the rule is
-     relative to that baseline;
-  4. optionally, agreement of every partition with an external grouping of the nodes;
+     flag, and "undecided" when they disagree (keep the graded graph unless step 4 shows no loss).
+     A no-cut drop above 0.05 is reported as a warning, since the rule is relative to that
+     baseline; from release 4.10.0 such a graph is also read on the absolute drops (a cut is
+     flagged when its own mean drop exceeds 2 x its seed SD and ``min_excess``), and a cut is
+     flagged when either reading flags it;
+  4. optionally, agreement of every partition with an external grouping of the nodes. From
+     release 4.10.0 the grouping is first checked against a permutation reference: the ARI of the
+     best of three seeds of G_F is compared with the same quantity on ``perm_draws`` row-wise
+     permutations of mu_E (out-strengths kept). Only a grouping that the graded partition matches
+     above the 95th percentile of that reference can show that an undecided cut loses nothing;
+     otherwise the cut stays undecided;
   5. optionally, best paths for the composition operators scored against external prerequisite
      pairs next to the direct edge and the hop distance on the same support, with a cluster
      bootstrap over items for every difference to the hop distance;
@@ -35,9 +42,9 @@ from .modularity import fuzzy_modularity
 CUT_RULE = "flag a cut whose audit exceeds the no-cut value by > 2 x max(seed SD) and by > {min_excess}"
 UNIT_RULE = {"meaningful": "the Q_F drop on mu_E decides; the rank-coded drop is reported beside it",
              "arbitrary": "cut when both drops pass, flagged when both flag, undecided when they disagree "
-                          "(keep the graded graph unless an independent grouping shows no loss, or fix a unit first)",
+                          "(keep the graded graph unless an independent grouping, matched above its permutation reference, shows no loss)",
              None: "unit not stated: both flags reported, no decision where they disagree"}
-BASELINE_WARNING = 0.05
+BASELINE_WARNING = 0.05  # fixed in release 4.9.0 after the drops under x^3 had been seen
 
 
 def decide(flag_mu: bool, flag_rank: bool, unit: Optional[str]) -> str:
@@ -74,9 +81,33 @@ def describe(G: FuzzyGraph) -> Dict:
             "mean_out_degree": float(G.m / max(1, act.size)), "mu_mean": float(G.mu.mean()), "mu_sd": float(G.mu.std())}
 
 
+def _best_of(G: FuzzyGraph, seeds: Sequence[int]) -> np.ndarray:
+    P = [_leiden(G, s) for s in seeds]
+    return max(P, key=lambda p: fuzzy_modularity(G, p))
+
+
+def grouping_reference(G: FuzzyGraph, gl: np.ndarray, has: np.ndarray, draws: int = 20, seed: int = 3) -> Dict:
+    """Permutation reference of step 4 (release 4.10.0): ARI of the best of three seeds of G_F
+    with the grouping, against the same quantity on row-wise permutations of mu_E."""
+    from sklearn.metrics import adjusted_rand_score as ari
+    from .nulltest import permute_rows
+    rng = np.random.default_rng(seed)
+    obs = float(ari(gl, _best_of(G, range(3))[has]))
+    ref = np.array([ari(gl, _best_of(permute_rows(G, rng), range(3))[has]) for _ in range(draws)])
+    p95 = float(np.percentile(ref, 95))
+    return {"ari_best3": obs, "perm_mean": float(ref.mean()), "perm_p95": p95,
+            "n_perm_at_or_above": int((ref >= obs).sum()), "draws": int(draws), "informative": bool(obs > p95)}
+
+
+def step4_no_loss(r: Dict, piF_mean: float, piF_sd: float) -> bool:
+    """A cut loses nothing on the grouping when its mean ARI is not below that of Pi_F by more
+    than 2 x the larger seed SD."""
+    return bool(piF_mean - r["ari_grouping"] <= 2 * max(piF_sd, r["ari_grouping_sd"]))
+
+
 def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[int] = range(20),
               grouping: Optional[np.ndarray] = None, min_excess: float = 0.01,
-              unit: Optional[str] = None) -> Dict:
+              unit: Optional[str] = None, perm_draws: int = 20) -> Dict:
     if unit not in UNIT_RULE:
         raise ValueError("unit must be 'meaningful', 'arbitrary' or None")
     from sklearn.metrics import adjusted_rand_score as ari
@@ -102,19 +133,39 @@ def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[i
             v = np.array([ari(gl, p[has]) for p in P]); r["ari_grouping"] = float(v.mean()); r["ari_grouping_sd"] = float(v.std(ddof=1))
         rows[c] = r
     b = rows["support"]
+    warn = [k for k in ("qf_drop", "rank_drop") if b.get(k, 0.0) > BASELINE_WARNING]
     for c, r in rows.items():
         if c == "support" or r.get("empty"):
             continue
         for k in ("qf_drop", "rank_drop"):
-            r[f"flag_{k}"] = bool(r[k] - b[k] > max(2 * max(r[k + "_sd"], b[k + "_sd"]), min_excess))
+            rel = bool(r[k] - b[k] > max(2 * max(r[k + "_sd"], b[k + "_sd"]), min_excess))
+            r[f"flag_{k}_relative"] = rel
+            if k in warn:  # release 4.10.0: the relative rule has lost resolution; read the absolute drop too
+                r[f"flag_{k}_absolute"] = bool(r[k] > max(2 * r[k + "_sd"], min_excess))
+                r[f"flag_{k}"] = rel or r[f"flag_{k}_absolute"]
+            else:
+                r[f"flag_{k}"] = rel
         r["decision"] = decide(r["flag_qf_drop"], r["flag_rank_drop"], unit)
-    warn = [k for k in ("qf_drop", "rank_drop") if b.get(k, 0.0) > BASELINE_WARNING]
     out = {"rule": CUT_RULE.format(min_excess=min_excess), "unit": unit, "unit_rule": UNIT_RULE[unit],
            "seeds": len(list(seeds)), "cuts": rows,
            "baseline_warning": [f"no-cut {k} {b[k]:.3f} > {BASELINE_WARNING}: the relative rule loses resolution; "
-                                f"read the absolute drops as well" for k in warn]}
+                                f"absolute drops read as well, a cut flagged when either reading flags it" for k in warn]}
     if has is not None:
-        v = np.array([ari(gl, p[has]) for p in PF]); out["ari_grouping_PiF"] = float(v.mean())
+        v = np.array([ari(gl, p[has]) for p in PF])
+        out["ari_grouping_PiF"] = float(v.mean()); out["ari_grouping_PiF_sd"] = float(v.std(ddof=1))
+        ref = grouping_reference(G, gl, has, draws=perm_draws)
+        out["grouping_reference"] = ref
+        for c, r in rows.items():
+            if r.get("decision") != "undecided":
+                continue
+            nl = step4_no_loss(r, out["ari_grouping_PiF"], out["ari_grouping_PiF_sd"])
+            r["step4"] = {"informative_grouping": ref["informative"], "no_loss": nl}
+            if ref["informative"] and nl:
+                r["decision"] = "cut (step 4: no loss)"
+            elif ref["informative"]:
+                r["decision"] = "flagged (step 4: loss)"
+            else:
+                r["step4"]["note"] = "grouping not matched above its permutation reference; cut stays undecided, keep the graded graph"
     return out
 
 
@@ -155,7 +206,7 @@ def path_audit(G: FuzzyGraph, pairs_src: np.ndarray, pairs_dst: np.ndarray, y: n
 
 def audit(G: FuzzyGraph, cuts: Optional[Dict[str, Optional[float]]] = None, grouping: Optional[np.ndarray] = None,
           pairs: Optional[tuple] = None, null_test: bool = True, draws: int = 200, seeds: Sequence[int] = range(20),
-          unit: Optional[str] = None) -> Dict:
+          unit: Optional[str] = None, perm_draws: int = 20) -> Dict:
     from .nulltest import best_qf, degree_test, density_matched_floor, structure_matched_floor, weights_only_test, weights_only_power, outcome
     if cuts is None:
         cuts = {f"q{q:.2f}": float(np.quantile(G.mu, q)) for q in (0.25, 0.5, 0.75)}
@@ -175,7 +226,7 @@ def audit(G: FuzzyGraph, cuts: Optional[Dict[str, Optional[float]]] = None, grou
                              "weights_global_z": wg["z"], "weights_row_z": wr["z"], "row_detectable_r": pr["detectable_r_pb"]}
         rep["partitioning"] = ("stop: no partition to lose" if rep["algorithm1"]["outcome_density_floor"] == "no structure detected"
                                else "partition is structure; audit the cut")
-    rep["cuts"] = cut_audit(G, cuts, seeds, grouping, unit=unit)
+    rep["cuts"] = cut_audit(G, cuts, seeds, grouping, unit=unit, perm_draws=perm_draws)
     if pairs is not None:
         rep["paths"] = path_audit(G, *pairs)
     return rep
@@ -191,6 +242,11 @@ def report_markdown(rep: Dict, title: str = "Fuzzy prerequisite graph audit") ->
     L += ["", "## Cuts", "", f"Rule: {rep['cuts']['rule']} ({rep['cuts']['seeds']} seeds).",
           f"Unit of mu_E: {rep['cuts'].get('unit')}; decision: {rep['cuts'].get('unit_rule', '')}.", ""]
     L += [f"Warning: {w}" for w in rep["cuts"].get("baseline_warning", [])]
+    gr = rep["cuts"].get("grouping_reference")
+    if gr:
+        L += [f"Step 4 permutation reference: ARI of Pi_F (best of 3 seeds) {gr['ari_best3']:.3f} against "
+              f"{gr['draws']} row-wise permutations (mean {gr['perm_mean']:.3f}, 95th percentile {gr['perm_p95']:.3f}); "
+              f"grouping {'informative' if gr['informative'] else 'not informative: an undecided cut stays undecided'}."]
     L += ["", "| cut | alpha | retained | mean out-degree | Q_F drop (SD) | rank-coded drop (SD) | flagged (Q_F / rank) | decision | ARI with grouping |",
           "|---|---|---|---|---|---|---|---|---|"]
     for c, r in rep["cuts"]["cuts"].items():

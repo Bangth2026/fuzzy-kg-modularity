@@ -1,0 +1,195 @@
+{
+ "rule": "1. Absolute reading where the relative rule loses resolution. Step 3 compares the drop of a cut\n   with the no-cut (support) drop. Where that baseline exceeds 0.05 (only under x^3: 2009, 2015 and\n   2017 KC transition, Junyi transition), step 3 also reads the absolute drop: a cut is flagged\n   when its own mean drop exceeds 2 x its seed SD and the minimum excess 0.01, and a cut counts as\n   flagged when either reading flags it. This recounts the sparse lower-quartile flags under x^3\n   and re-runs the Junyi topic check (a rescaling is rejected when it does not flag the Junyi\n   lower-quartile cut, which loses topic agreement). Source: results/v11/flag_rules.json.",
+ "absolute_cells": [
+  {
+   "graph": "assist2009_kc_transition",
+   "audit": "cube",
+   "cut": "q0.25",
+   "no_cut_drop": 0.2116944162581142,
+   "drop": 0.17979993593953597,
+   "sd": 0.02334232077394971,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2009_kc_transition",
+   "audit": "cube",
+   "cut": "q0.50",
+   "no_cut_drop": 0.2116944162581142,
+   "drop": 0.10649025857524352,
+   "sd": 0.02101804036727606,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2009_kc_transition",
+   "audit": "cube",
+   "cut": "q0.75",
+   "no_cut_drop": 0.2116944162581142,
+   "drop": 0.08942395343802573,
+   "sd": 0.013825802271928287,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2015_kc_transition",
+   "audit": "cube",
+   "cut": "q0.25",
+   "no_cut_drop": 0.26410888856131276,
+   "drop": 0.20207360602968696,
+   "sd": 0.026228718598442058,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2015_kc_transition",
+   "audit": "cube",
+   "cut": "q0.50",
+   "no_cut_drop": 0.26410888856131276,
+   "drop": 0.09389875305232034,
+   "sd": 0.023096350680409643,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2015_kc_transition",
+   "audit": "cube",
+   "cut": "q0.75",
+   "no_cut_drop": 0.26410888856131276,
+   "drop": 0.11535961770035755,
+   "sd": 0.018372469305652395,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2017_kc_transition",
+   "audit": "cube",
+   "cut": "q0.25",
+   "no_cut_drop": 0.07772803266333275,
+   "drop": 0.043362722782711326,
+   "sd": 0.024475949580399052,
+   "flag_relative": false,
+   "flag_absolute": false,
+   "flag": false
+  },
+  {
+   "graph": "assist2017_kc_transition",
+   "audit": "cube",
+   "cut": "q0.50",
+   "no_cut_drop": 0.07772803266333275,
+   "drop": 0.0392606197659227,
+   "sd": 5.587516268061888e-17,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "assist2017_kc_transition",
+   "audit": "cube",
+   "cut": "q0.75",
+   "no_cut_drop": 0.07772803266333275,
+   "drop": 0.11061488800055486,
+   "sd": 0.0,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "junyi_transition",
+   "audit": "cube",
+   "cut": "q0.25",
+   "no_cut_drop": 0.05903923690820141,
+   "drop": 0.03752352623030522,
+   "sd": 0.0018290737823676918,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "junyi_transition",
+   "audit": "cube",
+   "cut": "q0.50",
+   "no_cut_drop": 0.05903923690820141,
+   "drop": 0.03846315820299475,
+   "sd": 0.003472935159633507,
+   "flag_relative": false,
+   "flag_absolute": true,
+   "flag": true
+  },
+  {
+   "graph": "junyi_transition",
+   "audit": "cube",
+   "cut": "q0.75",
+   "no_cut_drop": 0.05903923690820141,
+   "drop": 0.16619852121086257,
+   "sd": 0.0005414071539421273,
+   "flag_relative": true,
+   "flag_absolute": true,
+   "flag": true
+  }
+ ],
+ "sparse_lower_quartile_flags": {
+  "identity": 4,
+  "cube": 5,
+  "cuberoot": 7,
+  "one_minus_cube": 6,
+  "rank": 1
+ },
+ "sparse_n": 7,
+ "not_rejected_by_junyi": [
+  "identity",
+  "cube",
+  "cuberoot",
+  "one_minus_cube"
+ ],
+ "rejected_by_junyi": [
+  "rank"
+ ],
+ "sparse_lower_quartile_range_not_rejected": [
+  4,
+  7
+ ],
+ "co_practice_warnings": [],
+ "step4_reference": {
+  "junyi_transition": {
+   "ari_best3": 0.6848924682118416,
+   "ari_seed_mean": 0.6352628800843964,
+   "row_perm_best3": {
+    "mean": 0.593239556736235,
+    "p95": 0.6442775456849472,
+    "n_at_or_above": 0,
+    "draws": 20
+   },
+   "global_perm_best3": {
+    "mean": 0.5685636355697022,
+    "p95": 0.6173994322357339,
+    "n_at_or_above": 0,
+    "draws": 20
+   },
+   "informative": true
+  },
+  "junyi_copractice": {
+   "ari_best3": 0.06041076748089159,
+   "ari_seed_mean": 0.07957463043427251,
+   "row_perm_best3": {
+    "mean": 0.06545513037992376,
+    "p95": 0.08120842132260905,
+    "n_at_or_above": 16,
+    "draws": 20
+   },
+   "global_perm_best3": {
+    "mean": 0.06450298101451765,
+    "p95": 0.07721261014998065,
+    "n_at_or_above": 14,
+    "draws": 20
+   },
+   "informative": false
+  }
+ }
+}

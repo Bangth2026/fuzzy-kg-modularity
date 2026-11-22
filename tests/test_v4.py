@@ -83,3 +83,21 @@ def test_step3_decision_depends_on_the_unit():
     assert decide(True, True, "arbitrary") == "flagged"
     assert decide(False, False, "arbitrary") == "cut"
     assert decide(True, False, None) == "undecided"
+
+
+def test_step4_no_loss_and_reference():
+    from fuzzykg.audit import step4_no_loss, grouping_reference
+    assert step4_no_loss({"ari_grouping": 0.60, "ari_grouping_sd": 0.01}, 0.61, 0.01)
+    assert not step4_no_loss({"ari_grouping": 0.50, "ari_grouping_sd": 0.01}, 0.61, 0.01)
+    G = _graph(7, n=60, m=500)
+    gl = np.arange(G.n) % 3; has = np.ones(G.n, bool)
+    ref = grouping_reference(G, gl, has, draws=5)
+    assert set(ref) >= {"ari_best3", "perm_p95", "informative"} and ref["draws"] == 5
+
+
+def test_cut_audit_reports_relative_flags_and_grouping_reference():
+    G = _graph(7, n=60, m=500)
+    cuts = {"q0.50": float(np.quantile(G.mu, 0.5))}
+    grp = np.array([str(i % 3) for i in range(G.n)], dtype=object)
+    r = cut_audit(G, cuts, seeds=range(3), grouping=grp, unit="arbitrary", perm_draws=3)
+    assert "flag_qf_drop_relative" in r["cuts"]["q0.50"] and "grouping_reference" in r

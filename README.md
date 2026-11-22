@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.8.1 below, which answers the latest review).
+> **(A)** Hai Bang Truong. *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 4.10.0 below, which answers the latest review).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.12.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983, version 3.12.0 (with 3.11.0): 10.5281/zenodo.24435807; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the first revision, 3.11.0 those of the second (with a preregistered replication on two held-out corpora; plan in `kt/prereg/`), and 3.12.0 the analyses of the third version (entry point x edge term, claims at three smallest effects of interest, regret under a Rasch simulated learner); see `kt/README.md`.
 
@@ -20,7 +20,18 @@ pip install -e .
 python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json --pairs pairs.csv --out my_audit
 ```
 
-The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over ten optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 4.10.0
+
+Changes that answer the eighth review of the Knowledge-Based Systems version of manuscript (A); new results in `results/v13/`, and `docs/paper_map_r8.md` maps each item to the manuscript. No earlier result file changes.
+
+| Topic | Script | Output |
+|---|---|---|
+| Absolute reading of step 3 where the no-cut drop exceeds 0.05 (only under x^3): a cut is flagged when either the relative or the absolute reading flags it. Sparse lower-quartile counts under every rescaling and the Junyi topic check redone with this reading (x^3 now flags 5 of 7 and passes the check; only the rank-coded drop is rejected; the range stays 4 to 7) | `scripts/v13_absolute_reading.py` | `results/v13/absolute_reading.json` (Section 8.3, Supplementary Section S3) |
+| Permutation reference of step 4: ARI of the best of three seeds of G_F with the external grouping against 20 row-wise and 20 global permutations of mu_E. Junyi transition: 0.685, above every permutation; Junyi co-practice: 0.060, below the permutation mean, so that grouping cannot show that an undecided cut loses nothing | same | same |
+
+`fuzzykg.audit.cut_audit` and `audit` take `perm_draws` (default 20). With a grouping, they report `grouping_reference` and, for every undecided cut, a `step4` entry: the cut becomes `cut (step 4: no loss)` only when the grouping is matched above the 95th percentile of its permutation reference and the cut's ARI is within 2 seed SDs of that of Pi_F; with an informative grouping and a loss it becomes `flagged (step 4: loss)`; otherwise it stays `undecided`. Each flag is reported as `flag_*_relative` and, on graphs with a baseline warning, `flag_*_absolute`. The threshold 0.05 was set in release 4.9.0 after the drops under x^3 had been seen; no decision on mu_E depends on it.
 
 ## What is in version 4.9.0
 
