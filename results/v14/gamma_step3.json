@@ -1,0 +1,2011 @@
+{
+ "runs": {
+  "mooccubex_cs/gamma0.5": {
+   "graph": "mooccubex_cs",
+   "group": "expert",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0004655703645508102,
+     "qf_drop_sd": 0.002200848249755293,
+     "rank_drop": 0.01992489589530038,
+     "rank_drop_sd": 0.002583578363931125
+    },
+    "q0.25": {
+     "qf_drop": 0.08911895799209893,
+     "qf_drop_sd": 0.0018774687949150895,
+     "rank_drop": 0.032400505651398,
+     "rank_drop_sd": 0.003227708225670296,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.27028703925816905,
+     "qf_drop_sd": 0.021361947360128284,
+     "rank_drop": 0.15268114217727533,
+     "rank_drop_sd": 0.014173524502114914,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.43761163064856656,
+     "qf_drop_sd": 0.0019390873728170335,
+     "rank_drop": 0.30827082093991676,
+     "rank_drop_sd": 0.001569067945116256,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.7891874540000003
+  },
+  "mooccubex_cs/gamma1": {
+   "graph": "mooccubex_cs",
+   "group": "expert",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0011829655389309275,
+     "qf_drop_sd": 0.008651292060566475,
+     "rank_drop": 0.03443248066627006,
+     "rank_drop_sd": 0.012614739676657011
+    },
+    "q0.25": {
+     "qf_drop": 0.10111458687726042,
+     "qf_drop_sd": 0.006256218952054301,
+     "rank_drop": 0.044019333729922665,
+     "rank_drop_sd": 0.005077476113947771,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.23402574298339443,
+     "qf_drop_sd": 0.011649604911791716,
+     "rank_drop": 0.13836049970255804,
+     "rank_drop_sd": 0.013397631988060321,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.34136231792110755,
+     "qf_drop_sd": 0.005352959766022837,
+     "rank_drop": 0.25140719809637113,
+     "rank_drop_sd": 0.004941265199469216,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 0.5574443350000138
+  },
+  "mooccubex_cs/gamma2": {
+   "graph": "mooccubex_cs",
+   "group": "expert",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.005852348583064193,
+     "qf_drop_sd": 0.002611584181311054,
+     "rank_drop": 0.05130398572278409,
+     "rank_drop_sd": 0.007328521420951664
+    },
+    "q0.25": {
+     "qf_drop": 0.09672650671669317,
+     "qf_drop_sd": 0.0035791347423946842,
+     "rank_drop": 0.04350505651397979,
+     "rank_drop_sd": 0.00423085985983491,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.1976740613170899,
+     "qf_drop_sd": 0.0028066187995933185,
+     "rank_drop": 0.11461986912552055,
+     "rank_drop_sd": 0.0013253733283344264,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.279736576215153,
+     "qf_drop_sd": 0.0027453006238373915,
+     "rank_drop": 0.20493515764425937,
+     "rank_drop_sd": 0.0009572592315608749,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [
+    "no-cut rank_drop 0.051 > 0.05: the relative rule loses resolution; absolute drops read as well, a cut flagged when either reading flags it"
+   ],
+   "time_s": 0.4429510040000082
+  },
+  "mooccubex_cs_full/gamma0.5": {
+   "graph": "mooccubex_cs_full",
+   "group": "expert",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": -0.0009621730850380261,
+     "qf_drop_sd": 0.006004212997485846,
+     "rank_drop": 0.025822740295949914,
+     "rank_drop_sd": 0.006173138213960539
+    },
+    "q0.25": {
+     "qf_drop": 0.0635352526491441,
+     "qf_drop_sd": 0.010893958481027732,
+     "rank_drop": 0.036443315071126484,
+     "rank_drop_sd": 0.011584787943699186,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.1815875497325985,
+     "qf_drop_sd": 0.011300355416211057,
+     "rank_drop": 0.09863625262068677,
+     "rank_drop_sd": 0.007863883233043082,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.33234554201031163,
+     "qf_drop_sd": 0.009989369094939818,
+     "rank_drop": 0.23940004952271968,
+     "rank_drop_sd": 0.009808188019382581,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 4.014154841000021
+  },
+  "mooccubex_cs_full/gamma1": {
+   "graph": "mooccubex_cs_full",
+   "group": "expert",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0014669769143310835,
+     "qf_drop_sd": 0.005355677563028231,
+     "rank_drop": 0.04469470970450068,
+     "rank_drop_sd": 0.010397260061850263
+    },
+    "q0.25": {
+     "qf_drop": 0.06902048670657071,
+     "qf_drop_sd": 0.0042464746200932295,
+     "rank_drop": 0.046420617783724985,
+     "rank_drop_sd": 0.006277022046188445,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.1692123714546394,
+     "qf_drop_sd": 0.003641627108479872,
+     "rank_drop": 0.0927128528916162,
+     "rank_drop_sd": 0.00433691259356488,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.2883172131837558,
+     "qf_drop_sd": 0.004570436451433599,
+     "rank_drop": 0.2092760061860222,
+     "rank_drop_sd": 0.005445409254366601,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 5.549089124999995
+  },
+  "mooccubex_cs_full/gamma2": {
+   "graph": "mooccubex_cs_full",
+   "group": "expert",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0010094108245926824,
+     "qf_drop_sd": 0.005753236829832901,
+     "rank_drop": 0.05438610225033641,
+     "rank_drop_sd": 0.006580003721488943
+    },
+    "q0.25": {
+     "qf_drop": 0.06308712726820617,
+     "qf_drop_sd": 0.005284477080410943,
+     "rank_drop": 0.05097464767156864,
+     "rank_drop_sd": 0.00493602175499183,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.15287113898156934,
+     "qf_drop_sd": 0.005322961574799577,
+     "rank_drop": 0.08289831998209825,
+     "rank_drop_sd": 0.00405447653149616,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.2486357970979441,
+     "qf_drop_sd": 0.005088011627770796,
+     "rank_drop": 0.1768276568056757,
+     "rank_drop_sd": 0.004184007322140391,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [
+    "no-cut rank_drop 0.054 > 0.05: the relative rule loses resolution; absolute drops read as well, a cut flagged when either reading flags it"
+   ],
+   "time_s": 6.536928450000005
+  },
+  "assist2009_kc/gamma0.5": {
+   "graph": "assist2009_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0
+    },
+    "q0.25": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.0025244430353719705,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.002087491197710567,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.746082876999992
+  },
+  "assist2009_kc/gamma1": {
+   "graph": "assist2009_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0009290925497091769,
+     "qf_drop_sd": 0.001498397662808047,
+     "rank_drop": 0.0037361888647315087,
+     "rank_drop_sd": 0.002973267404454984
+    },
+    "q0.25": {
+     "qf_drop": 0.005947590933403431,
+     "qf_drop_sd": 0.002562772355193138,
+     "rank_drop": 0.004729717638943959,
+     "rank_drop_sd": 0.0034813624930107342,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0109456754615398,
+     "qf_drop_sd": 0.0034685869414579776,
+     "rank_drop": 0.006667225269798261,
+     "rank_drop_sd": 0.0026491293930589028,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "undecided"
+    },
+    "q0.75": {
+     "qf_drop": 0.061263735734373936,
+     "qf_drop_sd": 0.0027187586145770892,
+     "rank_drop": 0.05296368842897915,
+     "rank_drop_sd": 0.003449127129716775,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 3.143806490000003
+  },
+  "assist2009_kc/gamma2": {
+   "graph": "assist2009_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0004460741774144983,
+     "qf_drop_sd": 0.000834916221212689,
+     "rank_drop": 0.0026624851967960235,
+     "rank_drop_sd": 0.0010953822722863282
+    },
+    "q0.25": {
+     "qf_drop": 0.006402270455889052,
+     "qf_drop_sd": 0.000727427019721156,
+     "rank_drop": 0.006090315678392056,
+     "rank_drop_sd": 0.0007864738911787732,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.00939629019817666,
+     "qf_drop_sd": 0.001470245613132079,
+     "rank_drop": 0.00707381826718676,
+     "rank_drop_sd": 0.001209342091788932,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.03615651962852716,
+     "qf_drop_sd": 0.002020886869253874,
+     "rank_drop": 0.03168601905891085,
+     "rank_drop_sd": 0.0020776861845157074,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 5.431753324999988
+  },
+  "assist2009_item/gamma0.5": {
+   "graph": "assist2009_item",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": -1.6653345369377347e-17,
+     "qf_drop_sd": 9.023090062756911e-17,
+     "rank_drop": 1.1102230246251566e-17,
+     "rank_drop_sd": 1.342937580760094e-16
+    },
+    "q0.25": {
+     "qf_drop": 0.0005240741675703986,
+     "qf_drop_sd": 8.74932379389953e-17,
+     "rank_drop": 0.00020978652954720678,
+     "rank_drop_sd": 1.1447459469891334e-16,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0072131863368526065,
+     "qf_drop_sd": 8.896451612867785e-17,
+     "rank_drop": 0.004935924263442032,
+     "rank_drop_sd": 1.1087669563593093e-16,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.08019080469031134,
+     "qf_drop_sd": 1.0108197257000806e-16,
+     "rank_drop": 0.06357062417880288,
+     "rank_drop_sd": 9.183433922960295e-17,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 2.43629045199998
+  },
+  "assist2009_item/gamma1": {
+   "graph": "assist2009_item",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": -2.7755575615628914e-17,
+     "qf_drop_sd": 9.444626294634613e-17,
+     "rank_drop": -2.2204460492503132e-17,
+     "rank_drop_sd": 8.52398036543705e-17
+    },
+    "q0.25": {
+     "qf_drop": 0.0005084076892395928,
+     "qf_drop_sd": 9.165756729168597e-17,
+     "rank_drop": 0.0001949750894599589,
+     "rank_drop_sd": 1.0563252311816762e-16,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.007140275845136534,
+     "qf_drop_sd": 8.749340764737098e-17,
+     "rank_drop": 0.004885773601001037,
+     "rank_drop_sd": 6.107554509029232e-17,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.07806422245984587,
+     "qf_drop_sd": 7.090621130895259e-17,
+     "rank_drop": 0.06200783716364312,
+     "rank_drop_sd": 8.93730442164262e-17,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 2.4843700069999954
+  },
+  "assist2009_item/gamma2": {
+   "graph": "assist2009_item",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": -2.7755575615628914e-17,
+     "qf_drop_sd": 7.090621130895259e-17,
+     "rank_drop": 1.6653345369377347e-17,
+     "rank_drop_sd": 8.2729358960098e-17
+    },
+    "q0.25": {
+     "qf_drop": 0.00047707473257778686,
+     "qf_drop_sd": 9.11251838190886e-17,
+     "rank_drop": 0.00016535220928576289,
+     "rank_drop_sd": 1.2215109018058463e-16,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.006994454861704242,
+     "qf_drop_sd": 6.714782252956404e-17,
+     "rank_drop": 0.004785472276119895,
+     "rank_drop_sd": 7.725595277284155e-17,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.07381105799891563,
+     "qf_drop_sd": 1.0188105198175002e-16,
+     "rank_drop": 0.05888226313332347,
+     "rank_drop_sd": 6.399324378534623e-17,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 2.3893350319999627
+  },
+  "assist2015_kc/gamma0.5": {
+   "graph": "assist2015_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0
+    },
+    "q0.25": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.7326546119999762
+  },
+  "assist2015_kc/gamma1": {
+   "graph": "assist2015_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.002782500400873598,
+     "qf_drop_sd": 0.002337145001982112,
+     "rank_drop": 0.008357516663683156,
+     "rank_drop_sd": 0.003689211762506487
+    },
+    "q0.25": {
+     "qf_drop": 0.007204878253170131,
+     "qf_drop_sd": 0.0022444954754071854,
+     "rank_drop": 0.007386993572981955,
+     "rank_drop_sd": 0.003755309407119272,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.013425781614588567,
+     "qf_drop_sd": 0.00477813998893212,
+     "rank_drop": 0.011842866521595339,
+     "rank_drop_sd": 0.0043527812975151375,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "undecided"
+    },
+    "q0.75": {
+     "qf_drop": 0.0349525033865828,
+     "qf_drop_sd": 0.004280543294834915,
+     "rank_drop": 0.03526377142155844,
+     "rank_drop_sd": 0.004546627967365211,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 3.8222480270000005
+  },
+  "assist2015_kc/gamma2": {
+   "graph": "assist2015_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0003270310769585622,
+     "qf_drop_sd": 0.00029700157502055154,
+     "rank_drop": 0.0013149045485095219,
+     "rank_drop_sd": 0.0004222735097659998
+    },
+    "q0.25": {
+     "qf_drop": 0.003194373515460887,
+     "qf_drop_sd": 0.0010022721782123483,
+     "rank_drop": 0.0028328124888154075,
+     "rank_drop_sd": 0.0009373757221355317,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.009349761890900626,
+     "qf_drop_sd": 0.0008440245348266159,
+     "rank_drop": 0.006762760692047165,
+     "rank_drop_sd": 0.0006255894212306414,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.028433742453931536,
+     "qf_drop_sd": 0.0019602345855480744,
+     "rank_drop": 0.026952789989039494,
+     "rank_drop_sd": 0.0017430017879573798,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 6.9080497179999725
+  },
+  "assist2017_kc/gamma0.5": {
+   "graph": "assist2017_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0
+    },
+    "q0.25": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.5128462000000127
+  },
+  "assist2017_kc/gamma1": {
+   "graph": "assist2017_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.004915061722880984,
+     "qf_drop_sd": 0.001412051299870422,
+     "rank_drop": 0.025319664562640547,
+     "rank_drop_sd": 0.004014448198120508
+    },
+    "q0.25": {
+     "qf_drop": 0.007406889888737228,
+     "qf_drop_sd": 0.001534807365659954,
+     "rank_drop": 0.004630857283729818,
+     "rank_drop_sd": 0.002166556558250384,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.010548753661329619,
+     "qf_drop_sd": 0.0026979889268090268,
+     "rank_drop": 0.006795419200327539,
+     "rank_drop_sd": 0.002707295842011824,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.017407340845860195,
+     "qf_drop_sd": 0.0023193803740051773,
+     "rank_drop": 0.01896582258267047,
+     "rank_drop_sd": 0.0028709821752107858,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "undecided"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 3.241493589000015
+  },
+  "assist2017_kc/gamma2": {
+   "graph": "assist2017_kc",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 3.6220855826432985e-05,
+     "qf_drop_sd": 1.9562834103321355e-05,
+     "rank_drop": 0.0019208885905904148,
+     "rank_drop_sd": 7.981701341640863e-05
+    },
+    "q0.25": {
+     "qf_drop": 0.004260248220625774,
+     "qf_drop_sd": 0.00028308079634587526,
+     "rank_drop": 0.0021089205344617724,
+     "rank_drop_sd": 0.0003558633825785526,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.013084400790581065,
+     "qf_drop_sd": 0.0010695387750492915,
+     "rank_drop": 0.006481974629090541,
+     "rank_drop_sd": 0.000545423207104416,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "undecided"
+    },
+    "q0.75": {
+     "qf_drop": 0.029660073195669052,
+     "qf_drop_sd": 0.002854026244441732,
+     "rank_drop": 0.0209684760039347,
+     "rank_drop_sd": 0.002190900803809435,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 3.4867565019999915
+  },
+  "assist2017_item/gamma0.5": {
+   "graph": "assist2017_item",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0007395420938188846,
+     "qf_drop_sd": 0.002098056276376492,
+     "rank_drop": 0.0019181847912927985,
+     "rank_drop_sd": 0.0013996602533309448
+    },
+    "q0.25": {
+     "qf_drop": 0.0002703098343990962,
+     "qf_drop_sd": 0.000645486088518252,
+     "rank_drop": -0.0001830573762098886,
+     "rank_drop_sd": 0.0013675736680589716,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.002099025123107695,
+     "qf_drop_sd": 0.0015621641490555216,
+     "rank_drop": 0.00022437637903806594,
+     "rank_drop_sd": 0.001991042495739566,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.015082392666957883,
+     "qf_drop_sd": 0.002822629440373195,
+     "rank_drop": 0.010847862499043643,
+     "rank_drop_sd": 0.0026362513931372806,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "undecided"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 20.116863524999985
+  },
+  "assist2017_item/gamma1": {
+   "graph": "assist2017_item",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0007338415948794863,
+     "qf_drop_sd": 0.0038790225016020023,
+     "rank_drop": 0.001058507687529664,
+     "rank_drop_sd": 0.003857694226824866
+    },
+    "q0.25": {
+     "qf_drop": 0.0009882342754765072,
+     "qf_drop_sd": 0.0052077608066189735,
+     "rank_drop": 3.144632058169061e-05,
+     "rank_drop_sd": 0.005558389854363625,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.005215173156342989,
+     "qf_drop_sd": 0.004675584763905459,
+     "rank_drop": 0.0023151641322017415,
+     "rank_drop_sd": 0.00462429924272448,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.04412619426931671,
+     "qf_drop_sd": 0.005358469286737693,
+     "rank_drop": 0.034698918635642936,
+     "rank_drop_sd": 0.005475192011715784,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 21.66618200199997
+  },
+  "assist2017_item/gamma2": {
+   "graph": "assist2017_item",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0012523132328031207,
+     "qf_drop_sd": 0.002912543153731238,
+     "rank_drop": 0.005065017061832655,
+     "rank_drop_sd": 0.003617596881766238
+    },
+    "q0.25": {
+     "qf_drop": 0.0007127468094878769,
+     "qf_drop_sd": 0.002146083992122216,
+     "rank_drop": 0.001253217115044239,
+     "rank_drop_sd": 0.0018883888703192732,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.01842049902989051,
+     "qf_drop_sd": 0.003523694409335623,
+     "rank_drop": 0.011181337331414104,
+     "rank_drop_sd": 0.00245674840804162,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "undecided"
+    },
+    "q0.75": {
+     "qf_drop": 0.06662382527131616,
+     "qf_drop_sd": 0.0034138691626834712,
+     "rank_drop": 0.053507173533981066,
+     "rank_drop_sd": 0.0036028589281056587,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 30.413293834
+  },
+  "junyi_copractice/gamma0.5": {
+   "graph": "junyi_copractice",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0
+    },
+    "q0.25": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.0,
+     "qf_drop_sd": 0.0,
+     "rank_drop": 0.0,
+     "rank_drop_sd": 0.0,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 52.46182390299998
+  },
+  "junyi_copractice/gamma1": {
+   "graph": "junyi_copractice",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": -0.00039980693067163606,
+     "qf_drop_sd": 0.00241182254521283,
+     "rank_drop": 0.0011525302382114418,
+     "rank_drop_sd": 0.0017485575303170249
+    },
+    "q0.25": {
+     "qf_drop": 0.0017127820798058877,
+     "qf_drop_sd": 0.0022437659653503864,
+     "rank_drop": 0.0019250074295189712,
+     "rank_drop_sd": 0.0015900417866270174,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.002264058801489209,
+     "qf_drop_sd": 0.0023113770377477037,
+     "rank_drop": 0.002505568162937264,
+     "rank_drop_sd": 0.002110252966470128,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.016496474482820038,
+     "qf_drop_sd": 0.002692908578358443,
+     "rank_drop": 0.017269503867443664,
+     "rank_drop_sd": 0.0020791470914967238,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 146.937367138
+  },
+  "junyi_copractice/gamma2": {
+   "graph": "junyi_copractice",
+   "group": "co-practice",
+   "unit": "arbitrary",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 5.213707456125823e-05,
+     "qf_drop_sd": 0.00022310745520274982,
+     "rank_drop": 0.0004594961455398654,
+     "rank_drop_sd": 0.00021344315686060635
+    },
+    "q0.25": {
+     "qf_drop": 0.0009166526028433625,
+     "qf_drop_sd": 0.0002271654988663481,
+     "rank_drop": 0.0006916622414822257,
+     "rank_drop_sd": 0.00020490143511002948,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.0021906605830629674,
+     "qf_drop_sd": 0.00038788022429231633,
+     "rank_drop": 0.0015973244185373016,
+     "rank_drop_sd": 0.00040031058243967263,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.014828889936971715,
+     "qf_drop_sd": 0.0005099059326076332,
+     "rank_drop": 0.014613603031920237,
+     "rank_drop_sd": 0.0005283732068453857,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 290.300519979
+  },
+  "assist2009_kc_transition/gamma0.5": {
+   "graph": "assist2009_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.033622838141989575,
+     "qf_drop_sd": 0.003972747246924087,
+     "rank_drop": 0.0335787853871679,
+     "rank_drop_sd": 0.00816001866347209
+    },
+    "q0.25": {
+     "qf_drop": 0.03726252975127956,
+     "qf_drop_sd": 0.018379573568322673,
+     "rank_drop": 0.025455003598943732,
+     "rank_drop_sd": 0.01521848956560902,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.030290403996599824,
+     "qf_drop_sd": 0.008118318728443636,
+     "rank_drop": 0.021334106301433002,
+     "rank_drop_sd": 0.010042218721136217,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.1924352586285388,
+     "qf_drop_sd": 0.01914372581708794,
+     "rank_drop": 0.1955045617745754,
+     "rank_drop_sd": 0.02228423796477128,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 0.88932296400003
+  },
+  "assist2009_kc_transition/gamma1": {
+   "graph": "assist2009_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.02306217789108577,
+     "qf_drop_sd": 0.010953802300141343,
+     "rank_drop": 0.032798649635757016,
+     "rank_drop_sd": 0.010603190773832259
+    },
+    "q0.25": {
+     "qf_drop": 0.030813727198081176,
+     "qf_drop_sd": 0.005902588051518717,
+     "rank_drop": 0.020956844155864934,
+     "rank_drop_sd": 0.006537726202988985,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.047182898679675754,
+     "qf_drop_sd": 0.010748112100894786,
+     "rank_drop": 0.041197341103565814,
+     "rank_drop_sd": 0.006947255813382735,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.11763941453872799,
+     "qf_drop_sd": 0.005007319544116159,
+     "rank_drop": 0.12841514149531447,
+     "rank_drop_sd": 0.004827183811958734,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.0507456300000513
+  },
+  "assist2009_kc_transition/gamma2": {
+   "graph": "assist2009_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.057170713068232515,
+     "qf_drop_sd": 0.008249342590080795,
+     "rank_drop": 0.06952428313255907,
+     "rank_drop_sd": 0.008705256842354597
+    },
+    "q0.25": {
+     "qf_drop": 0.03963270063959655,
+     "qf_drop_sd": 0.0057271530624587634,
+     "rank_drop": 0.026790627912970134,
+     "rank_drop_sd": 0.005777499962564996,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.04050413697998072,
+     "qf_drop_sd": 0.007695819007385647,
+     "rank_drop": 0.030736953762243474,
+     "rank_drop_sd": 0.008125898358064413,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.08431278203051815,
+     "qf_drop_sd": 0.004177670910600153,
+     "rank_drop": 0.09183938839832864,
+     "rank_drop_sd": 0.005256407839081794,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [
+    "no-cut qf_drop 0.057 > 0.05: the relative rule loses resolution; absolute drops read as well, a cut flagged when either reading flags it",
+    "no-cut rank_drop 0.070 > 0.05: the relative rule loses resolution; absolute drops read as well, a cut flagged when either reading flags it"
+   ],
+   "time_s": 1.1514889110000013
+  },
+  "assist2015_kc_transition/gamma0.5": {
+   "graph": "assist2015_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.014633562213628538,
+     "qf_drop_sd": 0.021293400033015757,
+     "rank_drop": 0.01583790813749104,
+     "rank_drop_sd": 0.018103234819148866
+    },
+    "q0.25": {
+     "qf_drop": 0.02581379195842191,
+     "qf_drop_sd": 0.018674464027955563,
+     "rank_drop": 0.014019488523808544,
+     "rank_drop_sd": 0.012270753909141266,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.06418977898691189,
+     "qf_drop_sd": 0.015335635425933676,
+     "rank_drop": 0.046204087192944956,
+     "rank_drop_sd": 0.014940080295256035,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.23028248281467092,
+     "qf_drop_sd": 0.01252804229415238,
+     "rank_drop": 0.22929291722876138,
+     "rank_drop_sd": 0.010203504284547776,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.0451449099999763
+  },
+  "assist2015_kc_transition/gamma1": {
+   "graph": "assist2015_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.03768160180241949,
+     "qf_drop_sd": 0.009730554586644373,
+     "rank_drop": 0.038876840249068664,
+     "rank_drop_sd": 0.011705665466025533
+    },
+    "q0.25": {
+     "qf_drop": 0.04964417495333125,
+     "qf_drop_sd": 0.011151997112767162,
+     "rank_drop": 0.030510932228884326,
+     "rank_drop_sd": 0.011685541626963674,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.04992830209032549,
+     "qf_drop_sd": 0.008576794874029715,
+     "rank_drop": 0.030685615169650137,
+     "rank_drop_sd": 0.006853093383547179,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.75": {
+     "qf_drop": 0.15864105117174138,
+     "qf_drop_sd": 0.007897719216355738,
+     "rank_drop": 0.15744985137996212,
+     "rank_drop_sd": 0.01103528452602368,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 1.3444961289999355
+  },
+  "assist2015_kc_transition/gamma2": {
+   "graph": "assist2015_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.05133092154218941,
+     "qf_drop_sd": 0.005381596477183203,
+     "rank_drop": 0.0644681275767271,
+     "rank_drop_sd": 0.008959436918536411
+    },
+    "q0.25": {
+     "qf_drop": 0.04542654784006351,
+     "qf_drop_sd": 0.004813494494545728,
+     "rank_drop": 0.03375590554160697,
+     "rank_drop_sd": 0.004752378139920258,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.052015312595078286,
+     "qf_drop_sd": 0.008406261928703349,
+     "rank_drop": 0.03764779226873074,
+     "rank_drop_sd": 0.007767779944335213,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.1211213608492572,
+     "qf_drop_sd": 0.007160989040433914,
+     "rank_drop": 0.12793924269056192,
+     "rank_drop_sd": 0.006155328913391964,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [
+    "no-cut qf_drop 0.051 > 0.05: the relative rule loses resolution; absolute drops read as well, a cut flagged when either reading flags it",
+    "no-cut rank_drop 0.064 > 0.05: the relative rule loses resolution; absolute drops read as well, a cut flagged when either reading flags it"
+   ],
+   "time_s": 1.5554193709999709
+  },
+  "assist2017_kc_transition/gamma0.5": {
+   "graph": "assist2017_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.011533252571727126,
+     "qf_drop_sd": 0.012028675954053497,
+     "rank_drop": 0.03064524129300083,
+     "rank_drop_sd": 0.024055982778635368
+    },
+    "q0.25": {
+     "qf_drop": 0.03305619546168311,
+     "qf_drop_sd": 0.006919759643115892,
+     "rank_drop": 0.020636198528738527,
+     "rank_drop_sd": 0.00490809733305812,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.13966927050270422,
+     "qf_drop_sd": 0.001111905772332458,
+     "rank_drop": 0.13261480876652124,
+     "rank_drop_sd": 0.0017651886927455126,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.32900510188663135,
+     "qf_drop_sd": 0.0009151488217523619,
+     "rank_drop": 0.3870734257196056,
+     "rank_drop_sd": 0.0016660432300417032,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 0.40049900799999705
+  },
+  "assist2017_kc_transition/gamma1": {
+   "graph": "assist2017_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.019777008709851822,
+     "qf_drop_sd": 0.015049396008972508,
+     "rank_drop": 0.043015704648820256,
+     "rank_drop_sd": 0.018116757154952968
+    },
+    "q0.25": {
+     "qf_drop": 0.02475067126526038,
+     "qf_drop_sd": 0.008463092818237825,
+     "rank_drop": 0.0222074265132322,
+     "rank_drop_sd": 0.007863081417926429,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.10677179055783195,
+     "qf_drop_sd": 0.0017883829608956127,
+     "rank_drop": 0.10213783156802299,
+     "rank_drop_sd": 0.001787842494779618,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.28061461693552986,
+     "qf_drop_sd": 0.0017883829608956096,
+     "rank_drop": 0.3377609810445345,
+     "rank_drop_sd": 0.001787842494779621,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 0.5474774880000268
+  },
+  "assist2017_kc_transition/gamma2": {
+   "graph": "assist2017_kc_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.019710424616522247,
+     "qf_drop_sd": 0.014131851047258495,
+     "rank_drop": 0.0388877018406032,
+     "rank_drop_sd": 0.017479696102816817
+    },
+    "q0.25": {
+     "qf_drop": 0.03490925058488977,
+     "qf_drop_sd": 0.0023970599982930424,
+     "rank_drop": 0.021550776838313922,
+     "rank_drop_sd": 0.0010437733200358275,
+     "flag_qf_drop": false,
+     "flag_rank_drop": false,
+     "decision": "cut"
+    },
+    "q0.50": {
+     "qf_drop": 0.09924880057362973,
+     "qf_drop_sd": 0.0025191806796064802,
+     "rank_drop": 0.09117319373645498,
+     "rank_drop_sd": 0.0012042854408227856,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.2347380113509771,
+     "qf_drop_sd": 0.0025711118778462944,
+     "rank_drop": 0.285784164097555,
+     "rank_drop_sd": 0.001035303445451412,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 0.4328088460000572
+  },
+  "assist2017_item_transition/gamma0.5": {
+   "graph": "assist2017_item_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.002389927977228812,
+     "qf_drop_sd": 0.0017448943106590327,
+     "rank_drop": 0.002041234567901251,
+     "rank_drop_sd": 0.0008433163030700983
+    },
+    "q0.25": {
+     "qf_drop": 0.04231958673003249,
+     "qf_drop_sd": 9.849164957333571e-17,
+     "rank_drop": 0.02376481975308637,
+     "rank_drop_sd": 0.00035611835264869464,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.1789080328338895,
+     "qf_drop_sd": 9.86459044048525e-17,
+     "rank_drop": 0.16315632592592594,
+     "rank_drop_sd": 0.0003561183526486947,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.474733430811344,
+     "qf_drop_sd": 1.2412670766236366e-16,
+     "rank_drop": 0.5373122765432098,
+     "rank_drop_sd": 0.000356118352648706,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 2.0834448739999516
+  },
+  "assist2017_item_transition/gamma1": {
+   "graph": "assist2017_item_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.002452980412246353,
+     "qf_drop_sd": 0.0018549287611594738,
+     "rank_drop": 0.004349195061728367,
+     "rank_drop_sd": 0.0011874304599203717
+    },
+    "q0.25": {
+     "qf_drop": 0.041033456201544964,
+     "qf_drop_sd": 0.0006225218019153742,
+     "rank_drop": 0.022867190123456727,
+     "rank_drop_sd": 0.00037239814674378826,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.17052448075200916,
+     "qf_drop_sd": 9.253798081853486e-05,
+     "rank_drop": 0.15582463209876535,
+     "rank_drop_sd": 0.0002886901787839732,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.4572596205158114,
+     "qf_drop_sd": 0.0006879342586194523,
+     "rank_drop": 0.5150528197530864,
+     "rank_drop_sd": 0.000741644763733417,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 2.4072153399999934
+  },
+  "assist2017_item_transition/gamma2": {
+   "graph": "assist2017_item_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.005193355294013657,
+     "qf_drop_sd": 0.0007351330692936961,
+     "rank_drop": 0.004536256790123472,
+     "rank_drop_sd": 0.0005479500011474636
+    },
+    "q0.25": {
+     "qf_drop": 0.039791844702010463,
+     "qf_drop_sd": 0.003782963697135603,
+     "rank_drop": 0.021736158024691393,
+     "rank_drop_sd": 0.0018542019627743069,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.16946913882047282,
+     "qf_drop_sd": 0.002573419194970679,
+     "rank_drop": 0.151854498765432,
+     "rank_drop_sd": 0.0029367661804535357,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.4166388048032995,
+     "qf_drop_sd": 0.00011265619111945238,
+     "rank_drop": 0.4653772444444444,
+     "rank_drop_sd": 0.00025406028467961356,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 2.5944627689999606
+  },
+  "junyi_transition/gamma0.5": {
+   "graph": "junyi_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 0.5,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.007727971282537588,
+     "qf_drop_sd": 0.0021363226513019034,
+     "rank_drop": 0.014691918713494267,
+     "rank_drop_sd": 0.002333984855974864
+    },
+    "q0.25": {
+     "qf_drop": 0.03654776639882269,
+     "qf_drop_sd": 0.002146194716828391,
+     "rank_drop": 0.023092092136889668,
+     "rank_drop_sd": 0.0015375166961040928,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.13504684322199734,
+     "qf_drop_sd": 0.0026630455838739047,
+     "rank_drop": 0.11454683945372905,
+     "rank_drop_sd": 0.002795534048481431,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.4245957953595426,
+     "qf_drop_sd": 0.0007831017958626926,
+     "rank_drop": 0.43563011130152507,
+     "rank_drop_sd": 0.00042814933455896897,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 7.063997558999972
+  },
+  "junyi_transition/gamma1": {
+   "graph": "junyi_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 1.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.01078069242708692,
+     "qf_drop_sd": 0.0022706851112890745,
+     "rank_drop": 0.01874199125843165,
+     "rank_drop_sd": 0.0027916782898762646
+    },
+    "q0.25": {
+     "qf_drop": 0.03225196864067985,
+     "qf_drop_sd": 0.0029247234038984812,
+     "rank_drop": 0.01971625165821997,
+     "rank_drop_sd": 0.0024418663662872067,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.1267348392901292,
+     "qf_drop_sd": 0.0047136236899195365,
+     "rank_drop": 0.10991921613508442,
+     "rank_drop_sd": 0.004359647233681573,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.3962806131766698,
+     "qf_drop_sd": 0.0012796934046845059,
+     "rank_drop": 0.4097814909376255,
+     "rank_drop_sd": 0.0012456068119941009,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 7.508620746999895
+  },
+  "junyi_transition/gamma2": {
+   "graph": "junyi_transition",
+   "group": "transition",
+   "unit": "meaningful",
+   "gamma": 2.0,
+   "cuts": {
+    "support": {
+     "qf_drop": 0.01265649147882551,
+     "qf_drop_sd": 0.0011487504534465243,
+     "rank_drop": 0.022350657655704154,
+     "rank_drop_sd": 0.0012115943528159937
+    },
+    "q0.25": {
+     "qf_drop": 0.035117389363293644,
+     "qf_drop_sd": 0.0019909161518461066,
+     "rank_drop": 0.022396760662934077,
+     "rank_drop_sd": 0.0016921776076653232,
+     "flag_qf_drop": true,
+     "flag_rank_drop": false,
+     "decision": "flagged"
+    },
+    "q0.50": {
+     "qf_drop": 0.12228192927454044,
+     "qf_drop_sd": 0.003109517883123724,
+     "rank_drop": 0.10672705418980097,
+     "rank_drop_sd": 0.0027151621094553403,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    },
+    "q0.75": {
+     "qf_drop": 0.35790063980871867,
+     "qf_drop_sd": 0.0009407439778557575,
+     "rank_drop": 0.3727315212306727,
+     "rank_drop_sd": 0.0008396703778018031,
+     "flag_qf_drop": true,
+     "flag_rank_drop": true,
+     "decision": "flagged"
+    }
+   },
+   "baseline_warning": [],
+   "time_s": 7.592332578000082
+  }
+ },
+ "summary": {
+  "gamma1_matches_v12": [
+   "assist2009_item",
+   "assist2009_kc",
+   "assist2009_kc_transition",
+   "assist2015_kc",
+   "assist2015_kc_transition",
+   "assist2017_item",
+   "assist2017_item_transition",
+   "assist2017_kc",
+   "assist2017_kc_transition",
+   "junyi_copractice",
+   "junyi_transition",
+   "mooccubex_cs",
+   "mooccubex_cs_full"
+  ],
+  "gamma1_differs_from_v12": [],
+  "changes": {
+   "gamma0.5": [
+    {
+     "graph": "assist2009_kc",
+     "cut": "q0.50",
+     "gamma1": "undecided",
+     "gamma0.5": "cut"
+    },
+    {
+     "graph": "assist2009_kc",
+     "cut": "q0.75",
+     "gamma1": "flagged",
+     "gamma0.5": "cut"
+    },
+    {
+     "graph": "assist2009_kc_transition",
+     "cut": "q0.50",
+     "gamma1": "flagged",
+     "gamma0.5": "cut"
+    },
+    {
+     "graph": "assist2015_kc",
+     "cut": "q0.50",
+     "gamma1": "undecided",
+     "gamma0.5": "cut"
+    },
+    {
+     "graph": "assist2015_kc",
+     "cut": "q0.75",
+     "gamma1": "flagged",
+     "gamma0.5": "cut"
+    },
+    {
+     "graph": "assist2015_kc_transition",
+     "cut": "q0.50",
+     "gamma1": "cut",
+     "gamma0.5": "flagged"
+    },
+    {
+     "graph": "assist2017_item",
+     "cut": "q0.75",
+     "gamma1": "flagged",
+     "gamma0.5": "undecided"
+    },
+    {
+     "graph": "assist2017_kc",
+     "cut": "q0.75",
+     "gamma1": "undecided",
+     "gamma0.5": "cut"
+    },
+    {
+     "graph": "junyi_copractice",
+     "cut": "q0.75",
+     "gamma1": "flagged",
+     "gamma0.5": "cut"
+    }
+   ],
+   "gamma2": [
+    {
+     "graph": "assist2009_kc",
+     "cut": "q0.50",
+     "gamma1": "undecided",
+     "gamma2": "cut"
+    },
+    {
+     "graph": "assist2009_kc_transition",
+     "cut": "q0.25",
+     "gamma1": "cut",
+     "gamma2": "flagged"
+    },
+    {
+     "graph": "assist2015_kc",
+     "cut": "q0.50",
+     "gamma1": "undecided",
+     "gamma2": "cut"
+    },
+    {
+     "graph": "assist2015_kc_transition",
+     "cut": "q0.25",
+     "gamma1": "cut",
+     "gamma2": "flagged"
+    },
+    {
+     "graph": "assist2015_kc_transition",
+     "cut": "q0.50",
+     "gamma1": "cut",
+     "gamma2": "flagged"
+    },
+    {
+     "graph": "assist2017_item",
+     "cut": "q0.50",
+     "gamma1": "cut",
+     "gamma2": "undecided"
+    },
+    {
+     "graph": "assist2017_kc",
+     "cut": "q0.50",
+     "gamma1": "cut",
+     "gamma2": "undecided"
+    },
+    {
+     "graph": "assist2017_kc",
+     "cut": "q0.75",
+     "gamma1": "undecided",
+     "gamma2": "flagged"
+    }
+   ]
+  },
+  "counts": {
+   "gamma0.5": {
+    "co-practice": {
+     "q0.25": {
+      "cut": 6
+     },
+     "q0.50": {
+      "cut": 6
+     },
+     "q0.75": {
+      "flagged": 1,
+      "cut": 4,
+      "undecided": 1
+     }
+    },
+    "transition": {
+     "q0.25": {
+      "cut": 3,
+      "flagged": 2
+     },
+     "q0.50": {
+      "cut": 1,
+      "flagged": 4
+     },
+     "q0.75": {
+      "flagged": 5
+     }
+    },
+    "expert": {
+     "q0.25": {
+      "flagged": 2
+     },
+     "q0.50": {
+      "flagged": 2
+     },
+     "q0.75": {
+      "flagged": 2
+     }
+    }
+   },
+   "gamma1": {
+    "co-practice": {
+     "q0.25": {
+      "cut": 6
+     },
+     "q0.50": {
+      "cut": 4,
+      "undecided": 2
+     },
+     "q0.75": {
+      "flagged": 5,
+      "undecided": 1
+     }
+    },
+    "transition": {
+     "q0.25": {
+      "cut": 3,
+      "flagged": 2
+     },
+     "q0.50": {
+      "flagged": 4,
+      "cut": 1
+     },
+     "q0.75": {
+      "flagged": 5
+     }
+    },
+    "expert": {
+     "q0.25": {
+      "flagged": 2
+     },
+     "q0.50": {
+      "flagged": 2
+     },
+     "q0.75": {
+      "flagged": 2
+     }
+    }
+   },
+   "gamma2": {
+    "co-practice": {
+     "q0.25": {
+      "cut": 6
+     },
+     "q0.50": {
+      "cut": 4,
+      "undecided": 2
+     },
+     "q0.75": {
+      "flagged": 6
+     }
+    },
+    "transition": {
+     "q0.25": {
+      "flagged": 4,
+      "cut": 1
+     },
+     "q0.50": {
+      "flagged": 5
+     },
+     "q0.75": {
+      "flagged": 5
+     }
+    },
+    "expert": {
+     "q0.25": {
+      "flagged": 2
+     },
+     "q0.50": {
+      "flagged": 2
+     },
+     "q0.75": {
+      "flagged": 2
+     }
+    }
+   }
+  },
+  "sparse_lower_quartile_flagged": {
+   "gamma0.5": 4,
+   "gamma1": 4,
+   "gamma2": 6
+  },
+  "sparse_n": 7,
+  "communities_PiF_median_seeds0to4": {
+   "mooccubex_cs": {
+    "gamma0.5": 4.0,
+    "gamma1": 8.0,
+    "gamma2": 12.0
+   },
+   "mooccubex_cs_full": {
+    "gamma0.5": 10.0,
+    "gamma1": 16.0,
+    "gamma2": 26.0
+   },
+   "assist2009_kc": {
+    "gamma0.5": 2.0,
+    "gamma1": 6.0,
+    "gamma2": 49.0
+   },
+   "assist2009_item": {
+    "gamma0.5": 28.0,
+    "gamma1": 28.0,
+    "gamma2": 28.0
+   },
+   "assist2015_kc": {
+    "gamma0.5": 1.0,
+    "gamma1": 3.0,
+    "gamma2": 74.0
+   },
+   "assist2017_kc": {
+    "gamma0.5": 1.0,
+    "gamma1": 3.0,
+    "gamma2": 72.0
+   },
+   "assist2017_item": {
+    "gamma0.5": 17.0,
+    "gamma1": 19.0,
+    "gamma2": 24.0
+   },
+   "junyi_copractice": {
+    "gamma0.5": 1.0,
+    "gamma1": 3.0,
+    "gamma2": 240.0
+   },
+   "assist2009_kc_transition": {
+    "gamma0.5": 2.0,
+    "gamma1": 7.0,
+    "gamma2": 13.0
+   },
+   "assist2015_kc_transition": {
+    "gamma0.5": 3.0,
+    "gamma1": 7.0,
+    "gamma2": 14.0
+   },
+   "assist2017_kc_transition": {
+    "gamma0.5": 6.0,
+    "gamma1": 8.0,
+    "gamma2": 11.0
+   },
+   "assist2017_item_transition": {
+    "gamma0.5": 42.0,
+    "gamma1": 43.0,
+    "gamma2": 46.0
+   },
+   "junyi_transition": {
+    "gamma0.5": 33.0,
+    "gamma1": 42.0,
+    "gamma2": 51.0
+   }
+  },
+  "n_changed": {
+   "gamma0.5": 9,
+   "gamma2": 8
+  }
+ }
+}

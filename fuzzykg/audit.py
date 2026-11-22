@@ -17,7 +17,8 @@
      A no-cut drop above 0.05 is reported as a warning, since the rule is relative to that
      baseline; from release 4.10.0 such a graph is also read on the absolute drops (a cut is
      flagged when its own mean drop exceeds 2 x its seed SD and ``min_excess``), and a cut is
-     flagged when either reading flags it;
+     flagged when either reading flags it. Release 4.11.0 adds ``gamma``, the resolution of every
+     Leiden run and Q_F of the step (the manuscript decides at 1; results/v14 reports 0.5 and 2);
   4. optionally, agreement of every partition with an external grouping of the nodes. From
      release 4.10.0 the grouping is first checked against a permutation reference: the ARI of the
      best of three seeds of G_F is compared with the same quantity on ``perm_draws`` row-wise
@@ -58,12 +59,12 @@ def decide(flag_mu: bool, flag_rank: bool, unit: Optional[str]) -> str:
     return "undecided"
 
 
-def _leiden(G: FuzzyGraph, seed: int) -> np.ndarray:
+def _leiden(G: FuzzyGraph, seed: int, gamma: float = 1.0) -> np.ndarray:
     import igraph as ig
     import leidenalg as la
     g = ig.Graph(n=G.n, edges=list(zip(G.src.tolist(), G.dst.tolist())), directed=True)
     g.es["weight"] = G.mu.tolist()
-    p = la.RBConfigurationVertexPartition(g, weights="weight", resolution_parameter=1.0)
+    p = la.RBConfigurationVertexPartition(g, weights="weight", resolution_parameter=float(gamma))
     o = la.Optimiser(); o.set_rng_seed(int(seed)); o.optimise_partition(p, n_iterations=-1)
     return np.asarray(p.membership)
 
@@ -107,13 +108,15 @@ def step4_no_loss(r: Dict, piF_mean: float, piF_sd: float) -> bool:
 
 def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[int] = range(20),
               grouping: Optional[np.ndarray] = None, min_excess: float = 0.01,
-              unit: Optional[str] = None, perm_draws: int = 20) -> Dict:
+              unit: Optional[str] = None, perm_draws: int = 20, gamma: float = 1.0) -> Dict:
+    """Step 3 (and step 4 when ``grouping`` is given). ``gamma`` (release 4.11.0) is the resolution
+    of every Leiden run and of every Q_F evaluated in the drops; the manuscript's decisions use 1."""
     if unit not in UNIT_RULE:
         raise ValueError("unit must be 'meaningful', 'arbitrary' or None")
     from sklearn.metrics import adjusted_rand_score as ari
     Gr = FuzzyGraph(G.n, G.src, G.dst, rank_code(G.mu))
-    PF = [_leiden(G, s) for s in seeds]; PR = [_leiden(Gr, s) for s in seeds]
-    QF = np.array([fuzzy_modularity(G, p) for p in PF]); QR = np.array([fuzzy_modularity(Gr, p) for p in PR])
+    PF = [_leiden(G, s, gamma) for s in seeds]; PR = [_leiden(Gr, s, gamma) for s in seeds]
+    QF = np.array([fuzzy_modularity(G, p, gamma) for p in PF]); QR = np.array([fuzzy_modularity(Gr, p, gamma) for p in PR])
     has = None if grouping is None else np.array([x is not None for x in grouping])
     if has is not None:
         import pandas as pd
@@ -124,8 +127,8 @@ def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[i
         H = FuzzyGraph(G.n, G.src, G.dst, np.ones_like(G.mu)) if a is None else G.alpha_cut(a)
         if H.m == 0:
             rows[c] = {"alpha": a, "empty": True}; continue
-        P = [_leiden(H, s) for s in seeds]
-        d = QF - np.array([fuzzy_modularity(G, p) for p in P]); dr = QR - np.array([fuzzy_modularity(Gr, p) for p in P])
+        P = [_leiden(H, s, gamma) for s in seeds]
+        d = QF - np.array([fuzzy_modularity(G, p, gamma) for p in P]); dr = QR - np.array([fuzzy_modularity(Gr, p, gamma) for p in P])
         r = {"alpha": a, **describe(H), "retained_edges": float(H.m / G.m), "qf_drop": float(d.mean()), "qf_drop_sd": float(d.std(ddof=1)),
              "rank_drop": float(dr.mean()), "rank_drop_sd": float(dr.std(ddof=1))}
         r["low_degree_warning"] = bool(r["mean_out_degree"] < 2.0)
@@ -146,7 +149,7 @@ def cut_audit(G: FuzzyGraph, cuts: Dict[str, Optional[float]], seeds: Sequence[i
             else:
                 r[f"flag_{k}"] = rel
         r["decision"] = decide(r["flag_qf_drop"], r["flag_rank_drop"], unit)
-    out = {"rule": CUT_RULE.format(min_excess=min_excess), "unit": unit, "unit_rule": UNIT_RULE[unit],
+    out = {"rule": CUT_RULE.format(min_excess=min_excess), "gamma": float(gamma), "unit": unit, "unit_rule": UNIT_RULE[unit],
            "seeds": len(list(seeds)), "cuts": rows,
            "baseline_warning": [f"no-cut {k} {b[k]:.3f} > {BASELINE_WARNING}: the relative rule loses resolution; "
                                 f"absolute drops read as well, a cut flagged when either reading flags it" for k in warn]}
@@ -206,7 +209,7 @@ def path_audit(G: FuzzyGraph, pairs_src: np.ndarray, pairs_dst: np.ndarray, y: n
 
 def audit(G: FuzzyGraph, cuts: Optional[Dict[str, Optional[float]]] = None, grouping: Optional[np.ndarray] = None,
           pairs: Optional[tuple] = None, null_test: bool = True, draws: int = 200, seeds: Sequence[int] = range(20),
-          unit: Optional[str] = None, perm_draws: int = 20) -> Dict:
+          unit: Optional[str] = None, perm_draws: int = 20, gamma: float = 1.0) -> Dict:
     from .nulltest import best_qf, degree_test, density_matched_floor, structure_matched_floor, weights_only_test, weights_only_power, outcome
     if cuts is None:
         cuts = {f"q{q:.2f}": float(np.quantile(G.mu, q)) for q in (0.25, 0.5, 0.75)}
@@ -226,7 +229,7 @@ def audit(G: FuzzyGraph, cuts: Optional[Dict[str, Optional[float]]] = None, grou
                              "weights_global_z": wg["z"], "weights_row_z": wr["z"], "row_detectable_r": pr["detectable_r_pb"]}
         rep["partitioning"] = ("stop: no partition to lose" if rep["algorithm1"]["outcome_density_floor"] == "no structure detected"
                                else "partition is structure; audit the cut")
-    rep["cuts"] = cut_audit(G, cuts, seeds, grouping, unit=unit, perm_draws=perm_draws)
+    rep["cuts"] = cut_audit(G, cuts, seeds, grouping, unit=unit, perm_draws=perm_draws, gamma=gamma)
     if pairs is not None:
         rep["paths"] = path_audit(G, *pairs)
     return rep

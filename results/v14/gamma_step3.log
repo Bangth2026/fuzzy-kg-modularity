@@ -1,0 +1,288 @@
+mooccubex_cs/gamma0.5 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 2
+mooccubex_cs/gamma1 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 1
+mooccubex_cs/gamma2 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 0
+mooccubex_cs_full/gamma0.5 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 4
+mooccubex_cs_full/gamma1 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 6
+mooccubex_cs_full/gamma2 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 7
+assist2009_kc/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'cut'} 2
+assist2009_kc/gamma1 {'q0.25': 'cut', 'q0.50': 'undecided', 'q0.75': 'flagged'} 3
+assist2009_kc/gamma2 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 5
+assist2009_item/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 2
+assist2009_item/gamma1 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 2
+assist2009_item/gamma2 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 2
+assist2015_kc/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'cut'} 2
+assist2015_kc/gamma1 {'q0.25': 'cut', 'q0.50': 'undecided', 'q0.75': 'flagged'} 4
+assist2015_kc/gamma2 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 7
+assist2017_kc/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'cut'} 2
+assist2017_kc/gamma1 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'undecided'} 3
+assist2017_kc/gamma2 {'q0.25': 'cut', 'q0.50': 'undecided', 'q0.75': 'flagged'} 3
+assist2017_item/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'undecided'} 20
+assist2017_item/gamma1 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 22
+assist2017_item/gamma2 {'q0.25': 'cut', 'q0.50': 'undecided', 'q0.75': 'flagged'} 30
+junyi_copractice/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'cut'} 52
+junyi_copractice/gamma1 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 147
+junyi_copractice/gamma2 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 290
+assist2009_kc_transition/gamma0.5 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 1
+assist2009_kc_transition/gamma1 {'q0.25': 'cut', 'q0.50': 'flagged', 'q0.75': 'flagged'} 1
+assist2009_kc_transition/gamma2 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 1
+assist2015_kc_transition/gamma0.5 {'q0.25': 'cut', 'q0.50': 'flagged', 'q0.75': 'flagged'} 1
+assist2015_kc_transition/gamma1 {'q0.25': 'cut', 'q0.50': 'cut', 'q0.75': 'flagged'} 1
+assist2015_kc_transition/gamma2 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 2
+assist2017_kc_transition/gamma0.5 {'q0.25': 'cut', 'q0.50': 'flagged', 'q0.75': 'flagged'} 0
+assist2017_kc_transition/gamma1 {'q0.25': 'cut', 'q0.50': 'flagged', 'q0.75': 'flagged'} 1
+assist2017_kc_transition/gamma2 {'q0.25': 'cut', 'q0.50': 'flagged', 'q0.75': 'flagged'} 0
+assist2017_item_transition/gamma0.5 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 2
+assist2017_item_transition/gamma1 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 2
+assist2017_item_transition/gamma2 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 3
+junyi_transition/gamma0.5 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 7
+junyi_transition/gamma1 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 8
+junyi_transition/gamma2 {'q0.25': 'flagged', 'q0.50': 'flagged', 'q0.75': 'flagged'} 8
+{
+ "gamma1_matches_v12": [
+  "assist2009_item",
+  "assist2009_kc",
+  "assist2009_kc_transition",
+  "assist2015_kc",
+  "assist2015_kc_transition",
+  "assist2017_item",
+  "assist2017_item_transition",
+  "assist2017_kc",
+  "assist2017_kc_transition",
+  "junyi_copractice",
+  "junyi_transition",
+  "mooccubex_cs",
+  "mooccubex_cs_full"
+ ],
+ "gamma1_differs_from_v12": [],
+ "changes": {
+  "gamma0.5": [
+   {
+    "graph": "assist2009_kc",
+    "cut": "q0.50",
+    "gamma1": "undecided",
+    "gamma0.5": "cut"
+   },
+   {
+    "graph": "assist2009_kc",
+    "cut": "q0.75",
+    "gamma1": "flagged",
+    "gamma0.5": "cut"
+   },
+   {
+    "graph": "assist2009_kc_transition",
+    "cut": "q0.50",
+    "gamma1": "flagged",
+    "gamma0.5": "cut"
+   },
+   {
+    "graph": "assist2015_kc",
+    "cut": "q0.50",
+    "gamma1": "undecided",
+    "gamma0.5": "cut"
+   },
+   {
+    "graph": "assist2015_kc",
+    "cut": "q0.75",
+    "gamma1": "flagged",
+    "gamma0.5": "cut"
+   },
+   {
+    "graph": "assist2015_kc_transition",
+    "cut": "q0.50",
+    "gamma1": "cut",
+    "gamma0.5": "flagged"
+   },
+   {
+    "graph": "assist2017_item",
+    "cut": "q0.75",
+    "gamma1": "flagged",
+    "gamma0.5": "undecided"
+   },
+   {
+    "graph": "assist2017_kc",
+    "cut": "q0.75",
+    "gamma1": "undecided",
+    "gamma0.5": "cut"
+   },
+   {
+    "graph": "junyi_copractice",
+    "cut": "q0.75",
+    "gamma1": "flagged",
+    "gamma0.5": "cut"
+   }
+  ],
+  "gamma2": [
+   {
+    "graph": "assist2009_kc",
+    "cut": "q0.50",
+    "gamma1": "undecided",
+    "gamma2": "cut"
+   },
+   {
+    "graph": "assist2009_kc_transition",
+    "cut": "q0.25",
+    "gamma1": "cut",
+    "gamma2": "flagged"
+   },
+   {
+    "graph": "assist2015_kc",
+    "cut": "q0.50",
+    "gamma1": "undecided",
+    "gamma2": "cut"
+   },
+   {
+    "graph": "assist2015_kc_transition",
+    "cut": "q0.25",
+    "gamma1": "cut",
+    "gamma2": "flagged"
+   },
+   {
+    "graph": "assist2015_kc_transition",
+    "cut": "q0.50",
+    "gamma1": "cut",
+    "gamma2": "flagged"
+   },
+   {
+    "graph": "assist2017_item",
+    "cut": "q0.50",
+    "gamma1": "cut",
+    "gamma2": "undecided"
+   },
+   {
+    "graph": "assist2017_kc",
+    "cut": "q0.50",
+    "gamma1": "cut",
+    "gamma2": "undecided"
+   },
+   {
+    "graph": "assist2017_kc",
+    "cut": "q0.75",
+    "gamma1": "undecided",
+    "gamma2": "flagged"
+   }
+  ]
+ },
+ "counts": {
+  "gamma0.5": {
+   "co-practice": {
+    "q0.25": {
+     "cut": 6
+    },
+    "q0.50": {
+     "cut": 6
+    },
+    "q0.75": {
+     "flagged": 1,
+     "cut": 4,
+     "undecided": 1
+    }
+   },
+   "transition": {
+    "q0.25": {
+     "cut": 3,
+     "flagged": 2
+    },
+    "q0.50": {
+     "cut": 1,
+     "flagged": 4
+    },
+    "q0.75": {
+     "flagged": 5
+    }
+   },
+   "expert": {
+    "q0.25": {
+     "flagged": 2
+    },
+    "q0.50": {
+     "flagged": 2
+    },
+    "q0.75": {
+     "flagged": 2
+    }
+   }
+  },
+  "gamma1": {
+   "co-practice": {
+    "q0.25": {
+     "cut": 6
+    },
+    "q0.50": {
+     "cut": 4,
+     "undecided": 2
+    },
+    "q0.75": {
+     "flagged": 5,
+     "undecided": 1
+    }
+   },
+   "transition": {
+    "q0.25": {
+     "cut": 3,
+     "flagged": 2
+    },
+    "q0.50": {
+     "flagged": 4,
+     "cut": 1
+    },
+    "q0.75": {
+     "flagged": 5
+    }
+   },
+   "expert": {
+    "q0.25": {
+     "flagged": 2
+    },
+    "q0.50": {
+     "flagged": 2
+    },
+    "q0.75": {
+     "flagged": 2
+    }
+   }
+  },
+  "gamma2": {
+   "co-practice": {
+    "q0.25": {
+     "cut": 6
+    },
+    "q0.50": {
+     "cut": 4,
+     "undecided": 2
+    },
+    "q0.75": {
+     "flagged": 6
+    }
+   },
+   "transition": {
+    "q0.25": {
+     "flagged": 4,
+     "cut": 1
+    },
+    "q0.50": {
+     "flagged": 5
+    },
+    "q0.75": {
+     "flagged": 5
+    }
+   },
+   "expert": {
+    "q0.25": {
+     "flagged": 2
+    },
+    "q0.50": {
+     "flagged": 2
+    },
+    "q0.75": {
+     "flagged": 2
+    }
+   }
+  }
+ },
+ "sparse_lower_quartile_flagged": {
+  "gamma0.5": 4,
+  "gamma1": 4,
+  "gamma2": 6
+ },
+ "sparse_n": 7
+}

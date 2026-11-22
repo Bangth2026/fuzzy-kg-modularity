@@ -101,3 +101,15 @@ def test_cut_audit_reports_relative_flags_and_grouping_reference():
     grp = np.array([str(i % 3) for i in range(G.n)], dtype=object)
     r = cut_audit(G, cuts, seeds=range(3), grouping=grp, unit="arbitrary", perm_draws=3)
     assert "flag_qf_drop_relative" in r["cuts"]["q0.50"] and "grouping_reference" in r
+
+
+def test_cut_audit_gamma_default_reproduces_and_changes_partitions():
+    from fuzzykg.audit import _leiden
+    G = _graph(7, n=80, m=900)
+    cuts = {"q0.50": float(np.quantile(G.mu, 0.5))}
+    a = cut_audit(G, cuts, seeds=range(3))
+    b = cut_audit(G, cuts, seeds=range(3), gamma=1.0)
+    assert a["gamma"] == 1.0 and a["cuts"]["q0.50"]["qf_drop"] == b["cuts"]["q0.50"]["qf_drop"]
+    assert len(set(_leiden(G, 0, 4.0))) >= len(set(_leiden(G, 0, 0.25)))
+    c = cut_audit(G, cuts, seeds=range(3), gamma=2.0)
+    assert c["gamma"] == 2.0 and "decision" in c["cuts"]["q0.50"]

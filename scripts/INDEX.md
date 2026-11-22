@@ -103,4 +103,5 @@ Scripts keep the name of the release that introduced them (prefix `v4_` to `v13_
 | `v9_ppi_percolation.py` | v9 | Percolation of the alpha-cuts of PPI5k (Section 8.6): share of ordered pairs joined |
 | `verify_propositions.py` | - | Numerical verification of Propositions 1-3, Corollary 1, Remark 3 and Fact 1. |
 | `weights_null_more_draws.py` | - | Weights-only nulls (global and row) with more draws for one graph. |
+| `v14_gamma_step3.py` | v14 | Step 3 of Algorithm 2 at gamma 0.5, 1 and 2 on the thirteen real graphs, with community counts (results/v14/gamma_step3.json). |
 | `v13_absolute_reading.py` | v13 | Absolute reading of step 3 where the no-cut drop exceeds 0.05, and the permutation reference of step 4 (results/v13/absolute_reading.json). |
