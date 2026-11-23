@@ -50,6 +50,8 @@ class World:
     learn: float = 0.35
     max_tries: int = 6
     seed: int = 0
+    delta: float = 0.0   # community information in the strengths (release 5.1.0): a prerequisite inside the
+                         # community of its target has strength U(0.3 + delta, 1), one outside U(0.3, 1 - delta)
 
 
 def make_dag(w: World, rng):
@@ -71,7 +73,9 @@ def make_dag(w: World, rng):
                 continue
             chosen.add(p)
         for p in chosen:
-            par_src.append(p); par_dst.append(c); par_w.append(float(rng.uniform(0.3, 1.0)))
+            inside = comm[p] == comm[c]
+            lo, hi = (0.3 + w.delta, 1.0) if inside else (0.3, 1.0 - w.delta)
+            par_src.append(p); par_dst.append(c); par_w.append(float(rng.uniform(lo, hi)))
     return comm, np.array(par_src, int), np.array(par_dst, int), np.array(par_w)
 
 

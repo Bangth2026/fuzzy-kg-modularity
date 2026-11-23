@@ -1,0 +1,3387 @@
+{
+ "assist2009_kc_copractice": {
+  "observed": {
+   "m": 5069,
+   "audit": {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 4.255065502465412,
+     "robust": "flagged"
+    }
+   }
+  },
+  "min_excess": 0.03,
+  "subsample": [
+   {
+    "m": 4770,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.6555259311579595,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4745,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.958068241684656,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4730,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.048065716667471,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4730,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.37144481261109,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4795,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.6517412725483775,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4756,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.531583637600819,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4732,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.2802714564813185,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4847,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.913672985920654,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4830,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.327978945865642,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4837,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.8260714794339155,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4765,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.332302267358799,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4768,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.37144481261109,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4773,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.854228868623107,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4779,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.332302267358799,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4706,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.782858141653792,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4675,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.777217924132723,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4768,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.1792057231753015,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4814,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.6555259311579595,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4760,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.913672985920654,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 4753,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.002864610575233,
+      "robust": "flagged"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 4766.5
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 4766.5
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 4.255065502465412,
+     "robust": "flagged"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      4.3616591762980175,
+      4.719192036405875,
+      4.9692673339073
+     ],
+     "edges_median": 4766.5
+    }
+   }
+  },
+  "time_s": 82.8804173919998
+ },
+ "assist2009_kc_transition": {
+  "observed": {
+   "m": 304,
+   "audit": {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 1.6399996297484472,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.0273507681793026,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.2670899410414918,
+     "robust": "flagged"
+    }
+   }
+  },
+  "min_excess": 0.0075,
+  "subsample": [
+   {
+    "m": 269,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.7943462442492473,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.0273507681793026,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.0169145547303304,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 277,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.9109529749704406,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.2863969449369745,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.8768842935762189,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 270,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.4201811696858717,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.0090350448414473,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.715437896342879,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 285,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.20673406908459,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.175743265920711,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.8600784018072822,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 276,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.436232598151701,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.2521496890655568,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.7943462442492473,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 282,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.1652154917032231,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.19708503049573,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.8600784018072822,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 272,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.072078717154221,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.084316958237171,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.072078717154221,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 275,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 3.8197175492836655,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.3823722273578998,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.8938420273308882,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 267,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.064985635350429,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.3215808895645087,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.2196784442513793,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 289,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.036632928437698,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.0090350448414473,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.548296747979347,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 288,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.7465760476621182,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.730936954659055,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.8938420273308882,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 271,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.553839831274974,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.0090350448414473,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.548296747979347,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 273,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.502865431174608,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.715437896342879,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.4201811696858717,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 279,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.20673406908459,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.4989296487202608,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.6697684466455622,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 280,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.5678788438269704,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.5963385442879423,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.9282185207891962,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 278,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.064985635350429,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.1039991779173977,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.035137468173687,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 269,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.553839831274974,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.1652154917032231,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.392799173428138,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 283,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.539926526059492,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.4722065648435405,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.9456400615886358,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 289,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.8434229924091108,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.2521496890655568,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.5678788438269704,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 276,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.20673406908459,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.2863969449369745,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.700077618822873,
+      "robust": "undecided"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": 1.6399996297484472,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 0.9,
+     "share_same_robust": 0.65,
+     "kappa_star_quartiles": [
+      1.509990186966087,
+      1.7704611459556827,
+      2.20673406908459
+     ],
+     "edges_median": 276.5
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.0273507681793026,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 0.2,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1.099078622997341,
+      1.2521496890655568,
+      1.40483081172931
+     ],
+     "edges_median": 276.5
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 2.2670899410414918,
+     "robust": "flagged"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 0.35,
+     "kappa_star_quartiles": [
+      1.7746191572726553,
+      1.8938420273308882,
+      2.0443727804188208
+     ],
+     "edges_median": 276.5
+    }
+   }
+  },
+  "time_s": 54.19640123499994
+ },
+ "assist2015_kc_copractice": {
+  "observed": {
+   "m": 6963,
+   "audit": {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 1.2079007474252843,
+     "robust": "undecided"
+    }
+   }
+  },
+  "min_excess": 0.03,
+  "subsample": [
+   {
+    "m": 6757,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.4459599030674115,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6790,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.6548170999431815,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6743,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.6107615346177147,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6790,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.2980195990183812,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6784,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.064985635350429,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6758,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.2521496890655568,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6744,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.4201811696858717,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6771,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.539926526059492,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6770,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.4330125702369627,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6801,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.6107615346177147,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6730,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.4330125702369627,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6771,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.2521496890655568,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6813,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.19708503049573,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6837,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": 1.084316958237171,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6771,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": 1.0459989534302536,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6782,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.684854879435839,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6744,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.8269167179409245,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6748,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.6697684466455622,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6781,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": 1.2748783617709827,
+      "robust": "undecided"
+     }
+    }
+   },
+   {
+    "m": 6776,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 1.3215808895645087,
+      "robust": "undecided"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 6771.0
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 6771.0
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.2079007474252843,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 0.85,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1.2521496890655568,
+      1.426596869961417,
+      1.6107615346177147
+     ],
+     "edges_median": 6771.0
+    }
+   }
+  },
+  "time_s": 91.77721295299989
+ },
+ "assist2015_kc_transition": {
+  "observed": {
+   "m": 323,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.0,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 2.8133175148587766,
+     "robust": "flagged"
+    }
+   }
+  },
+  "min_excess": 0.0075,
+  "subsample": [
+   {
+    "m": 316,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.7465760476621182,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.3455698580999509,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.9427271762092815,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 316,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.2748783617709827,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.2863969449369745,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.1622776601683795,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 317,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.134194403502757,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.5124725453106234,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.6655157314161153,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 311,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.700077618822873,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.1039991779173977,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.7631613784546403,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 305,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.485508017172775,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.7943462442492473,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.4911519371724427,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 311,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.084316958237171,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.084316958237171,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.1622776601683795,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 315,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.2079007474252843,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.539926526059492,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.6847349186952174,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 321,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.357727142105184,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.1039991779173977,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.4582440689201976,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 314,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 3.5226946514731017,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.6548170999431815,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.6517412725483775,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 320,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.502865431174608,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.684854879435839,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.1622776601683795,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 311,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.229826225655732,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.4330125702369627,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.078089546545675,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 306,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.1139738599948024,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.9456400615886358,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.5226946514731017,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 315,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.582044699486904,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.553839831274974,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.8133175148587766,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 323,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.0,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.4590242156305606,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.03151936286044,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 309,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.018151721718182,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.018151721718182,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.0505278902670256,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 306,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.5963385442879423,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.39486202241965,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.6517412725483775,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 318,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.147985028517009,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.7465760476621182,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.1622776601683795,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 299,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.1547819846894583,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.6107615346177147,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.75161920154464,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 310,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.3713737056616555,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.9109529749704406,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.586637624484769,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 304,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.0908000412787184,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": 1.055449600878603,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.6179946215854,
+      "robust": "flagged"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.0,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 0.35,
+     "share_same_robust": 0.75,
+     "kappa_star_quartiles": [
+      1.149635089392783,
+      1.4216175796389794,
+      1.8326320460662682
+     ],
+     "edges_median": 312.5
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": 1.084316958237171,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 0.15,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1.2407975031820804,
+      1.485748380470592,
+      1.6623265448163458
+     ],
+     "edges_median": 312.5
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 2.8133175148587766,
+     "robust": "flagged"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      2.9103747608716555,
+      3.1622776601683795,
+      3.602913536500671
+     ],
+     "edges_median": 312.5
+    }
+   }
+  },
+  "time_s": 66.94203602400012
+ },
+ "assist2017_kc_copractice": {
+  "observed": {
+   "m": 5494,
+   "audit": {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "q0.75": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    }
+   }
+  },
+  "min_excess": 0.03,
+  "subsample": [
+   {
+    "m": 5348,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5358,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5320,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5326,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5320,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5330,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5348,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5339,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5326,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5383,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5357,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5330,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5341,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5326,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5330,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5342,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5348,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5330,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5336,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   },
+   {
+    "m": 5329,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     },
+     "q0.75": {
+      "decision": "cut",
+      "kappa_star": Infinity,
+      "robust": "cut"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 5333.0
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 5333.0
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": Infinity,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      1000.0,
+      1000.0,
+      1000.0
+     ],
+     "edges_median": 5333.0
+    }
+   }
+  },
+  "time_s": 56.44651952200002
+ },
+ "assist2017_kc_transition": {
+  "observed": {
+   "m": 80,
+   "audit": {
+    "q0.25": {
+     "decision": "cut",
+     "kappa_star": 3.1622776601683795,
+     "robust": "cut"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 1.8269167179409245,
+     "robust": "undecided"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 6.731703824144983,
+     "robust": "flagged"
+    }
+   }
+  },
+  "min_excess": 0.0075,
+  "subsample": [
+   {
+    "m": 82,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.055449600878603,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.9282185207891962,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.623413251903492,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 77,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.3215808895645087,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 2.5945527214040154,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.573060401273886,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 88,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.1240386637720556,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 2.0535250264571463,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 6.552488237367148,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 83,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.7943462442492473,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.3215808895645087,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.450794062355996,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 86,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.0746078283213174,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.778279410038923,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.7254878843583805,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 82,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.4989296487202608,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 3.5226946514731017,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 17.00077618822874,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 88,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.229826225655732,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.8434229924091108,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.573060401273886,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 91,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.9632190067904056,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 3.4289112935751365,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 11.341944035027575,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 85,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 2.3713737056616555,
+      "robust": "cut"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.3699942677165546,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.613839682733215,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 81,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.8600784018072822,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.19708503049573,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 2.9163775740531204,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 93,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.144441900797323,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 2.7384196342643614,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 8.505258154439963,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 84,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.9456400615886358,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 3.1908489806291085,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 11.444419007973236,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 85,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.0,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.9988548118735103,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.2802714564813185,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 84,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.229826225655732,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 2.350140084613489,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.777217924132723,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 85,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.1863661590503345,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.4989296487202608,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 3.2196784442513793,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 85,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.19708503049573,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 1.9282185207891962,
+      "robust": "undecided"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 4.697588816706493,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 81,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 4.531583637600819,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.42910085028456,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 15.678788438269706,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 88,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.2521496890655568,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 2.5945527214040154,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.424690937011326,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 87,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.1096905134061714,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 3.785515249258631,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 7.986265609715333,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 84,
+    "audit": {
+     "q0.25": {
+      "decision": "cut",
+      "kappa_star": 1.1547819846894583,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 2.350140084613489,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 5.186134191837929,
+      "robust": "flagged"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "cut",
+     "kappa_star": 3.1622776601683795,
+     "robust": "cut"
+    },
+    "subsample": {
+     "share_same_decision": 0.45,
+     "share_same_robust": 0.05,
+     "kappa_star_quartiles": [
+      1.1521969637164244,
+      1.2409879573606444,
+      1.8814688167526206
+     ],
+     "edges_median": 85.0
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.8269167179409245,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 0.45,
+     "kappa_star_quartiles": [
+      1.8271370968165639,
+      2.2018325555353178,
+      2.851526970855548
+     ],
+     "edges_median": 85.0
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 6.731703824144983,
+     "robust": "flagged"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      5.06399784805507,
+      5.598236826588689,
+      8.11601374589649
+     ],
+     "edges_median": 85.0
+    }
+   }
+  },
+  "time_s": 31.217223803000252
+ },
+ "junyi_transition": {
+  "observed": {
+   "m": 1078,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.9809567785503388,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 6.208243607191253,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 27.384196342643627,
+     "robust": "flagged"
+    }
+   }
+  },
+  "min_excess": 0.0075,
+  "subsample": [
+   {
+    "m": 1057,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.3713737056616555,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.299300614350421,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 30.232130250207156,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1052,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.7384196342643614,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.566695371401163,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 29.693148482024792,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1051,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.5713207233666546,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.13123008063037,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 33.98208328942561,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1033,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.350140084613489,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 6.792525070055476,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 29.693148482024792,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1059,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.5254789325773794,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.041355154858089,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 29.163775740531207,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1041,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 3.889051999280318,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.278825906280481,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 35.86637624484769,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1038,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.6655157314161153,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.582103543253414,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 33.98208328942561,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1029,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.4804544143141136,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.058421877614819,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 33.077391229919975,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1069,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.9988548118735103,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 6.731703824144983,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 29.693148482024792,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1028,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 3.6517412725483775,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.498942093324559,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 36.19043056252012,
+      "robust": "flagged"
+     }
+    }
+   }
+  ],
+  "bootstrap": [
+   {
+    "m": 1152,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.6655157314161153,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.041355154858089,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 30.232130250207156,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1144,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.838735964758755,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.737883498527172,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 33.67780283068891,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1149,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 3.33762469429204,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.431795487839463,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 26.895987855750448,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1135,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.2266720103519186,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 6.320933917507673,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 26.416483203860942,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1132,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.5254789325773794,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.582103543253414,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 32.19678444251381,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1168,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.9109529749704406,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 6.152654101490373,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 25.713207233666555,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1133,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.392799173428138,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 7.773650302387761,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 27.63161378454641,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1135,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 1.8434229924091108,
+      "robust": "undecided"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.976871324473139,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 34.91151937172444,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1125,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.1287516617963727,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 8.505258154439963,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 29.693148482024792,
+      "robust": "flagged"
+     }
+    }
+   },
+   {
+    "m": 1123,
+    "audit": {
+     "q0.25": {
+      "decision": "flagged",
+      "kappa_star": 2.9693148482024783,
+      "robust": "flagged"
+     },
+     "q0.50": {
+      "decision": "flagged",
+      "kappa_star": 6.097562352214592,
+      "robust": "flagged"
+     },
+     "q0.75": {
+      "decision": "flagged",
+      "kappa_star": 27.384196342643627,
+      "robust": "flagged"
+     }
+    }
+   }
+  ],
+  "summary": {
+   "q0.25": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 1.9809567785503388,
+     "robust": "undecided"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 0.1,
+     "kappa_star_quartiles": [
+      2.39864388282477,
+      2.548399827972017,
+      2.7201936585523
+     ],
+     "edges_median": 1046.0
+    },
+    "bootstrap": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 0.2,
+     "kappa_star_quartiles": [
+      2.153231748935259,
+      2.459139053002759,
+      2.795430906423095
+     ],
+     "edges_median": 1135.0
+    }
+   },
+   "q0.50": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 6.208243607191253,
+     "robust": "flagged"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      7.105841519731172,
+      7.532818732362861,
+      8.113028029876482
+     ],
+     "edges_median": 1046.0
+    },
+    "bootstrap": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      6.501039226845277,
+      7.602722895113612,
+      8.56289219605005
+     ],
+     "edges_median": 1135.0
+    }
+   },
+   "q0.75": {
+    "observed": {
+     "decision": "flagged",
+     "kappa_star": 27.384196342643627,
+     "robust": "flagged"
+    },
+    "subsample": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      29.693148482024792,
+      31.654760740063566,
+      33.98208328942561
+     ],
+     "edges_median": 1046.0
+    },
+    "bootstrap": {
+     "share_same_decision": 1.0,
+     "share_same_robust": 1.0,
+     "kappa_star_quartiles": [
+      27.01803997747374,
+      28.6623811332856,
+      31.705620894437146
+     ],
+     "edges_median": 1135.0
+    }
+   }
+  },
+  "time_s": 342.9899460329998
+ }
+}

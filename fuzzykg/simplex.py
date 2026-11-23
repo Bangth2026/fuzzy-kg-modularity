@@ -1,4 +1,4 @@
-"""Unit-robust cut audit (release 5.0.0, Section 4 of the manuscript).
+"""Unit-robust cut audit (release 5.0.0; refined knots and the divergence check added in 5.1.0; Section 4 of the manuscript).
 
 A strictly increasing rescaling phi of the memberships that is piecewise linear with knots
 t_0 = 0 < t_1 < ... < t_J (the minimum membership and the quantiles of mu_E at k/L) is fixed by its
@@ -145,3 +145,24 @@ def simplex_extremes(fam: CutFamily, cut: str, min_excess: float = 0.01, n_rand:
             "margin_min": float(mg.min()), "margin_max": float(mg.max()),
             "argmin_vertex": int(np.argmin(ex[:J])), "argmax_vertex": int(np.argmax(ex[:J])),
             "vertex_excess": ex[:J].tolist()}
+
+
+def refined_knots(mu: np.ndarray, levels: Sequence[float], L: int = 8):
+    """Knots of Section 4.2 plus, for each cut level, the largest membership below it (Corollary 1):
+    the vertex of the segment ending at a cut level is then the cut's indicator."""
+    knots, _ = segment_basis(mu, L)
+    extra = [float(mu[mu < a].max()) for a in levels if (mu < a).any()]
+    knots = np.unique(np.concatenate([knots, extra]))
+    lo, hi = knots[:-1], knots[1:]
+    return knots, np.clip(mu[:, None] - lo[None, :], 0.0, (hi - lo)[None, :])
+
+
+def divergence(support_parts: Sequence[np.ndarray], graded_parts: Sequence[np.ndarray]) -> Dict[str, float]:
+    """Divergence D of the graded partition from the support partition (Section 4.5, Eq. 7):
+    min(seed-to-seed ARI of each) - mean ARI between them over matched seeds (cyclic seed pairs)."""
+    from sklearn.metrics import adjusted_rand_score as ari
+    S, F = list(support_parts), list(graded_parts); n = min(len(S), len(F))
+    fs = float(np.mean([ari(F[i], S[i]) for i in range(n)]))
+    ss = float(np.mean([ari(S[i], S[(i + 1) % n]) for i in range(n)]))
+    ff = float(np.mean([ari(F[i], F[(i + 1) % n]) for i in range(n)]))
+    return {"a_FS": fs, "a_SS": ss, "a_FF": ff, "D": min(ss, ff) - fs}

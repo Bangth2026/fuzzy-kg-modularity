@@ -1,0 +1,7 @@
+assist2009_kc_copractice 5069 {'q0.25': {'subsample': (1.0, 1.0, 4766.5)}, 'q0.50': {'subsample': (1.0, 1.0, 4766.5)}, 'q0.75': {'subsample': (1.0, 1.0, 4766.5)}} 83s
+assist2009_kc_transition 304 {'q0.25': {'subsample': (0.9, 0.65, 276.5)}, 'q0.50': {'subsample': (0.2, 1.0, 276.5)}, 'q0.75': {'subsample': (1.0, 0.35, 276.5)}} 54s
+assist2015_kc_copractice 6963 {'q0.25': {'subsample': (1.0, 1.0, 6771.0)}, 'q0.50': {'subsample': (1.0, 1.0, 6771.0)}, 'q0.75': {'subsample': (0.85, 1.0, 6771.0)}} 92s
+assist2015_kc_transition 323 {'q0.25': {'subsample': (0.35, 0.75, 312.5)}, 'q0.50': {'subsample': (0.15, 1.0, 312.5)}, 'q0.75': {'subsample': (1.0, 1.0, 312.5)}} 67s
+assist2017_kc_copractice 5494 {'q0.25': {'subsample': (1.0, 1.0, 5333.0)}, 'q0.50': {'subsample': (1.0, 1.0, 5333.0)}, 'q0.75': {'subsample': (1.0, 1.0, 5333.0)}} 56s
+assist2017_kc_transition 80 {'q0.25': {'subsample': (0.45, 0.05, 85.0)}, 'q0.50': {'subsample': (1.0, 0.45, 85.0)}, 'q0.75': {'subsample': (1.0, 1.0, 85.0)}} 31s
+junyi_transition 1078 {'q0.25': {'subsample': (1.0, 0.1, 1046.0), 'bootstrap': (1.0, 0.2, 1135.0)}, 'q0.50': {'subsample': (1.0, 1.0, 1046.0), 'bootstrap': (1.0, 1.0, 1135.0)}, 'q0.75': {'subsample': (1.0, 1.0, 1046.0), 'bootstrap': (1.0, 1.0, 1135.0)}} 343s

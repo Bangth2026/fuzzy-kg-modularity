@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; version 5.0.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
+> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 and 5.1.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.12.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983, version 3.12.0 (with 3.11.0): 10.5281/zenodo.24435807; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the first revision, 3.11.0 those of the second (with a preregistered replication on two held-out corpora; plan in `kt/prereg/`), and 3.12.0 the analyses of the third version (entry point x edge term, claims at three smallest effects of interest, regret under a Rasch simulated learner); see `kt/README.md`.
 
@@ -21,6 +21,22 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4, and `--gamma` (version 4.11.0) for the resolution, 1 by default); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 5.1.0
+
+The analyses of the revised manuscript (A). New code in `fuzzykg/simplex.py` (`refined_knots`, `divergence`), `fuzzykg/semisynthetic.py` (`World.delta`), new results in `results/v16/`, figures in `docs/v51_figure*.{png,pdf}`; `docs/paper_map_r11.md` maps every new table and figure to its script. No earlier result file changes. Every new number of the manuscript is in `results/v16/summary.json`, every new supplementary table in `results/v16/supp_tables.json`.
+
+| Topic | Script | Output |
+|---|---|---|
+| Value of grades of the Junyi transition graph at pruning thresholds 0, 0.05, 0.1, 0.2, 0.3 on the fixed 1,954 annotated pairs (needs the Junyi problem log) | `scripts/v16_junyi_pruning.py` | `results/v16/junyi_pruning_value.json`, `data/graphs/junyi_transition_tau*` |
+| Path and partition values over the 18 vertices of the box B_2 of rescalings | `scripts/v16_units.py` | `results/v16/units.json` |
+| Real graphs from the cached partitions: losses against Pi_F, row-null gain check, refined family, kappa* over seed resamples, seed-triple ranges and Monte Carlo errors of the partition value, column null | `scripts/v16_real.py` | `results/v16/real.json` |
+| Semi-synthetic worlds with community information in the generator, delta in {0, 0.2, 0.4} | `scripts/v16_semisynthetic.py` | `results/v16/semisynthetic_delta_*.json` |
+| Grades made to mark the communities after construction, eta in {0, 0.5, 1, 2}; divergence check | `scripts/v16_injected.py`, `scripts/v16_divergence.py` | `results/v16/injected_part*.json`, `results/v16/divergence.json` |
+| Learner subsamples without duplicates (ASSISTments KC level, Junyi transition) and the bootstrap on Junyi | `scripts/v16_learner_resampling.py` | `results/v16/learner_resampling.json` |
+| All new numbers; supplementary tables; Figures 1, 2 and 4 | `scripts/v16_summarise.py`, `scripts/v16_supp_tables.py`, `scripts/v16_figures.py` | `results/v16/summary.json`, `results/v16/supp_tables.json`, `docs/v51_figure*` |
+
+Run order: the v15 run order, then `v16_junyi_pruning.py`, `v16_units.py`, `v16_real.py`, `v16_semisynthetic.py 0 0.2 0.4`, `v16_injected.py` (optionally split with `PART=0/2` and `PART=1/2`), `v16_divergence.py`, `v16_learner_resampling.py`, `v16_summarise.py`, `v16_supp_tables.py`, `v16_figures.py`. The ASSISTments 2009 loader reads `skill_builder_data.csv`; the `_corrected` release of the EduData mirror reproduces the graphs of `data/graphs/` and can be linked under that name.
 
 ## What is in version 5.0.0
 
