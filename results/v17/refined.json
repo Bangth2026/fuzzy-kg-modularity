@@ -1,0 +1,466 @@
+{
+ "cuts": {
+  "mooccubex_cs": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 25.141467573528136,
+    "kappa_refined": 25.141467573528136,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 187.6884293576218,
+    "kappa_refined": 187.6884293576218,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 699.4015049897152,
+    "kappa_refined": 699.4015049897152,
+    "J_refined": 12
+   }
+  },
+  "mooccubex_cs_full": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 13.792672921477099,
+    "kappa_refined": 13.792672921477099,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 93.68707660220845,
+    "kappa_refined": 93.68707660220845,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 523.2991146814945,
+    "kappa_refined": 523.2991146814945,
+    "J_refined": 12
+   }
+  },
+  "assist2009_kc": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 4.235972431743681,
+    "kappa_refined": 4.235972431743681,
+    "J_refined": 12
+   }
+  },
+  "assist2009_item": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 48.69675251658631,
+    "kappa_refined": 48.69675251658631,
+    "J_refined": 12
+   }
+  },
+  "assist2015_kc": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 1.2409377607517196,
+    "kappa_refined": 1.2409377607517196,
+    "J_refined": 12
+   }
+  },
+  "assist2017_kc": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   }
+  },
+  "assist2017_item": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 4.880637612788442,
+    "kappa_refined": 4.880637612788442,
+    "J_refined": 12
+   }
+  },
+  "junyi_copractice": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   }
+  },
+  "assist2009_kc_transition": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": 1.5295733650879886,
+    "kappa_refined": 1.5295733650879886,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 1.055449600878603,
+    "kappa_refined": 1.055449600878603,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 2.355430598453073,
+    "kappa_refined": 2.355430598453073,
+    "J_refined": 12
+   }
+  },
+  "assist2015_kc_transition": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": 1.4297938921574151,
+    "kappa_refined": 1.4297938921574151,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": 1.084316958237171,
+    "kappa_refined": 1.084316958237171,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 2.750762689037563,
+    "kappa_refined": 2.750762689037563,
+    "J_refined": 12
+   }
+  },
+  "assist2017_kc_transition": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": 2.419853434713799,
+    "kappa_refined": 2.419853434713799,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 2.2316845792468993,
+    "kappa_refined": 2.2316845792468993,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 8.04032192064868,
+    "kappa_refined": 8.04032192064868,
+    "J_refined": 12
+   }
+  },
+  "assist2017_item_transition": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 11.573815701829783,
+    "kappa_refined": 11.496003173122858,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 28.96770322689564,
+    "kappa_refined": 28.772948938682795,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 81.31230080630361,
+    "kappa_refined": 80.76562580268174,
+    "J_refined": 12
+   }
+  },
+  "junyi_transition": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 1.9109529749704406,
+    "kappa_refined": 1.9109529749704406,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 6.264335366568855,
+    "kappa_refined": 6.264335366568855,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 28.006937678817305,
+    "kappa_refined": 28.006937678817305,
+    "J_refined": 12
+   }
+  },
+  "assist2012_copractice": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   }
+  },
+  "assist2012_transition": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": 1.5399265260594919,
+    "kappa_refined": 1.5399265260594919,
+    "J_refined": 11
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 1.5090753928162082,
+    "kappa_refined": 1.5090753928162082,
+    "J_refined": 11
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 5.25657814405402,
+    "kappa_refined": 5.25657814405402,
+    "J_refined": 11
+   }
+  },
+  "algebra2005_copractice": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 1.2921952045436331,
+    "kappa_refined": 1.2921952045436331,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 5.327978945865641,
+    "kappa_refined": 5.327978945865641,
+    "J_refined": 12
+   }
+  },
+  "algebra2005_transition": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 1.614387597696659,
+    "kappa_refined": 1.614387597696659,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 5.082234353590866,
+    "kappa_refined": 5.082234353590866,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 63.78043838892176,
+    "kappa_refined": 63.78043838892176,
+    "J_refined": 12
+   }
+  },
+  "bridge2006_copractice": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 36.190430562520106,
+    "kappa_refined": 36.190430562520106,
+    "J_refined": 12
+   }
+  },
+  "bridge2006_transition": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 3.5785817063853904,
+    "kappa_refined": 3.5785817063853904,
+    "J_refined": 11
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 27.81864276396209,
+    "kappa_refined": 27.6316137845464,
+    "J_refined": 11
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 11
+   }
+  },
+  "eedi_copractice": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": 1.1139738599948024,
+    "kappa_refined": 1.1139738599948024,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": 6.222219284189569,
+    "kappa_refined": 6.222219284189569,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 5.151267020450658,
+    "kappa_refined": 5.151267020450658,
+    "J_refined": 12
+   }
+  },
+  "eedi_transition": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 1.7983855837338836,
+    "kappa_refined": 1.7983855837338836,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 10.746078283213174,
+    "kappa_refined": 10.746078283213174,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 26.71516202604624,
+    "kappa_refined": 26.71516202604624,
+    "J_refined": 12
+   }
+  },
+  "ednet_copractice": {
+   "q0.25": {
+    "decision": "cut",
+    "kappa": 10.459989534302537,
+    "kappa_refined": 10.459989534302537,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "cut",
+    "kappa": 76.5224845747717,
+    "kappa_refined": 76.5224845747717,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "cut",
+    "kappa": Infinity,
+    "kappa_refined": Infinity,
+    "J_refined": 12
+   }
+  },
+  "ednet_transition": {
+   "q0.25": {
+    "decision": "flagged",
+    "kappa": 4.322571517865361,
+    "kappa_refined": 4.322571517865361,
+    "J_refined": 12
+   },
+   "q0.50": {
+    "decision": "flagged",
+    "kappa": 5.0141268007030035,
+    "kappa_refined": 4.980416061248411,
+    "J_refined": 12
+   },
+   "q0.75": {
+    "decision": "flagged",
+    "kappa": 12.465311192565446,
+    "kappa_refined": 12.465311192565446,
+    "J_refined": 12
+   }
+  }
+ },
+ "nesting_violations": [],
+ "robust_changed": []
+}

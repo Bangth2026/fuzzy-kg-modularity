@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 and 5.1.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
+> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 to 5.2.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.12.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983, version 3.12.0 (with 3.11.0): 10.5281/zenodo.24435807; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the first revision, 3.11.0 those of the second (with a preregistered replication on two held-out corpora; plan in `kt/prereg/`), and 3.12.0 the analyses of the third version (entry point x edge term, claims at three smallest effects of interest, regret under a Rasch simulated learner); see `kt/README.md`.
 
@@ -21,6 +21,18 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4, and `--gamma` (version 4.11.0) for the resolution, 1 by default); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 5.2.0
+
+The analyses of the second revision of manuscript (A); new results in `results/v17/`, every new number in `results/v17/summary.json`, every new or replaced supplementary table in `results/v17/supp_tables.json`; figures `docs/v52_figure*` (Figures 3 and 4 swap numbers with respect to 5.1.0). `fuzzykg.simplex` now enumerates the box vertices up to J = 12, so the refined family of Corollary 1 is searched like the family (5); no result of the family (5) changes (J = 9).
+
+| Topic | Script | Output |
+|---|---|---|
+| Divergence check with a null reference (row permutations), on the injected worlds and the real graphs | `scripts/v17_divergence_null.py` (`PART=0/2`, `PART=1/2`) | `results/v17/divergence_null_part*.json` |
+| Best crisp vs best graded over the pruning threshold (cross-fitted); grouping-class null of the partition value, Junyi without suggested attempts; sparse minimum excess 0.03 | `scripts/v17_misc.py` | `results/v17/misc.json` |
+| kappa* in the refined family with full vertex enumeration | `scripts/v17_refined.py` | `results/v17/refined.json` |
+| kappa* of the Junyi transition cuts against the share of learners (needs the Junyi log) | `scripts/v17_junyi_fraction.py` | `results/v17/junyi_fraction.json` |
+| Checks calibrated by density class; summary; supplementary tables | `scripts/v17_summarise.py`, `scripts/v17_supp_tables.py` | `results/v17/summary.json`, `results/v17/supp_tables.json` |
 
 ## What is in version 5.1.0
 

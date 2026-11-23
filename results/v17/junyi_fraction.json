@@ -1,0 +1,206 @@
+{
+ "0.5": [
+  {
+   "m": 968,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 3.5545223556118883,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 7.704043920109095,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 35.54522355611889,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 951,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 3.619043056252011,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 7.914755439411163,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 34.91151937172444,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 951,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 2.5254789325773794,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 7.773650302387761,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 35.226946514731026,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 959,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 1.8768842935762189,
+     "robust": "undecided"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 7.299300614350421,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 29.163775740531207,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 949,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 2.86438407149338,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 8.42910085028456,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 34.91151937172444,
+     "robust": "flagged"
+    }
+   }
+  }
+ ],
+ "0.65": [
+  {
+   "m": 1019,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 3.4911519371724427,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 8.89649112819833,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 34.28911293575137,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 1017,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 2.548296747979347,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 10.366329284376981,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 36.847349186952165,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 987,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 2.2266720103519186,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 7.843885581451565,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 34.59891660869934,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 1017,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 3.5545223556118883,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 9.56023901095308,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 34.28911293575137,
+     "robust": "flagged"
+    }
+   }
+  },
+  {
+   "m": 986,
+   "audit": {
+    "q0.25": {
+     "decision": "flagged",
+     "kappa_star": 4.067944321083048,
+     "robust": "flagged"
+    },
+    "q0.50": {
+     "decision": "flagged",
+     "kappa_star": 10.273507681793026,
+     "robust": "flagged"
+    },
+    "q0.75": {
+     "decision": "flagged",
+     "kappa_star": 31.90848980629109,
+     "robust": "flagged"
+    }
+   }
+  }
+ ]
+}

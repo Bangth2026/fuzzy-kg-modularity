@@ -96,7 +96,7 @@ def _box_extreme(fam: CutFamily, cut: str, kappa: float, sign: int, min_excess: 
     """min (sign = +1) or max (sign = -1) of the margin over the box s in [1, kappa]^J."""
     from scipy.optimize import minimize
     J = fam.J
-    V = np.array(list(product([1.0, kappa], repeat=J))) if J <= 10 else np.vstack([np.ones(J), kappa * np.ones(J)])
+    V = np.array(list(product([1.0, kappa], repeat=J))) if J <= 12 else np.vstack([np.ones(J), kappa * np.ones(J)])  # 5.2.0: J <= 12 (refined family)
     R = 1.0 + (kappa - 1.0) * rng.random((n_rand, J))
     S = np.vstack([V, R, np.ones((1, J))])
     _, mg = fam.margin(cut, S, min_excess)
