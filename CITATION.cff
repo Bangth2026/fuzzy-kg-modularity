@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "fuzzy-kg-modularity: auditing thresholding and t-norm path inference in fuzzy prerequisite knowledge graphs (code, results and run files)"
-version: 5.4.1
+version: 5.4.2
 date-released: 2026-11-23
 doi: 10.5281/zenodo.23689762
 repository-code: https://github.com/Bangth2026/fuzzy-kg-modularity
@@ -22,12 +22,3 @@ preferred-citation:
     - family-names: Truong
       given-names: Hai Bang
       orcid: https://orcid.org/0000-0001-5094-3128
-references:
-  - type: article
-    title: "When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora"
-    journal: IEEE Transactions on Learning Technologies
-    year: 2026
-    notes: submitted; code in kt/ (releases 2.0.0 to 3.12.0, Zenodo 10.5281/zenodo.24131157)
-    authors:
-      - family-names: Truong
-        given-names: Hai Bang
