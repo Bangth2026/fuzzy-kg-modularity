@@ -1,5 +1,7 @@
 # Binarisation and t-norm composition on fuzzy knowledge graphs
 
+> **Manuscript (A) has moved.** From release 6.0.0 its code, results and archive live in their own repository, https://github.com/Bangth2026/fuzzy-prereq-cut-path-audit (Zenodo concept 10.5281/zenodo.24492829), which contains nothing else. The files of (A) here are frozen at release 5.4.1 and kept for the history of earlier versions; the knowledge-tracing code of (B) is in https://github.com/Bangth2026/kt-null-graph-controls.
+
 Reference implementation, reproduction scripts and run files for the manuscript:
 
 > **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 to 5.4.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
