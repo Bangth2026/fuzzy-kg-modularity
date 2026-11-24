@@ -277,7 +277,7 @@ Code changes: `fuzzykg/nulltest.py` adds `planted_dc_like`, `structure_matched_f
 These versions added the directory `kt/` with the code and run files of a separate knowledge-tracing study (manuscript
 *When Does a Concept Graph Help a Knowledge Tracer? Null-Graph Controls by Entry Point for KC-Level First Attempts*). From
 version 5.4.2 that code is no longer part of this repository: it lives in its own repository,
-https://github.com/Bangth2026/kt-null-graph-controls (version 4.0.0, https://doi.org/10.5281/zenodo.24492767). The fuzzy-graph
+https://github.com/Bangth2026/kt-null-graph-controls (version 4.0.0, https://doi.org/10.5281/zenodo.24492980; all versions https://doi.org/10.5281/zenodo.24492979). The fuzzy-graph
 package, scripts and results of manuscript (A) did not change in these versions, except as listed in their own sections.
 
 ## What is in version 1.4.3
