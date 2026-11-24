@@ -29,8 +29,9 @@
     },
     {
       "identifier": "10.5281/zenodo.23074830",
-      "relation": "isRelatedTo",
-      "scheme": "doi"
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "software"
     }
   ]
 }
