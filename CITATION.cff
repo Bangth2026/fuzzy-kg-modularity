@@ -27,7 +27,7 @@ references:
     title: "When does a concept graph help a knowledge tracer? Null-graph controls by entry point for KC-level first attempts"
     journal: IEEE Transactions on Learning Technologies
     year: 2026
-    notes: submitted; code in kt/ (releases 2.0.0 to 3.13.0, Zenodo 10.5281/zenodo.24131157; version 3.13.0: 10.5281/zenodo.24439395)
+    notes: submitted; code in kt/ (releases 2.0.0 to 3.14.0, Zenodo 10.5281/zenodo.24131157; version 3.14.0 (with 3.13.0): 10.5281/zenodo.24439395)
     authors:
       - family-names: Truong
         given-names: Hai Bang

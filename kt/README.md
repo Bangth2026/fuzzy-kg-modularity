@@ -150,6 +150,15 @@ checksums are in `results_r7/pred_checksums_sha256.txt`. Raw corpora: the Junyi 
 mirror holds a problem log over 2 GB that some RAR extractors cannot unpack; `unrar` works.
 Earlier results files are unchanged.
 
+# Release 3.14.0: analyses for the fifth version of the IEEE TLT manuscript
+
+Zenodo: 10.5281/zenodo.24439395 (concept DOI 10.5281/zenodo.24131157); this version includes release 3.13.0, whose draft
+was never published on its own. No new training runs.
+
+| Analysis | Script | Output |
+|---|---|---|
+| The first-attempt gain across the ten corpora: mean and median over corpora (32 and 50 units), corpus features (KCs, training interactions per KC at 10%, share of first attempts, edges of G per KC, share of edges inside one unit) and their Spearman correlations with the gain, exact or Monte Carlo permutation p | `src/r17_between_corpora.py` | `results_r17/r17_between_corpora.json` |
+
 # Release 3.13.0: runs and analyses for the fourth version of the IEEE TLT manuscript
 
 Zenodo: 10.5281/zenodo.24439395 (concept DOI 10.5281/zenodo.24131157).
