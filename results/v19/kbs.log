@@ -1,0 +1,138 @@
+{
+ "n_targets": 351,
+ "full_sample": {
+  "hop_baseline|0": [
+   0.8837756393404862,
+   0.6309116809116809,
+   0.4716999050332382
+  ],
+  "product|0": [
+   0.927603431888373,
+   0.7051282051282052,
+   0.41832858499525155
+  ],
+  "hop_baseline|0.05": [
+   0.9152407082486811,
+   0.6866096866096866,
+   0.43323836657169973
+  ],
+  "product|0.05": [
+   0.9259779881587396,
+   0.7051282051282052,
+   0.4192307692307692
+  ],
+  "hop_baseline|0.1": [
+   0.9154207804422255,
+   0.6891737891737892,
+   0.4319088319088317
+  ],
+  "product|0.1": [
+   0.9218170087229229,
+   0.7000000000000001,
+   0.42564102564102557
+  ],
+  "hop_baseline|0.2": [
+   0.8791022235184242,
+   0.642022792022792,
+   0.4711775878442544
+  ],
+  "product|0.2": [
+   0.8796987108022047,
+   0.6391737891737892,
+   0.46847103513770166
+  ],
+  "hop_baseline|0.3": [
+   0.8500179398663367,
+   0.5800569800569801,
+   0.5011396011396011
+  ],
+  "product|0.3": [
+   0.8498168528078205,
+   0.5803418803418804,
+   0.4993352326685659
+  ]
+ },
+ "edges": {
+  "0": 17400,
+  "0.05": 4071,
+  "0.1": 2302,
+  "0.2": 1078,
+  "0.3": 652
+ },
+ "heldout": {
+  "crisp-default": {
+   "nDCG@3": 0.8789064370349134,
+   "P@1": 0.6414602082881925,
+   "unnecessary@3": 0.4735267871549663
+  },
+  "graded-fixed": {
+   "nDCG@3": 0.9278442535900059,
+   "P@1": 0.705985440588903,
+   "unnecessary@3": 0.42040090582806433
+  },
+  "guide": {
+   "nDCG@3": 0.9262795317818124,
+   "P@1": 0.704356703442501,
+   "unnecessary@3": 0.42184984669545855
+  }
+ },
+ "guide_minus_crisp_default": {
+  "nDCG@3": [
+   0.04737309474689901,
+   0.035806483996849166,
+   0.05837918983556878,
+   1.0
+  ],
+  "P@1": [
+   0.06289649515430855,
+   0.03240976416450963,
+   0.09393056865651528,
+   1.0
+  ],
+  "unnecessary@3": [
+   -0.0516769404595078,
+   -0.06695182523767083,
+   -0.03542676767676762,
+   0.0
+  ]
+ },
+ "guide_minus_graded_fixed": {
+  "nDCG@3": [
+   -0.0015647218081933816,
+   -0.013373896112536825,
+   0.0,
+   0.0
+  ],
+  "P@1": [
+   -0.0016287371464019829,
+   -0.025301406116338774,
+   0.0029239766081871066,
+   0.035
+  ],
+  "unnecessary@3": [
+   0.0014489408673941317,
+   0.0,
+   0.015869391161180496,
+   0.205
+  ]
+ },
+ "choices": {
+  "product|0": 151,
+  "product|0.05": 38,
+  "product|0.1": 11
+ },
+ "edges_stored_mean": 14037.1
+}
+2009_item {'construction': 'copractice', 'crisp_hop': 0.1492, 'graded_product': 0.1427, 'guide_choice': 'hop', 'guide': 0.1492, 'best_on_test': 'hop', 'best': 0.1492, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.0065}
+2009_kc {'construction': 'copractice', 'crisp_hop': 0.08, 'graded_product': 0.0628, 'guide_choice': 'hop', 'guide': 0.08, 'best_on_test': 'hop', 'best': 0.08, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.0172}
+2009_kc_transition {'construction': 'transition', 'crisp_hop': 0.2482, 'graded_product': 0.2633, 'guide_choice': 'product', 'guide': 0.2633, 'best_on_test': 'product', 'best': 0.2633, 'regret_guide': 0.0, 'regret_crisp': 0.0151, 'regret_graded': 0.0}
+2015_kc {'construction': 'copractice', 'crisp_hop': 0.0679, 'graded_product': 0.0529, 'guide_choice': 'hop', 'guide': 0.0679, 'best_on_test': 'hop', 'best': 0.0679, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.015}
+2015_kc_transition {'construction': 'transition', 'crisp_hop': 0.2378, 'graded_product': 0.2581, 'guide_choice': 'product', 'guide': 0.2581, 'best_on_test': 'product', 'best': 0.2581, 'regret_guide': 0.0, 'regret_crisp': 0.0203, 'regret_graded': 0.0}
+2017_item {'construction': 'copractice', 'crisp_hop': 0.0751, 'graded_product': 0.0621, 'guide_choice': 'hop', 'guide': 0.0751, 'best_on_test': 'hop', 'best': 0.0751, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.013}
+2017_item_transition {'construction': 'transition', 'crisp_hop': 0.2421, 'graded_product': 0.214, 'guide_choice': 'min_hopbreak', 'guide': 0.2408, 'best_on_test': 'hop', 'best': 0.2421, 'regret_guide': 0.0013, 'regret_crisp': 0.0, 'regret_graded': 0.0281}
+2017_kc {'construction': 'copractice', 'crisp_hop': 0.0674, 'graded_product': 0.0544, 'guide_choice': 'hop', 'guide': 0.0674, 'best_on_test': 'hop', 'best': 0.0674, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.013}
+2017_kc_transition {'construction': 'transition', 'crisp_hop': 0.1112, 'graded_product': 0.1104, 'guide_choice': 'hop', 'guide': 0.1112, 'best_on_test': 'hop', 'best': 0.1112, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.0008}
+junyi {'construction': 'copractice', 'crisp_hop': 0.0155, 'graded_product': 0.0116, 'guide_choice': 'hop', 'guide': 0.0155, 'best_on_test': 'hop', 'best': 0.0155, 'regret_guide': 0.0, 'regret_crisp': 0.0, 'regret_graded': 0.0039}
+junyi_transition {'construction': 'transition', 'crisp_hop': 0.2849, 'graded_product': 0.2954, 'guide_choice': 'product', 'guide': 0.2954, 'best_on_test': 'product', 'best': 0.2954, 'regret_guide': 0.0, 'regret_crisp': 0.0105, 'regret_graded': 0.0}
+{'guide': {'mean_regret': 0.0001195101599567493, 'max_regret': 0.0013146117595242424}, 'crisp': {'mean_regret': 0.004162507023254083, 'max_regret': 0.02027432236724319}, 'graded': {'mean_regret': 0.008860873061661837, 'max_regret': 0.028131250307143058}}
+{'threshold_gain_hop_0.05_minus_0.2': {'estimate': 0.14203785891468923, 'ci': [0.06917338295864224, 0.2098714938542872], 'p_boot': 0.0005}, 'best_graded_minus_best_crisp': {'estimate': 0.039283265093497666, 'ci': [0.008064845062434354, 0.07486180243955294], 'p_boot': 0.012}, 'product_minus_hop_at_0.05': {'estimate': 0.029529182854008074, 'ci': [0.003970301693543338, 0.05659638021068678], 'p_boot': 0.017}}

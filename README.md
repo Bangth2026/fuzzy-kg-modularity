@@ -2,7 +2,7 @@
 
 Reference implementation, reproduction scripts and run files for two manuscripts:
 
-> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 to 5.3.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
+> **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 to 5.4.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
 >
 > **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.12.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983, version 3.12.0 (with 3.11.0): 10.5281/zenodo.24435807; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the first revision, 3.11.0 those of the second (with a preregistered replication on two held-out corpora; plan in `kt/prereg/`), and 3.12.0 the analyses of the third version (entry point x edge term, claims at three smallest effects of interest, regret under a Rasch simulated learner); see `kt/README.md`.
 
@@ -21,6 +21,17 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4, and `--gamma` (version 4.11.0) for the resolution, 1 by default); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 5.4.0
+
+The analyses of the fourth revision of manuscript (A); new results in `results/v19/`. No earlier result changes, except the Table S9c cross-fit, which is recomputed by `scripts/v19_misc.py` (its earlier values had no script in the repository). `REPRODUCE.md` maps every main-text table and figure to its script, result file and run time; `requirements-lock.txt` pins the environment.
+
+| Topic | Script | Output |
+|---|---|---|
+| Three-level reach score, threshold chosen on held-out exercises, Table S9c cross-fit | `scripts/v19_misc.py` | `results/v19/misc.json` |
+| Partition value at 64 interior points of B_2, null per seed triple | `scripts/v19_interior.py` | `results/v19/interior.json` |
+| Guide in use: prerequisite and next-concept recommendation; bootstrap p-values | `scripts/v19_kbs.py` | `results/v19/kbs.json` |
+| Permutation tests, noise, scale, graph features | `scripts/v19_robust.py` | `results/v19/robust.json` |
 
 ## What is in version 5.3.0
 

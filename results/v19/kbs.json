@@ -1,0 +1,301 @@
+{
+ "A": {
+  "n_targets": 351,
+  "full_sample": {
+   "hop_baseline|0": [
+    0.8837756393404862,
+    0.6309116809116809,
+    0.4716999050332382
+   ],
+   "product|0": [
+    0.927603431888373,
+    0.7051282051282052,
+    0.41832858499525155
+   ],
+   "hop_baseline|0.05": [
+    0.9152407082486811,
+    0.6866096866096866,
+    0.43323836657169973
+   ],
+   "product|0.05": [
+    0.9259779881587396,
+    0.7051282051282052,
+    0.4192307692307692
+   ],
+   "hop_baseline|0.1": [
+    0.9154207804422255,
+    0.6891737891737892,
+    0.4319088319088317
+   ],
+   "product|0.1": [
+    0.9218170087229229,
+    0.7000000000000001,
+    0.42564102564102557
+   ],
+   "hop_baseline|0.2": [
+    0.8791022235184242,
+    0.642022792022792,
+    0.4711775878442544
+   ],
+   "product|0.2": [
+    0.8796987108022047,
+    0.6391737891737892,
+    0.46847103513770166
+   ],
+   "hop_baseline|0.3": [
+    0.8500179398663367,
+    0.5800569800569801,
+    0.5011396011396011
+   ],
+   "product|0.3": [
+    0.8498168528078205,
+    0.5803418803418804,
+    0.4993352326685659
+   ]
+  },
+  "edges": {
+   "0": 17400,
+   "0.05": 4071,
+   "0.1": 2302,
+   "0.2": 1078,
+   "0.3": 652
+  },
+  "heldout": {
+   "crisp-default": {
+    "nDCG@3": 0.8789064370349134,
+    "P@1": 0.6414602082881925,
+    "unnecessary@3": 0.4735267871549663
+   },
+   "graded-fixed": {
+    "nDCG@3": 0.9278442535900059,
+    "P@1": 0.705985440588903,
+    "unnecessary@3": 0.42040090582806433
+   },
+   "guide": {
+    "nDCG@3": 0.9262795317818124,
+    "P@1": 0.704356703442501,
+    "unnecessary@3": 0.42184984669545855
+   }
+  },
+  "guide_minus_crisp_default": {
+   "nDCG@3": [
+    0.04737309474689901,
+    0.035806483996849166,
+    0.05837918983556878,
+    1.0
+   ],
+   "P@1": [
+    0.06289649515430855,
+    0.03240976416450963,
+    0.09393056865651528,
+    1.0
+   ],
+   "unnecessary@3": [
+    -0.0516769404595078,
+    -0.06695182523767083,
+    -0.03542676767676762,
+    0.0
+   ]
+  },
+  "guide_minus_graded_fixed": {
+   "nDCG@3": [
+    -0.0015647218081933816,
+    -0.013373896112536825,
+    0.0,
+    0.0
+   ],
+   "P@1": [
+    -0.0016287371464019829,
+    -0.025301406116338774,
+    0.0029239766081871066,
+    0.035
+   ],
+   "unnecessary@3": [
+    0.0014489408673941317,
+    0.0,
+    0.015869391161180496,
+    0.205
+   ]
+  },
+  "choices": {
+   "product|0": 151,
+   "product|0.05": 38,
+   "product|0.1": 11
+  },
+  "edges_stored_mean": 14037.1
+ },
+ "B": {
+  "2009_item": {
+   "construction": "copractice",
+   "crisp_hop": 0.14921295150949884,
+   "graded_product": 0.14266306080414895,
+   "guide_choice": "hop",
+   "guide": 0.14921295150949884,
+   "best_on_test": "hop",
+   "best": 0.14921295150949884,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.006549890705349892
+  },
+  "2009_kc": {
+   "construction": "copractice",
+   "crisp_hop": 0.08000418381701965,
+   "graded_product": 0.06281033400335896,
+   "guide_choice": "hop",
+   "guide": 0.08000418381701965,
+   "best_on_test": "hop",
+   "best": 0.08000418381701965,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.01719384981366069
+  },
+  "2009_kc_transition": {
+   "construction": "transition",
+   "crisp_hop": 0.24823383971227592,
+   "graded_product": 0.2632938170997093,
+   "guide_choice": "product",
+   "guide": 0.2632938170997093,
+   "best_on_test": "product",
+   "best": 0.2632938170997093,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.015059977387433365,
+   "regret_graded": 0.0
+  },
+  "2015_kc": {
+   "construction": "copractice",
+   "crisp_hop": 0.06786558467054965,
+   "graded_product": 0.05289857771696892,
+   "guide_choice": "hop",
+   "guide": 0.06786558467054965,
+   "best_on_test": "hop",
+   "best": 0.06786558467054965,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.014967006953580733
+  },
+  "2015_kc_transition": {
+   "construction": "transition",
+   "crisp_hop": 0.2377862548142678,
+   "graded_product": 0.258060577181511,
+   "guide_choice": "product",
+   "guide": 0.258060577181511,
+   "best_on_test": "product",
+   "best": 0.258060577181511,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.02027432236724319,
+   "regret_graded": 0.0
+  },
+  "2017_item": {
+   "construction": "copractice",
+   "crisp_hop": 0.07512077483431275,
+   "graded_product": 0.06209013854564501,
+   "guide_choice": "hop",
+   "guide": 0.07512077483431275,
+   "best_on_test": "hop",
+   "best": 0.07512077483431275,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.013030636288667734
+  },
+  "2017_item_transition": {
+   "construction": "transition",
+   "crisp_hop": 0.24210375919631597,
+   "graded_product": 0.2139725088891729,
+   "guide_choice": "min_hopbreak",
+   "guide": 0.24078914743679172,
+   "best_on_test": "hop",
+   "best": 0.24210375919631597,
+   "regret_guide": 0.0013146117595242424,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.028131250307143058
+  },
+  "2017_kc": {
+   "construction": "copractice",
+   "crisp_hop": 0.06736480769686479,
+   "graded_product": 0.05440115087500783,
+   "guide_choice": "hop",
+   "guide": 0.06736480769686479,
+   "best_on_test": "hop",
+   "best": 0.06736480769686479,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.012963656821856955
+  },
+  "2017_kc_transition": {
+   "construction": "transition",
+   "crisp_hop": 0.11118299015333696,
+   "graded_product": 0.11042678350653816,
+   "guide_choice": "hop",
+   "guide": 0.11118299015333696,
+   "best_on_test": "hop",
+   "best": 0.11118299015333696,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.0007562066467988043
+  },
+  "junyi": {
+   "construction": "copractice",
+   "crisp_hop": 0.015465367941852763,
+   "graded_product": 0.011588261800630415,
+   "guide_choice": "hop",
+   "guide": 0.015465367941852763,
+   "best_on_test": "hop",
+   "best": 0.015465367941852763,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.0,
+   "regret_graded": 0.003877106141222348
+  },
+  "junyi_transition": {
+   "construction": "transition",
+   "crisp_hop": 0.28489966403997175,
+   "graded_product": 0.2953529415410901,
+   "guide_choice": "product",
+   "guide": 0.2953529415410901,
+   "best_on_test": "product",
+   "best": 0.2953529415410901,
+   "regret_guide": 0.0,
+   "regret_crisp": 0.010453277501118352,
+   "regret_graded": 0.0
+  }
+ },
+ "B_summary": {
+  "guide": {
+   "mean_regret": 0.0001195101599567493,
+   "max_regret": 0.0013146117595242424
+  },
+  "crisp": {
+   "mean_regret": 0.004162507023254083,
+   "max_regret": 0.02027432236724319
+  },
+  "graded": {
+   "mean_regret": 0.008860873061661837,
+   "max_regret": 0.028131250307143058
+  }
+ },
+ "C": {
+  "threshold_gain_hop_0.05_minus_0.2": {
+   "estimate": 0.14203785891468923,
+   "ci": [
+    0.06917338295864224,
+    0.2098714938542872
+   ],
+   "p_boot": 0.0005
+  },
+  "best_graded_minus_best_crisp": {
+   "estimate": 0.039283265093497666,
+   "ci": [
+    0.008064845062434354,
+    0.07486180243955294
+   ],
+   "p_boot": 0.012
+  },
+  "product_minus_hop_at_0.05": {
+   "estimate": 0.029529182854008074,
+   "ci": [
+    0.003970301693543338,
+    0.05659638021068678
+   ],
+   "p_boot": 0.017
+  }
+ }
+}
