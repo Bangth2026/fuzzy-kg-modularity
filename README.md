@@ -22,6 +22,21 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4, and `--gamma` (version 4.11.0) for the resolution, 1 by default); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
 
+## Relation to ASOC-D-26-17250 and shared data (release 5.4.1)
+
+A related single-authored manuscript, *Traceable Construction and Abstention for Graded Prerequisite Graphs in Tutoring Systems* (Applied Soft Computing, ASOC-D-26-17250, under review; code and data archive https://doi.org/10.5281/zenodo.23074830), uses data that overlap with this repository:
+
+| Item | ASOC-D-26-17250 | This repository (manuscript A) |
+|---|---|---|
+| Junyi Academy log (PSLC DataShop 1198) | used | used |
+| Junyi crowd-annotated exercise pairs | 1,131 pairs, plus 823 held out | all 1,954 pairs, as the path criterion |
+| Within-learner adjacent transitions (about 25.7 million) | undirected co-occurrence criterion | the counts behind the Junyi transition graph (`scripts/build_junyi_graph.py`) |
+| Graded crowd weights vs majority-vote weights | main result (Q1) | **not computed, not reported** |
+| ASSISTments 2009-2010 | second-platform directed check | KC- and item-level graphs |
+| Pruning threshold audit, unit-robust cut audit, t-norm and hop-penalised path scores | not addressed | contributions |
+
+Manuscript A cites ASOC-D-26-17250 as the source of the adjacent-transition definition and of the finding that graded weights on the Junyi data carry information binary ones lose; its Junyi results are read as an application of the threshold and path-score analysis, not as independent evidence on that question. Release 5.4.1 changes no code or result file.
+
 ## What is in version 5.4.0
 
 The analyses of the fourth revision of manuscript (A); new results in `results/v19/`. No earlier result changes, except the Table S9c cross-fit, which is recomputed by `scripts/v19_misc.py` (its earlier values had no script in the repository). `REPRODUCE.md` maps every main-text table and figure to its script, result file and run time; `requirements-lock.txt` pins the environment.
