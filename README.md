@@ -1,10 +1,9 @@
 # Binarisation and t-norm composition on fuzzy knowledge graphs
 
-Reference implementation, reproduction scripts and run files for two manuscripts:
+Reference implementation, reproduction scripts and run files for the manuscript:
 
 > **(A)** Hai Bang Truong. *Where do the grades of a log-derived fuzzy prerequisite graph carry value? A null-model decomposition and a unit-robust audit across edge, path and partition use.* Submitted to **Knowledge-Based Systems** (code: `fuzzykg/`, `scripts/`, `results/`; versions 5.0.0 to 5.4.0 below; versions up to 4.11.0 accompanied the earlier form of the manuscript, *Should prerequisite knowledge be graded or crisp? Quantifying what thresholding and t-norm path inference cost in log-derived fuzzy knowledge graphs*).
->
-> **(B)** Hai Bang Truong. *When does a concept graph help a knowledge tracer? Null-graph controls for first-attempt predictions on ten corpora.* Submitted to **IEEE Transactions on Learning Technologies** (code: `kt/`; versions 2.0.0 to 3.12.0, Zenodo concept DOI 10.5281/zenodo.24131157, version 3.10.0: 10.5281/zenodo.24410983, version 3.12.0 (with 3.11.0): 10.5281/zenodo.24435807; earlier versions of this manuscript were submitted to Neurocomputing and Neural Networks). Version 3.10.0 adds the runs and analyses of the first revision, 3.11.0 those of the second (with a preregistered replication on two held-out corpora; plan in `kt/prereg/`), and 3.12.0 the analyses of the third version (entry point x edge term, claims at three smallest effects of interest, regret under a Rasch simulated learner); see `kt/README.md`.
+
 
 [![tests](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml/badge.svg)](https://github.com/Bangth2026/fuzzy-kg-modularity/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -21,6 +20,11 @@ python scripts/fkg_audit.py edges.csv --nodes nodes.csv --grouping groups.json -
 ```
 
 The tool writes `my_audit.json` and a Markdown report: graph description; Algorithm 1 (degree-preserving null with the density-matched and the structure-matched floor, weights-only nulls with power); the Q_F drop and the rank-coded Q_F drop of every candidate cut over 20 optimiser seeds, read against the no-cut baseline (a cut is flagged when it exceeds that baseline by more than twice the larger seed SD and by more than 0.01; see "What is in version 4.10.0" for the decision by unit and step 4, and `--gamma` (version 4.11.0) for the resolution, 1 by default); agreement of every partition with the grouping; and, with external pairs, best paths for max-min, product, Łukasiewicz and Yager (p = 5) next to the direct edge and the hop distance, with a two-way cluster bootstrap over items. Example: `results/v4/audits/junyi_transition.md`, produced with `python scripts/make_junyi_pairs.py pairs.csv` and `python scripts/fkg_audit.py data/graphs/junyi_transition_edges.csv --nodes data/graphs/junyi_transition_nodes.csv --pairs pairs.csv --no-null-test --out results/v4/audits/junyi_transition`.
+
+## What is in version 5.4.2
+
+The directory `kt/` (a separate knowledge-tracing study) and its test file are removed; that code now lives in
+https://github.com/Bangth2026/kt-null-graph-controls. No code or result of manuscript (A) changes.
 
 ## Relation to ASOC-D-26-17250 and shared data (release 5.4.1)
 
@@ -266,64 +270,13 @@ All new results are in `results/v4/`; `scripts/v4_summarise.py` assembles the ta
 
 Code changes: `fuzzykg/nulltest.py` adds `planted_dc_like`, `structure_matched_floor` and `outcome`; `fuzzykg/fastcount.encode` accepts a categorical KC column with the same coding as strings (the Junyi log now loads in about 4 GB); `data/loaders.py` adds loaders for the five corpora, a parquet cache and `load_any`. Every graph of release 1.4.3 is rebuilt byte for byte (checked for the ASSISTments 2017 and Junyi transition graphs).
 
-## What is in version 3.9.0
+## Versions 2.0.0 to 3.9.0 (knowledge-tracing code, moved)
 
-No new training runs. `kt/src/r12_analyse.py` (`kt/results_r12/`) splits the first-attempt contrasts of the random-vector
-controls by training interactions on the target KC (n_k = 0 against n_k > 0, and pooled quintiles of log n_k with a slope
-per decade), after checking the rebuilt corpora against the archived per-prediction files, and lists every run set of
-Section 5.4 of the manuscript (721 runs). It also explains the names of the run and result directories. See the section
-"Release 3.9.0" of `kt/README.md`.
-
-## What is in version 3.8.0
-
-The random-vector controls with the two maps of the embedding refinement frozen at initialisation (`rvecF_emb`, `rvec1F_emb`;
-64 CPU runs, `kt/src/r11_controls.py`, `kt/runs_r11/`), the support graph on the rebuilt EdNet data, and reruns that reproduce
-the archived control exactly. `kt/src/r11_analyse.py` (`kt/results_r11/`) adds the support graph against the controls without a
-graph, the frozen-map comparisons, first attempts at KCs with and without training interactions, the share of KCs without an
-Erdős–Rényi neighbour, and the units and strata behind the neighbour split by position. See the section "Release 3.8.0" of
-`kt/README.md`.
-
-## What is in version 3.7.0
-
-Controls without a graph: a fixed random vector per KC with no graph (two variances) and Erdős–Rényi mixing of a second, trainable table, on the 32 units of the complete ladder (96 CPU runs, `kt/src/r10_controls.py`, `kt/runs_r10/`), on corpora rebuilt from public copies of the raw files, with reruns that reproduce the archived control exactly on nine corpora. Analyses of the per-prediction files: first attempts split by a previously practised neighbour for the frozen-random-table control and for the learned-minus-frozen contrast, the same split within terciles of the position in the sequence, the AUC of the empty-graph control in each group, training length, an inventory of the runs of Section 5.4, and Fig. 4 with the rungs ER(R) − U and RV − U (`kt/src/r10_analyse.py`, `kt/src/r10_figures.py`, `kt/results_r10/`). See the section "Release 3.7.0" of `kt/README.md`.
-
-## What is in version 3.6.0
-
-The complete null-graph ladder with the graph read in the embedding refinement (32 units of 10 corpora), the frozen-random-table control, first attempts split by a previously practised graph neighbour, seed replicates for the probe and for GKT, GKT with the complete graph, and Figures 3 and 4 of the manuscript: 260 CPU runs with per-prediction files (`kt/runs_r9/`), `kt/src/r9_controls.py`, `kt/src/r9_analyse.py`, `kt/src/r9_figures.py`, results in `kt/results_r9/`. See the section "Release 3.6.0" of `kt/README.md`.
-
-## What is in version 3.5.0
-
-The null-graph ladder beyond the probe (Section 6.6 of the manuscript): 280 runs on six corpora at 10% of the training learners under the update budget. GKT with the empty, Erdős–Rényi, degree-preserving and support graphs; SAKT with the embedding refinement over the ladder empty, uniform, Erdős–Rényi, support; a parameter-sharing (hashed) KC table; and the paired probe runs. Code in `kt/src/r8_controls.py` and `kt/src/r8_analyse.py`, run files in `kt/runs_r8/`, results in `kt/results_r8/r8_results.json`, the Colab notebook that ran them in `kt/FKG_KT_r8_runs.ipynb`. See the section "Release 3.5.0" of `kt/README.md`.
-
-## What is in version 3.4.0
-
-Robustness of the main comparisons and decision-level metrics, and the uniform-mixing, tuned-shrinkage and learning-rate controls (`kt/src/r34_analyse.py`, `kt/src/r7_controls.py`, `kt/runs_r7/`). See the section "Release 3.4.0" of `kt/README.md`. Archived on Zenodo: [10.5281/zenodo.24131158](https://doi.org/10.5281/zenodo.24131158).
-
-## What is in version 3.3.0
-
-Channel-separating controls (`support_emb`, `support_att`, `er_emb`, `er_att` in `kt/src/r6_controls.py`, 128 run files in `kt/runs_r6`) and `kt/src/r33_analyse.py` with `kt/results_r6/r33_results.json`: the graph read only in the embedding refinement or only in the attention bias; rise of the graph gain from 5% to 10% under both budgets on the same units; updates to the selected checkpoint; graph controls pooled over both budgets with a budget fixed effect. See the section "Release 3.3.0" of `kt/README.md`.
-
-## What is in version 3.2.0
-
-`kt/src/r32_analyse.py`, new run files in `kt/runs_r6/` and `kt/results_r6/r32_results.json`: the degree-feature control with a zero-initialised map (`degfeat0`), under the epoch and the update budget; the Erdős–Rényi control on every subsample of the epoch-budget control runs and on all ten corpora under the update budget; the degree-preserving control on all subsamples under the update budget; pooled comparisons of the graph controls over both budgets with intervals; run counts by set. See the section "Release 3.2.0" of `kt/README.md`.
-
-## What is in version 3.1.0
-
-`kt/src/r6_controls.py`, `kt/src/r6_analyse.py`, run files in `kt/runs_r6/` and results in `kt/results_r6/`: the probe trained for a fixed number of parameter updates instead of 30 epochs (support graph, empty-graph control, degree-preserving rewiring and an Erdős–Rényi graph with the same number of edges, at 5% and 10% of the training learners); two further graph controls under the epoch budget (Erdős–Rényi graph, and the empty graph with a degree feature in the KC embedding); the number of updates taken by every learning-curve run; the support-versus-control comparison pooled over the learning-curve runs and the runs of version 2.1.0; bootstrap and mixed-model intervals for the controls; and run counts by set. See the section "Release 3.1.0" of `kt/README.md`.
-
-## What is in version 3.0.0
-
-`kt/r2/`: code, the 957 learning-curve run files and their analysis (Sections 6.1 to 6.5 and 6.9 of the manuscript); see `kt/r2/README.md`.
-
-## What is in version 2.1.0
-
-Archived on Zenodo: [10.5281/zenodo.24027065](https://doi.org/10.5281/zenodo.24027065) (all versions: 10.5281/zenodo.23830894).
-
-The knowledge-tracing experiments live in `kt/` (see `kt/README.md`). Version 2.1.0 adds graph controls: a graph-free recency bias and a degree-preserving rewiring of the graph, run with the release-2.0.0 model on ten corpora (five subsamples at 10%, three at 25%); the empty-graph control rerun on the 10% sample of release 2.0.0 with three seeds; the support graph against the control at 5%, 10%, 25% and 100%; one cell with a larger learning rate for the graph scalars; preprocessing of Bridge to Algebra 2006 and Statics 2011; and a memory-light Junyi preprocessing. Run files in `kt/runs_r5/`, results in `kt/results_r5/`.
-
-## What is in version 2.0.0
-
-`kt/`: preprocessing of eight corpora, fuzzy prerequisite graphs from training learners, DKT, SAKT, AKT, GKT and FKG-KT training on CPU, and the 527 run files of release 2.0.0 (archived on Zenodo, 10.5281/zenodo.23830895).
+These versions added the directory `kt/` with the code and run files of a separate knowledge-tracing study (manuscript
+*When Does a Concept Graph Help a Knowledge Tracer? Null-Graph Controls by Entry Point for KC-Level First Attempts*). From
+version 5.4.2 that code is no longer part of this repository: it lives in its own repository,
+https://github.com/Bangth2026/kt-null-graph-controls (version 4.0.0, https://doi.org/10.5281/zenodo.24492767). The fuzzy-graph
+package, scripts and results of manuscript (A) did not change in these versions, except as listed in their own sections.
 
 ## What is in version 1.4.3
 
